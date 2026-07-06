@@ -80,19 +80,42 @@ img {
 }
 
 .brand strong {
-  display: block;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 18px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 21px;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
-.brand span {
+.brand-copy,
+.brand-tagline {
   display: block;
+}
+
+.brand-name {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.brand-name span {
+  display: inline;
+  margin-top: 0;
+  font-size: inherit;
+  letter-spacing: inherit;
+}
+
+.brand-name .brand-on {
+  color: var(--gold);
+}
+
+.brand-name .brand-reason {
+  color: var(--green);
+}
+
+.brand-tagline {
   margin-top: -2px;
   color: var(--muted);
   font-size: 12px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0;
 }
 
 .site-nav {
