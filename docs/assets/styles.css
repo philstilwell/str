@@ -291,7 +291,6 @@ h3 {
 .quote-strip,
 .method-strip,
 .card-grid,
-.claim-table,
 .tag-grid {
   display: grid;
   gap: 14px;
@@ -373,6 +372,7 @@ h3 {
 }
 
 .claim-table {
+  display: table;
   width: 100%;
   border-collapse: collapse;
   overflow: hidden;
