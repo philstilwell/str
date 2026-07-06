@@ -1,0 +1,21 @@
+{
+  "episodes": [
+    {
+      "guid": "strweekly.podbean.com/0cb5c2f4-e533-36c8-bc20-3a3290589b5f",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/cid4vmjhn8jxnpzb/070126.mp3",
+      "path": "episodes/2026-07-01-cultivating-a-big-enough-worldview-in-students",
+      "podcast_page_url": "https://strweekly.podbean.com/e/cultivating-a-big-enough-worldview-in-students/",
+      "pub_date": "2026-07-01",
+      "slug": "2026-07-01-cultivating-a-big-enough-worldview-in-students",
+      "title": "Cultivating a “Big Enough” Worldview in Students",
+      "transcript": {
+        "reason": "No official transcript found and ASR credentials are not configured.",
+        "source": null,
+        "status": "pending_asr"
+      },
+      "youtube_url": null
+    }
+  ],
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "updated_at": "2026-07-06T19:07:41Z"
+}

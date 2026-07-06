@@ -1,0 +1,14 @@
+.DS_Store
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+
+# Keep downloaded audio out of git. The workflow stores metadata/transcripts only.
+downloads/
+tmp/
+*.mp3
+*.m4a
+*.wav
+*.webm

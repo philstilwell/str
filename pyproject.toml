@@ -1,0 +1,23 @@
+[project]
+name = "str-workflow"
+version = "0.1.0"
+description = "Collect Stand to Reason podcast metadata and transcripts from the official RSS feed."
+requires-python = ">=3.11"
+dependencies = [
+  "beautifulsoup4>=4.12.3",
+  "feedparser>=6.0.11",
+  "openai>=1.93.0",
+  "pydub>=0.25.1",
+  "python-dateutil>=2.9.0.post0",
+  "python-slugify>=8.0.4",
+  "requests>=2.32.3",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.2.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+
