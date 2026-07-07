@@ -135,6 +135,7 @@ DEFAULT_METHODS = [
         "body": "Concern should become proportionate action where agency exists, not inflated cosmic responsibility.",
     },
 ]
+REQUIRED_METHOD_TITLES = [item["title"] for item in DEFAULT_METHODS]
 
 DEFAULT_SECTION_BLUEPRINTS = [
     {
@@ -704,8 +705,13 @@ def validate_spec(spec: dict[str, Any]) -> list[str]:
             errors.append("episode_nav must include at least one linked adjacent critique")
 
     methods = spec.get("methods")
-    if not isinstance(methods, list) or len(methods) < 4:
-        errors.append("methods must contain at least four method cards")
+    if not isinstance(methods, list) or len(methods) < len(REQUIRED_METHOD_TITLES):
+        errors.append("methods must contain all five required method cards")
+    if isinstance(methods, list):
+        method_titles = [text(method.get("title")) for method in methods if isinstance(method, dict)]
+        missing_methods = [title for title in REQUIRED_METHOD_TITLES if title not in method_titles]
+        if missing_methods:
+            errors.append(f"methods missing required critique framework cards: {', '.join(missing_methods)}")
 
     research = spec.get("research") if isinstance(spec.get("research"), dict) else {}
     if not research.get("rows") or len(research.get("rows", [])) < 3:
@@ -977,6 +983,13 @@ def validate_page(path: Path) -> list[str]:
         errors.append("page AI prompt must instruct ALL-CAPS major section headers")
     if "episode-nav-link" not in html_text:
         errors.append("page must include at least one linked previous/next critique control")
+    method_titles = [
+        normalized_content(node.get_text(" ", strip=True))
+        for node in soup.select("#method .method-card strong")
+    ]
+    missing_methods = [title for title in REQUIRED_METHOD_TITLES if title not in method_titles]
+    if missing_methods:
+        errors.append(f"page method cards missing required critique framework cards: {', '.join(missing_methods)}")
     for anchor in soup.select("a[href]"):
         href = anchor.get("href")
         if is_private_source_index_url(href):

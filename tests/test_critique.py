@@ -127,6 +127,10 @@ def valid_spec() -> dict:
             {"title": "Symmetry", "body": "Rivals need the same test."},
             {"title": "Architecture", "body": "A source is not a system."},
             {"title": "Alternatives", "body": "Compare live alternatives."},
+            {
+                "title": "Bounded Agency",
+                "body": "Concern should become proportionate action where agency exists.",
+            },
         ],
         "research": {
             "body": ["The critique is grounded in Free of Faith and local framework summaries."],
@@ -235,6 +239,7 @@ def test_valid_spec_renders_page_with_required_onreason_features(tmp_path):
     assert "The Steelmanned Condensed Claims:" in html
     assert "Diagnostic fit: High" in html
     assert "epistemic-reality" in html
+    assert "Bounded Agency" in html
     assert 'class="link-pill gold"' in html
     assert "</a>;" not in html
     assert "OnReason source index" not in html
@@ -271,6 +276,16 @@ def test_validate_spec_rejects_boilerplate_evidence_needed_rows():
     assert any("evidence_needed.raise entries" in error for error in errors)
     assert any("evidence_needed.lower entries" in error for error in errors)
     assert any("must be customized" in error for error in errors)
+
+
+def test_validate_spec_rejects_missing_bounded_agency_method():
+    spec = valid_spec()
+    weak = copy.deepcopy(spec)
+    weak["methods"] = [method for method in weak["methods"] if method["title"] != "Bounded Agency"]
+
+    errors = validate_spec(weak)
+
+    assert any("Bounded Agency" in error for error in errors)
 
 
 def test_validate_spec_rejects_general_boilerplate_and_repeated_explanatory_text():
@@ -390,6 +405,20 @@ def test_validate_page_rejects_lowercase_proper_names(tmp_path):
     errors = validate_page(page)
 
     assert any('"christ"' in error and '"Christ"' in error for error in errors)
+
+
+def test_validate_page_rejects_missing_bounded_agency_method(tmp_path):
+    spec = valid_spec()
+    page = tmp_path / "index.html"
+    html = render_critique(spec).replace(
+        '              <div class="method-card"><strong>Bounded Agency</strong><p>Concern should become proportionate action where agency exists.</p></div>\n',
+        "",
+    )
+    page.write_text(html, encoding="utf-8")
+
+    errors = validate_page(page)
+
+    assert any("Bounded Agency" in error for error in errors)
 
 
 def test_scaffold_uses_metadata_transcript_chunks_and_source_index(tmp_path):
