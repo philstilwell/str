@@ -116,12 +116,6 @@ def valid_spec() -> dict:
             "previous": {"title": "Older Test Episode", "url": "../2026-06-24-test-episode/"},
             "next": {"title": "Newer Test Episode", "url": "../2026-07-08-test-episode/"},
         },
-        "quote_strip": [
-            {"quote": "big enough worldview", "label": "Scope claim"},
-            {"quote": "Christ is risen", "label": "Hope claim"},
-            {"quote": "all things new", "label": "Story claim"},
-            {"quote": "what is good", "label": "Calling claim"},
-        ],
         "methods": [
             {"title": "Calibration", "body": "Belief should track evidence."},
             {"title": "Symmetry", "body": "Rivals need the same test."},
@@ -240,6 +234,9 @@ def test_valid_spec_renders_page_with_required_onreason_features(tmp_path):
     assert "Diagnostic fit: High" in html
     assert "epistemic-reality" in html
     assert "Bounded Agency" in html
+    assert "quote-strip" not in html
+    assert "quote-chip" not in html
+    assert "Short quote anchors" not in html
     assert 'class="link-pill gold"' in html
     assert "</a>;" not in html
     assert "OnReason source index" not in html
@@ -262,6 +259,15 @@ def test_validate_spec_rejects_missing_transcript_quote_explanations():
 
     assert any("transcript.quotes" in error for error in errors)
     assert any("tags[1].application" in error for error in errors)
+
+
+def test_validate_spec_rejects_deprecated_quote_strip_field():
+    spec = valid_spec()
+    spec["quote_strip"] = [{"quote": "big enough worldview", "label": "Scope claim"}]
+
+    errors = validate_spec(spec)
+
+    assert any("quote_strip is deprecated" in error for error in errors)
 
 
 def test_validate_spec_rejects_boilerplate_evidence_needed_rows():
@@ -421,6 +427,24 @@ def test_validate_page_rejects_missing_bounded_agency_method(tmp_path):
     assert any("Bounded Agency" in error for error in errors)
 
 
+def test_validate_page_rejects_deprecated_quote_strip_markup(tmp_path):
+    spec = valid_spec()
+    page = tmp_path / "index.html"
+    html = render_critique(spec).replace(
+        '          <section class="section-panel" id="method">',
+        '          <section class="quote-strip" aria-label="Short quote anchors">\n'
+        '            <div class="quote-chip"><strong>“old summary”</strong><span>Old card</span></div>\n'
+        "          </section>\n\n"
+        '          <section class="section-panel" id="method">',
+        1,
+    )
+    page.write_text(html, encoding="utf-8")
+
+    errors = validate_page(page)
+
+    assert any("deprecated top quote-strip" in error for error in errors)
+
+
 def test_scaffold_uses_metadata_transcript_chunks_and_source_index(tmp_path):
     episode_dir = tmp_path / "corpus" / "episodes" / "2026-07-01-test-episode"
     episode_dir.mkdir(parents=True)
@@ -477,6 +501,7 @@ def test_scaffold_uses_metadata_transcript_chunks_and_source_index(tmp_path):
     assert spec["sections"][0]["transcript"]["range"] == "00:00:00-00:01:00"
     assert spec["sections"][0]["transcript"]["quotes"][0]["quote"].startswith("Greg says Genuine Christianity")
     assert spec["sections"][0]["research_anchors"][0]["url"] == "https://freeoffaith.com/2024/11/11/21/"
+    assert "quote_strip" not in spec
     assert all(item["label"] != "OnReason source index" for item in spec["source_list"])
     assert any("TODO" in error for error in validate_spec(spec))
 

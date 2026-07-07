@@ -98,6 +98,7 @@ OnReason critique pages are generated from a structured critique spec rather tha
    - evidence-needed calibration tests customized to each section's claim, with distinct criteria for what would raise or lower confidence;
    - a steelmanned AI prompt whose claims are actually grounded in the transcript.
    - numbered substantive section kickers rendered as dark container-wide bars with light text, while non-numbered framework kickers keep the standard green text treatment.
+   - no deprecated top-level quote-strip / quote-chip summary card section; transcript quotes belong inside the relevant substantive critique sections.
    - no reused boilerplate repair paragraphs, source notes, tag explanations, formalizations, overall assessments, or calibration-table prose; the validator rejects known stale phrases and repeated explanatory text.
 
 5. Validate the spec before rendering:
@@ -136,4 +137,4 @@ Research-map anchor styling is part of the production contract: rendered Free of
 
 The `Validate OnReason workflow` GitHub Action runs the Python tests on push and pull request. The tests check RSS ingest helpers, critique spec validation, HTML generation, and the current public page's required features.
 
-Critique depth is a production contract, not a copy-editing preference. The validator rejects draft specs or rendered pages that omit the five-card method framework (`Calibration`, `Symmetry`, `Architecture`, `Alternatives`, and `Bounded Agency`), section-level Free of Faith anchors, underdeveloped `◉` explanations, shallow research notes, one-row audit tables, thin tag applications, under-explained formalizations, short evidence-calibration tests, underdeveloped epistemic-reality rebukes, repeated boilerplate, label-like AI steelman claims, public links to the private OnReason source index, or lowercase proper names inherited from ASR/transcript text.
+Critique depth is a production contract, not a copy-editing preference. The validator rejects draft specs or rendered pages that omit the five-card method framework (`Calibration`, `Symmetry`, `Architecture`, `Alternatives`, and `Bounded Agency`), section-level Free of Faith anchors, underdeveloped `◉` explanations, shallow research notes, one-row audit tables, thin tag applications, under-explained formalizations, short evidence-calibration tests, underdeveloped epistemic-reality rebukes, repeated boilerplate, label-like AI steelman claims, deprecated quote-strip summary cards, public links to the private OnReason source index, or lowercase proper names inherited from ASR/transcript text.

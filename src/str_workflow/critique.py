@@ -592,11 +592,6 @@ def scaffold_spec(episode_dir: Path, source_index_path: Path) -> dict[str, Any]:
                 "url": "TODO relative URL to next newer critique",
             },
         },
-        "quote_strip": [
-            {"quote": item["quote"], "label": section["label"]}
-            for section in sections
-            for item in section["transcript"]["quotes"][:1]
-        ][:4],
         "methods": DEFAULT_METHODS,
         "research": {
             "body": [
@@ -679,6 +674,8 @@ def scaffold_spec(episode_dir: Path, source_index_path: Path) -> dict[str, Any]:
 
 def validate_spec(spec: dict[str, Any]) -> list[str]:
     errors: list[str] = []
+    if "quote_strip" in spec:
+        errors.append("quote_strip is deprecated; keep transcript quotes inside each substantive critique section")
     errors.extend(visible_url_errors(spec, "spec"))
     errors.extend(proper_name_case_errors(spec, "spec"))
     episode = spec.get("episode") if isinstance(spec.get("episode"), dict) else {}
@@ -952,6 +949,8 @@ def validate_page(path: Path) -> list[str]:
     visible_text = normalized_content(soup.get_text(" ", strip=True))
     proper_name_scan_text = page_text_for_proper_name_scan(soup)
     errors: list[str] = []
+    if "quote-strip" in html_text or "quote-chip" in html_text or "Short quote anchors" in html_text:
+        errors.append("page must not include the deprecated top quote-strip summary cards")
     checks = {
         "brand": "OnReason",
         "roman_toc_css": "toc",
@@ -1231,10 +1230,6 @@ def render_critique(spec: dict[str, Any]) -> str:
     toc_items.extend([("overall", "Overall assessment"), ("evidence-needed", "Evidence needed"), ("prompt", "AI prompt")])
 
     toc_html = "\n".join(f'          <li><a href="#{esc(target)}">{esc(label)}</a></li>' for target, label in toc_items)
-    quote_strip = "\n".join(
-        f'            <div class="quote-chip"><strong>“{esc(item.get("quote"))}”</strong><span>{esc(item.get("label"))}</span></div>'
-        for item in spec.get("quote_strip", [])
-    )
     method_cards = "\n".join(
         f'              <div class="method-card"><strong>{esc(item.get("title"))}</strong><p>{esc(item.get("body"))}</p></div>'
         for item in spec.get("methods", [])
@@ -1354,10 +1349,6 @@ def render_critique(spec: dict[str, Any]) -> str:
               <img src="{esc(episode.get("hero_image") or DEFAULT_HERO_IMAGE)}" alt="{esc(episode.get("hero_alt") or DEFAULT_HERO_ALT)}">
             </figure>
           </header>
-
-          <section class="quote-strip" aria-label="Short quote anchors">
-{quote_strip}
-          </section>
 
           <section class="section-panel" id="method">
             <p class="section-kicker">Critique Framework</p>

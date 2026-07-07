@@ -379,7 +379,6 @@ h3 {
   max-width: 460px;
 }
 
-.quote-strip,
 .method-strip,
 .card-grid,
 .tag-grid {
@@ -387,12 +386,6 @@ h3 {
   gap: 14px;
 }
 
-.quote-strip {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin: 28px 0;
-}
-
-.quote-chip,
 .method-card,
 .section-panel,
 .prompt-box,
@@ -407,25 +400,6 @@ h3 {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--paper);
-}
-
-.quote-chip {
-  min-height: 116px;
-  padding: 16px;
-}
-
-.quote-chip strong {
-  display: block;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 18px;
-  font-weight: 500;
-}
-
-.quote-chip span {
-  display: block;
-  margin-top: 12px;
-  color: var(--muted);
-  font-size: 12px;
 }
 
 .section-panel {
@@ -1108,7 +1082,6 @@ h3 {
   .site-header,
   .site-nav,
   .article-header,
-  .quote-strip,
   .method-strip,
   .formal-block,
   .index-hero {
