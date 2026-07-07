@@ -1,21 +1,26 @@
-# STR Podcast Transcript Workflow
+# OnReason Podcast Transcript Workflow
 
-This repository monitors the Stand to Reason weekly podcast RSS feed and builds a local corpus of episode metadata and transcripts.
+This repository monitors apologetics podcast feeds and builds local corpora of episode metadata and transcripts for OnReason critique work.
 
-The durable source is the Podbean RSS feed:
+The current durable sources are:
 
-`https://feed.podbean.com/strweekly/feed.xml`
+- Stand to Reason Weekly Podcast: `https://feed.podbean.com/strweekly/feed.xml`
+- Frank Turek's "I Don't Have Enough FAITH to Be an ATHEIST": `https://crossexamined.org/category/podcast/feed/`
 
 The initial workflow:
 
 1. Polls the RSS feed on a schedule or by manual dispatch.
-2. Detects new episode GUIDs.
-3. Stores episode metadata under `corpus/episodes/`.
+2. Detects new episode GUIDs per podcast corpus.
+3. Stores episode metadata under `corpus/podcasts/<podcast-id>/episodes/`.
 4. Checks for official transcript hints in RSS and on the linked episode page.
-5. If no official transcript is found, transcribes the MP3 when an ASR provider is configured.
-6. Commits new metadata/transcripts back to `main`.
+5. Discovers embedded audio players when the RSS feed links to a show-note page without an MP3 enclosure.
+6. If no official transcript is found, transcribes the MP3 when an ASR provider is configured.
+7. Commits new metadata/transcripts back to `main`.
 
 Raw audio is downloaded only into temporary workspace storage during a run and is intentionally ignored by git.
+
+Podcast assets stay separated under `corpus/podcasts/<podcast-id>/`; do not mix episode metadata,
+transcripts, or generated ASR artifacts across podcast directories.
 
 ## Enable Transcription
 
@@ -40,6 +45,15 @@ python -m venv .venv
 source .venv/bin/activate
 pip install -e .
 python -m str_workflow.ingest --max-new 1 --transcribe never
+
+python -m str_workflow.ingest \
+  --feed-url https://crossexamined.org/category/podcast/feed/ \
+  --out-dir corpus/podcasts/idont-have-enough-faith \
+  --podcast-id idont-have-enough-faith \
+  --podcast-title "I Don't Have Enough FAITH to Be an ATHEIST" \
+  --podcast-home-url https://crossexamined.org/podcasts/ \
+  --max-new 1 \
+  --transcribe never
 ```
 
 To run local ASR, export `OPENAI_API_KEY` and use `--transcribe auto` or `--transcribe always`.
@@ -48,12 +62,21 @@ To run local ASR, export `OPENAI_API_KEY` and use `--transcribe auto` or `--tran
 
 ```text
 corpus/
-  episodes.json
-  episodes/
-    YYYY-MM-DD-episode-slug/
-      metadata.json
-      transcript.md
-      transcript.json
+  podcasts/
+    stand-to-reason/
+      episodes.json
+      episodes/
+        YYYY-MM-DD-episode-slug/
+          metadata.json
+          transcript.md
+          transcript.json
+    idont-have-enough-faith/
+      episodes.json
+      episodes/
+        YYYY-MM-DD-episode-slug/
+          metadata.json
+          transcript.md
+          transcript.json
 ```
 
 `metadata.json` records the RSS GUID, title, publication date, MP3 URL, linked episode page, transcript status, and ASR provenance.
@@ -80,7 +103,7 @@ OnReason critique pages are generated from a structured critique spec rather tha
 
    ```bash
    python -m str_workflow.critique scaffold \
-     --episode-dir corpus/episodes/YYYY-MM-DD-episode-slug
+     --episode-dir corpus/podcasts/stand-to-reason/episodes/YYYY-MM-DD-episode-slug
    ```
 
    This writes a local draft packet under `output/critique-drafts/`. The `output/` directory is ignored so transcript-derived working files do not become public by accident.

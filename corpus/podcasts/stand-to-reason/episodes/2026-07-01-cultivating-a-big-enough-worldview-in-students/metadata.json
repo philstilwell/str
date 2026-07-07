@@ -6,6 +6,11 @@
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
   "guid": "strweekly.podbean.com/0cb5c2f4-e533-36c8-bc20-3a3290589b5f",
   "mp3_url": "https://mcdn.podbean.com/mf/web/cid4vmjhn8jxnpzb/070126.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
   "podcast_page_url": "https://strweekly.podbean.com/e/cultivating-a-big-enough-worldview-in-students/",
   "pub_date": "2026-07-01",
   "rss_transcript_tags": [],

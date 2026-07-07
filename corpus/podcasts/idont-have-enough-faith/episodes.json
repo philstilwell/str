@@ -1,0 +1,231 @@
+{
+  "episodes": [
+    {
+      "guid": "https://crossexamined.org/?p=103762",
+      "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast_Bill-Federer_7-3-26.mp3",
+      "path": "episodes/2026-07-03-what-happened-to-the-56-men-who-signed-the-declaration-of-independence",
+      "podcast": {
+        "home_url": "https://crossexamined.org/podcasts/",
+        "id": "idont-have-enough-faith",
+        "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+      },
+      "podcast_page_url": "https://crossexamined.org/what-happened-to-the-56-men-who-signed-the-declaration-of-independence-with-bill-federer/",
+      "pub_date": "2026-07-03",
+      "slug": "2026-07-03-what-happened-to-the-56-men-who-signed-the-declaration-of-independence",
+      "title": "What Happened to the 56 Men Who Signed the Declaration of Independence? with Bill Federer",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "https://crossexamined.org/?p=103733",
+      "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek_Podcast_Bill-Federer_6-30-2026.mp3",
+      "path": "episodes/2026-06-30-deist-or-christian-who-were-the-56-men-who-founded-america-with-bill",
+      "podcast": {
+        "home_url": "https://crossexamined.org/podcasts/",
+        "id": "idont-have-enough-faith",
+        "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+      },
+      "podcast_page_url": "https://crossexamined.org/deist-or-christian-who-were-the-56-men-who-founded-america-with-bill-federer/",
+      "pub_date": "2026-06-30",
+      "slug": "2026-06-30-deist-or-christian-who-were-the-56-men-who-founded-america-with-bill",
+      "title": "Deist or Christian: Who Were the 56 Men Who Founded America? with Bill Federer",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "https://crossexamined.org/?p=103717",
+      "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast-RyanCrews_6-26-26.mp3",
+      "path": "episodes/2026-06-26-how-to-detect-heresy-the-gospel-of-james-talarico-with-ryan-crews",
+      "podcast": {
+        "home_url": "https://crossexamined.org/podcasts/",
+        "id": "idont-have-enough-faith",
+        "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+      },
+      "podcast_page_url": "https://crossexamined.org/how-to-detect-heresy-the-gospel-of-james-talarico-with-ryan-crews/",
+      "pub_date": "2026-06-26",
+      "slug": "2026-06-26-how-to-detect-heresy-the-gospel-of-james-talarico-with-ryan-crews",
+      "title": "How to Detect Heresy: The Gospel of James Talarico with Ryan Crews",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "https://crossexamined.org/?p=103700",
+      "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek-Podcast-NickFrietas_6-23-2026.mp3",
+      "path": "episodes/2026-06-23-the-outrageous-lies-americans-are-being-told-about-reality-with-nick",
+      "podcast": {
+        "home_url": "https://crossexamined.org/podcasts/",
+        "id": "idont-have-enough-faith",
+        "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+      },
+      "podcast_page_url": "https://crossexamined.org/the-outrageous-lies-americans-are-being-told-about-reality-with-nick-freitas/",
+      "pub_date": "2026-06-23",
+      "slug": "2026-06-23-the-outrageous-lies-americans-are-being-told-about-reality-with-nick",
+      "title": "The Outrageous Lies Americans Are Being Told About Reality with Nick Freitas",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "https://crossexamined.org/?p=103688",
+      "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast-NickFreitas_6-19-26.mp3",
+      "path": "episodes/2026-06-19-mic-drop-wisdom-about-marriage-manhood-lawn-care-elon-musk-american-from",
+      "podcast": {
+        "home_url": "https://crossexamined.org/podcasts/",
+        "id": "idont-have-enough-faith",
+        "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+      },
+      "podcast_page_url": "https://crossexamined.org/mic-drop-wisdom-about-marriage-manhood-lawn-care-elon-musk-american-prosperity-from-nick-freitas/",
+      "pub_date": "2026-06-19",
+      "slug": "2026-06-19-mic-drop-wisdom-about-marriage-manhood-lawn-care-elon-musk-american-from",
+      "title": "Mic-Drop Wisdom About Marriage, Manhood, Lawn Care, Elon Musk, & American Prosperity from Nick Freitas",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "https://crossexamined.org/?p=103683",
+      "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_MidweekPodcast-SteveMeyer_6-16-2026.mp3",
+      "path": "episodes/2026-06-16-did-the-universe-really-have-a-beginning-unpacking-the-battle-for-the-dr",
+      "podcast": {
+        "home_url": "https://crossexamined.org/podcasts/",
+        "id": "idont-have-enough-faith",
+        "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+      },
+      "podcast_page_url": "https://crossexamined.org/did-the-universe-really-have-a-beginning-unpacking-the-battle-for-the-big-bang-with-dr-stephen-c-meyer/",
+      "pub_date": "2026-06-16",
+      "slug": "2026-06-16-did-the-universe-really-have-a-beginning-unpacking-the-battle-for-the-dr",
+      "title": "Did the Universe REALLY Have a Beginning? Unpacking the “Battle for the Big Bang” with Dr. Stephen C. Meyer",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "https://crossexamined.org/?p=103673",
+      "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast-BryceCrawford_6-12-26.mp3",
+      "path": "episodes/2026-06-12-from-extreme-depression-to-street-preacher-how-god-saved-his-life-with",
+      "podcast": {
+        "home_url": "https://crossexamined.org/podcasts/",
+        "id": "idont-have-enough-faith",
+        "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+      },
+      "podcast_page_url": "https://crossexamined.org/from-extreme-depression-to-street-preacher-how-god-saved-his-life-with-bryce-crawford/",
+      "pub_date": "2026-06-12",
+      "slug": "2026-06-12-from-extreme-depression-to-street-preacher-how-god-saved-his-life-with",
+      "title": "From Extreme Depression to Street Preacher: How God Saved His Life with Bryce Crawford",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "https://crossexamined.org/?p=103665",
+      "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek-Podcast-FrankSolo_6-9-2026.mp3",
+      "path": "episodes/2026-06-09-god-the-artist-what-you-never-knew-about-david-goliath",
+      "podcast": {
+        "home_url": "https://crossexamined.org/podcasts/",
+        "id": "idont-have-enough-faith",
+        "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+      },
+      "podcast_page_url": "https://crossexamined.org/god-the-artist-what-you-never-knew-about-david-goliath/",
+      "pub_date": "2026-06-09",
+      "slug": "2026-06-09-god-the-artist-what-you-never-knew-about-david-goliath",
+      "title": "God the Artist: What You Never Knew About David & Goliath",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "https://crossexamined.org/?p=103634",
+      "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast-EricMetaxas_6-5-26.mp3",
+      "path": "episodes/2026-06-05-what-no-one-ever-told-you-about-the-american-revolution-with-eric",
+      "podcast": {
+        "home_url": "https://crossexamined.org/podcasts/",
+        "id": "idont-have-enough-faith",
+        "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+      },
+      "podcast_page_url": "https://crossexamined.org/what-no-one-ever-told-you-about-the-american-revolution-with-eric-metaxas/",
+      "pub_date": "2026-06-05",
+      "slug": "2026-06-05-what-no-one-ever-told-you-about-the-american-revolution-with-eric",
+      "title": "What No One Ever Told You About the American Revolution with Eric Metaxas",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "https://crossexamined.org/?p=103613",
+      "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek_Podcast-Steve_Deace-6-2-2026-Podcast_Mix.mp3",
+      "path": "episodes/2026-06-02-be-worthy-of-the-bullet-that-charlie-kirk-took-for-you-why-independence",
+      "podcast": {
+        "home_url": "https://crossexamined.org/podcasts/",
+        "id": "idont-have-enough-faith",
+        "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+      },
+      "podcast_page_url": "https://crossexamined.org/be-worthy-of-the-bullet-that-charlie-kirk-took-for-you-why-independence-day-with-steve-deace-plus-qa/",
+      "pub_date": "2026-06-02",
+      "slug": "2026-06-02-be-worthy-of-the-bullet-that-charlie-kirk-took-for-you-why-independence",
+      "title": "Be Worthy of the Bullet That Charlie Kirk Took For You — Why Independence Day? with Steve Deace PLUS Q&A",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    }
+  ],
+  "feed_url": "https://crossexamined.org/category/podcast/feed/",
+  "podcast": {
+    "home_url": "https://crossexamined.org/podcasts/",
+    "id": "idont-have-enough-faith",
+    "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+  },
+  "updated_at": "2026-07-07T13:18:34Z"
+}

@@ -1,0 +1,34 @@
+{
+  "audio_source": {
+    "player_url": "https://player.blubrry.com/id/154171441?cache=1782842348#mode-Light&border-000000&progress-000000",
+    "source": "embedded_player",
+    "source_url": "https://crossexamined.org/deist-or-christian-who-were-the-56-men-who-founded-america-with-bill-federer/",
+    "url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek_Podcast_Bill-Federer_6-30-2026.mp3"
+  },
+  "created_at": "2026-07-07T13:01:19Z",
+  "description_html": "<p>﻿ How did America REALLY begin? As the United States approaches its 250th anniversary, claims that the Founding Fathers were mostly deists and that Christianity had little influence on America&#8217;s founding have become increasingly common. But does the historical record support those claims, or are misinformed pundits trying to rewrite our past while jeopardizing our [&#8230;]</p>\n<p>The post <a href=\"https://crossexamined.org/deist-or-christian-who-were-the-56-men-who-founded-america-with-bill-federer/\">Deist or Christian: Who Were the 56 Men Who Founded America? with Bill Federer</a> appeared first on <a href=\"https://crossexamined.org\">CrossExamined</a>.</p>",
+  "description_text": "﻿ How did America REALLY begin? As the United States approaches its 250th anniversary, claims that the Founding Fathers were mostly deists and that Christianity had little influence on America’s founding have become increasingly common. But does the historical record support those claims, or are misinformed pundits trying to rewrite our past while jeopardizing our […] The post Deist or Christian: Who Were the 56 Men Who Founded America? with Bill Federer appeared first on CrossExamined .",
+  "duration": null,
+  "feed_url": "https://crossexamined.org/category/podcast/feed/",
+  "guid": "https://crossexamined.org/?p=103733",
+  "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek_Podcast_Bill-Federer_6-30-2026.mp3",
+  "podcast": {
+    "home_url": "https://crossexamined.org/podcasts/",
+    "id": "idont-have-enough-faith",
+    "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+  },
+  "podcast_page_url": "https://crossexamined.org/deist-or-christian-who-were-the-56-men-who-founded-america-with-bill-federer/",
+  "pub_date": "2026-06-30",
+  "rss_transcript_tags": [],
+  "slug": "2026-06-30-deist-or-christian-who-were-the-56-men-who-founded-america-with-bill",
+  "title": "Deist or Christian: Who Were the 56 Men Who Founded America? with Bill Federer",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-07T13:01:19Z",
+  "youtube_url": null
+}

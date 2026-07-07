@@ -982,6 +982,26 @@ h3 {
   line-height: 1.5;
 }
 
+.podcast-section {
+  margin-top: 34px;
+}
+
+.section-heading {
+  max-width: 760px;
+}
+
+.section-heading h2 {
+  margin: 0 0 8px;
+  font-size: 30px;
+}
+
+.section-heading p:not(.date) {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
 .episode-list {
   display: grid;
   gap: 14px;
@@ -1026,6 +1046,19 @@ h3 {
   min-height: 32px;
   padding: 6px 11px;
   font-size: 12px;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 6px 11px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--blue);
+  background: var(--blue-soft);
+  font-size: 12px;
+  font-weight: 700;
 }
 
 @media (max-width: 1180px) {

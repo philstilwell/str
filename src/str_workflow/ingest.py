@@ -11,7 +11,7 @@ from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
-from urllib.parse import urljoin
+from urllib.parse import parse_qs, unquote, urljoin, urlparse
 import xml.etree.ElementTree as ET
 
 import feedparser
@@ -21,11 +21,15 @@ from dateutil import parser as date_parser
 from slugify import slugify
 
 DEFAULT_FEED_URL = "https://feed.podbean.com/strweekly/feed.xml"
+DEFAULT_OUT_DIR = Path("corpus/podcasts/stand-to-reason")
+DEFAULT_PODCAST_ID = "stand-to-reason"
+DEFAULT_PODCAST_TITLE = "Stand to Reason Weekly Podcast"
+DEFAULT_PODCAST_HOME_URL = "https://strweekly.podbean.com/"
 DEFAULT_USER_AGENT = "str-workflow/0.1 (+https://github.com/philstilwell/str)"
 DEFAULT_ASR_MODEL = "gpt-4o-mini-transcribe"
-DEFAULT_ASR_PROMPT = (
-    "Transcribe this Stand to Reason podcast episode. Preserve names, Scripture "
-    "references, apologetics terminology, punctuation, and readable paragraphs."
+DEFAULT_ASR_PROMPT_TEMPLATE = (
+    "Transcribe this {podcast_title} episode. Preserve names, Scripture references, "
+    "apologetics terminology, punctuation, and readable paragraphs."
 )
 PENDING_STATUSES = {"pending_asr", "not_found", "asr_failed"}
 
@@ -185,6 +189,85 @@ def fetch_text_url(session: requests.Session, url: str) -> str | None:
     else:
         text = body.strip()
     return text if len(text) >= 300 else None
+
+
+def extract_audio_url_from_player_html(player_html: str) -> str | None:
+    normalized = player_html.replace("\\/", "/").replace("&quot;", '"')
+    match = re.search(r"https?://[^\"' <>\s]+?\.mp3", normalized, re.IGNORECASE)
+    if match:
+        return unquote(match.group(0))
+    return None
+
+
+def audio_candidate_from_page_html(page_url: str, page_html: str) -> dict[str, Any] | None:
+    soup = BeautifulSoup(page_html, "html.parser")
+
+    for link in soup.find_all("a", href=True):
+        href = str(link["href"])
+        if ".mp3" in href.lower():
+            return {
+                "url": urljoin(page_url, href),
+                "source": "episode_page_audio_link",
+                "source_url": page_url,
+            }
+
+    for iframe in soup.find_all("iframe", src=True):
+        src = str(iframe["src"])
+        if "blubrry" not in src.lower() and "podcast" not in src.lower():
+            continue
+        player_url = urljoin(page_url, src)
+        query = parse_qs(urlparse(player_url).query)
+        media_url = query.get("media_url", [None])[0]
+        if media_url:
+            return {
+                "url": media_url,
+                "source": "embedded_player_media_url",
+                "source_url": page_url,
+                "player_url": player_url,
+            }
+        return {
+            "source": "embedded_player",
+            "source_url": page_url,
+            "player_url": player_url,
+        }
+
+    return None
+
+
+def discover_page_audio_url(session: requests.Session, page_url: str | None) -> dict[str, Any] | None:
+    if not page_url or not page_url.startswith(("http://", "https://")):
+        return None
+
+    try:
+        response = session.get(page_url, timeout=60)
+        response.raise_for_status()
+    except requests.RequestException:
+        return None
+
+    candidate = audio_candidate_from_page_html(page_url, response.text)
+    if not candidate:
+        return None
+    if candidate.get("url"):
+        return candidate
+
+    player_url = candidate.get("player_url")
+    if not player_url:
+        return None
+
+    try:
+        player_response = session.get(player_url, timeout=60)
+        player_response.raise_for_status()
+    except requests.RequestException:
+        return None
+
+    audio_url = extract_audio_url_from_player_html(player_response.text)
+    if not audio_url:
+        return None
+
+    return {
+        **candidate,
+        "url": audio_url,
+    }
 
 
 def fetch_transcript_from_tags(
@@ -375,13 +458,12 @@ def transcribe_with_openai(
     model: str,
     max_upload_mb: int,
     chunk_minutes: int,
+    prompt: str | None,
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     from openai import OpenAI
 
     client = OpenAI(timeout=float(os.getenv("OPENAI_TIMEOUT_SECONDS", "900")))
     max_bytes = max_upload_mb * 1024 * 1024
-    prompt = os.getenv("ASR_PROMPT", DEFAULT_ASR_PROMPT)
-
     with tempfile.TemporaryDirectory() as temp_dir:
         scratch_dir = Path(temp_dir)
         audio_chunks = chunk_audio_for_upload(audio_path, scratch_dir, max_bytes, chunk_minutes)
@@ -455,13 +537,22 @@ def process_episode(
     transcript_tags: list[dict[str, str | None]],
     transcribe_mode: str,
     asr_model: str,
+    asr_prompt: str | None,
+    podcast_id: str,
+    podcast_title: str,
+    podcast_home_url: str | None,
     dry_run: bool,
 ) -> dict[str, Any]:
     metadata = episode_metadata(entry, feed_url, transcript_tags)
+    metadata["podcast"] = {
+        "id": podcast_id,
+        "title": podcast_title,
+        "home_url": podcast_home_url,
+    }
     episode_dir = out_dir / "episodes" / metadata["slug"]
 
     if dry_run:
-        print(f"Would process: {metadata['title']} ({metadata['guid']})")
+        print(f"Would process: {metadata['title']} ({metadata['guid']})", flush=True)
         metadata["path"] = str(episode_dir.relative_to(out_dir.parent))
         metadata["transcript"] = {"status": "dry_run"}
         return metadata
@@ -470,6 +561,12 @@ def process_episode(
     existing_metadata = load_json(episode_dir / "metadata.json", {})
     metadata["created_at"] = existing_metadata.get("created_at") or utc_now_iso()
     metadata["updated_at"] = utc_now_iso()
+
+    if not metadata.get("mp3_url"):
+        audio = discover_page_audio_url(session, metadata.get("podcast_page_url"))
+        if audio and audio.get("url"):
+            metadata["mp3_url"] = audio["url"]
+            metadata["audio_source"] = audio
 
     official = fetch_transcript_from_tags(session, transcript_tags)
     if official:
@@ -521,6 +618,7 @@ def process_episode(
                 model=asr_model,
                 max_upload_mb=int(os.getenv("ASR_MAX_UPLOAD_MB", "24")),
                 chunk_minutes=int(os.getenv("ASR_CHUNK_MINUTES", "10")),
+                prompt=asr_prompt,
             )
         write_transcript_files(episode_dir, metadata, source, chunks)
         metadata["transcript"] = {
@@ -576,12 +674,16 @@ def select_entries_to_process(
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Ingest STR podcast metadata and transcripts.")
+    parser = argparse.ArgumentParser(description="Ingest podcast metadata and transcripts.")
     parser.add_argument("--feed-url", default=DEFAULT_FEED_URL)
-    parser.add_argument("--out-dir", type=Path, default=Path("corpus"))
+    parser.add_argument("--out-dir", type=Path, default=DEFAULT_OUT_DIR)
+    parser.add_argument("--podcast-id", default=os.getenv("PODCAST_ID", DEFAULT_PODCAST_ID))
+    parser.add_argument("--podcast-title", default=os.getenv("PODCAST_TITLE", DEFAULT_PODCAST_TITLE))
+    parser.add_argument("--podcast-home-url", default=os.getenv("PODCAST_HOME_URL", DEFAULT_PODCAST_HOME_URL))
     parser.add_argument("--max-new", type=int, default=int(os.getenv("MAX_EPISODES_PER_RUN", "2")))
     parser.add_argument("--transcribe", choices=("auto", "always", "never"), default=os.getenv("TRANSCRIBE", "auto"))
     parser.add_argument("--asr-model", default=os.getenv("ASR_MODEL", DEFAULT_ASR_MODEL))
+    parser.add_argument("--asr-prompt", default=os.getenv("ASR_PROMPT"))
     parser.add_argument("--user-agent", default=os.getenv("USER_AGENT", DEFAULT_USER_AGENT))
     parser.add_argument("--no-retry-pending", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
@@ -599,7 +701,13 @@ def main(argv: list[str] | None = None) -> int:
     transcript_tags = transcript_tags_by_guid(feed_xml)
     index = load_index(args.out_dir)
     index["feed_url"] = args.feed_url
+    index["podcast"] = {
+        "id": args.podcast_id,
+        "title": args.podcast_title,
+        "home_url": args.podcast_home_url,
+    }
     entries = list(parsed.entries)
+    asr_prompt = args.asr_prompt or DEFAULT_ASR_PROMPT_TEMPLATE.format(podcast_title=args.podcast_title)
 
     transcribe_enabled = should_transcribe(args.transcribe)
     selected_entries = select_entries_to_process(
@@ -611,7 +719,7 @@ def main(argv: list[str] | None = None) -> int:
     )
 
     if not selected_entries:
-        print("No new or pending episodes found.")
+        print("No new or pending episodes found.", flush=True)
         return 0
 
     for entry in selected_entries:
@@ -624,6 +732,10 @@ def main(argv: list[str] | None = None) -> int:
             transcript_tags=transcript_tags.get(guid, []),
             transcribe_mode=args.transcribe,
             asr_model=args.asr_model,
+            asr_prompt=asr_prompt,
+            podcast_id=args.podcast_id,
+            podcast_title=args.podcast_title,
+            podcast_home_url=args.podcast_home_url,
             dry_run=args.dry_run,
         )
         upsert_index_episode(
@@ -636,11 +748,12 @@ def main(argv: list[str] | None = None) -> int:
                 "podcast_page_url": metadata.get("podcast_page_url"),
                 "mp3_url": metadata.get("mp3_url"),
                 "path": f"episodes/{metadata['slug']}",
+                "podcast": metadata.get("podcast"),
                 "transcript": metadata.get("transcript"),
                 "youtube_url": metadata.get("youtube_url"),
             },
         )
-        print(f"Processed: {metadata['title']} ({metadata.get('transcript', {}).get('status')})")
+        print(f"Processed: {metadata['title']} ({metadata.get('transcript', {}).get('status')})", flush=True)
 
     if not args.dry_run:
         write_json(args.out_dir / "episodes.json", index)

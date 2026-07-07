@@ -1582,7 +1582,7 @@ def build_parser() -> argparse.ArgumentParser:
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     scaffold = subparsers.add_parser("scaffold", help="Create a local critique draft spec from episode metadata/transcript.")
-    scaffold.add_argument("--episode-dir", required=True, help="Path to corpus/episodes/<slug>.")
+    scaffold.add_argument("--episode-dir", required=True, help="Path to corpus/podcasts/<podcast-id>/episodes/<slug>.")
     scaffold.add_argument("--source-index", default="research/source-index.json", help="Path to source-index.json.")
     scaffold.add_argument("--out-dir", default="output/critique-drafts", help="Local draft output directory.")
     scaffold.set_defaults(func=command_scaffold)

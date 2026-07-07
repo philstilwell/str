@@ -1,4 +1,4 @@
-name: Ingest STR podcast episodes
+name: Ingest podcast episodes
 
 on:
   schedule:
@@ -19,14 +19,15 @@ permissions:
   contents: write
 
 concurrency:
-  group: str-podcast-ingest
+  group: podcast-ingest
   cancel-in-progress: false
 
 jobs:
   ingest:
     runs-on: ubuntu-latest
     env:
-      FEED_URL: "https://feed.podbean.com/strweekly/feed.xml"
+      STR_FEED_URL: "https://feed.podbean.com/strweekly/feed.xml"
+      CROSSEXAMINED_FEED_URL: "https://crossexamined.org/category/podcast/feed/"
       MAX_EPISODES_PER_RUN: ${{ github.event.inputs.max_episodes || '2' }}
       TRANSCRIBE: ${{ github.event.inputs.transcribe || 'auto' }}
       ASR_MODEL: ${{ vars.ASR_MODEL || 'gpt-4o-mini-transcribe' }}
@@ -48,11 +49,25 @@ jobs:
       - name: Install Python dependencies
         run: python -m pip install -e .
 
-      - name: Ingest feed
+      - name: Ingest Stand to Reason feed
         run: >
           python -m str_workflow.ingest
-          --feed-url "$FEED_URL"
-          --out-dir corpus
+          --feed-url "$STR_FEED_URL"
+          --out-dir corpus/podcasts/stand-to-reason
+          --podcast-id stand-to-reason
+          --podcast-title "Stand to Reason Weekly Podcast"
+          --podcast-home-url "https://strweekly.podbean.com/"
+          --max-new "$MAX_EPISODES_PER_RUN"
+          --transcribe "$TRANSCRIBE"
+
+      - name: Ingest CrossExamined feed
+        run: >
+          python -m str_workflow.ingest
+          --feed-url "$CROSSEXAMINED_FEED_URL"
+          --out-dir corpus/podcasts/idont-have-enough-faith
+          --podcast-id idont-have-enough-faith
+          --podcast-title "I Don't Have Enough FAITH to Be an ATHEIST"
+          --podcast-home-url "https://crossexamined.org/podcasts/"
           --max-new "$MAX_EPISODES_PER_RUN"
           --transcribe "$TRANSCRIBE"
 
@@ -66,5 +81,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add corpus
-          git commit -m "Update STR podcast corpus"
+          git commit -m "Update podcast corpora"
           git push

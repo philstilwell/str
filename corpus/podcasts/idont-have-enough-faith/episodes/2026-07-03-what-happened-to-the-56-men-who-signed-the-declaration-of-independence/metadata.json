@@ -1,0 +1,34 @@
+{
+  "audio_source": {
+    "player_url": "https://player.blubrry.com/id/154195954?cache=1783027108#mode-Light&border-000000&progress-000000",
+    "source": "embedded_player",
+    "source_url": "https://crossexamined.org/what-happened-to-the-56-men-who-signed-the-declaration-of-independence-with-bill-federer/",
+    "url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast_Bill-Federer_7-3-26.mp3"
+  },
+  "created_at": "2026-07-07T12:59:35Z",
+  "description_html": "<p>Earlier this week, historian Bill Federer joined Frank to explore the biblical ideas that shaped the foundation of America. In this follow-up conversation, Bill returns to bring the Declaration of Independence&#8217;s most influential figures to life through their faith, their sacrifices, and the extraordinary stories of divine providence that many believed shaped America&#8217;s fight for [&#8230;]</p>\n<p>The post <a href=\"https://crossexamined.org/what-happened-to-the-56-men-who-signed-the-declaration-of-independence-with-bill-federer/\">What Happened to the 56 Men Who Signed the Declaration of Independence? with Bill Federer</a> appeared first on <a href=\"https://crossexamined.org\">CrossExamined</a>.</p>",
+  "description_text": "Earlier this week, historian Bill Federer joined Frank to explore the biblical ideas that shaped the foundation of America. In this follow-up conversation, Bill returns to bring the Declaration of Independence’s most influential figures to life through their faith, their sacrifices, and the extraordinary stories of divine providence that many believed shaped America’s fight for […] The post What Happened to the 56 Men Who Signed the Declaration of Independence? with Bill Federer appeared first on CrossExamined .",
+  "duration": null,
+  "feed_url": "https://crossexamined.org/category/podcast/feed/",
+  "guid": "https://crossexamined.org/?p=103762",
+  "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast_Bill-Federer_7-3-26.mp3",
+  "podcast": {
+    "home_url": "https://crossexamined.org/podcasts/",
+    "id": "idont-have-enough-faith",
+    "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+  },
+  "podcast_page_url": "https://crossexamined.org/what-happened-to-the-56-men-who-signed-the-declaration-of-independence-with-bill-federer/",
+  "pub_date": "2026-07-03",
+  "rss_transcript_tags": [],
+  "slug": "2026-07-03-what-happened-to-the-56-men-who-signed-the-declaration-of-independence",
+  "title": "What Happened to the 56 Men Who Signed the Declaration of Independence? with Bill Federer",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-07T12:59:35Z",
+  "youtube_url": null
+}
