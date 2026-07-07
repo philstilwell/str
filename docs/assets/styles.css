@@ -655,7 +655,7 @@ h3 {
   text-transform: uppercase;
 }
 
-.severity.strong {
+.severity.high {
   border-color: #e0aaa5;
   color: var(--red);
   background: var(--red-soft);
@@ -667,7 +667,7 @@ h3 {
   background: var(--gold-soft);
 }
 
-.severity.candidate {
+.severity.tentative {
   border-color: #bdd1e4;
   color: var(--blue);
   background: var(--blue-soft);
