@@ -1179,7 +1179,7 @@ def build_ai_prompt(spec: dict[str, Any]) -> str:
     vulnerability_lines = "\n".join(f"◉ {text(item)}" for item in vulnerabilities)
     return f"""PASTE THIS PROMPT INTO YOUR FAVORITE AI:
 
-Analyze the following steelmanned condensed argument from the Stand to Reason episode "{episode_title}" for logical fallacies, cognitive biases, logical incoherencies, non sequiturs, evidential overreach, and structural weaknesses.
+Analyze the following steelmanned condensed argument from the podcast episode "{episode_title}" for logical fallacies, cognitive biases, logical incoherencies, non sequiturs, evidential overreach, and structural weaknesses.
 
 The Steelmanned Condensed Claims:
 {claim_lines}

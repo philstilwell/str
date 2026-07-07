@@ -986,6 +986,18 @@ h3 {
   margin-top: 34px;
 }
 
+.critique-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+  margin-top: 34px;
+}
+
+.podcast-column {
+  min-width: 0;
+}
+
 .section-heading {
   max-width: 760px;
 }
@@ -1046,6 +1058,16 @@ h3 {
   min-height: 32px;
   padding: 6px 11px;
   font-size: 12px;
+}
+
+.compact-list .episode-card {
+  gap: 9px;
+  padding: 16px 18px;
+}
+
+.compact-list .episode-card h2 {
+  font-size: 21px;
+  line-height: 1.2;
 }
 
 .status-pill {
@@ -1117,6 +1139,7 @@ h3 {
   .article-header,
   .method-strip,
   .formal-block,
+  .critique-columns,
   .index-hero {
     grid-template-columns: 1fr;
   }
