@@ -4,7 +4,16 @@ import copy
 import json
 from pathlib import Path
 
-from str_workflow.critique import render_critique, scaffold_spec, validate_page, validate_spec
+from bs4 import BeautifulSoup
+
+from str_workflow.critique import (
+    page_text_for_proper_name_scan,
+    proper_name_case_hits,
+    render_critique,
+    scaffold_spec,
+    validate_page,
+    validate_spec,
+)
 
 
 def valid_spec() -> dict:
@@ -326,6 +335,18 @@ def test_validate_spec_rejects_public_source_index_links():
     assert any("must not expose the private OnReason source index" in error for error in errors)
 
 
+def test_validate_spec_rejects_lowercase_proper_names():
+    spec = valid_spec()
+    weak = copy.deepcopy(spec)
+    weak["claim_map"][0]["risk"] = "greg's confidence is treated as a substitute for public evidence."
+    weak["sections"][0]["transcript"]["quotes"][0]["quote"] = "jesus is Lord"
+
+    errors = validate_spec(weak)
+
+    assert any('"greg"' in error and '"Greg"' in error for error in errors)
+    assert any('"jesus"' in error and '"Jesus"' in error for error in errors)
+
+
 def test_validate_page_rejects_stale_boilerplate_phrase(tmp_path):
     spec = valid_spec()
     page = tmp_path / "index.html"
@@ -360,6 +381,17 @@ def test_validate_page_rejects_public_source_index_links(tmp_path):
     assert any("must not expose the private OnReason source index" in error for error in errors)
 
 
+def test_validate_page_rejects_lowercase_proper_names(tmp_path):
+    spec = valid_spec()
+    page = tmp_path / "index.html"
+    html = render_critique(spec).replace("Christ is risen", "christ is risen", 1)
+    page.write_text(html, encoding="utf-8")
+
+    errors = validate_page(page)
+
+    assert any('"christ"' in error and '"Christ"' in error for error in errors)
+
+
 def test_scaffold_uses_metadata_transcript_chunks_and_source_index(tmp_path):
     episode_dir = tmp_path / "corpus" / "episodes" / "2026-07-01-test-episode"
     episode_dir.mkdir(parents=True)
@@ -381,7 +413,7 @@ def test_scaffold_uses_metadata_transcript_chunks_and_source_index(tmp_path):
                     {
                         "start_seconds": 0,
                         "end_seconds": 60,
-                        "text": "Genuine Christianity is a worldview that claims to comprehend all of reality. Christ is risen and Christ is Lord.",
+                        "text": "greg says Genuine Christianity is a worldview that claims to comprehend all of reality. christ is risen and Christ is Lord.",
                     }
                 ]
             }
@@ -414,7 +446,7 @@ def test_scaffold_uses_metadata_transcript_chunks_and_source_index(tmp_path):
 
     assert spec["episode"]["display_date"] == "July 1, 2026"
     assert spec["sections"][0]["transcript"]["range"] == "00:00:00-00:01:00"
-    assert spec["sections"][0]["transcript"]["quotes"][0]["quote"].startswith("Genuine Christianity")
+    assert spec["sections"][0]["transcript"]["quotes"][0]["quote"].startswith("Greg says Genuine Christianity")
     assert spec["sections"][0]["research_anchors"][0]["url"] == "https://freeoffaith.com/2024/11/11/21/"
     assert all(item["label"] != "OnReason source index" for item in spec["source_list"])
     assert any("TODO" in error for error in validate_spec(spec))
@@ -426,6 +458,14 @@ def test_public_episode_pages_pass_quality_gate():
     assert len(pages) >= 10
     for page in pages:
         assert validate_page(page) == []
+
+
+def test_public_site_visible_text_has_proper_name_casing():
+    pages = [Path("docs/index.html"), *sorted(Path("docs/episodes").glob("*/index.html"))]
+
+    for page in pages:
+        soup = BeautifulSoup(page.read_text(encoding="utf-8"), "html.parser")
+        assert proper_name_case_hits(page_text_for_proper_name_scan(soup)) == []
 
 
 def test_current_contents_style_uses_lower_roman_markers():

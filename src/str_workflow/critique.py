@@ -73,6 +73,45 @@ PRIVATE_SOURCE_INDEX_URL_PATTERNS = (
     "github.com/philstilwell/str/raw/main/research/source-index",
 )
 PRIVATE_SOURCE_INDEX_LABEL = "OnReason source index"
+PROPER_NAME_CASE_MAP = {
+    "abraham": "Abraham",
+    "alan": "Alan",
+    "calvinism": "Calvinism",
+    "calvinist": "Calvinist",
+    "christ": "Christ",
+    "didache": "Didache",
+    "ezekiel": "Ezekiel",
+    "free of faith": "Free of Faith",
+    "greg": "Greg",
+    "holy spirit": "Holy Spirit",
+    "israel": "Israel",
+    "jesus": "Jesus",
+    "john": "John",
+    "koukl": "Koukl",
+    "molinism": "Molinism",
+    "nicene": "Nicene",
+    "onreason": "OnReason",
+    "paul": "Paul",
+    "peter": "Peter",
+    "podbean": "Podbean",
+    "rodney stark": "Rodney Stark",
+    "shlemon": "Shlemon",
+    "stand to reason": "Stand to Reason",
+    "str": "STR",
+}
+PROPER_NAME_CASE_PATTERNS = [
+    (lower, canonical, re.compile(rf"(?<![A-Za-z]){re.escape(lower)}(?![A-Za-z])", re.IGNORECASE))
+    for lower, canonical in sorted(PROPER_NAME_CASE_MAP.items(), key=lambda item: len(item[0]), reverse=True)
+]
+SPEC_PROPER_NAME_SKIP_KEYS = {
+    "asset_version",
+    "hero_image",
+    "id",
+    "latex",
+    "slug",
+    "source_url",
+    "url",
+}
 
 DEFAULT_METHODS = [
     {
@@ -218,6 +257,40 @@ def normalized_content(value: Any) -> str:
 
 def word_count(value: Any) -> int:
     return len(re.findall(r"\S+", normalized_content(value)))
+
+
+def apply_proper_name_casing(value: Any) -> str:
+    corrected = text(value)
+    for _, canonical, pattern in PROPER_NAME_CASE_PATTERNS:
+        corrected = pattern.sub(canonical, corrected)
+    return corrected
+
+
+def proper_name_case_hits(value: Any) -> list[tuple[str, str]]:
+    hits: list[tuple[str, str]] = []
+    content = normalized_content(value)
+    for _, canonical, pattern in PROPER_NAME_CASE_PATTERNS:
+        for match in pattern.finditer(content):
+            found = match.group(0)
+            if found != canonical:
+                hits.append((found, canonical))
+    return hits
+
+
+def proper_name_case_errors(value: Any, path: str, key: str | None = None) -> list[str]:
+    errors: list[str] = []
+    if isinstance(value, dict):
+        for child_key, child in value.items():
+            errors.extend(proper_name_case_errors(child, f"{path}.{child_key}", child_key))
+    elif isinstance(value, list):
+        for index, child in enumerate(value, start=1):
+            errors.extend(proper_name_case_errors(child, f"{path}[{index}]", key))
+    elif isinstance(value, str):
+        if key in SPEC_PROPER_NAME_SKIP_KEYS or key and key.endswith("_url"):
+            return errors
+        for found, canonical in proper_name_case_hits(value):
+            errors.append(f'{path} contains lowercased proper name "{found}"; use "{canonical}" even when transcript casing is lower')
+    return errors
 
 
 def is_private_source_index_url(value: Any) -> bool:
@@ -394,7 +467,7 @@ def quote_candidates(chunks: list[dict[str, Any]], keywords: list[str], limit: i
             lower = sentence.lower()
             if not any(keyword.lower() in lower for keyword in keywords):
                 continue
-            quote = excerpt_words(sentence)
+            quote = apply_proper_name_casing(excerpt_words(sentence))
             if len(quote) < 4 or quote.lower() in seen:
                 continue
             seen.add(quote.lower())
@@ -606,6 +679,7 @@ def scaffold_spec(episode_dir: Path, source_index_path: Path) -> dict[str, Any]:
 def validate_spec(spec: dict[str, Any]) -> list[str]:
     errors: list[str] = []
     errors.extend(visible_url_errors(spec, "spec"))
+    errors.extend(proper_name_case_errors(spec, "spec"))
     episode = spec.get("episode") if isinstance(spec.get("episode"), dict) else {}
     for key in ("title", "pub_date", "display_date", "slug", "source_url", "speaker", "transcript_source", "lede"):
         required(episode, key, "episode", errors)
@@ -859,10 +933,18 @@ def page_explanatory_texts(soup: BeautifulSoup) -> list[tuple[str, str]]:
     return items
 
 
+def page_text_for_proper_name_scan(soup: BeautifulSoup) -> str:
+    scan_soup = BeautifulSoup(str(soup), "html.parser")
+    for node in scan_soup.select("script, style, code, .logic"):
+        node.decompose()
+    return normalized_content(scan_soup.get_text(" ", strip=True))
+
+
 def validate_page(path: Path) -> list[str]:
     html_text = path.read_text(encoding="utf-8")
     soup = BeautifulSoup(html_text, "html.parser")
     visible_text = normalized_content(soup.get_text(" ", strip=True))
+    proper_name_scan_text = page_text_for_proper_name_scan(soup)
     errors: list[str] = []
     checks = {
         "brand": "OnReason",
@@ -965,6 +1047,8 @@ def validate_page(path: Path) -> list[str]:
         errors.append("page must link fallacies to LogFall")
     if "https://cogbias.site/" not in html_text:
         errors.append("page must link biases to CogBias")
+    for found, canonical in proper_name_case_hits(proper_name_scan_text):
+        errors.append(f'page contains lowercased proper name "{found}"; use "{canonical}" even when transcript casing is lower')
     if "..." in visible_text:
         errors.append("page contains a mechanical ellipsis artifact")
     for phrase in boilerplate_hits(visible_text):
@@ -1434,7 +1518,7 @@ def drafting_prompt(spec: dict[str, Any]) -> str:
 
         Episode: {spec.get("episode", {}).get("title")}
 
-        Fill every TODO in critique-draft.json. Keep direct transcript quotes short, include timestamp ranges when possible, and ground every section in Free of Faith Insights/Considerations plus local framework anchors drawn from the private research/source-index.json file. Do not expose that local source index as a public link or visible source.
+        Fill every TODO in critique-draft.json. Keep direct transcript quotes short, include timestamp ranges when possible, and ground every section in Free of Faith Insights/Considerations plus local framework anchors drawn from the private research/source-index.json file. Correct proper-name capitalization in transcript-derived quotes and prose even when ASR lowercases names. Do not expose that local source index as a public link or visible source.
 
         The AI prompt must include steelmanned claims actually made in the transcript. Current scaffold claims:
         {claims}
