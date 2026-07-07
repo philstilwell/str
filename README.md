@@ -97,6 +97,7 @@ OnReason critique pages are generated from a structured critique spec rather tha
    - LogFall and CogBias diagnostic cards that explain how the tag applies to specific transcript claims;
    - evidence-needed calibration tests customized to each section's claim, with distinct criteria for what would raise or lower confidence;
    - a steelmanned AI prompt whose claims are actually grounded in the transcript.
+   - no reused boilerplate repair paragraphs, source notes, tag explanations, formalizations, overall assessments, or calibration-table prose; the validator rejects known stale phrases and repeated explanatory text.
 
 5. Validate the spec before rendering:
 

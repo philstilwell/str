@@ -27,15 +27,15 @@ def valid_spec() -> dict:
                     {
                         "text": f"The transcript makes a substantive {label.lower()} claim.",
                         "note_label": f"Expand {label}",
-                        "note": "This note explains the inference, the evidential gap, the hidden premise, and what would improve the argument.",
+                        "note": f"This note explains the {label.lower()} inference, the evidential gap, the hidden premise, and what would improve that specific argument.",
                     },
-                    "The critique separates pastoral usefulness from public warrant.",
+                    f"The {label.lower()} critique separates the episode's practical usefulness from the public warrant needed for that claim.",
                 ],
                 "research_anchors": [
                     {"label": "Free of Faith anchor", "url": "https://freeoffaith.com/2024/11/11/21/", "tone": "gold"},
                     {"label": "Framework anchor", "url": "https://freeoffaith.com/2026/01/27/parsimony-and-christianity/", "tone": "blue"},
                 ],
-                "research_note": "These anchors require comparative testing and evidence-proportionate belief.",
+                "research_note": f"These anchors require comparative testing and evidence-proportionate belief for the {label.lower()} claim.",
                 "transcript": {
                     "range": "00:00-10:00",
                     "quotes": [
@@ -46,15 +46,15 @@ def valid_spec() -> dict:
                 },
                 "audit_rows": [
                     {
-                        "claim": "Christianity supplies the needed frame.",
-                        "evidence": "Short transcript phrases and pastoral examples.",
-                        "critique": "The transcript needs comparative evidence before confidence rises.",
+                        "claim": f"The episode supplies a {label.lower()} frame.",
+                        "evidence": f"Short transcript phrases and pastoral examples are used for {label.lower()}.",
+                        "critique": f"The {label.lower()} claim needs comparative evidence before confidence rises.",
                     }
                 ],
                 "formalization": {
-                    "intro": "Let P be the transcript premise and Q be the public conclusion.",
-                    "latex": "\\[\\begin{aligned}P &:= \\text{Premise.}\\\\ Q &:= \\text{Conclusion.}\\\\ P &\\not\\Rightarrow Q\\end{aligned}\\]",
-                    "assessment": "The conclusion does not follow without additional evidence.",
+                    "intro": f"Let P_{section_id} be the {label.lower()} premise and Q_{section_id} be the public conclusion.",
+                    "latex": f"\\[\\begin{{aligned}}P_{{{section_id}}} &:= \\text{{{label} premise.}}\\\\ Q_{{{section_id}}} &:= \\text{{{label} conclusion.}}\\\\ P_{{{section_id}}} &\\not\\Rightarrow Q_{{{section_id}}}\\end{{aligned}}\\]",
+                    "assessment": f"The {label.lower()} conclusion does not follow without additional evidence.",
                 },
                 "tags": [
                     {
@@ -63,7 +63,7 @@ def valid_spec() -> dict:
                         "url": "https://logfall.com/fallacies/appeal-to-consequences/",
                         "tone": "red",
                         "fit": "High",
-                        "application": "Applies where usefulness is treated as evidence of truth.",
+                        "application": f"Applies where the usefulness of the {label.lower()} point is treated as evidence of truth.",
                     },
                     {
                         "kind": "bias",
@@ -71,7 +71,7 @@ def valid_spec() -> dict:
                         "url": "https://cogbias.site/biases/confirmation-bias/",
                         "tone": "blue",
                         "fit": "Moderate",
-                        "application": "Applies where confirming examples are selected without a rival audit.",
+                        "application": f"Applies where confirming {label.lower()} examples are selected without a rival audit.",
                     },
                 ],
             }
@@ -114,8 +114,8 @@ def valid_spec() -> dict:
                 {
                     "area": section["label"],
                     "anchors": section["research_anchors"],
-                    "local_anchor": "Belief Overreach Audit",
-                    "application": "It calibrates confidence to evidence.",
+                    "local_anchor": f"{section['label']} confidence audit",
+                    "application": f"It calibrates the {section['label'].lower()} claim to the evidence supplied.",
                 }
                 for section in sections
             ],
@@ -127,7 +127,7 @@ def valid_spec() -> dict:
                 "reconstruction": "A substantive reconstructed claim.",
                 "status": "Needs support",
                 "status_tone": "gold",
-                "risk": "Confidence outruns evidence.",
+                "risk": f"Confidence outruns the evidence for {section['label'].lower()}.",
             }
             for section in sections
         ],
@@ -242,6 +242,37 @@ def test_validate_spec_rejects_boilerplate_evidence_needed_rows():
     assert any("evidence_needed.raise entries" in error for error in errors)
     assert any("evidence_needed.lower entries" in error for error in errors)
     assert any("must be customized" in error for error in errors)
+
+
+def test_validate_spec_rejects_general_boilerplate_and_repeated_explanatory_text():
+    spec = valid_spec()
+    weak = copy.deepcopy(spec)
+    weak["sections"][0]["paragraphs"][1] = (
+        "The responsible repair is to separate the pastoral or insider point from the public evidential claim."
+    )
+    repeated = "This repeated critique sentence is long enough to expose uncustomized explanatory filler."
+    weak["sections"][1]["research_note"] = repeated
+    weak["sections"][2]["research_note"] = repeated
+
+    errors = validate_spec(weak)
+
+    assert any("contains boilerplate phrase" in error for error in errors)
+    assert any("repeats explanatory text" in error for error in errors)
+
+
+def test_validate_page_rejects_stale_boilerplate_phrase(tmp_path):
+    spec = valid_spec()
+    page = tmp_path / "index.html"
+    html = render_critique(spec).replace(
+        "The assessment can move, but only through claim-matched evidence.",
+        "The critique is not designed to be unfalsifiable.",
+        1,
+    )
+    page.write_text(html, encoding="utf-8")
+
+    errors = validate_page(page)
+
+    assert any("page contains boilerplate phrase" in error for error in errors)
 
 
 def test_scaffold_uses_metadata_transcript_chunks_and_source_index(tmp_path):

@@ -24,6 +24,44 @@ BOILERPLATE_EVIDENCE_PHRASES = [
     "TODO evidence that would lower confidence",
 ]
 
+BOILERPLATE_CRITIQUE_PHRASES = BOILERPLATE_EVIDENCE_PHRASES + [
+    "The responsible repair is to separate the pastoral or insider point from the public evidential claim",
+    "The implied confidence should be held only to the degree the transcript actually earns it",
+    "The episode offers a brief answer, analogy, testimony, or proof-text rather than an exhaustive public case",
+    "The page therefore treats the claim as a proposal needing further support",
+    "Transcript premise or example",
+    "Public conclusion or confidence claim",
+    "Belief Overreach, Inductive Symmetry, Moral System Threshold",
+    "The sources shape the confidence downgrade",
+    "A local answer is asked to do broader evidential or moral work",
+    "This critique uses the Free of Faith source index as a standing guardrail",
+    "The charitable repair is to keep the best pastoral or interpretive insight",
+    "The charitable repair is episode-specific",
+    "The episode can still contain useful distinctions",
+    "The transcript often speaks from inside Christian assumptions",
+    "Where certainty depends on Scripture, theological tradition",
+    "the repair is narrower: treat",
+    "as a live but limited claim, then require",
+    "before raising public confidence",
+    "the transcript support has some relevance, but it does not justify high confidence until",
+    "Higher confidence in",
+    "Current transcript support:",
+    "The downgrade is triggered if the answer keeps relying on",
+    "Confidence would rise if",
+    "The transcript currently offers this support: The transcript",
+    "Current support is limited to The transcript",
+    "The episode instead gives The transcript",
+    "What the transcript actually supplies is The transcript",
+    "made explicit is made explicit",
+    "made and resisting",
+    "from responsibility and resisting",
+    "At most, this transcript supports modest insider guidance on",
+    "It does not justify stronger public confidence unless the missing tests named below are actually supplied",
+    "For this episode, confidence would move only through targeted tests",
+    "The critique is not designed to be unfalsifiable",
+    "Several kinds of evidence would strengthen the episode's claims if supplied with enough specificity and symmetry",
+]
+
 DEFAULT_METHODS = [
     {
         "title": "Calibration",
@@ -160,6 +198,86 @@ def required(obj: dict[str, Any], key: str, path: str, errors: list[str]) -> str
     if not value or value.startswith("TODO"):
         errors.append(f"{path}.{key} is required")
     return value
+
+
+def normalized_content(value: Any) -> str:
+    return re.sub(r"\s+", " ", text(value)).strip()
+
+
+def boilerplate_hits(value: Any) -> list[str]:
+    haystack = normalized_content(value)
+    return [phrase for phrase in BOILERPLATE_CRITIQUE_PHRASES if phrase in haystack]
+
+
+def repeated_explanatory_text_errors(items: list[tuple[str, str]], label: str, minimum_words: int = 9) -> list[str]:
+    locations_by_text: dict[str, list[str]] = {}
+    for path, value in items:
+        content = normalized_content(value)
+        if len(content.split()) < minimum_words:
+            continue
+        locations_by_text.setdefault(content, []).append(path)
+    errors = []
+    for content, locations in locations_by_text.items():
+        if len(locations) > 1:
+            first_locations = ", ".join(locations[:3])
+            errors.append(f"{label} repeats explanatory text at {first_locations}: {content[:120]}")
+    return errors
+
+
+def spec_explanatory_texts(spec: dict[str, Any]) -> list[tuple[str, str]]:
+    items: list[tuple[str, str]] = []
+
+    research = spec.get("research") if isinstance(spec.get("research"), dict) else {}
+    for index, item in enumerate(research.get("body") or [], start=1):
+        items.append((f"research.body[{index}]", normalized_content(item)))
+    for index, row in enumerate(research.get("rows") or [], start=1):
+        if isinstance(row, dict):
+            items.append((f"research.rows[{index}].application", normalized_content(row.get("application"))))
+
+    for index, row in enumerate(spec.get("claim_map") or [], start=1):
+        if isinstance(row, dict):
+            items.append((f"claim_map[{index}].risk", normalized_content(row.get("risk"))))
+
+    for section_index, section in enumerate(spec.get("sections") or [], start=1):
+        if not isinstance(section, dict):
+            continue
+        section_path = f"sections[{section_index}]"
+        items.append((f"{section_path}.research_note", normalized_content(section.get("research_note"))))
+        for paragraph_index, paragraph in enumerate(section.get("paragraphs") or [], start=1):
+            if isinstance(paragraph, dict):
+                items.append((f"{section_path}.paragraphs[{paragraph_index}].text", normalized_content(paragraph.get("text"))))
+                items.append((f"{section_path}.paragraphs[{paragraph_index}].note", normalized_content(paragraph.get("note"))))
+            else:
+                items.append((f"{section_path}.paragraphs[{paragraph_index}]", normalized_content(paragraph)))
+        for row_index, row in enumerate(section.get("audit_rows") or [], start=1):
+            if isinstance(row, dict):
+                items.append((f"{section_path}.audit_rows[{row_index}].evidence", normalized_content(row.get("evidence"))))
+                items.append((f"{section_path}.audit_rows[{row_index}].critique", normalized_content(row.get("critique"))))
+        formalization = section.get("formalization") if isinstance(section.get("formalization"), dict) else {}
+        items.append((f"{section_path}.formalization.intro", normalized_content(formalization.get("intro"))))
+        items.append((f"{section_path}.formalization.assessment", normalized_content(formalization.get("assessment"))))
+        for tag_index, tag in enumerate(section.get("tags") or [], start=1):
+            if isinstance(tag, dict):
+                items.append((f"{section_path}.tags[{tag_index}].application", normalized_content(tag.get("application"))))
+
+    overall = spec.get("overall") if isinstance(spec.get("overall"), dict) else {}
+    for index, paragraph in enumerate(overall.get("paragraphs") or [], start=1):
+        items.append((f"overall.paragraphs[{index}]", normalized_content(paragraph)))
+    epistemic = overall.get("epistemic_reality") if isinstance(overall.get("epistemic_reality"), dict) else {}
+    for index, paragraph in enumerate(epistemic.get("paragraphs") or [], start=1):
+        items.append((f"overall.epistemic_reality.paragraphs[{index}]", normalized_content(paragraph)))
+    for index, bullet in enumerate(epistemic.get("bullets") or [], start=1):
+        items.append((f"overall.epistemic_reality.bullets[{index}]", normalized_content(bullet)))
+
+    intro = spec.get("evidence_intro")
+    if intro:
+        items.append(("evidence_intro", normalized_content(intro)))
+    for index, row in enumerate(spec.get("evidence_needed") or [], start=1):
+        if isinstance(row, dict):
+            items.append((f"evidence_needed[{index}].raise", normalized_content(row.get("raise"))))
+            items.append((f"evidence_needed[{index}].lower", normalized_content(row.get("lower"))))
+
+    return [(path, content) for path, content in items if content]
 
 
 def format_display_date(value: str | None) -> str:
@@ -599,7 +717,42 @@ def validate_spec(spec: dict[str, Any]) -> list[str]:
     if not isinstance(vulnerabilities, list) or len(vulnerabilities) < 8:
         errors.append("ai_prompt.vulnerabilities must preserve the systematic audit checklist")
 
+    explanatory_items = spec_explanatory_texts(spec)
+    for path, content in explanatory_items:
+        for phrase in boilerplate_hits(content):
+            errors.append(f"{path} contains boilerplate phrase: {phrase}")
+        if "..." in content:
+            errors.append(f"{path} contains a mechanical ellipsis artifact")
+    errors.extend(repeated_explanatory_text_errors(explanatory_items, "spec"))
+
     return errors
+
+
+def page_explanatory_texts(soup: BeautifulSoup) -> list[tuple[str, str]]:
+    selectors = [
+        ("section paragraph", "section.section-panel > p:not(.section-kicker)"),
+        ("source note", ".source-note"),
+        ("tag explainer", ".tag-explainer p"),
+        ("formalization", ".formal-block p"),
+        ("audit evidence", ".audit-table tbody tr td:nth-of-type(2)"),
+        ("audit critique", ".audit-table tbody tr td:nth-of-type(3)"),
+        ("evidence raise", "#evidence-needed tbody tr td:nth-of-type(2)"),
+        ("evidence lower", "#evidence-needed tbody tr td:nth-of-type(3)"),
+        ("overall paragraph", "#overall > p:not(.section-kicker)"),
+        ("epistemic paragraph", "#overall .epistemic-reality p:not(.dark-kicker)"),
+        ("epistemic bullet", "#overall .epistemic-reality li"),
+    ]
+    items: list[tuple[str, str]] = []
+    for label, selector in selectors:
+        for index, node in enumerate(soup.select(selector), start=1):
+            if node.find_parent(id="method") or node.find_parent(id="prompt"):
+                continue
+            if label == "section paragraph" and (node.find_parent(id="overall") or node.find_parent(id="evidence-needed")):
+                continue
+            content = normalized_content(node.get_text(" ", strip=True))
+            if content:
+                items.append((f"{label} {index}", content))
+    return items
 
 
 def validate_page(path: Path) -> list[str]:
@@ -656,6 +809,13 @@ def validate_page(path: Path) -> list[str]:
         errors.append("page must link fallacies to LogFall")
     if "https://cogbias.site/" not in html_text:
         errors.append("page must link biases to CogBias")
+    visible_text = normalized_content(soup.get_text(" ", strip=True))
+    if "..." in visible_text:
+        errors.append("page contains a mechanical ellipsis artifact")
+    for phrase in boilerplate_hits(visible_text):
+        errors.append(f"page contains boilerplate phrase: {phrase}")
+    explanatory_items = page_explanatory_texts(soup)
+    errors.extend(repeated_explanatory_text_errors(explanatory_items, "page"))
     evidence_rows = [
         [cell.get_text(" ", strip=True) for cell in row.select("td")]
         for row in soup.select("#evidence-needed table tbody tr")
@@ -728,6 +888,30 @@ def render_table(headers: list[str], rows: list[list[str]], class_name: str = "c
         f"    <tbody>{''.join(body_rows)}</tbody>\n"
         "  </table>\n"
         "</div>"
+    )
+
+
+def sentence_case_fragment(value: Any) -> str:
+    fragment = normalized_content(value).rstrip(".")
+    return fragment[:1].lower() + fragment[1:] if fragment else ""
+
+
+def evidence_intro_html(spec: dict[str, Any]) -> str:
+    intro = spec.get("evidence_intro")
+    if intro:
+        return paragraph_html(intro)
+    rows = [row for row in spec.get("evidence_needed", []) if isinstance(row, dict)]
+    if len(rows) >= 2:
+        first = rows[0]
+        second = rows[1]
+        return (
+            "<p>The assessment can move, but only through claim-matched evidence. "
+            f"Start with the {esc(first.get('area'))} section: {esc(sentence_case_fragment(first.get('raise')))}; "
+            f"then test the {esc(second.get('area'))} section with {esc(sentence_case_fragment(second.get('raise')))}.</p>"
+        )
+    return (
+        "<p>The assessment can move, but only through evidence tied directly to the "
+        "episode's reconstructed claims and tested against live alternatives.</p>"
     )
 
 
@@ -841,6 +1025,7 @@ def render_critique(spec: dict[str, Any]) -> str:
     epistemic_paragraphs = "\n".join(f"              <p>{esc(item)}</p>" for item in epistemic.get("paragraphs", []))
     epistemic_bullets = "\n".join(f"                <li>{esc(item)}</li>" for item in epistemic.get("bullets", []))
     research_intro = "\n".join(paragraph_html(item) for item in spec["research"].get("body", []))
+    evidence_intro = evidence_intro_html(spec)
 
     return f"""<!doctype html>
 <html lang="en">
@@ -958,7 +1143,7 @@ def render_critique(spec: dict[str, Any]) -> str:
           <section class="section-panel" id="evidence-needed">
             <p class="section-kicker">Calibration Tests</p>
             <h2>Evidence that would change the assessment</h2>
-            <p>The critique is not designed to be unfalsifiable. Several kinds of evidence would strengthen the episode's claims if supplied with enough specificity and symmetry.</p>
+{evidence_intro}
 {render_table(["Area", "Would raise confidence", "Would lower confidence"], evidence_rows, "claim-table evidence-needed-table")}
           </section>
 
