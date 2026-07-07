@@ -7,6 +7,19 @@
     <meta name="description" content="A formal critique of the STR episode Cultivating a Big Enough Worldview in Students.">
     <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../../assets/styles.css">
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [["\\(", "\\)"]],
+          displayMath: [["\\[", "\\]"]],
+          processEscapes: true
+        },
+        chtml: {
+          matchFontHeight: false
+        }
+      };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
   </head>
   <body>
     <header class="site-header">
@@ -158,10 +171,16 @@
             <div class="formal-block" aria-label="Worldview formalization">
               <div>
                 <h3>Formalization</h3>
-                <p>Let <em>C</em> be Christianity, <em>B(x)</em> mean x is comprehensive, and <em>T(x)</em> mean x is true.</p>
-                <pre class="logic">B(C)
-B(x) may be psychologically useful
-Therefore T(C)</pre>
+                <p>Let \(C\) be Christianity, \(B(x)\) mean x is comprehensive, \(U(x)\) mean x is psychologically useful, and \(T(x)\) mean x is true.</p>
+                <div class="logic">
+\[
+\begin{aligned}
+B(C) &\quad \text{Christianity is comprehensive.}\\
+B(x) &\quad \text{Comprehensiveness may make } x \text{ psychologically useful.}\\
+\therefore\; T(C) &\quad \text{Christianity is true.}
+\end{aligned}
+\]
+                </div>
               </div>
               <div>
                 <h3>Assessment</h3>
@@ -197,13 +216,18 @@ Therefore T(C)</pre>
             <div class="formal-block">
               <div>
                 <h3>Formalization</h3>
-                <pre class="logic">R = Christ rose
-L = Christ is Lord
-H = durable Christian hope
-
-(R ∧ L) → H
-H is desirable
-Therefore R ∧ L</pre>
+                <div class="logic">
+\[
+\begin{aligned}
+R &:= \text{Christ rose.}\\
+L &:= \text{Christ is Lord.}\\
+H &:= \text{Durable Christian hope.}\\
+(R \land L) &\to H\\
+\operatorname{Desirable}(H)\\
+\therefore\; R \land L
+\end{aligned}
+\]
+                </div>
               </div>
               <div>
                 <h3>Assessment</h3>
@@ -239,12 +263,17 @@ Therefore R ∧ L</pre>
             <div class="formal-block">
               <div>
                 <h3>Formalization</h3>
-                <pre class="logic">A = story analogy is emotionally apt
-S = Christian story has a redemptive ending
-T = Christian story is true
-
-A supports intelligibility(S)
-A does not entail T</pre>
+                <div class="logic">
+\[
+\begin{aligned}
+A &:= \text{The story analogy is emotionally apt.}\\
+S &:= \text{The Christian story has a redemptive ending.}\\
+T &:= \text{The Christian story is true.}\\
+A &\Rightarrow \operatorname{Intelligible}(S)\\
+A &\not\Rightarrow T
+\end{aligned}
+\]
+                </div>
               </div>
               <div>
                 <h3>Assessment</h3>
@@ -281,13 +310,18 @@ A does not entail T</pre>
             <div class="formal-block">
               <div>
                 <h3>Formalization</h3>
-                <pre class="logic">S = Scripture/creation story supplies a source
-M = complete public moral system
-A = moral authority for all persons
-
-S ⊬ M
-M requires access, binding, scope, repair
-M ⊬ A unless authority is justified</pre>
+                <div class="logic">
+\[
+\begin{aligned}
+S &:= \text{Scripture or the creation story supplies a moral source.}\\
+M &:= \text{A complete public moral system.}\\
+A &:= \text{Moral authority for all persons.}\\
+S &\not\vdash M\\
+M &\to \operatorname{Access} \land \operatorname{Binding} \land \operatorname{Scope} \land \operatorname{Repair}\\
+M &\not\vdash A \quad \text{unless authority is independently justified.}
+\end{aligned}
+\]
+                </div>
               </div>
               <div>
                 <h3>Assessment</h3>
@@ -322,11 +356,16 @@ M ⊬ A unless authority is justified</pre>
             <div class="formal-block">
               <div>
                 <h3>Formalization</h3>
-                <pre class="logic">G(Cases) = some Christian actions are good
-T(Doctrine) = Christian doctrine is true
-
-G(Cases) supports: Christians can do good
-G(Cases) does not entail T(Doctrine)</pre>
+                <div class="logic">
+\[
+\begin{aligned}
+G(\mathrm{Cases}) &:= \text{Some Christian actions are good.}\\
+T(\mathrm{Doctrine}) &:= \text{Christian doctrine is true.}\\
+G(\mathrm{Cases}) &\Rightarrow \text{Christians can do good.}\\
+G(\mathrm{Cases}) &\not\Rightarrow T(\mathrm{Doctrine})
+\end{aligned}
+\]
+                </div>
               </div>
               <div>
                 <h3>Assessment</h3>

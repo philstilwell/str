@@ -460,10 +460,13 @@ h3 {
   border: 1px solid var(--line);
   border-radius: 6px;
   background: #f6f7f5;
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.55;
-  white-space: pre;
+}
+
+.logic mjx-container {
+  margin: 0 !important;
+  min-width: max-content;
 }
 
 .note {
