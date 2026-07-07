@@ -6,7 +6,7 @@
     <title>Cultivating a Big Enough Worldview in Students | OnReason</title>
     <meta name="description" content="A formal critique of the STR episode Cultivating a Big Enough Worldview in Students.">
     <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../../assets/styles.css">
+    <link rel="stylesheet" href="../../assets/styles.css?v=20260707-audit">
     <script>
       window.MathJax = {
         tex: {
@@ -39,9 +39,10 @@
     </header>
 
     <div class="page-shell">
-      <aside class="toc" aria-label="Contents">
+      <aside class="toc is-open" aria-label="Contents">
+        <button class="toc-toggle" type="button" aria-expanded="true" aria-controls="toc-list">Contents</button>
         <p class="toc-title">Contents</p>
-        <ol>
+        <ol id="toc-list">
           <li><a href="#overview">Thesis and overview</a></li>
           <li><a href="#method">Method</a></li>
           <li><a href="#research">Research base</a></li>
@@ -52,6 +53,7 @@
           <li><a href="#identity">Identity and morality</a></li>
           <li><a href="#calling">Calling and mission</a></li>
           <li><a href="#overall">Overall assessment</a></li>
+          <li><a href="#evidence-needed">Evidence needed</a></li>
           <li><a href="#prompt">AI prompt</a></li>
         </ol>
       </aside>
@@ -241,7 +243,7 @@
               private path to heaven, but a lens for history, culture, identity, morality, and vocation.
               That may be pastorally motivating, but the epistemic question is different:
               does the frame deserve the credence being assigned to it?
-              <span class="note" tabindex="0">◉<span class="popover">The critique is not that a comprehensive worldview is useless; it is that comprehensiveness is being allowed to function as a proxy for truth. A worldview can explain many domains because it is accurate, because it is flexible enough to absorb contrary data, or because insiders have learned to reinterpret anomalies as confirmations. Evidence-proportionate belief requires separating psychological scope from evidential warrant: What observations would Christianity predict better than rival views, what would count against it, and why should confidence rise beyond the support actually supplied in the episode?</span></span>
+              <button class="note" type="button" aria-label="Expand worldview scope explanation" aria-expanded="false">◉<span class="popover" role="tooltip">The critique is not that a comprehensive worldview is useless; it is that comprehensiveness is being allowed to function as a proxy for truth. A worldview can explain many domains because it is accurate, because it is flexible enough to absorb contrary data, or because insiders have learned to reinterpret anomalies as confirmations. Evidence-proportionate belief requires separating psychological scope from evidential warrant: What observations would Christianity predict better than rival views, what would count against it, and why should confidence rise beyond the support actually supplied in the episode?</span></button>
             </p>
             <p>
               The relevant comparison is not Christianity versus nihilism. The comparison is Christianity versus the
@@ -259,11 +261,47 @@
             </div>
             <div class="transcript-anchors" aria-label="Worldview transcript anchors">
               <div class="anchor-head">
-                <strong>Transcript anchor</strong>
-                <span>ASR range 00:00-20:00</span>
+                <strong>Transcript anchors</strong>
+                <span>Coarse ASR range 00:00-20:00</span>
               </div>
-              <p><q>big enough worldview</q></p>
+              <div class="quote-anchor-grid">
+                <article class="quote-anchor">
+                  <q>genuine Christianity</q>
+                  <span>Worldview totalization</span>
+                </article>
+                <article class="quote-anchor">
+                  <q>all of reality</q>
+                  <span>Scope expansion</span>
+                </article>
+                <article class="quote-anchor">
+                  <q>worldview that has us</q>
+                  <span>Identity formation</span>
+                </article>
+              </div>
               <p>The critiqued claim is that Christianity must function as the large interpretive frame for historic questions, current cultural conflict, student formation, and all of life.</p>
+            </div>
+            <div class="table-scroll compact-audit">
+              <table class="claim-table audit-table">
+                <thead>
+                  <tr>
+                    <th>Claim</th>
+                    <th>Evidence in transcript</th>
+                    <th>Critique / downgrade</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Christianity is a total map of reality.</td>
+                    <td>Colson quotation, personal testimony, and examples of cultural pressure on students.</td>
+                    <td>The evidence supports usefulness for insiders, not unique public accuracy.</td>
+                  </tr>
+                  <tr>
+                    <td>A larger worldview better equips students.</td>
+                    <td>Student-retention anecdotes and progressive-college examples.</td>
+                    <td>Pedagogical adequacy should be separated from truth-tracking probability.</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
             <div class="formal-block" aria-label="Worldview formalization">
               <div>
@@ -291,18 +329,22 @@ B(x) &\quad \text{Comprehensiveness may make } x \text{ psychologically useful.}
             <div class="tag-grid tag-explainers">
               <article class="tag-explainer">
                 <a class="link-pill red" href="https://logfall.com/fallacies/appeal-to-consequences/">Appeal to consequences</a>
+                <span class="severity strong">Strength: Strong</span>
                 <p>Applies to the move from a worldview being useful for students under cultural pressure to treating that worldview as epistemically warranted.</p>
               </article>
               <article class="tag-explainer">
                 <a class="link-pill red" href="https://logfall.com/fallacies/false-dilemma/">False dilemma</a>
+                <span class="severity moderate">Strength: Moderate</span>
                 <p>Applies where the transcript contrasts a sufficiently Christian frame with inadequate or collapsing alternatives without comparing the strongest rival frameworks.</p>
               </article>
               <article class="tag-explainer">
                 <a class="link-pill blue" href="https://cogbias.site/biases/belief-bias/">Belief bias</a>
+                <span class="severity moderate">Strength: Moderate</span>
                 <p>Applies when the coherence and desirability of a total Christian frame can make its conclusions feel more rational than the supplied evidence permits.</p>
               </article>
               <article class="tag-explainer">
                 <a class="link-pill blue" href="https://cogbias.site/biases/confirmation-bias/">Confirmation bias</a>
+                <span class="severity moderate">Strength: Moderate</span>
                 <p>Applies where examples of progressive theology, sexual ethics disputes, and student attrition are selected because they confirm the need for the favored worldview.</p>
               </article>
             </div>
@@ -315,7 +357,7 @@ B(x) &\quad \text{Comprehensiveness may make } x \text{ psychologically useful.}
               The episode moves from resurrection language to existential stability: if Christ is risen and lordly,
               then hope is not wishful thinking but a posture grounded in reality. The conditional can be granted for
               argument's sake. The issue is that the antecedent still carries the evidential burden.
-              <span class="note" tabindex="0">◉<span class="popover">The episode treats resurrection hope as existentially decisive, but the decisive pastoral role of a belief does not settle whether the event occurred. A Resurrection Evidence Audit keeps several items separate: the prior improbability of a dead person returning to life, the specific historical evidence offered, the quality and independence of sources, alternative explanations, and the amount of uncertainty that should remain. If the resurrection is used as the load-bearing reason for hope, then the argument must show why the evidence warrants that level of confidence rather than letting the comfort of the conclusion do the evidential work.</span></span>
+              <button class="note" type="button" aria-label="Expand hope and resurrection explanation" aria-expanded="false">◉<span class="popover" role="tooltip">The episode treats resurrection hope as existentially decisive, but the decisive pastoral role of a belief does not settle whether the event occurred. A Resurrection Evidence Audit keeps several items separate: the prior improbability of a dead person returning to life, the specific historical evidence offered, the quality and independence of sources, alternative explanations, and the amount of uncertainty that should remain. If the resurrection is used as the load-bearing reason for hope, then the argument must show why the evidence warrants that level of confidence rather than letting the comfort of the conclusion do the evidential work.</span></button>
             </p>
             <p>
               A student may be psychologically strengthened by resurrection hope. That fact can matter for pastoral
@@ -332,11 +374,47 @@ B(x) &\quad \text{Comprehensiveness may make } x \text{ psychologically useful.}
             </div>
             <div class="transcript-anchors" aria-label="Hope and resurrection transcript anchors">
               <div class="anchor-head">
-                <strong>Transcript anchor</strong>
-                <span>ASR range 00:20-40:00</span>
+                <strong>Transcript anchors</strong>
+                <span>Coarse ASR range 00:20-40:00</span>
               </div>
-              <p><q>Christ is risen</q></p>
+              <div class="quote-anchor-grid">
+                <article class="quote-anchor">
+                  <q>hope in something</q>
+                  <span>Hope premise</span>
+                </article>
+                <article class="quote-anchor">
+                  <q>Christ is risen</q>
+                  <span>Resurrection premise</span>
+                </article>
+                <article class="quote-anchor">
+                  <q>Christ is Lord</q>
+                  <span>Authority premise</span>
+                </article>
+              </div>
               <p>The critiqued claim is that resurrection belief grounds hope not merely as personal doctrine, but as the reality through which every cultural moment and human history should be interpreted.</p>
+            </div>
+            <div class="table-scroll compact-audit">
+              <table class="claim-table audit-table">
+                <thead>
+                  <tr>
+                    <th>Claim</th>
+                    <th>Evidence in transcript</th>
+                    <th>Critique / downgrade</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Resurrection makes hope reality-grounded.</td>
+                    <td>Appeals to 1 Peter, Easter confession, and the remark that resurrection evidence is remarkable.</td>
+                    <td>The transcript asserts the historical anchor but does not present the historical case.</td>
+                  </tr>
+                  <tr>
+                    <td>Christ's lordship relativizes all cultural powers.</td>
+                    <td>Acts 2 language and comparison to Caesar-like authorities.</td>
+                    <td>The conclusion is proclaimed as theology; public warrant still has to be supplied.</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
             <div class="formal-block">
               <div>
@@ -365,18 +443,22 @@ H &:= \text{Durable Christian hope.}\\
             <div class="tag-grid tag-explainers">
               <article class="tag-explainer">
                 <a class="link-pill red" href="https://logfall.com/fallacies/begging-the-question/">Begging the question</a>
+                <span class="severity strong">Strength: Strong</span>
                 <p>Applies because the resurrection and lordship claims are used to ground hope while the argument does not present the evidence needed to establish those premises.</p>
               </article>
               <article class="tag-explainer">
                 <a class="link-pill red" href="https://logfall.com/fallacies/appeal-to-consequences/">Appeal to consequences</a>
+                <span class="severity strong">Strength: Strong</span>
                 <p>Applies when the pastoral need for hope under persecution is allowed to make the truth of the resurrection feel more secure than the historical case shown here.</p>
               </article>
               <article class="tag-explainer">
                 <a class="link-pill blue" href="https://cogbias.site/biases/motivated-reasoning/">Motivated reasoning</a>
+                <span class="severity moderate">Strength: Moderate</span>
                 <p>Applies where the emotional need for durable hope can pull confidence upward before the evidential burden for resurrection and lordship has been met.</p>
               </article>
               <article class="tag-explainer">
                 <a class="link-pill blue" href="https://cogbias.site/biases/availability-cascade/">Availability cascade</a>
+                <span class="severity candidate">Strength: Candidate</span>
                 <p>Applies to repeated liturgical and communal formulas that can make a claim feel settled through repetition even when the transcript only gestures at evidence.</p>
               </article>
             </div>
@@ -389,7 +471,7 @@ H &:= \text{Durable Christian hope.}\\
               The talk uses a familiar literary pattern: a dark moment can look final until the larger story
               reveals restoration. That is a vivid teaching device. The logical danger is allowing the usefulness
               of the story-form to imply that the Christian story is the true story.
-              <span class="note" tabindex="0">◉<span class="popover">Narrative framing is powerful because it gives suffering, cultural loss, and uncertainty a place inside a larger arc. The critique is that a satisfying arc can become an interpretive filter that predetermines what present events mean before the evidence is assessed. If "we know the ending" is imported from doctrine, then every defeat can be reclassified as temporary and every disconfirming pressure can be folded into the story. A stronger argument would distinguish narrative resilience from truth-tracking and explain what independent evidence licenses confidence in the promised ending.</span></span>
+              <button class="note" type="button" aria-label="Expand narrative framing explanation" aria-expanded="false">◉<span class="popover" role="tooltip">Narrative framing is powerful because it gives suffering, cultural loss, and uncertainty a place inside a larger arc. The critique is that a satisfying arc can become an interpretive filter that predetermines what present events mean before the evidence is assessed. If "we know the ending" is imported from doctrine, then every defeat can be reclassified as temporary and every disconfirming pressure can be folded into the story. A stronger argument would distinguish narrative resilience from truth-tracking and explain what independent evidence licenses confidence in the promised ending.</span></button>
             </p>
             <p>
               This is where inductive symmetry matters. If narrative fit is allowed to support Christian eschatology,
@@ -406,11 +488,47 @@ H &:= \text{Durable Christian hope.}\\
             </div>
             <div class="transcript-anchors" aria-label="Narrative framing transcript anchors">
               <div class="anchor-head">
-                <strong>Transcript anchor</strong>
-                <span>ASR range 00:20-40:00</span>
+                <strong>Transcript anchors</strong>
+                <span>Coarse ASR range 00:20-40:00</span>
               </div>
-              <p><q>all things new</q></p>
+              <div class="quote-anchor-grid">
+                <article class="quote-anchor">
+                  <q>all things new</q>
+                  <span>Eschatological ending</span>
+                </article>
+                <article class="quote-anchor">
+                  <q>not the end</q>
+                  <span>Story analogy</span>
+                </article>
+                <article class="quote-anchor">
+                  <q>same-sex marriage</q>
+                  <span>Cultural example</span>
+                </article>
+              </div>
               <p>The critiqued claim is that the Christian ending of history should govern how students interpret present cultural losses, including the same-sex marriage example.</p>
+            </div>
+            <div class="table-scroll compact-audit">
+              <table class="claim-table audit-table">
+                <thead>
+                  <tr>
+                    <th>Claim</th>
+                    <th>Evidence in transcript</th>
+                    <th>Critique / downgrade</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Present events should be read from the Christian ending.</td>
+                    <td>Revelation language and the Lord of the Rings analogy.</td>
+                    <td>A satisfying narrative frame does not establish that the narrative is true.</td>
+                  </tr>
+                  <tr>
+                    <td>Cultural defeat is not final because the story ends in restoration.</td>
+                    <td>Obergefell-era marriage example and pastoral encouragement.</td>
+                    <td>The reading may encourage resilience, but it imports the conclusion it needs to prove.</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
             <div class="formal-block">
               <div>
@@ -438,18 +556,22 @@ A &\not\Rightarrow T
             <div class="tag-grid tag-explainers">
               <article class="tag-explainer">
                 <a class="link-pill red" href="https://logfall.com/fallacies/false-analogy/">False analogy</a>
+                <span class="severity moderate">Strength: Moderate</span>
                 <p>Applies to the Gandalf story analogy: knowing the ending of a fictional story does not show that the Christian eschatological ending is true.</p>
               </article>
               <article class="tag-explainer">
                 <a class="link-pill red" href="https://logfall.com/fallacies/special-pleading/">Special pleading</a>
+                <span class="severity moderate">Strength: Moderate</span>
                 <p>Applies if Christian narrative closure is allowed to reinterpret defeats while rival religious or secular narratives would be denied the same evidential permission.</p>
               </article>
               <article class="tag-explainer">
                 <a class="link-pill blue" href="https://cogbias.site/biases/illusion-of-explanatory-depth/">Illusion of explanatory depth</a>
+                <span class="severity moderate">Strength: Moderate</span>
                 <p>Applies when saying the present moment must be read through the larger story feels explanatory without specifying independent tests for that story.</p>
               </article>
               <article class="tag-explainer">
                 <a class="link-pill blue" href="https://cogbias.site/biases/status-quo-bias/">Status quo bias</a>
+                <span class="severity candidate">Strength: Candidate</span>
                 <p>Applies where contemporary moral and legal change is framed as a temporary loss inside an inherited Christian story rather than assessed from neutral evidence.</p>
               </article>
             </div>
@@ -463,7 +585,7 @@ A &\not\Rightarrow T
               inner life, relationships, sexuality, society, and work. But a source-story is not the same thing as a
               public moral system. The moral system still has to explain truth, authority, access, binding force,
               case guidance, scope, and correction.
-              <span class="note" tabindex="0">◉<span class="popover">The Moral System Threshold asks whether a moral view has enough architecture to operate as more than an inherited conclusion. A public moral system needs criteria for moral truth, a justification of authority, a way for outsiders to access the reasons, guidance for hard cases, mechanisms for correction, and safeguards against reading current group preferences back into sacred language. Creation, Fall, and redemption may be meaningful categories inside Christian formation, but the critique presses the missing bridge: why should those categories settle contested questions for people who do not already grant the source's authority?</span></span>
+              <button class="note" type="button" aria-label="Expand identity and morality explanation" aria-expanded="false">◉<span class="popover" role="tooltip">The Moral System Threshold asks whether a moral view has enough architecture to operate as more than an inherited conclusion. A public moral system needs criteria for moral truth, a justification of authority, a way for outsiders to access the reasons, guidance for hard cases, mechanisms for correction, and safeguards against reading current group preferences back into sacred language. Creation, Fall, and redemption may be meaningful categories inside Christian formation, but the critique presses the missing bridge: why should those categories settle contested questions for people who do not already grant the source's authority?</span></button>
             </p>
             <p>
               The talk treats several contested modern questions as if Genesis categories have already settled them.
@@ -481,11 +603,47 @@ A &\not\Rightarrow T
             </div>
             <div class="transcript-anchors" aria-label="Identity and morality transcript anchors">
               <div class="anchor-head">
-                <strong>Transcript anchor</strong>
-                <span>ASR range 00:40-58:00</span>
+                <strong>Transcript anchors</strong>
+                <span>Coarse ASR range 00:40-58:00</span>
               </div>
-              <p><q>God intended</q></p>
+              <div class="quote-anchor-grid">
+                <article class="quote-anchor">
+                  <q>God intended</q>
+                  <span>Design premise</span>
+                </article>
+                <article class="quote-anchor">
+                  <q>fallen expression</q>
+                  <span>Distortion premise</span>
+                </article>
+                <article class="quote-anchor">
+                  <q>Christ's death redeem</q>
+                  <span>Redemption expansion</span>
+                </article>
+              </div>
               <p>The critiqued claim is that creation, fall, and redemption classify modern relational and sexual questions by distinguishing divine intention from fallen distortion.</p>
+            </div>
+            <div class="table-scroll compact-audit">
+              <table class="claim-table audit-table">
+                <thead>
+                  <tr>
+                    <th>Claim</th>
+                    <th>Evidence in transcript</th>
+                    <th>Critique / downgrade</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Genesis categories distinguish intention from distortion.</td>
+                    <td>Creation/Fall schema applied to God, self, others, sexuality, and creation.</td>
+                    <td>The schema is meaningful internally, but public authority is not established.</td>
+                  </tr>
+                  <tr>
+                    <td>Redemption applies to all relationships and roles.</td>
+                    <td>Appeals to Romans, Ephesians, family duties, and social roles.</td>
+                    <td>The move needs a moral-system bridge: access, scope, correction, and binding force.</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
             <div class="formal-block">
               <div>
@@ -514,18 +672,22 @@ M &\not\vdash A \quad \text{unless authority is independently justified.}
             <div class="tag-grid tag-explainers">
               <article class="tag-explainer">
                 <a class="link-pill red" href="https://logfall.com/fallacies/equivocation/">Equivocation</a>
+                <span class="severity moderate">Strength: Moderate</span>
                 <p>Applies where terms such as created, fallen, redeemed, relationship, and identity slide between theological description and public moral conclusion.</p>
               </article>
               <article class="tag-explainer">
                 <a class="link-pill red" href="https://logfall.com/fallacies/begging-the-question/">Begging the question</a>
+                <span class="severity strong">Strength: Strong</span>
                 <p>Applies when Genesis categories are treated as already authoritative for contested sexuality and social-role claims that require independent justification.</p>
               </article>
               <article class="tag-explainer">
                 <a class="link-pill blue" href="https://cogbias.site/biases/authority-bias/">Authority bias</a>
+                <span class="severity moderate">Strength: Moderate</span>
                 <p>Applies where scriptural or tradition-backed categories are allowed to settle moral questions because of their source rather than because of publicly testable reasons.</p>
               </article>
               <article class="tag-explainer">
                 <a class="link-pill blue" href="https://cogbias.site/biases/ingroup-bias/">Ingroup bias</a>
+                <span class="severity candidate">Strength: Candidate</span>
                 <p>Applies when insider Christian vocabulary is treated as the natural interpretive grid while non-Christian accounts of identity and sexuality are not comparably engaged.</p>
               </article>
             </div>
@@ -538,7 +700,7 @@ M &\not\vdash A \quad \text{unless authority is independently justified.}
               The strongest practical portion of the episode urges students to preserve what is good, contribute what
               is missing, and resist what is evil. Much of that can be affirmed. The problem arises when admirable
               Christian examples are allowed to carry more apologetic weight than they can bear.
-              <span class="note" tabindex="0">◉<span class="popover">The historical examples may show that Christian communities have sometimes generated genuine moral courage, but selective moral success is not the same as worldview validation. Survivorship bias enters when the argument highlights rescue, reform, and compassion while leaving out complicity, coercion, exclusion, or cases where non-Christian movements produced similar goods. The fair comparison is distributional: What range of outcomes has the worldview produced, under what social conditions, and how does that range compare with rival explanations? Good fruits can support claims about moral usefulness without proving the metaphysical story attached to them.</span></span>
+              <button class="note" type="button" aria-label="Expand calling and mission explanation" aria-expanded="false">◉<span class="popover" role="tooltip">The historical examples may show that Christian communities have sometimes generated genuine moral courage, but selective moral success is not the same as worldview validation. Survivorship bias enters when the argument highlights rescue, reform, and compassion while leaving out complicity, coercion, exclusion, or cases where non-Christian movements produced similar goods. The fair comparison is distributional: What range of outcomes has the worldview produced, under what social conditions, and how does that range compare with rival explanations? Good fruits can support claims about moral usefulness without proving the metaphysical story attached to them.</span></button>
             </p>
             <p>
               A historically honest analysis would include both rescue and harm, reform and complicity, moral courage
@@ -554,11 +716,47 @@ M &\not\vdash A \quad \text{unless authority is independently justified.}
             </div>
             <div class="transcript-anchors" aria-label="Calling and mission transcript anchors">
               <div class="anchor-head">
-                <strong>Transcript anchor</strong>
-                <span>ASR range 00:40-58:00</span>
+                <strong>Transcript anchors</strong>
+                <span>Coarse ASR range 00:40-58:00</span>
               </div>
-              <p><q>What is good?</q></p>
+              <div class="quote-anchor-grid">
+                <article class="quote-anchor">
+                  <q>What is good?</q>
+                  <span>Preservation question</span>
+                </article>
+                <article class="quote-anchor">
+                  <q>What is missing?</q>
+                  <span>Contribution question</span>
+                </article>
+                <article class="quote-anchor">
+                  <q>What is evil?</q>
+                  <span>Resistance question</span>
+                </article>
+              </div>
               <p>The critiqued claim is that Christian calling is organized by finding what is good, missing, and evil, then using selected church-history examples to model action.</p>
+            </div>
+            <div class="table-scroll compact-audit">
+              <table class="claim-table audit-table">
+                <thead>
+                  <tr>
+                    <th>Claim</th>
+                    <th>Evidence in transcript</th>
+                    <th>Critique / downgrade</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Christian calling helps students preserve, contribute, and resist.</td>
+                    <td>Didache, infanticide rescue, Rodney Stark, and missionary anecdotes.</td>
+                    <td>The practical ethic can be good without validating the whole metaphysical frame.</td>
+                  </tr>
+                  <tr>
+                    <td>Christian history demonstrates distinctive moral fruit.</td>
+                    <td>Selected stories of early church rescue, growth, and mission.</td>
+                    <td>The evidential base is selective unless harms and rival successes are also audited.</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
             <div class="formal-block">
               <div>
@@ -585,18 +783,22 @@ G(\mathrm{Cases}) &\not\Rightarrow T(\mathrm{Doctrine})
             <div class="tag-grid tag-explainers">
               <article class="tag-explainer">
                 <a class="link-pill red" href="https://logfall.com/fallacies/cherry-picking/">Cherry picking</a>
+                <span class="severity strong">Strength: Strong</span>
                 <p>Applies to the selection of Didache, exposure rescue, Rodney Stark, and missionary examples without a balanced audit of Christian harms or rival moral successes.</p>
               </article>
               <article class="tag-explainer">
                 <a class="link-pill red" href="https://logfall.com/fallacies/appeal-to-emotion/">Appeal to emotion</a>
+                <span class="severity moderate">Strength: Moderate</span>
                 <p>Applies where emotionally powerful rescue and protection stories make the worldview feel validated before comparative historical evidence is supplied.</p>
               </article>
               <article class="tag-explainer">
                 <a class="link-pill blue" href="https://cogbias.site/biases/halo-effect/">Halo effect</a>
+                <span class="severity moderate">Strength: Moderate</span>
                 <p>Applies when admirable Christian actions cast a glow over broader theological claims that do not follow from those actions alone.</p>
               </article>
               <article class="tag-explainer">
                 <a class="link-pill blue" href="https://cogbias.site/biases/survivorship-bias/">Survivorship bias</a>
+                <span class="severity strong">Strength: Strong</span>
                 <p>Applies where remembered success stories of church growth and missions receive attention while failed, coercive, or harmful cases drop out of view.</p>
               </article>
             </div>
@@ -643,6 +845,55 @@ G(\mathrm{Cases}) &\not\Rightarrow T(\mathrm{Doctrine})
                 transcript supplies proclamation, analogy, and selected anecdotes, it does not earn the right to speak as
                 though Christianity has been shown to be the uniquely adequate map of reality.
               </p>
+            </div>
+          </section>
+
+          <section class="section-panel" id="evidence-needed">
+            <p class="section-kicker">Calibration Tests</p>
+            <h2>Evidence that would change the assessment</h2>
+            <p>
+              The critique is not designed to be unfalsifiable. Several kinds of evidence would strengthen the
+              episode's claims if supplied with enough specificity and symmetry. The page's current confidence
+              downgrade follows from the transcript's evidential gap, not from a rule that Christian conclusions
+              must always be dismissed.
+            </p>
+            <div class="table-scroll">
+              <table class="claim-table evidence-needed-table">
+                <thead>
+                  <tr>
+                    <th>Area</th>
+                    <th>Would raise confidence</th>
+                    <th>Would lower confidence</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Worldview scope</td>
+                    <td>Clear predictions or explanatory advantages that Christianity has over strong rival worldviews, tested on the same criteria.</td>
+                    <td>Reliance on breadth, usefulness, or insider familiarity without comparative scoring against alternatives.</td>
+                  </tr>
+                  <tr>
+                    <td>Resurrection and lordship</td>
+                    <td>A concise historical case that addresses priors, source independence, alternative explanations, and uncertainty.</td>
+                    <td>Repeated proclamation of resurrection/lordship while the actual evidential case remains offstage.</td>
+                  </tr>
+                  <tr>
+                    <td>Narrative closure</td>
+                    <td>Independent reasons to believe the promised ending is true, plus criteria for when events would count against the story.</td>
+                    <td>A story framework that reclassifies every defeat or anomaly as confirmation of the same narrative.</td>
+                  </tr>
+                  <tr>
+                    <td>Moral architecture</td>
+                    <td>Public criteria for moral truth, access, binding authority, case guidance, and correction across communities.</td>
+                    <td>Scriptural categories that function only after the audience already grants scriptural authority.</td>
+                  </tr>
+                  <tr>
+                    <td>Historical fruits</td>
+                    <td>A distributional audit of Christian goods, Christian harms, rival goods, and rival harms under comparable conditions.</td>
+                    <td>Selected success stories that let admirable Christian action validate unrelated metaphysical claims.</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </section>
 
@@ -748,7 +999,7 @@ Conclude with:
         <p class="rail-title">Evidence &amp; Analysis</p>
         <div class="rail-box">
           <h3>Draft Status</h3>
-          <p>Public approval draft. Short transcript anchors use coarse ASR ranges, and section tag cards explain how each fallacy or bias applies.</p>
+          <p>Public approval draft. Quote clusters use coarse ASR ranges, section audit tables tie claims to evidence, and tag cards grade fallacy/bias strength.</p>
         </div>
         <div class="rail-box">
           <h3>Fallacies Flagged</h3>
@@ -774,7 +1025,7 @@ Conclude with:
         </div>
         <div class="rail-box">
           <h3>About the ◉ marker</h3>
-          <p>Hover or focus each symbol to open an expanded explanation of the nearby critique point, including the evidential standard, the weak inference, and what a stronger argument would need.</p>
+          <p>Click, hover, or focus each symbol to open an expanded explanation of the nearby critique point, including the evidential standard, the weak inference, and what a stronger argument would need.</p>
         </div>
       </aside>
     </div>
@@ -785,6 +1036,6 @@ Conclude with:
         methodology sources, and fallacy/bias reference pages.
       </p>
     </footer>
-    <script src="../../assets/app.js"></script>
+    <script src="../../assets/app.js?v=20260707-audit"></script>
   </body>
 </html>
