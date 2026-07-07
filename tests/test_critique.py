@@ -25,17 +25,23 @@ def valid_spec() -> dict:
                 "title": f"Test title for {label}",
                 "paragraphs": [
                     {
-                        "text": f"The transcript makes a substantive {label.lower()} claim.",
+                        "text": f"The transcript makes a substantive {label.lower()} claim that needs public evidential testing rather than insider resonance alone.",
                         "note_label": f"Expand {label}",
-                        "note": f"This note explains the {label.lower()} inference, the evidential gap, the hidden premise, and what would improve that specific argument.",
+                        "note": (
+                            f"This note explains the {label.lower()} inference, the evidential gap, the hidden premise, "
+                            "the rival explanations that must be compared, and what would improve that specific argument."
+                        ),
                     },
-                    f"The {label.lower()} critique separates the episode's practical usefulness from the public warrant needed for that claim.",
+                    f"The {label.lower()} critique separates the episode's practical usefulness from the public warrant needed before that claim can rationally raise confidence.",
                 ],
                 "research_anchors": [
                     {"label": "Free of Faith anchor", "url": "https://freeoffaith.com/2024/11/11/21/", "tone": "gold"},
                     {"label": "Framework anchor", "url": "https://freeoffaith.com/2026/01/27/parsimony-and-christianity/", "tone": "blue"},
                 ],
-                "research_note": f"These anchors require comparative testing and evidence-proportionate belief for the {label.lower()} claim.",
+                "research_note": (
+                    f"These anchors require comparative testing and evidence-proportionate belief for the {label.lower()} claim, "
+                    "with the Free of Faith source used to identify the public warrant gap and the local framework used to define the downgrade test."
+                ),
                 "transcript": {
                     "range": "00:00-10:00",
                     "quotes": [
@@ -49,12 +55,17 @@ def valid_spec() -> dict:
                         "claim": f"The episode supplies a {label.lower()} frame.",
                         "evidence": f"Short transcript phrases and pastoral examples are used for {label.lower()}.",
                         "critique": f"The {label.lower()} claim needs comparative evidence before confidence rises.",
+                    },
+                    {
+                        "claim": f"A stronger public case for {label.lower()} would require a public warrant bridge.",
+                        "evidence": f"The transcript support remains limited to selected phrases and examples about {label.lower()}.",
+                        "critique": f"Confidence should fall if the {label.lower()} conclusion is treated as established without rival testing.",
                     }
                 ],
                 "formalization": {
                     "intro": f"Let P_{section_id} be the {label.lower()} premise and Q_{section_id} be the public conclusion.",
                     "latex": f"\\[\\begin{{aligned}}P_{{{section_id}}} &:= \\text{{{label} premise.}}\\\\ Q_{{{section_id}}} &:= \\text{{{label} conclusion.}}\\\\ P_{{{section_id}}} &\\not\\Rightarrow Q_{{{section_id}}}\\end{{aligned}}\\]",
-                    "assessment": f"The {label.lower()} conclusion does not follow without additional evidence.",
+                    "assessment": f"The {label.lower()} conclusion does not follow without additional evidence that connects the transcript premise to a public warrant.",
                 },
                 "tags": [
                     {
@@ -71,7 +82,7 @@ def valid_spec() -> dict:
                         "url": "https://cogbias.site/biases/confirmation-bias/",
                         "tone": "blue",
                         "fit": "Moderate",
-                        "application": f"Applies where confirming {label.lower()} examples are selected without a rival audit.",
+                        "application": f"Applies where confirming {label.lower()} examples are selected without a rival audit or comparison class.",
                     },
                 ],
             }
@@ -115,7 +126,7 @@ def valid_spec() -> dict:
                     "area": section["label"],
                     "anchors": section["research_anchors"],
                     "local_anchor": f"{section['label']} confidence audit",
-                    "application": f"It calibrates the {section['label'].lower()} claim to the evidence supplied.",
+                    "application": f"It calibrates the {section['label'].lower()} claim to the evidence supplied and identifies what would raise or lower confidence.",
                 }
                 for section in sections
             ],
@@ -136,17 +147,21 @@ def valid_spec() -> dict:
             "kicker": "Overall Assessment",
             "title": "The charitable repair",
             "paragraphs": [
-                "The strongest version of the argument should be narrower.",
-                "The public conclusion needs more evidence than the transcript supplies.",
+                "The strongest version of the argument should be narrower than the transcript's rhetorical confidence suggests.",
+                "The public conclusion needs more evidence than the transcript supplies because rival explanations remain live.",
             ],
             "epistemic_reality": {
                 "kicker": "The epistemic reality",
                 "title": "Certainty outruns the evidence provided",
                 "paragraphs": [
-                    "The transcript proclaims several load-bearing claims without demonstrating them.",
-                    "The responsible posture is a confidence downgrade.",
+                    "The transcript proclaims several load-bearing claims without demonstrating them through shared public evidence or rival comparison.",
+                    "The responsible posture is a confidence downgrade until the relevant warrants are supplied and tested symmetrically.",
                 ],
-                "bullets": ["Resurrection is invoked but not argued.", "Rival explanations are not compared."],
+                "bullets": [
+                    "Resurrection is invoked but not argued with source-sensitive historical controls.",
+                    "Rival explanations are not compared under the same evidential standards.",
+                    "Pastoral usefulness is not enough to establish public truth.",
+                ],
             },
         },
         "evidence_needed": [
@@ -166,11 +181,11 @@ def valid_spec() -> dict:
         "ai_prompt": {
             "episode_title": "Test Episode",
             "steelman_claims": [
-                "The episode presents Christianity as a comprehensive worldview.",
-                "The episode presents resurrection hope as reality-grounded.",
-                "The episode presents narrative closure as interpretively decisive.",
-                "The episode presents creation and redemption as moral architecture.",
-                "The episode presents Christian calling as culturally constructive.",
+                "The episode presents Christianity as a comprehensive worldview that can explain reality better than rivals.",
+                "The episode presents resurrection hope as reality-grounded rather than merely psychologically comforting.",
+                "The episode presents narrative closure as interpretively decisive for reading suffering and culture.",
+                "The episode presents creation and redemption as moral architecture for identity and conduct.",
+                "The episode presents Christian calling as culturally constructive and evidence of worldview adequacy.",
             ],
             "vulnerabilities": [
                 "Worldview Totalization",
@@ -261,6 +276,30 @@ def test_validate_spec_rejects_general_boilerplate_and_repeated_explanatory_text
 
     assert any("contains boilerplate phrase" in error for error in errors)
     assert any("repeats explanatory text" in error for error in errors)
+
+
+def test_validate_spec_rejects_shallow_critique_depth_fields():
+    spec = valid_spec()
+    weak = copy.deepcopy(spec)
+    weak["sections"][0]["paragraphs"][0]["note"] = "Too thin."
+    weak["sections"][0]["research_note"] = "Anchor mention only."
+    weak["sections"][0]["audit_rows"] = weak["sections"][0]["audit_rows"][:1]
+    weak["sections"][0]["formalization"]["assessment"] = "Too short."
+    weak["sections"][0]["tags"][0]["application"] = "Generic label."
+    weak["evidence_needed"][0]["raise"] = "More evidence."
+    weak["overall"]["epistemic_reality"]["bullets"] = ["Vague."]
+    weak["ai_prompt"]["steelman_claims"][0] = "Worldview claim."
+
+    errors = validate_spec(weak)
+
+    assert any("expansive ◉ explanation" in error for error in errors)
+    assert any("research_note" in error and "anchors apply" in error for error in errors)
+    assert any("audit_rows" in error and "at least two" in error for error in errors)
+    assert any("formalization.assessment" in error for error in errors)
+    assert any("tags[1].application" in error for error in errors)
+    assert any("evidence_needed[1].raise" in error for error in errors)
+    assert any("epistemic_reality must include at least three bullets" in error for error in errors)
+    assert any("steelman_claims must be developed" in error for error in errors)
 
 
 def test_validate_page_rejects_stale_boilerplate_phrase(tmp_path):

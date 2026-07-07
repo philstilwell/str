@@ -62,6 +62,13 @@ BOILERPLATE_CRITIQUE_PHRASES = BOILERPLATE_EVIDENCE_PHRASES + [
     "Several kinds of evidence would strengthen the episode's claims if supplied with enough specificity and symmetry",
 ]
 
+MIN_POPOVER_NOTE_WORDS = 25
+MIN_SOURCE_NOTE_WORDS = 30
+MIN_TAG_APPLICATION_WORDS = 8
+MIN_FORMAL_ASSESSMENT_WORDS = 16
+MIN_EVIDENCE_CELL_WORDS = 12
+MIN_PROMPT_CHARS = 3000
+
 DEFAULT_METHODS = [
     {
         "title": "Calibration",
@@ -202,6 +209,10 @@ def required(obj: dict[str, Any], key: str, path: str, errors: list[str]) -> str
 
 def normalized_content(value: Any) -> str:
     return re.sub(r"\s+", " ", text(value)).strip()
+
+
+def word_count(value: Any) -> int:
+    return len(re.findall(r"\S+", normalized_content(value)))
 
 
 def boilerplate_hits(value: Any) -> list[str]:
@@ -598,6 +609,22 @@ def validate_spec(spec: dict[str, Any]) -> list[str]:
     research = spec.get("research") if isinstance(spec.get("research"), dict) else {}
     if not research.get("rows") or len(research.get("rows", [])) < 3:
         errors.append("research.rows must map critique areas to Free of Faith/local framework anchors")
+    else:
+        for row_index, row in enumerate(research.get("rows", []), start=1):
+            if not isinstance(row, dict):
+                errors.append(f"research.rows[{row_index}] must be an object")
+                continue
+            anchors = row.get("anchors")
+            if not isinstance(anchors, list) or len(anchors) < 2:
+                errors.append(f"research.rows[{row_index}].anchors must include at least two research anchors")
+            elif not any("freeoffaith.com" in text(anchor.get("url")) for anchor in anchors if isinstance(anchor, dict)):
+                errors.append(f"research.rows[{row_index}].anchors must include at least one Free of Faith URL")
+            local_anchor = required(row, "local_anchor", f"research.rows[{row_index}]", errors)
+            application = required(row, "application", f"research.rows[{row_index}]", errors)
+            if local_anchor and word_count(local_anchor) < 3:
+                errors.append(f"research.rows[{row_index}].local_anchor must identify a specific local framework")
+            if application and word_count(application) < 12:
+                errors.append(f"research.rows[{row_index}].application must explain how the sources shape the critique")
 
     claim_map = spec.get("claim_map")
     sections = spec.get("sections")
@@ -625,10 +652,21 @@ def validate_spec(spec: dict[str, Any]) -> list[str]:
             errors.append(f"{path}.paragraphs must contain at least two paragraphs")
         elif not any(isinstance(p, dict) and text(p.get("note")) and not text(p.get("note")).startswith("TODO") for p in paragraphs):
             errors.append(f"{path}.paragraphs must include an expansive ◉ note")
+        else:
+            for paragraph_index, paragraph in enumerate(paragraphs, start=1):
+                body = paragraph.get("text") if isinstance(paragraph, dict) else paragraph
+                if word_count(body) < 10:
+                    errors.append(f"{path}.paragraphs[{paragraph_index}] must be developed, not merely labeled")
+                if isinstance(paragraph, dict) and word_count(paragraph.get("note")) < MIN_POPOVER_NOTE_WORDS:
+                    errors.append(f"{path}.paragraphs[{paragraph_index}].note must be an expansive ◉ explanation")
 
         anchors = section.get("research_anchors")
         if not isinstance(anchors, list) or len(anchors) < 2:
             errors.append(f"{path}.research_anchors must include at least two Free of Faith/framework anchors")
+        elif not any("freeoffaith.com" in text(anchor.get("url")) for anchor in anchors if isinstance(anchor, dict)):
+            errors.append(f"{path}.research_anchors must include at least one Free of Faith URL")
+        if word_count(section.get("research_note")) < MIN_SOURCE_NOTE_WORDS:
+            errors.append(f"{path}.research_note must explain how the anchors apply to this section")
 
         transcript = section.get("transcript") if isinstance(section.get("transcript"), dict) else {}
         required(transcript, "range", f"{path}.transcript", errors)
@@ -645,14 +683,28 @@ def validate_spec(spec: dict[str, Any]) -> list[str]:
                 required(quote, "label", f"{path}.transcript.quotes[{q_index}]", errors)
 
         audit_rows = section.get("audit_rows")
-        if not isinstance(audit_rows, list) or not audit_rows:
-            errors.append(f"{path}.audit_rows must tie claims to transcript evidence and critique")
+        if not isinstance(audit_rows, list) or len(audit_rows) < 2:
+            errors.append(f"{path}.audit_rows must include at least two claim/evidence/critique rows")
+        else:
+            for row_index, row in enumerate(audit_rows, start=1):
+                if not isinstance(row, dict):
+                    errors.append(f"{path}.audit_rows[{row_index}] must be an object")
+                    continue
+                required(row, "claim", f"{path}.audit_rows[{row_index}]", errors)
+                evidence = required(row, "evidence", f"{path}.audit_rows[{row_index}]", errors)
+                critique = required(row, "critique", f"{path}.audit_rows[{row_index}]", errors)
+                if evidence and word_count(evidence) < 5:
+                    errors.append(f"{path}.audit_rows[{row_index}].evidence must name the transcript support")
+                if critique and word_count(critique) < 8:
+                    errors.append(f"{path}.audit_rows[{row_index}].critique must include a substantive confidence downgrade")
 
         formalization = section.get("formalization") if isinstance(section.get("formalization"), dict) else {}
         latex = required(formalization, "latex", f"{path}.formalization", errors)
-        required(formalization, "assessment", f"{path}.formalization", errors)
+        assessment = required(formalization, "assessment", f"{path}.formalization", errors)
         if latex and "\\[" not in latex:
             errors.append(f"{path}.formalization.latex must use display LaTeX")
+        if assessment and word_count(assessment) < MIN_FORMAL_ASSESSMENT_WORDS:
+            errors.append(f"{path}.formalization.assessment must explain the inferential result")
 
         tags = section.get("tags")
         if not isinstance(tags, list) or len(tags) < 2:
@@ -669,14 +721,35 @@ def validate_spec(spec: dict[str, Any]) -> list[str]:
                 required(tag, "label", f"{path}.tags[{tag_index}]", errors)
                 required(tag, "url", f"{path}.tags[{tag_index}]", errors)
                 required(tag, "fit", f"{path}.tags[{tag_index}]", errors)
-                required(tag, "application", f"{path}.tags[{tag_index}]", errors)
+                application = required(tag, "application", f"{path}.tags[{tag_index}]", errors)
+                if application and word_count(application) < MIN_TAG_APPLICATION_WORDS:
+                    errors.append(f"{path}.tags[{tag_index}].application must apply the diagnostic to a specific transcript claim")
 
     overall = spec.get("overall") if isinstance(spec.get("overall"), dict) else {}
     epistemic = overall.get("epistemic_reality") if isinstance(overall.get("epistemic_reality"), dict) else {}
     required(overall, "title", "overall", errors)
     required(epistemic, "title", "overall.epistemic_reality", errors)
-    if not epistemic.get("paragraphs") or not epistemic.get("bullets"):
-        errors.append("overall.epistemic_reality must include paragraphs and bullets")
+    overall_paragraphs = overall.get("paragraphs")
+    if not isinstance(overall_paragraphs, list) or len(overall_paragraphs) < 2:
+        errors.append("overall.paragraphs must include at least two assessment paragraphs")
+    else:
+        for index, paragraph in enumerate(overall_paragraphs, start=1):
+            if word_count(paragraph) < 10:
+                errors.append(f"overall.paragraphs[{index}] must be a substantive assessment")
+    epistemic_paragraphs = epistemic.get("paragraphs")
+    epistemic_bullets = epistemic.get("bullets")
+    if not isinstance(epistemic_paragraphs, list) or len(epistemic_paragraphs) < 2:
+        errors.append("overall.epistemic_reality must include at least two paragraphs")
+    else:
+        for index, paragraph in enumerate(epistemic_paragraphs, start=1):
+            if word_count(paragraph) < 16:
+                errors.append(f"overall.epistemic_reality.paragraphs[{index}] must directly rebuke overconfidence")
+    if not isinstance(epistemic_bullets, list) or len(epistemic_bullets) < 3:
+        errors.append("overall.epistemic_reality must include at least three bullets")
+    else:
+        for index, bullet in enumerate(epistemic_bullets, start=1):
+            if word_count(bullet) < 8:
+                errors.append(f"overall.epistemic_reality.bullets[{index}] must name a concrete downgrade")
 
     evidence_needed = spec.get("evidence_needed")
     if not isinstance(evidence_needed, list) or len(evidence_needed) < len(sections):
@@ -694,7 +767,7 @@ def validate_spec(spec: dict[str, Any]) -> list[str]:
             for field_name, value in (("raise", raise_text), ("lower", lower_text)):
                 if any(phrase in value for phrase in BOILERPLATE_EVIDENCE_PHRASES):
                     errors.append(f"evidence_needed[{index}].{field_name} must be customized, not boilerplate")
-                if value and len(value.split()) < 9:
+                if value and word_count(value) < MIN_EVIDENCE_CELL_WORDS:
                     errors.append(f"evidence_needed[{index}].{field_name} is too brief to be a useful calibration test")
                 if value.startswith("TODO"):
                     errors.append(f"evidence_needed[{index}].{field_name} still contains a TODO placeholder")
@@ -713,6 +786,10 @@ def validate_spec(spec: dict[str, Any]) -> list[str]:
         errors.append("ai_prompt.steelman_claims must contain actual steelmanned transcript claims")
     elif any(text(claim).startswith("TODO") for claim in claims):
         errors.append("ai_prompt.steelman_claims still contains TODO placeholders")
+    elif any(word_count(claim) < 8 for claim in claims):
+        errors.append("ai_prompt.steelman_claims must be developed steelmanned claims, not labels")
+    elif len(set(text(claim) for claim in claims)) != len(claims):
+        errors.append("ai_prompt.steelman_claims must be distinct transcript claims")
     vulnerabilities = ai_prompt.get("vulnerabilities")
     if not isinstance(vulnerabilities, list) or len(vulnerabilities) < 8:
         errors.append("ai_prompt.vulnerabilities must preserve the systematic audit checklist")
@@ -783,6 +860,9 @@ def validate_page(path: Path) -> list[str]:
     prompt_end = html_text.find("Treat the claims above", prompt_start)
     if prompt_start == -1 or prompt_end == -1 or html_text[prompt_start:prompt_end].count("◉") < 5:
         errors.append("page AI prompt must include at least five steelmanned condensed claims")
+    prompt_node = soup.select_one("#ai-prompt")
+    if not prompt_node or len(prompt_node.get_text("\n", strip=True)) < MIN_PROMPT_CHARS:
+        errors.append("page AI prompt must be a full steelman and systematic coherence audit prompt")
     if "ALL-CAPS" not in html_text:
         errors.append("page AI prompt must instruct ALL-CAPS major section headers")
     if "episode-nav-link" not in html_text:
@@ -814,6 +894,37 @@ def validate_page(path: Path) -> list[str]:
     for node in soup.select(".section-kicker.numbered-kicker"):
         if not re.match(r"^\d+\.\s+", node.get_text(" ", strip=True)):
             errors.append(f"only numbered section kickers may use dark bar class: {node.get_text(' ', strip=True)}")
+    for section in soup.select("section.section-panel"):
+        kicker = section.select_one(".section-kicker.numbered-kicker")
+        if not kicker:
+            continue
+        label = kicker.get_text(" ", strip=True)
+        if len(section.select(".research-anchors a")) < 2:
+            errors.append(f"{label} must include multiple research anchors")
+        if not any("freeoffaith.com" in text(anchor.get("href")) for anchor in section.select(".research-anchors a")):
+            errors.append(f"{label} must include at least one Free of Faith research anchor")
+        source_note = section.select_one(".source-note")
+        if not source_note or word_count(source_note.get_text(" ", strip=True)) < MIN_SOURCE_NOTE_WORDS:
+            errors.append(f"{label} source note must explain how the research anchors apply")
+        popovers = section.select(".note .popover")
+        if not popovers or any(word_count(node.get_text(" ", strip=True)) < MIN_POPOVER_NOTE_WORDS for node in popovers):
+            errors.append(f"{label} must include an expansive ◉ explanation")
+        if len(section.select(".quote-anchor-grid q")) < 2:
+            errors.append(f"{label} must include at least two direct quote anchors")
+        if len(section.select(".audit-table tbody tr")) < 2:
+            errors.append(f"{label} audit table must include at least two rows")
+        if len(section.select(".formal-block .logic")) < 1:
+            errors.append(f"{label} must include natural LaTeX formalization")
+        formal_assessment = section.select_one(".formal-block > div:nth-of-type(2) p")
+        if not formal_assessment or word_count(formal_assessment.get_text(" ", strip=True)) < MIN_FORMAL_ASSESSMENT_WORDS:
+            errors.append(f"{label} formalization assessment must explain the inferential result")
+        tag_explainers = section.select(".tag-explainer")
+        if len(tag_explainers) < 2:
+            errors.append(f"{label} must include fallacy/bias diagnostic cards")
+        for tag in tag_explainers:
+            application = tag.select_one("p")
+            if not application or word_count(application.get_text(" ", strip=True)) < MIN_TAG_APPLICATION_WORDS:
+                errors.append(f"{label} diagnostic cards must apply tags to specific claims")
     if "https://freeoffaith.com/" not in html_text:
         errors.append("page must reference Free of Faith research anchors")
     if "https://logfall.com/" not in html_text:
@@ -831,8 +942,8 @@ def validate_page(path: Path) -> list[str]:
         [cell.get_text(" ", strip=True) for cell in row.select("td")]
         for row in soup.select("#evidence-needed table tbody tr")
     ]
-    if len(evidence_rows) < 3:
-        errors.append("page evidence-needed table must include multiple calibration rows")
+    if len(evidence_rows) < len(numbered_kickers):
+        errors.append("page evidence-needed table must include a calibration row for each substantive section")
     else:
         raise_texts = [row[1] for row in evidence_rows if len(row) >= 3]
         lower_texts = [row[2] for row in evidence_rows if len(row) >= 3]
@@ -847,8 +958,12 @@ def validate_page(path: Path) -> list[str]:
             for field_name, value in (("raise", row[1]), ("lower", row[2])):
                 if any(phrase in value for phrase in BOILERPLATE_EVIDENCE_PHRASES):
                     errors.append(f"page evidence-needed row {row_index} {field_name} cell must be customized")
-                if len(value.split()) < 9:
+                if word_count(value) < MIN_EVIDENCE_CELL_WORDS:
                     errors.append(f"page evidence-needed row {row_index} {field_name} cell is too brief")
+    epistemic_paragraphs = soup.select("#overall .epistemic-reality p:not(.dark-kicker)")
+    epistemic_bullets = soup.select("#overall .epistemic-reality li")
+    if len(epistemic_paragraphs) < 2 or len(epistemic_bullets) < 3:
+        errors.append("page epistemic reality section must include two paragraphs and three concrete bullets")
     return errors
 
 

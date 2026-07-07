@@ -135,3 +135,5 @@ Research-map anchor styling is part of the production contract: rendered Free of
 ## Quality Gates
 
 The `Validate OnReason workflow` GitHub Action runs the Python tests on push and pull request. The tests check RSS ingest helpers, critique spec validation, HTML generation, and the current public page's required features.
+
+Critique depth is a production contract, not a copy-editing preference. The validator rejects draft specs or rendered pages that omit section-level Free of Faith anchors, underdevelop `◉` explanations, shallow research notes, one-row audit tables, thin tag applications, under-explained formalizations, short evidence-calibration tests, underdeveloped epistemic-reality rebukes, repeated boilerplate, or label-like AI steelman claims.
