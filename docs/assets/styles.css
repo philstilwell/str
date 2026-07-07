@@ -963,6 +963,12 @@ h3 {
   padding: 48px 28px 76px;
 }
 
+.methodology-shell {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 48px 28px 82px;
+}
+
 .index-hero {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
@@ -972,7 +978,20 @@ h3 {
   border-bottom: 1px solid var(--line);
 }
 
+.methodology-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr);
+  gap: 30px;
+  align-items: start;
+  padding-bottom: 34px;
+  border-bottom: 1px solid var(--line);
+}
+
 .index-hero h1 {
+  font-size: 44px;
+}
+
+.methodology-hero h1 {
   font-size: 44px;
 }
 
@@ -980,6 +999,12 @@ h3 {
   max-width: 690px;
   font-size: 16px;
   line-height: 1.5;
+}
+
+.methodology-hero .lede {
+  max-width: 700px;
+  font-size: 17px;
+  line-height: 1.55;
 }
 
 .podcast-section {
@@ -996,6 +1021,68 @@ h3 {
 
 .podcast-column {
   min-width: 0;
+}
+
+.methodology-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 34px;
+}
+
+.methodology-card,
+.methodology-section {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.methodology-card {
+  padding: 20px;
+}
+
+.methodology-card h2,
+.methodology-section h2 {
+  margin: 0 0 10px;
+  font-size: 26px;
+}
+
+.methodology-card p:not(.section-kicker),
+.methodology-section p,
+.methodology-section li {
+  color: #303731;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.methodology-section {
+  margin-top: 22px;
+  padding: 24px;
+}
+
+.methodology-steps {
+  display: grid;
+  gap: 12px;
+  margin: 18px 0 0;
+  padding-left: 22px;
+}
+
+.methodology-steps strong {
+  color: var(--green);
+}
+
+.methodology-methods {
+  margin-top: 18px;
+}
+
+.methodology-split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.methodology-split h3 {
+  margin-top: 0;
 }
 
 .section-heading {
@@ -1140,6 +1227,9 @@ h3 {
   .method-strip,
   .formal-block,
   .critique-columns,
+  .methodology-grid,
+  .methodology-hero,
+  .methodology-split,
   .index-hero {
     grid-template-columns: 1fr;
   }

@@ -1312,7 +1312,7 @@ def render_critique(spec: dict[str, Any]) -> str:
       </a>
       <nav class="site-nav" aria-label="Primary">
         <a href="../../" aria-current="page">Critiques</a>
-        <a href="https://freeoffaith.com/core-rationality/">Methodology</a>
+        <a href="../../methodology/">Methodology</a>
         <a href="https://logfall.com/fallacies/">Fallacies</a>
         <a href="https://cogbias.site/biases/">Biases</a>
       </nav>

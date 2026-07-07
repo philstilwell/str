@@ -514,8 +514,36 @@ def test_public_episode_pages_pass_quality_gate():
         assert validate_page(page) == []
 
 
+def test_public_methodology_page_is_local_and_explanatory():
+    index_html = Path("docs/index.html").read_text(encoding="utf-8")
+    methodology_path = Path("docs/methodology/index.html")
+    methodology_html = methodology_path.read_text(encoding="utf-8")
+    episode_pages = sorted(Path("docs/episodes").glob("*/index.html"))
+
+    assert '<a href="./methodology/">Methodology</a>' in index_html
+    assert "https://freeoffaith.com/core-rationality/" not in index_html
+    assert "https://freeoffaith.com/core-rationality/" not in methodology_html
+    for page in episode_pages:
+        assert '<a href="../../methodology/">Methodology</a>' in page.read_text(encoding="utf-8")
+
+    soup = BeautifulSoup(methodology_html, "html.parser")
+    visible_text = page_text_for_proper_name_scan(soup)
+    for phrase in [
+        "Steelman before critique",
+        "Separate assertion from support",
+        "Apply the same standard to rivals",
+        "Let belief come in degrees",
+        "How a critique page is built",
+    ]:
+        assert phrase in visible_text
+
+
 def test_public_site_visible_text_has_proper_name_casing():
-    pages = [Path("docs/index.html"), *sorted(Path("docs/episodes").glob("*/index.html"))]
+    pages = [
+        Path("docs/index.html"),
+        Path("docs/methodology/index.html"),
+        *sorted(Path("docs/episodes").glob("*/index.html")),
+    ]
 
     for page in pages:
         soup = BeautifulSoup(page.read_text(encoding="utf-8"), "html.parser")
