@@ -481,7 +481,8 @@ h3 {
 }
 
 .source-map-table td {
-  font-size: 13px;
+  font-size: 12px;
+  line-height: 1.35;
 }
 
 .source-map-table td:first-child {
@@ -490,6 +491,15 @@ h3 {
 
 .source-map-table a {
   font-weight: 700;
+}
+
+.source-map-table .link-pill {
+  min-height: 22px;
+  margin: 1px 2px 1px 0;
+  padding: 2px 6px;
+  border-radius: 5px;
+  font-size: 11px;
+  line-height: 1.15;
 }
 
 .badge,

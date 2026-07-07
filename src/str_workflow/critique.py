@@ -563,6 +563,8 @@ def validate_page(path: Path) -> list[str]:
         errors.append("page AI prompt must include at least five steelmanned condensed claims")
     if "ALL-CAPS" not in html_text:
         errors.append("page AI prompt must instruct ALL-CAPS major section headers")
+    if "</a>;" in html_text:
+        errors.append("page research links must use space separators instead of semicolons")
     if html_text.count("transcript-anchors") < 4:
         errors.append("page must include transcript anchors for at least four substantive sections")
     if html_text.count('class="note"') < html_text.count("transcript-anchors"):
@@ -690,7 +692,7 @@ def render_critique(spec: dict[str, Any]) -> str:
 
     research_rows = []
     for row in spec["research"]["rows"]:
-        anchors = "; ".join(anchor_html(anchor) for anchor in row.get("anchors", []))
+        anchors = " ".join(anchor_html(anchor) for anchor in row.get("anchors", []))
         research_rows.append([esc(row.get("area")), anchors, esc(row.get("local_anchor")), esc(row.get("application"))])
 
     claim_rows = []
