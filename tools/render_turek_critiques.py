@@ -23,6 +23,7 @@ from str_workflow.critique import (  # noqa: E402
     validate_page,
 )
 from str_workflow.ingest import format_seconds  # noqa: E402
+from str_workflow.seo import truncate_description  # noqa: E402
 
 
 CORPUS_DIR = ROOT / "corpus/podcasts/idont-have-enough-faith/episodes"
@@ -375,13 +376,15 @@ def build_spec(episode: dict[str, Any], all_episodes: list[dict[str, Any]], inde
     steelman_claims.append(
         f"Taken together, the episode presents {short_title(episode['title'])} as a case where historical, moral, and theological claims mutually reinforce Christian confidence."
     )
+    lede_section_names = ", ".join(section["label"].lower().replace("bible", "Bible") for section in sections)
+    lede = f"This critique tests {lede_section_names} against public evidence and rival explanations."
     return {
         "schema_version": 1,
         "asset_version": DEFAULT_ASSET_VERSION,
         "episode": {
             "title": episode["title"],
             "page_title": episode["title"],
-            "meta_description": f"OnReason critique of Frank Turek's episode {episode['title']}.",
+            "meta_description": truncate_description(lede),
             "pub_date": episode["pub_date"],
             "display_date": display_date,
             "slug": episode["slug"],
@@ -389,9 +392,7 @@ def build_spec(episode: dict[str, Any], all_episodes: list[dict[str, Any]], inde
             "source_url": episode["podcast_page_url"],
             "speaker": speaker,
             "transcript_source": "Private ASR transcript generated locally from the official CrossExamined episode audio.",
-            "lede": (
-                f"This critique tests {section_names} in the episode and asks whether the confidence expressed remains proportional to public evidence."
-            ),
+            "lede": lede,
             "hero_image": DEFAULT_HERO_IMAGE,
             "hero_alt": DEFAULT_HERO_ALT,
         },

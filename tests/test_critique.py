@@ -247,6 +247,11 @@ def test_valid_spec_renders_page_with_required_onreason_features(tmp_path):
     assert '<p class="section-kicker">Critique Framework</p>' in html
     assert '<p class="section-kicker numbered-kicker">Critique Framework</p>' not in html
     assert "app.js?v=20260707-numbered-bars" in html
+    assert '<link rel="canonical" href="https://onreason.com/episodes/2026-07-01-test-episode/">' in html
+    assert '<meta property="og:type" content="article">' in html
+    assert '<meta name="twitter:card" content="summary_large_image">' in html
+    assert '"@type": "Article"' in html
+    assert '"@type": "BreadcrumbList"' in html
 
 
 def test_validate_spec_rejects_missing_transcript_quote_explanations():
@@ -536,6 +541,35 @@ def test_public_methodology_page_is_local_and_explanatory():
         "How a critique page is built",
     ]:
         assert phrase in visible_text
+
+
+def test_public_site_has_seo_metadata_and_discovery_files():
+    pages = [
+        Path("docs/index.html"),
+        Path("docs/methodology/index.html"),
+        *sorted(Path("docs/episodes").glob("*/index.html")),
+    ]
+
+    for page in pages:
+        html = page.read_text(encoding="utf-8")
+        soup = BeautifulSoup(html, "html.parser")
+        canonical = soup.select_one('link[rel="canonical"]')
+        assert canonical
+        assert canonical["href"].startswith("https://onreason.com/")
+        assert soup.select_one('meta[name="robots"]')["content"] == "index,follow"
+        assert soup.select_one('meta[property="og:title"]')
+        assert soup.select_one('meta[property="og:description"]')
+        assert soup.select_one('meta[property="og:url"]')["content"] == canonical["href"]
+        assert soup.select_one('meta[property="og:image"]')["content"] == "https://onreason.com/assets/evidence-alignment.png"
+        assert soup.select_one('meta[name="twitter:card"]')["content"] == "summary_large_image"
+        assert soup.select_one('script[type="application/ld+json"]')
+
+    sitemap = Path("docs/sitemap.xml").read_text(encoding="utf-8")
+    robots = Path("docs/robots.txt").read_text(encoding="utf-8")
+    assert "https://onreason.com/" in sitemap
+    assert "https://onreason.com/methodology/" in sitemap
+    assert "https://onreason.com/episodes/" in sitemap
+    assert "Sitemap: https://onreason.com/sitemap.xml" in robots
 
 
 def test_public_site_visible_text_has_proper_name_casing():

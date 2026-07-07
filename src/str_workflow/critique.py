@@ -11,6 +11,20 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
+from .seo import (
+    DEFAULT_SOCIAL_IMAGE_ALT,
+    article_schema,
+    breadcrumb_schema,
+    canonical_url,
+    graph_schema,
+    organization_schema,
+    render_seo_head,
+    site_image_url,
+    truncate_description,
+    webpage_schema,
+    website_schema,
+)
+
 DEFAULT_ASSET_VERSION = "20260707-numbered-bars"
 DEFAULT_HERO_IMAGE = "../../assets/evidence-alignment.png"
 DEFAULT_HERO_ALT = "Abstract evidence-alignment illustration with papers, scales, and a magnifying glass."
@@ -570,7 +584,9 @@ def scaffold_spec(episode_dir: Path, source_index_path: Path) -> dict[str, Any]:
         "episode": {
             "title": text(metadata.get("title")) or "Untitled episode",
             "page_title": text(metadata.get("title")) or "Untitled episode",
-            "meta_description": f"A formal critique of the STR episode {text(metadata.get('title')) or 'Untitled episode'}.",
+            "meta_description": truncate_description(
+                f"Evidence-proportionate OnReason critique of the STR episode {text(metadata.get('title')) or 'Untitled episode'}, testing apologetics claims against public evidence."
+            ),
             "pub_date": text(metadata.get("pub_date")),
             "display_date": format_display_date(text(metadata.get("pub_date"))),
             "slug": text(metadata.get("slug")) or slug_from_episode_dir(episode_dir),
@@ -971,6 +987,44 @@ def validate_page(path: Path) -> list[str]:
     for name, needle in checks.items():
         if needle not in html_text:
             errors.append(f"page missing {name}: {needle}")
+    canonical = soup.select_one('link[rel="canonical"]')
+    canonical_href = canonical.get("href", "") if canonical else ""
+    if not canonical_href.startswith("https://onreason.com/episodes/") or not canonical_href.endswith("/"):
+        errors.append("page must include an absolute canonical URL for its OnReason episode path")
+    meta_expectations = {
+        "robots": ('meta[name="robots"]', "index,follow"),
+        "og_type": ('meta[property="og:type"]', "article"),
+        "og_title": ('meta[property="og:title"]', None),
+        "og_description": ('meta[property="og:description"]', None),
+        "og_url": ('meta[property="og:url"]', canonical_href),
+        "og_image": ('meta[property="og:image"]', "https://onreason.com/assets/evidence-alignment.png"),
+        "twitter_card": ('meta[name="twitter:card"]', "summary_large_image"),
+        "twitter_title": ('meta[name="twitter:title"]', None),
+        "twitter_description": ('meta[name="twitter:description"]', None),
+        "twitter_image": ('meta[name="twitter:image"]', "https://onreason.com/assets/evidence-alignment.png"),
+        "article_published_time": ('meta[property="article:published_time"]', None),
+    }
+    for name, (selector, expected) in meta_expectations.items():
+        node = soup.select_one(selector)
+        content = node.get("content", "") if node else ""
+        if not content:
+            errors.append(f"page missing SEO meta tag: {name}")
+        elif expected is not None and content != expected:
+            errors.append(f"page SEO meta tag {name} must be {expected}")
+    json_ld_node = soup.select_one('script[type="application/ld+json"]')
+    if not json_ld_node:
+        errors.append("page must include JSON-LD structured data")
+    else:
+        try:
+            payload = json.loads(json_ld_node.get_text())
+        except json.JSONDecodeError as exc:
+            errors.append(f"page JSON-LD must parse as JSON: {exc}")
+        else:
+            graph = payload.get("@graph", []) if isinstance(payload, dict) else []
+            schema_types = {node.get("@type") for node in graph if isinstance(node, dict)}
+            for required_type in ("Article", "BreadcrumbList", "Organization", "WebPage", "WebSite"):
+                if required_type not in schema_types:
+                    errors.append(f"page JSON-LD must include {required_type} schema")
     prompt_start = html_text.find("The Steelmanned Condensed Claims:")
     prompt_end = html_text.find("Treat the claims above", prompt_start)
     if prompt_start == -1 or prompt_end == -1 or html_text[prompt_start:prompt_end].count("◉") < 5:
@@ -1220,6 +1274,44 @@ def render_critique(spec: dict[str, Any]) -> str:
     episode = spec["episode"]
     css_version = esc(spec.get("asset_version") or DEFAULT_ASSET_VERSION)
     title = text(episode.get("page_title")) or text(episode.get("title"))
+    description = text(episode.get("meta_description")) or text(episode.get("lede"))
+    episode_slug = text(episode.get("slug"))
+    page_url = canonical_url(f"/episodes/{episode_slug}/")
+    document_title = f"{title} | OnReason"
+    social_image = site_image_url()
+    structured_data = graph_schema(
+        [
+            organization_schema(),
+            website_schema(),
+            webpage_schema(document_title, description, page_url, "WebPage"),
+            article_schema(
+                title,
+                description,
+                page_url,
+                text(episode.get("pub_date")),
+                text(episode.get("source_label")),
+                text(episode.get("source_url")),
+                social_image,
+            ),
+            breadcrumb_schema(
+                [
+                    ("Critiques", canonical_url("/")),
+                    (title, page_url),
+                ]
+            ),
+        ]
+    )
+    seo_head = render_seo_head(
+        document_title=document_title,
+        description=description,
+        page_url=page_url,
+        page_type="article",
+        social_title=document_title,
+        image_url=social_image,
+        image_alt=text(episode.get("hero_alt")) or DEFAULT_SOCIAL_IMAGE_ALT,
+        published_date=text(episode.get("pub_date")),
+        structured_data=structured_data,
+    )
     toc_items = [
         ("overview", "Thesis and overview"),
         ("method", "Method"),
@@ -1283,10 +1375,10 @@ def render_critique(spec: dict[str, Any]) -> str:
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{esc(title)} | OnReason</title>
-    <meta name="description" content="{esc(episode.get("meta_description"))}">
+{seo_head}
     <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../../assets/styles.css?v={css_version}">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <script>
       window.MathJax = {{
         tex: {{
