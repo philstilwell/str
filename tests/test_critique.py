@@ -197,6 +197,8 @@ def test_valid_spec_renders_page_with_required_onreason_features(tmp_path):
     assert "The Steelmanned Condensed Claims:" in html
     assert "Diagnostic fit: High" in html
     assert "epistemic-reality" in html
+    assert 'class="link-pill gold"' in html
+    assert "</a>;" not in html
 
 
 def test_validate_spec_rejects_missing_transcript_quote_explanations():

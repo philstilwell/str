@@ -89,6 +89,7 @@ OnReason critique pages are generated from a structured critique spec rather tha
 
    - short transcript quotes with timestamp ranges when possible;
    - Free of Faith / local framework research anchors;
+   - compact research-map anchor pills separated by plain spaces, with no semicolon punctuation between links;
    - an expanded `◉` explanation;
    - a claim/evidence/critique audit table;
    - natural LaTeX formalization;
@@ -125,6 +126,8 @@ OnReason critique pages are generated from a structured critique spec rather tha
    ```
 
 The public page should cite only short excerpts and link back to official STR episode pages. Full transcripts remain local/private unless there is a separate decision to publish them.
+
+Research-map anchor styling is part of the production contract: rendered Free of Faith anchors use compact pill links in the source-map table, and the renderer/validator reject semicolon-separated link markup such as `</a>;`.
 
 ## Quality Gates
 
