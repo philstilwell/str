@@ -19,6 +19,46 @@
         "status": "pending_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/5aa14fbb-118a-367f-b1f6-22dd0cb1f531",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/78th5uw562euqmyx/062426.mp3",
+      "path": "episodes/2026-06-24-who-are-the-least-of-these",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/who-are-the-least-of-these/",
+      "pub_date": "2026-06-24",
+      "slug": "2026-06-24-who-are-the-least-of-these",
+      "title": "Who Are the “Least of These”?",
+      "transcript": {
+        "reason": "No official transcript found and ASR credentials are not configured.",
+        "source": null,
+        "status": "pending_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/4555a721-9fc4-301b-82af-1a9abd2361f8",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/27aaj7iumqarfysb/061726.mp3",
+      "path": "episodes/2026-06-17-why-would-we-matter-to-god",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/why-would-we-matter-to-god/",
+      "pub_date": "2026-06-17",
+      "slug": "2026-06-17-why-would-we-matter-to-god",
+      "title": "Why Would We Matter to God?",
+      "transcript": {
+        "reason": "No official transcript found and ASR credentials are not configured.",
+        "source": null,
+        "status": "pending_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -27,5 +67,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-07-06T19:07:41Z"
+  "updated_at": "2026-07-07T16:41:41Z"
 }
