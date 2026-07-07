@@ -888,40 +888,72 @@ h3 {
 .index-shell {
   max-width: 1160px;
   margin: 0 auto;
-  padding: 64px 28px 90px;
+  padding: 48px 28px 76px;
 }
 
 .index-hero {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
-  gap: 36px;
+  gap: 30px;
   align-items: start;
-  padding-bottom: 42px;
+  padding-bottom: 32px;
   border-bottom: 1px solid var(--line);
 }
 
 .index-hero h1 {
-  font-size: 58px;
+  font-size: 44px;
+}
+
+.index-hero .lede {
+  max-width: 690px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.episode-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 22px;
 }
 
 .episode-card {
   display: grid;
-  gap: 18px;
-  margin-top: 30px;
-  padding: 24px;
+  gap: 10px;
+  margin-top: 0;
+  padding: 18px 20px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: #fff;
 }
 
+.episode-card .date {
+  margin-bottom: 2px;
+  font-size: 11px;
+}
+
 .episode-card h2 {
   margin-bottom: 0;
+  font-size: 25px;
+}
+
+.episode-card p:not(.date) {
+  margin: 0;
+  color: #303731;
+  font-size: 14px;
+  line-height: 1.45;
 }
 
 .episode-card .actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.episode-card .primary-link {
+  min-height: 32px;
+  padding: 6px 11px;
+  font-size: 12px;
 }
 
 @media (max-width: 1180px) {
@@ -934,7 +966,7 @@ h3 {
   }
 
   .index-hero h1 {
-    font-size: 50px;
+    font-size: 40px;
   }
 
   .page-shell {
@@ -972,7 +1004,7 @@ h3 {
   }
 
   .index-hero h1 {
-    font-size: 38px;
+    font-size: 32px;
   }
 
   .site-header,
