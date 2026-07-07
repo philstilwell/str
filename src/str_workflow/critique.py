@@ -11,7 +11,7 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
-DEFAULT_ASSET_VERSION = "20260707-toc-active"
+DEFAULT_ASSET_VERSION = "20260707-numbered-bars"
 DEFAULT_HERO_IMAGE = "../../assets/evidence-alignment.png"
 DEFAULT_HERO_ALT = "Abstract evidence-alignment illustration with papers, scales, and a magnifying glass."
 
@@ -774,6 +774,7 @@ def validate_page(path: Path) -> list[str]:
         "epistemic_reality": "epistemic-reality",
         "ai_prompt": "The Steelmanned Condensed Claims:",
         "symbols": "✶",
+        "numbered_kicker_bar": "numbered-kicker",
     }
     for name, needle in checks.items():
         if needle not in html_text:
@@ -803,6 +804,16 @@ def validate_page(path: Path) -> list[str]:
         errors.append("page must include expanded ◉ notes and prompt bullets")
     if html_text.count("<q>") < 8:
         errors.append("page must include short direct quotes tied to transcript claims")
+    kickers = soup.select(".section-kicker")
+    numbered_kickers = [node for node in kickers if re.match(r"^\d+\.\s+", node.get_text(" ", strip=True))]
+    if len(numbered_kickers) < 3:
+        errors.append("page must include numbered critique section kickers")
+    for node in numbered_kickers:
+        if "numbered-kicker" not in node.get("class", []):
+            errors.append(f"numbered section kicker must use dark bar class: {node.get_text(' ', strip=True)}")
+    for node in soup.select(".section-kicker.numbered-kicker"):
+        if not re.match(r"^\d+\.\s+", node.get_text(" ", strip=True)):
+            errors.append(f"only numbered section kickers may use dark bar class: {node.get_text(' ', strip=True)}")
     if "https://freeoffaith.com/" not in html_text:
         errors.append("page must reference Free of Faith research anchors")
     if "https://logfall.com/" not in html_text:
@@ -1227,7 +1238,7 @@ def render_section(section: dict[str, Any]) -> str:
         for tag in section.get("tags", [])
     )
     return f"""          <section class="section-panel" id="{esc(section.get("id"))}">
-            <p class="section-kicker">{esc(section.get("kicker"))}</p>
+            <p class="section-kicker numbered-kicker">{esc(section.get("kicker"))}</p>
             <h2>{esc(section.get("title"))}</h2>
 {paragraphs}
             <div class="research-anchors" aria-label="{esc(section.get("label"))} research anchors">

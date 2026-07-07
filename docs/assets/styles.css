@@ -433,6 +433,16 @@ h3 {
   padding: 28px;
 }
 
+.section-panel > .section-kicker.numbered-kicker {
+  max-width: none;
+  margin: -28px -28px 22px;
+  padding: 13px 28px 14px;
+  color: #f3f7f2;
+  border-bottom: 1px solid #263a30;
+  border-radius: 7px 7px 0 0;
+  background: #111a15;
+}
+
 .section-panel > p {
   max-width: 880px;
 }

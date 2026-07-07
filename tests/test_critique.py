@@ -215,7 +215,10 @@ def test_valid_spec_renders_page_with_required_onreason_features(tmp_path):
     assert "</a>;" not in html
     assert 'class="episode-nav-link previous"' in html
     assert 'href="../2026-07-08-test-episode/"' in html
-    assert "app.js?v=20260707-toc-active" in html
+    assert '<p class="section-kicker numbered-kicker">1. Worldview scope</p>' in html
+    assert '<p class="section-kicker">Critique Framework</p>' in html
+    assert '<p class="section-kicker numbered-kicker">Critique Framework</p>' not in html
+    assert "app.js?v=20260707-numbered-bars" in html
 
 
 def test_validate_spec_rejects_missing_transcript_quote_explanations():
@@ -346,6 +349,14 @@ def test_current_contents_style_uses_lower_roman_markers():
     styles = Path("docs/assets/styles.css").read_text(encoding="utf-8")
 
     assert "list-style-type: lower-roman;" in styles
+
+
+def test_numbered_section_kickers_use_dark_container_bar_contract():
+    styles = Path("docs/assets/styles.css").read_text(encoding="utf-8")
+
+    assert ".section-panel > .section-kicker.numbered-kicker" in styles
+    assert "background: #111a15;" in styles
+    assert "color: #f3f7f2;" in styles
 
 
 def test_contents_menu_has_active_scroll_state_contract():
