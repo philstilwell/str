@@ -746,10 +746,13 @@ h3 {
 }
 
 .prompt-text {
-  max-height: 520px;
+  max-height: 340px;
   overflow: auto;
   margin: 0;
-  padding: 18px;
+  padding: 16px;
+  background: #f0f2ef;
+  font-size: 13px;
+  line-height: 1.5;
   white-space: pre-wrap;
 }
 
