@@ -92,6 +92,10 @@ def valid_spec() -> dict:
             "transcript_source": "Private ASR transcript generated locally.",
             "lede": "This critique tests whether confidence remains proportionate to evidence.",
         },
+        "episode_nav": {
+            "previous": {"title": "Older Test Episode", "url": "../2026-06-24-test-episode/"},
+            "next": {"title": "Newer Test Episode", "url": "../2026-07-08-test-episode/"},
+        },
         "quote_strip": [
             {"quote": "big enough worldview", "label": "Scope claim"},
             {"quote": "Christ is risen", "label": "Hope claim"},
@@ -199,6 +203,8 @@ def test_valid_spec_renders_page_with_required_onreason_features(tmp_path):
     assert "epistemic-reality" in html
     assert 'class="link-pill gold"' in html
     assert "</a>;" not in html
+    assert 'class="episode-nav-link previous"' in html
+    assert 'href="../2026-07-08-test-episode/"' in html
 
 
 def test_validate_spec_rejects_missing_transcript_quote_explanations():

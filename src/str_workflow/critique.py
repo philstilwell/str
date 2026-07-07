@@ -9,7 +9,7 @@ from datetime import date
 from pathlib import Path
 from typing import Any
 
-DEFAULT_ASSET_VERSION = "20260707-audit"
+DEFAULT_ASSET_VERSION = "20260707-nav"
 DEFAULT_HERO_IMAGE = "../../assets/evidence-alignment.png"
 DEFAULT_HERO_ALT = "Abstract evidence-alignment illustration with papers, scales, and a magnifying glass."
 
@@ -341,6 +341,16 @@ def scaffold_spec(episode_dir: Path, source_index_path: Path) -> dict[str, Any]:
             "hero_image": DEFAULT_HERO_IMAGE,
             "hero_alt": DEFAULT_HERO_ALT,
         },
+        "episode_nav": {
+            "previous": {
+                "title": "TODO previous older critique title, or set this value to null for the oldest critique",
+                "url": "TODO relative URL to previous older critique",
+            },
+            "next": {
+                "title": "TODO next newer critique title, or set this value to null for the newest critique",
+                "url": "TODO relative URL to next newer critique",
+            },
+        },
         "quote_strip": [
             {"quote": item["quote"], "label": section["label"]}
             for section in sections
@@ -432,6 +442,25 @@ def validate_spec(spec: dict[str, Any]) -> list[str]:
     episode = spec.get("episode") if isinstance(spec.get("episode"), dict) else {}
     for key in ("title", "pub_date", "display_date", "slug", "source_url", "speaker", "transcript_source", "lede"):
         required(episode, key, "episode", errors)
+
+    episode_nav = spec.get("episode_nav")
+    if not isinstance(episode_nav, dict):
+        errors.append("episode_nav must define previous and next critique links")
+    else:
+        linked_nav_items = 0
+        for key in ("previous", "next"):
+            item = episode_nav.get(key)
+            if item is None:
+                continue
+            if not isinstance(item, dict):
+                errors.append(f"episode_nav.{key} must be an object or null")
+                continue
+            required(item, "title", f"episode_nav.{key}", errors)
+            required(item, "url", f"episode_nav.{key}", errors)
+            if text(item.get("url")) and not text(item.get("url")).startswith("TODO"):
+                linked_nav_items += 1
+        if linked_nav_items == 0:
+            errors.append("episode_nav must include at least one linked adjacent critique")
 
     methods = spec.get("methods")
     if not isinstance(methods, list) or len(methods) < 4:
@@ -547,6 +576,7 @@ def validate_page(path: Path) -> list[str]:
         "transcript_anchors": "transcript-anchors",
         "quote_anchor_grid": "quote-anchor-grid",
         "research_anchors": "research-anchors",
+        "episode_nav": "episode-nav-band",
         "tag_explainers": "tag-explainer",
         "diagnostic_fit": "Diagnostic fit:",
         "formal_latex": "\\[",
@@ -563,6 +593,11 @@ def validate_page(path: Path) -> list[str]:
         errors.append("page AI prompt must include at least five steelmanned condensed claims")
     if "ALL-CAPS" not in html_text:
         errors.append("page AI prompt must instruct ALL-CAPS major section headers")
+    if "episode-nav-link" not in html_text:
+        errors.append("page must include at least one linked previous/next critique control")
+    nav_controls = html_text.count("episode-nav-link") + html_text.count("episode-nav-disabled")
+    if nav_controls < 2:
+        errors.append("page must include previous and next critique controls")
     if "</a>;" in html_text:
         errors.append("page research links must use space separators instead of semicolons")
     if html_text.count("transcript-anchors") < 4:
@@ -589,6 +624,21 @@ def validate_page(path: Path) -> list[str]:
 def anchor_html(anchor: dict[str, Any]) -> str:
     tone = text(anchor.get("tone")) or "gold"
     return f'<a class="link-pill {esc(tone)}" href="{esc(anchor.get("url"))}">{esc(anchor.get("label"))}</a>'
+
+
+def episode_nav_control(item: Any, key: str) -> str:
+    label = "Previous" if key == "previous" else "Next"
+    if isinstance(item, dict) and text(item.get("url")):
+        title = text(item.get("title")) or f"{label} critique"
+        return (
+            f'<a class="episode-nav-link {esc(key)}" href="{esc(item.get("url"))}" '
+            f'aria-label="{esc(label)} critique: {esc(title)}" title="{esc(title)}">'
+            f'<span>{esc(label)}</span></a>'
+        )
+    return (
+        f'<span class="episode-nav-disabled {esc(key)}" aria-disabled="true">'
+        f'<span>{esc(label)}</span></span>'
+    )
 
 
 def paragraph_html(item: Any) -> str:
@@ -708,6 +758,9 @@ def render_critique(spec: dict[str, Any]) -> str:
         )
 
     section_html = "\n".join(render_section(section) for section in spec["sections"])
+    episode_nav = spec.get("episode_nav", {})
+    previous_nav = episode_nav_control(episode_nav.get("previous"), "previous")
+    next_nav = episode_nav_control(episode_nav.get("next"), "next")
     prompt = build_ai_prompt(spec)
     source_items = "\n".join(
         f'              <li><a href="{esc(item.get("url"))}">{esc(item.get("label"))}</a>.</li>'
@@ -780,6 +833,11 @@ def render_critique(spec: dict[str, Any]) -> str:
 
       <main class="article">
         <article>
+          <nav class="episode-nav-band" aria-label="Adjacent episode critiques">
+            {previous_nav}
+            {next_nav}
+          </nav>
+
           <header class="article-header" id="overview">
             <div>
               <p class="date">{esc(episode.get("display_date"))}</p>

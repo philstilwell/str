@@ -88,6 +88,7 @@ OnReason critique pages are generated from a structured critique spec rather tha
 4. Fill every `TODO` in `critique-draft.json`. Each substantive section must include:
 
    - short transcript quotes with timestamp ranges when possible;
+   - an `episode_nav` block whose `previous` link points to the older adjacent critique and whose `next` link points to the newer adjacent critique, using `null` only at the oldest/newest endpoints;
    - Free of Faith / local framework research anchors;
    - compact research-map anchor pills separated by plain spaces, with no semicolon punctuation between links;
    - an expanded `◉` explanation;
