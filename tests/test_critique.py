@@ -228,6 +228,8 @@ def test_valid_spec_renders_page_with_required_onreason_features(tmp_path):
     assert "epistemic-reality" in html
     assert 'class="link-pill gold"' in html
     assert "</a>;" not in html
+    assert "OnReason source index" not in html
+    assert "github.com/philstilwell/str/blob/main/research/source-index" not in html
     assert 'class="episode-nav-link previous"' in html
     assert 'href="../2026-07-08-test-episode/"' in html
     assert '<p class="section-kicker numbered-kicker">1. Worldview scope</p>' in html
@@ -302,6 +304,28 @@ def test_validate_spec_rejects_shallow_critique_depth_fields():
     assert any("steelman_claims must be developed" in error for error in errors)
 
 
+def test_validate_spec_rejects_public_source_index_links():
+    spec = valid_spec()
+    weak = copy.deepcopy(spec)
+    weak["sections"][0]["research_anchors"].append(
+        {
+            "label": "OnReason source index",
+            "url": "https://github.com/philstilwell/str/blob/main/research/source-index.json",
+            "tone": "blue",
+        }
+    )
+    weak["source_list"].append(
+        {
+            "label": "OnReason source index",
+            "url": "https://github.com/philstilwell/str/blob/main/research/source-index.json",
+        }
+    )
+
+    errors = validate_spec(weak)
+
+    assert any("must not expose the private OnReason source index" in error for error in errors)
+
+
 def test_validate_page_rejects_stale_boilerplate_phrase(tmp_path):
     spec = valid_spec()
     page = tmp_path / "index.html"
@@ -315,6 +339,25 @@ def test_validate_page_rejects_stale_boilerplate_phrase(tmp_path):
     errors = validate_page(page)
 
     assert any("page contains boilerplate phrase" in error for error in errors)
+
+
+def test_validate_page_rejects_public_source_index_links(tmp_path):
+    spec = valid_spec()
+    page = tmp_path / "index.html"
+    html = render_critique(spec).replace(
+        "Free of Faith Insights archive",
+        "OnReason source index",
+        1,
+    ).replace(
+        "https://freeoffaith.com/category/insights/",
+        "https://github.com/philstilwell/str/blob/main/research/source-index.json",
+        1,
+    )
+    page.write_text(html, encoding="utf-8")
+
+    errors = validate_page(page)
+
+    assert any("must not expose the private OnReason source index" in error for error in errors)
 
 
 def test_scaffold_uses_metadata_transcript_chunks_and_source_index(tmp_path):
@@ -373,6 +416,7 @@ def test_scaffold_uses_metadata_transcript_chunks_and_source_index(tmp_path):
     assert spec["sections"][0]["transcript"]["range"] == "00:00:00-00:01:00"
     assert spec["sections"][0]["transcript"]["quotes"][0]["quote"].startswith("Genuine Christianity")
     assert spec["sections"][0]["research_anchors"][0]["url"] == "https://freeoffaith.com/2024/11/11/21/"
+    assert all(item["label"] != "OnReason source index" for item in spec["source_list"])
     assert any("TODO" in error for error in validate_spec(spec))
 
 

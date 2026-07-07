@@ -68,6 +68,11 @@ MIN_TAG_APPLICATION_WORDS = 8
 MIN_FORMAL_ASSESSMENT_WORDS = 16
 MIN_EVIDENCE_CELL_WORDS = 12
 MIN_PROMPT_CHARS = 3000
+PRIVATE_SOURCE_INDEX_URL_PATTERNS = (
+    "github.com/philstilwell/str/blob/main/research/source-index",
+    "github.com/philstilwell/str/raw/main/research/source-index",
+)
+PRIVATE_SOURCE_INDEX_LABEL = "OnReason source index"
 
 DEFAULT_METHODS = [
     {
@@ -213,6 +218,28 @@ def normalized_content(value: Any) -> str:
 
 def word_count(value: Any) -> int:
     return len(re.findall(r"\S+", normalized_content(value)))
+
+
+def is_private_source_index_url(value: Any) -> bool:
+    candidate = normalized_content(value).lower()
+    return any(pattern in candidate for pattern in PRIVATE_SOURCE_INDEX_URL_PATTERNS)
+
+
+def visible_url_errors(value: Any, path: str) -> list[str]:
+    errors: list[str] = []
+    if isinstance(value, dict):
+        url = value.get("url")
+        if url and is_private_source_index_url(url):
+            errors.append(f"{path}.url must not expose the private OnReason source index")
+        label = normalized_content(value.get("label"))
+        if label == PRIVATE_SOURCE_INDEX_LABEL:
+            errors.append(f"{path}.label must not expose the private OnReason source index")
+        for key, child in value.items():
+            errors.extend(visible_url_errors(child, f"{path}.{key}"))
+    elif isinstance(value, list):
+        for index, child in enumerate(value, start=1):
+            errors.extend(visible_url_errors(child, f"{path}[{index}]"))
+    return errors
 
 
 def boilerplate_hits(value: Any) -> list[str]:
@@ -561,7 +588,6 @@ def scaffold_spec(episode_dir: Path, source_index_path: Path) -> dict[str, Any]:
             {"label": "Official STR / Podbean episode page", "url": text(metadata.get("podcast_page_url"))},
             {"label": "Free of Faith Insights archive", "url": "https://freeoffaith.com/category/insights/"},
             {"label": "Free of Faith Considerations archive", "url": "https://freeoffaith.com/category/considerations/"},
-            {"label": "OnReason source index", "url": "https://github.com/philstilwell/str/blob/main/research/source-index.json"},
         ],
         "rail": {
             "status": "TODO draft status and transcript timing note.",
@@ -579,6 +605,7 @@ def scaffold_spec(episode_dir: Path, source_index_path: Path) -> dict[str, Any]:
 
 def validate_spec(spec: dict[str, Any]) -> list[str]:
     errors: list[str] = []
+    errors.extend(visible_url_errors(spec, "spec"))
     episode = spec.get("episode") if isinstance(spec.get("episode"), dict) else {}
     for key in ("title", "pub_date", "display_date", "slug", "source_url", "speaker", "transcript_source", "lede"):
         required(episode, key, "episode", errors)
@@ -835,6 +862,7 @@ def page_explanatory_texts(soup: BeautifulSoup) -> list[tuple[str, str]]:
 def validate_page(path: Path) -> list[str]:
     html_text = path.read_text(encoding="utf-8")
     soup = BeautifulSoup(html_text, "html.parser")
+    visible_text = normalized_content(soup.get_text(" ", strip=True))
     errors: list[str] = []
     checks = {
         "brand": "OnReason",
@@ -867,6 +895,12 @@ def validate_page(path: Path) -> list[str]:
         errors.append("page AI prompt must instruct ALL-CAPS major section headers")
     if "episode-nav-link" not in html_text:
         errors.append("page must include at least one linked previous/next critique control")
+    for anchor in soup.select("a[href]"):
+        href = anchor.get("href")
+        if is_private_source_index_url(href):
+            errors.append("page must not expose the private OnReason source index as a public link")
+    if PRIVATE_SOURCE_INDEX_LABEL in visible_text:
+        errors.append("page must not display the private OnReason source index label")
     nav_controls = html_text.count("episode-nav-link") + html_text.count("episode-nav-disabled")
     if nav_controls < 2:
         errors.append("page must include previous and next critique controls")
@@ -931,7 +965,6 @@ def validate_page(path: Path) -> list[str]:
         errors.append("page must link fallacies to LogFall")
     if "https://cogbias.site/" not in html_text:
         errors.append("page must link biases to CogBias")
-    visible_text = normalized_content(soup.get_text(" ", strip=True))
     if "..." in visible_text:
         errors.append("page contains a mechanical ellipsis artifact")
     for phrase in boilerplate_hits(visible_text):
@@ -1401,7 +1434,7 @@ def drafting_prompt(spec: dict[str, Any]) -> str:
 
         Episode: {spec.get("episode", {}).get("title")}
 
-        Fill every TODO in critique-draft.json. Keep direct transcript quotes short, include timestamp ranges when possible, and ground every section in Free of Faith Insights/Considerations plus local framework anchors from research/source-index.json.
+        Fill every TODO in critique-draft.json. Keep direct transcript quotes short, include timestamp ranges when possible, and ground every section in Free of Faith Insights/Considerations plus local framework anchors drawn from the private research/source-index.json file. Do not expose that local source index as a public link or visible source.
 
         The AI prompt must include steelmanned claims actually made in the transcript. Current scaffold claims:
         {claims}
