@@ -9,7 +9,7 @@ from datetime import date
 from pathlib import Path
 from typing import Any
 
-DEFAULT_ASSET_VERSION = "20260707-nav"
+DEFAULT_ASSET_VERSION = "20260707-toc-active"
 DEFAULT_HERO_IMAGE = "../../assets/evidence-alignment.png"
 DEFAULT_HERO_ALT = "Abstract evidence-alignment illustration with papers, scales, and a magnifying glass."
 
@@ -577,6 +577,7 @@ def validate_page(path: Path) -> list[str]:
         "quote_anchor_grid": "quote-anchor-grid",
         "research_anchors": "research-anchors",
         "episode_nav": "episode-nav-band",
+        "toc_active_script": f"app.js?v={DEFAULT_ASSET_VERSION}",
         "tag_explainers": "tag-explainer",
         "diagnostic_fit": "Diagnostic fit:",
         "formal_latex": "\\[",

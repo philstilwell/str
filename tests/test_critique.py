@@ -205,6 +205,7 @@ def test_valid_spec_renders_page_with_required_onreason_features(tmp_path):
     assert "</a>;" not in html
     assert 'class="episode-nav-link previous"' in html
     assert 'href="../2026-07-08-test-episode/"' in html
+    assert "app.js?v=20260707-toc-active" in html
 
 
 def test_validate_spec_rejects_missing_transcript_quote_explanations():
@@ -290,3 +291,13 @@ def test_current_contents_style_uses_lower_roman_markers():
     styles = Path("docs/assets/styles.css").read_text(encoding="utf-8")
 
     assert "list-style-type: lower-roman;" in styles
+
+
+def test_contents_menu_has_active_scroll_state_contract():
+    styles = Path("docs/assets/styles.css").read_text(encoding="utf-8")
+    script = Path("docs/assets/app.js").read_text(encoding="utf-8")
+
+    assert ".toc li.is-active" in styles
+    assert '.toc a[aria-current="location"]' in styles
+    assert "syncActiveTocItem" in script
+    assert 'aria-current", "location"' in script

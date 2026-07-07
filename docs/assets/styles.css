@@ -195,13 +195,41 @@ img {
   font-size: 14px;
 }
 
+.toc li {
+  transition: color 160ms ease;
+}
+
+.toc li::marker {
+  transition: color 160ms ease;
+}
+
+.toc li.is-active {
+  color: var(--green);
+}
+
+.toc li.is-active::marker {
+  color: var(--gold);
+}
+
 .toc a {
+  display: block;
+  margin-left: -6px;
+  padding: 3px 6px 4px;
+  border-radius: 6px;
   color: inherit;
   text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease;
 }
 
 .toc a:hover {
   color: var(--green);
+}
+
+.toc a.is-active,
+.toc a[aria-current="location"] {
+  background: #edf5f0;
+  color: var(--green);
+  font-weight: 700;
 }
 
 .article {
