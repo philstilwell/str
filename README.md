@@ -60,12 +60,72 @@ corpus/
 
 `transcript.json` stores chunk-level timestamps and model metadata. `transcript.md` is the human-readable version.
 
-## Planned GitHub Pages Layer
+## Critique Production Workflow
 
-The next layer can publish argument critique pages generated from the corpus without publishing raw copyrighted transcripts. A good split is:
+OnReason critique pages are generated from a structured critique spec rather than assembled ad hoc. The hardened path is:
 
-- Keep full transcripts private in `corpus/`.
-- Generate public critique artifacts into `site/` or `docs/`.
-- Cite short excerpts only where needed and link back to official STR episode pages.
-- Add review status fields so critiques can distinguish machine-generated drafts from human-reviewed arguments.
+1. Ingest the episode metadata/transcript:
 
+   ```bash
+   python -m str_workflow.ingest --max-new 1 --transcribe auto
+   ```
+
+2. Refresh the compact research map when Free of Faith or local framework sources have changed:
+
+   ```bash
+   python3 tools/build_source_index.py
+   ```
+
+3. Scaffold a local critique draft from the transcript and source index:
+
+   ```bash
+   python -m str_workflow.critique scaffold \
+     --episode-dir corpus/episodes/YYYY-MM-DD-episode-slug
+   ```
+
+   This writes a local draft packet under `output/critique-drafts/`. The `output/` directory is ignored so transcript-derived working files do not become public by accident.
+
+4. Fill every `TODO` in `critique-draft.json`. Each substantive section must include:
+
+   - short transcript quotes with timestamp ranges when possible;
+   - Free of Faith / local framework research anchors;
+   - an expanded `◉` explanation;
+   - a claim/evidence/critique audit table;
+   - natural LaTeX formalization;
+   - LogFall and CogBias diagnostic cards that explain how the tag applies to specific transcript claims;
+   - evidence-needed calibration tests;
+   - a steelmanned AI prompt whose claims are actually grounded in the transcript.
+
+5. Validate the spec before rendering:
+
+   ```bash
+   python -m str_workflow.critique validate \
+     --spec output/critique-drafts/YYYY-MM-DD-episode-slug/critique-draft.json
+   ```
+
+6. Render the public page:
+
+   ```bash
+   python -m str_workflow.critique render \
+     --spec output/critique-drafts/YYYY-MM-DD-episode-slug/critique-draft.json \
+     --out docs/episodes/YYYY-MM-DD-episode-slug/index.html
+   ```
+
+7. Validate the rendered page:
+
+   ```bash
+   python -m str_workflow.critique validate-page \
+     --page docs/episodes/YYYY-MM-DD-episode-slug/index.html
+   ```
+
+8. Run the full test suite:
+
+   ```bash
+   pytest
+   ```
+
+The public page should cite only short excerpts and link back to official STR episode pages. Full transcripts remain local/private unless there is a separate decision to publish them.
+
+## Quality Gates
+
+The `Validate OnReason workflow` GitHub Action runs the Python tests on push and pull request. The tests check RSS ingest helpers, critique spec validation, HTML generation, and the current public page's required features.

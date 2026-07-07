@@ -8,6 +8,7 @@ __pycache__/
 # Keep downloaded audio out of git. The workflow stores metadata/transcripts only.
 downloads/
 tmp/
+output/
 *.mp3
 *.m4a
 *.wav
