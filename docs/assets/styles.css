@@ -643,33 +643,33 @@ h3 {
 
 .severity {
   justify-self: start;
-  padding: 2px 7px;
+  padding: 2px 6px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  color: var(--muted);
+  color: #6f7670;
   background: #fff;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
   line-height: 1.35;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .severity.high {
   border-color: #e0aaa5;
-  color: var(--red);
+  color: #6f7670;
   background: var(--red-soft);
 }
 
 .severity.moderate {
   border-color: #ecd099;
-  color: var(--gold);
+  color: #6f7670;
   background: var(--gold-soft);
 }
 
 .severity.tentative {
   border-color: #bdd1e4;
-  color: var(--blue);
+  color: #6f7670;
   background: var(--blue-soft);
 }
 
