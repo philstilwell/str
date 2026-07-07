@@ -9,9 +9,20 @@ from datetime import date
 from pathlib import Path
 from typing import Any
 
+from bs4 import BeautifulSoup
+
 DEFAULT_ASSET_VERSION = "20260707-toc-active"
 DEFAULT_HERO_IMAGE = "../../assets/evidence-alignment.png"
 DEFAULT_HERO_ALT = "Abstract evidence-alignment illustration with papers, scales, and a magnifying glass."
+
+BOILERPLATE_EVIDENCE_PHRASES = [
+    "Clear comparative evidence, independent warrant, and explicit treatment of rival explanations.",
+    "More assertion, analogy, proof-texting, or pastoral usefulness without a public evidence bridge.",
+    "A comparative argument that shows why this reading or moral distinction better explains",
+    "More insider assertion, analogy, or selective proof-texting without a public warrant bridge.",
+    "TODO evidence that would raise confidence",
+    "TODO evidence that would lower confidence",
+]
 
 DEFAULT_METHODS = [
     {
@@ -552,6 +563,31 @@ def validate_spec(spec: dict[str, Any]) -> list[str]:
     evidence_needed = spec.get("evidence_needed")
     if not isinstance(evidence_needed, list) or len(evidence_needed) < len(sections):
         errors.append("evidence_needed must include calibration tests for each critique section")
+    else:
+        raise_texts = []
+        lower_texts = []
+        for index, row in enumerate(evidence_needed, start=1):
+            if not isinstance(row, dict):
+                errors.append(f"evidence_needed[{index}] must be an object")
+                continue
+            area = required(row, "area", f"evidence_needed[{index}]", errors)
+            raise_text = required(row, "raise", f"evidence_needed[{index}]", errors)
+            lower_text = required(row, "lower", f"evidence_needed[{index}]", errors)
+            for field_name, value in (("raise", raise_text), ("lower", lower_text)):
+                if any(phrase in value for phrase in BOILERPLATE_EVIDENCE_PHRASES):
+                    errors.append(f"evidence_needed[{index}].{field_name} must be customized, not boilerplate")
+                if value and len(value.split()) < 9:
+                    errors.append(f"evidence_needed[{index}].{field_name} is too brief to be a useful calibration test")
+                if value.startswith("TODO"):
+                    errors.append(f"evidence_needed[{index}].{field_name} still contains a TODO placeholder")
+            if area and raise_text:
+                raise_texts.append(raise_text)
+            if area and lower_text:
+                lower_texts.append(lower_text)
+        if len(set(raise_texts)) != len(raise_texts):
+            errors.append("evidence_needed.raise entries must be section-specific, not repeated boilerplate")
+        if len(set(lower_texts)) != len(lower_texts):
+            errors.append("evidence_needed.lower entries must be section-specific, not repeated boilerplate")
 
     ai_prompt = spec.get("ai_prompt") if isinstance(spec.get("ai_prompt"), dict) else {}
     claims = ai_prompt.get("steelman_claims")
@@ -568,6 +604,7 @@ def validate_spec(spec: dict[str, Any]) -> list[str]:
 
 def validate_page(path: Path) -> list[str]:
     html_text = path.read_text(encoding="utf-8")
+    soup = BeautifulSoup(html_text, "html.parser")
     errors: list[str] = []
     checks = {
         "brand": "OnReason",
@@ -619,6 +656,28 @@ def validate_page(path: Path) -> list[str]:
         errors.append("page must link fallacies to LogFall")
     if "https://cogbias.site/" not in html_text:
         errors.append("page must link biases to CogBias")
+    evidence_rows = [
+        [cell.get_text(" ", strip=True) for cell in row.select("td")]
+        for row in soup.select("#evidence-needed table tbody tr")
+    ]
+    if len(evidence_rows) < 3:
+        errors.append("page evidence-needed table must include multiple calibration rows")
+    else:
+        raise_texts = [row[1] for row in evidence_rows if len(row) >= 3]
+        lower_texts = [row[2] for row in evidence_rows if len(row) >= 3]
+        if len(set(raise_texts)) != len(raise_texts):
+            errors.append("page evidence-needed raise entries must be section-specific, not repeated boilerplate")
+        if len(set(lower_texts)) != len(lower_texts):
+            errors.append("page evidence-needed lower entries must be section-specific, not repeated boilerplate")
+        for row_index, row in enumerate(evidence_rows, start=1):
+            if len(row) < 3:
+                errors.append(f"page evidence-needed row {row_index} must include area, raise, and lower cells")
+                continue
+            for field_name, value in (("raise", row[1]), ("lower", row[2])):
+                if any(phrase in value for phrase in BOILERPLATE_EVIDENCE_PHRASES):
+                    errors.append(f"page evidence-needed row {row_index} {field_name} cell must be customized")
+                if len(value.split()) < 9:
+                    errors.append(f"page evidence-needed row {row_index} {field_name} cell is too brief")
     return errors
 
 

@@ -95,7 +95,7 @@ OnReason critique pages are generated from a structured critique spec rather tha
    - a claim/evidence/critique audit table;
    - natural LaTeX formalization;
    - LogFall and CogBias diagnostic cards that explain how the tag applies to specific transcript claims;
-   - evidence-needed calibration tests;
+   - evidence-needed calibration tests customized to each section's claim, with distinct criteria for what would raise or lower confidence;
    - a steelmanned AI prompt whose claims are actually grounded in the transcript.
 
 5. Validate the spec before rendering:

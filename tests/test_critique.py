@@ -150,7 +150,17 @@ def valid_spec() -> dict:
             },
         },
         "evidence_needed": [
-            {"area": section["label"], "raise": "Comparative evidence.", "lower": "More assertion without warrant."}
+            {
+                "area": section["label"],
+                "raise": (
+                    f"Transcript-specific evidence that the {section['label'].lower()} claim predicts or "
+                    "explains the cited examples better than live alternatives."
+                ),
+                "lower": (
+                    f"More reliance on {section['label'].lower()} assertion without comparing rival "
+                    "explanations or naming a public warrant bridge."
+                ),
+            }
             for section in sections
         ],
         "ai_prompt": {
@@ -218,6 +228,20 @@ def test_validate_spec_rejects_missing_transcript_quote_explanations():
 
     assert any("transcript.quotes" in error for error in errors)
     assert any("tags[1].application" in error for error in errors)
+
+
+def test_validate_spec_rejects_boilerplate_evidence_needed_rows():
+    spec = valid_spec()
+    weak = copy.deepcopy(spec)
+    for row in weak["evidence_needed"]:
+        row["raise"] = "Clear comparative evidence, independent warrant, and explicit treatment of rival explanations."
+        row["lower"] = "More assertion, analogy, proof-texting, or pastoral usefulness without a public evidence bridge."
+
+    errors = validate_spec(weak)
+
+    assert any("evidence_needed.raise entries" in error for error in errors)
+    assert any("evidence_needed.lower entries" in error for error in errors)
+    assert any("must be customized" in error for error in errors)
 
 
 def test_scaffold_uses_metadata_transcript_chunks_and_source_index(tmp_path):
