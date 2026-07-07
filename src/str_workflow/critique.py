@@ -557,8 +557,16 @@ def validate_page(path: Path) -> list[str]:
     for name, needle in checks.items():
         if needle not in html_text:
             errors.append(f"page missing {name}: {needle}")
-    if html_text.count("transcript-anchors") < 3:
-        errors.append("page must include transcript anchors for at least three sections")
+    prompt_start = html_text.find("The Steelmanned Condensed Claims:")
+    prompt_end = html_text.find("Treat the claims above", prompt_start)
+    if prompt_start == -1 or prompt_end == -1 or html_text[prompt_start:prompt_end].count("◉") < 5:
+        errors.append("page AI prompt must include at least five steelmanned condensed claims")
+    if "ALL-CAPS" not in html_text:
+        errors.append("page AI prompt must instruct ALL-CAPS major section headers")
+    if html_text.count("transcript-anchors") < 4:
+        errors.append("page must include transcript anchors for at least four substantive sections")
+    if html_text.count('class="note"') < html_text.count("transcript-anchors"):
+        errors.append("page must include an expanded ◉ note for each substantive critique section")
     if html_text.count("tag-explainer") < 6:
         errors.append("page must include multiple fallacy/bias explanation cards")
     if html_text.count("Diagnostic fit:") < 6:

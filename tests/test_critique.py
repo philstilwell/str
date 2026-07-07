@@ -270,10 +270,12 @@ def test_scaffold_uses_metadata_transcript_chunks_and_source_index(tmp_path):
     assert any("TODO" in error for error in validate_spec(spec))
 
 
-def test_current_public_page_passes_quality_gate():
-    page = Path("docs/episodes/2026-07-01-cultivating-a-big-enough-worldview-in-students/index.html")
+def test_public_episode_pages_pass_quality_gate():
+    pages = sorted(Path("docs/episodes").glob("*/index.html"))
 
-    assert validate_page(page) == []
+    assert len(pages) >= 10
+    for page in pages:
+        assert validate_page(page) == []
 
 
 def test_current_contents_style_uses_lower_roman_markers():
