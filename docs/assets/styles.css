@@ -313,6 +313,8 @@ h3 {
 .formal-block,
 .source-list,
 .research-anchors,
+.transcript-anchors,
+.tag-explainer,
 .status-card {
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -490,6 +492,72 @@ h3 {
 
 .source-note {
   flex-basis: 100%;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.transcript-anchors {
+  display: grid;
+  gap: 8px;
+  margin: 18px 0;
+  padding: 14px;
+  background: #f8faf8;
+}
+
+.anchor-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.anchor-head strong {
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.anchor-head span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.transcript-anchors p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.transcript-anchors q {
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.tag-explainers {
+  align-items: stretch;
+}
+
+.tag-explainer {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  padding: 12px;
+  background: #fbfcfb;
+}
+
+.tag-explainer .link-pill {
+  justify-self: start;
+}
+
+.tag-explainer p {
+  margin: 0;
   color: var(--muted);
   font-size: 13px;
   line-height: 1.45;
