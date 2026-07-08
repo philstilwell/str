@@ -1,0 +1,32 @@
+{
+  "audio_source": {
+    "player_url": "https://player.blubrry.com/id/154268978?cache=1783461069#mode-Light&border-000000&progress-000000",
+    "source": "embedded_player",
+    "source_url": "https://crossexamined.org/frank-addresses-candace-owens-conspiracy-theories/",
+    "url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek_Podcast_Frank_Solo_7-7-2026.mp3"
+  },
+  "created_at": "2026-07-08T16:10:42Z",
+  "description_html": "<p>When did &#8220;just asking questions&#8221; become enough to convict someone in the court of public opinion? This week, Frank takes a closer look at several claims made by Candace Owens surrounding Charlie Kirk&#8217;s murder and asks a simple question: What does the evidence actually show? As he responds to listener emails about the alleged discrepancies [&#8230;]</p>\n<p>The post <a href=\"https://crossexamined.org/frank-addresses-candace-owens-conspiracy-theories/\">Frank Addresses Candace Owens’ Conspiracy Theories</a> appeared first on <a href=\"https://crossexamined.org\">CrossExamined</a>.</p>",
+  "description_text": "When did “just asking questions” become enough to convict someone in the court of public opinion? This week, Frank takes a closer look at several claims made by Candace Owens surrounding Charlie Kirk’s murder and asks a simple question: What does the evidence actually show? As he responds to listener emails about the alleged discrepancies […] The post Frank Addresses Candace Owens’ Conspiracy Theories appeared first on CrossExamined .",
+  "duration": null,
+  "feed_url": "https://crossexamined.org/category/podcast/feed/",
+  "guid": "https://crossexamined.org/?p=103779",
+  "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek_Podcast_Frank_Solo_7-7-2026.mp3",
+  "podcast": {
+    "home_url": "https://crossexamined.org/podcasts/",
+    "id": "idont-have-enough-faith",
+    "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+  },
+  "podcast_page_url": "https://crossexamined.org/frank-addresses-candace-owens-conspiracy-theories/",
+  "pub_date": "2026-07-07",
+  "rss_transcript_tags": [],
+  "slug": "2026-07-07-frank-addresses-candace-owens-conspiracy-theories",
+  "title": "Frank Addresses Candace Owens’ Conspiracy Theories",
+  "transcript": {
+    "reason": "No official transcript found and ASR credentials are not configured.",
+    "source": null,
+    "status": "pending_asr"
+  },
+  "updated_at": "2026-07-08T16:10:42Z",
+  "youtube_url": null
+}

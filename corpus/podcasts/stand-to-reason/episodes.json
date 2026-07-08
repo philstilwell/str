@@ -1,6 +1,26 @@
 {
   "episodes": [
     {
+      "guid": "strweekly.podbean.com/8c83ac5c-8115-350c-9932-d74b7ada47cd",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/p7nkufaby6ewk8f4/070826.mp3",
+      "path": "episodes/2026-07-08-faith-is-not-opposed-to-knowledge",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/faith-is-not-opposed-to-knowledge/",
+      "pub_date": "2026-07-08",
+      "slug": "2026-07-08-faith-is-not-opposed-to-knowledge",
+      "title": "Faith Is Not Opposed to Knowledge",
+      "transcript": {
+        "reason": "No official transcript found and ASR credentials are not configured.",
+        "source": null,
+        "status": "pending_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "strweekly.podbean.com/0cb5c2f4-e533-36c8-bc20-3a3290589b5f",
       "mp3_url": "https://mcdn.podbean.com/mf/web/cid4vmjhn8jxnpzb/070126.mp3",
       "path": "episodes/2026-07-01-cultivating-a-big-enough-worldview-in-students",
@@ -59,6 +79,26 @@
         "status": "pending_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/4354daf3-b48c-3a65-a91c-360a64b231fa",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/bavv3wby6r4z98qn/061226.mp3",
+      "path": "episodes/2026-06-12-what-a-good-young-man-looks-like",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/what-a-good-young-man-looks-like/",
+      "pub_date": "2026-06-12",
+      "slug": "2026-06-12-what-a-good-young-man-looks-like",
+      "title": "What a Good Young Man Looks Like",
+      "transcript": {
+        "reason": "No official transcript found and ASR credentials are not configured.",
+        "source": null,
+        "status": "pending_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -67,5 +107,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-07-07T16:41:41Z"
+  "updated_at": "2026-07-08T16:10:39Z"
 }
