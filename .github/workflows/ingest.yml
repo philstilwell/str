@@ -17,6 +17,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 concurrency:
   group: podcast-ingest
@@ -71,6 +72,15 @@ jobs:
           --max-new "$MAX_EPISODES_PER_RUN"
           --transcribe "$TRANSCRIBE"
 
+      - name: Collect transcript-ready notices
+        run: >
+          python -m str_workflow.notifications collect-ready-transcripts
+          --corpus-dir corpus
+          --out "$RUNNER_TEMP/transcript-ready-notices.json"
+          --body-dir "$RUNNER_TEMP/transcript-ready-issue-bodies"
+          --repo-url "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY"
+          --run-url "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+
       - name: Commit corpus updates
         run: |
           if [[ -z "$(git status --porcelain corpus)" ]]; then
@@ -83,3 +93,10 @@ jobs:
           git add corpus
           git commit -m "Update podcast corpora"
           git push
+
+      - name: Create transcript-ready issues
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: >
+          python -m str_workflow.notifications create-issues
+          --notices "$RUNNER_TEMP/transcript-ready-notices.json"

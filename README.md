@@ -16,6 +16,7 @@ The initial workflow:
 5. Discovers embedded audio players when the RSS feed links to a show-note page without an MP3 enclosure.
 6. If no official transcript is found, transcribes the MP3 when an ASR provider is configured.
 7. Commits new metadata/transcripts back to `main`.
+8. Opens a GitHub issue when a transcript newly becomes ready for critique.
 
 Raw audio is downloaded only into temporary workspace storage during a run and is intentionally ignored by git.
 
@@ -37,6 +38,15 @@ Optional workflow environment variables:
 `MAX_EPISODES_PER_RUN`: cap on newly discovered episodes handled per scheduled run. Defaults to `2`.
 
 `TRANSCRIBE`: `auto`, `always`, or `never`. Defaults to `auto`, which transcribes only when credentials are available.
+
+## Transcript-Ready Notices
+
+The scheduled ingest workflow creates a GitHub issue whenever an episode transcript newly reaches a ready status:
+
+- `found_official`
+- `generated_asr`
+
+Each issue includes the podcast, episode title, release date, transcript status, ASR model when applicable, official episode URL, transcript path, metadata path, workflow run, and a checklist item to create or update the OnReason critique page. The workflow compares changed metadata against `HEAD`, so reruns do not create a duplicate notice for transcripts that were already ready.
 
 ## Local Use
 
