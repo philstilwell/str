@@ -487,6 +487,7 @@ def build_spec(episode: dict[str, Any], all_episodes: list[dict[str, Any]], inde
             {"label": "Official CrossExamined episode page", "url": episode["podcast_page_url"]},
             {"label": "Free of Faith Insights archive", "url": "https://freeoffaith.com/category/insights/"},
             {"label": "Free of Faith Considerations archive", "url": "https://freeoffaith.com/category/considerations/"},
+            {"label": "Free of Faith Featured archive", "url": "https://freeoffaith.com/featured/"},
         ],
         "rail": {
             "status": "Public critique rendered from the separated CrossExamined transcript corpus.",

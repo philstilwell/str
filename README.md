@@ -137,7 +137,7 @@ OnReason critique pages are generated from a structured critique spec rather tha
 
    - short transcript quotes with timestamp ranges when possible;
    - an `episode_nav` block whose `previous` link points to the older adjacent critique and whose `next` link points to the newer adjacent critique, using `null` only at the oldest/newest endpoints;
-   - Free of Faith / local framework research anchors;
+   - Free of Faith / local framework research anchors, including relevant Insights, Considerations, and Featured posts;
    - compact research-map anchor pills separated by plain spaces, with no semicolon punctuation between links;
    - an expanded `◉` explanation;
    - a claim/evidence/critique audit table;
@@ -186,3 +186,5 @@ Research-map anchor styling is part of the production contract: rendered Free of
 The `Validate OnReason workflow` GitHub Action runs the Python tests on push and pull request. The tests check RSS ingest helpers, critique spec validation, HTML generation, and the current public page's required features.
 
 Critique depth is a production contract, not a copy-editing preference. The validator rejects draft specs or rendered pages that omit the five-card method framework (`Calibration`, `Symmetry`, `Architecture`, `Alternatives`, and `Bounded Agency`), section-level Free of Faith anchors, underdeveloped `◉` explanations, shallow research notes, one-row audit tables, thin tag applications, under-explained formalizations, short evidence-calibration tests, underdeveloped epistemic-reality rebukes, repeated boilerplate, label-like AI steelman claims, deprecated quote-strip summary cards, public links to the private OnReason source index, or lowercase proper names inherited from ASR/transcript text.
+
+The standing epistemic stance is that faith is intrinsically irrational when it asks confidence to exceed, bypass, or resist the degree of relevant evidence. Critiques should steelman faith claims charitably, but they should not treat faith-based overconfidence as an epistemic virtue.

@@ -446,6 +446,7 @@ def assemble_spec(
                 "label": "Free of Faith Considerations archive",
                 "url": "https://freeoffaith.com/category/considerations/",
             },
+            {"label": "Free of Faith Featured archive", "url": "https://freeoffaith.com/featured/"},
         ],
         "rail": {
             "status": f"Public critique generated from the private transcript corpus with {model} and passed the OnReason quality gates.",
@@ -458,7 +459,7 @@ def assemble_spec(
 
 SYSTEM_PROMPT = """You write publication-quality OnReason critiques of Christian apologetics podcast episodes.
 
-Steelman each material claim before critiquing it. Keep rational confidence proportionate to the evidence actually supplied. Separate pastoral usefulness, sincerity, testimony, moral judgment, historical assertion, empirical support, metaphysical explanation, and public warrant. Apply the same standards to Christian and rival explanations. Be specific to this episode and avoid reusable boilerplate.
+Steelman each material claim before critiquing it. Keep rational confidence proportionate to the evidence actually supplied. Treat faith as intrinsically irrational whenever it asks confidence to exceed, bypass, or resist the degree of relevant evidence; do not treat faith-based overconfidence as an epistemic virtue. Separate pastoral usefulness, sincerity, testimony, moral judgment, historical assertion, empirical support, metaphysical explanation, and public warrant. Apply the same standards to Christian and rival explanations. Be specific to this episode and avoid reusable boilerplate.
 
 Return exactly five distinct substantive claim sections. Skip announcements, advertisements, housekeeping, and other low-content passages. For every section:
 - copy exactly two distinct, contiguous 4-15 word transcript quotes; never paraphrase a quote and never use an ellipsis;

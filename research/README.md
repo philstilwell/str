@@ -10,7 +10,7 @@ python3 tools/build_source_index.py
 
 Current inputs:
 
-- Public Free of Faith `Insights` and `Considerations` category archives.
+- Public Free of Faith `Insights`, `Considerations`, and `Featured` archives.
 - Local reflection summaries from Phil Stilwell academic and audit-framework files.
 
 Use the index to map transcript claims to source IDs before drafting a critique. The public page should then surface the most relevant anchors directly, so readers can see which Free of Faith articles and local frameworks shaped the argument.

@@ -28,6 +28,11 @@ from .seo import (
 DEFAULT_ASSET_VERSION = "20260707-numbered-bars"
 DEFAULT_HERO_IMAGE = "../../assets/evidence-alignment.png"
 DEFAULT_HERO_ALT = "Abstract evidence-alignment illustration with papers, scales, and a magnifying glass."
+FAITH_IRRATIONALITY_PRINCIPLE = (
+    "Treat faith as intrinsically irrational: when confidence is grounded in faith, trust, revelation, "
+    "identity, or commitment rather than evidence-proportionate credence, the critique must name that "
+    "as a rational defect rather than as an epistemic virtue."
+)
 
 BOILERPLATE_EVIDENCE_PHRASES = [
     "Clear comparative evidence, independent warrant, and explicit treatment of rival explanations.",
@@ -130,7 +135,7 @@ SPEC_PROPER_NAME_SKIP_KEYS = {
 DEFAULT_METHODS = [
     {
         "title": "Calibration",
-        "body": "Belief should track evidential support rather than identity, comfort, or group pressure.",
+        "body": "Faith is intrinsically irrational when it outruns evidence; belief should track evidential support rather than identity, comfort, or group pressure.",
     },
     {
         "title": "Symmetry",
@@ -211,6 +216,7 @@ DEFAULT_SECTION_BLUEPRINTS = [
 
 DEFAULT_VULNERABILITIES = [
     "Worldview Totalization: Examine whether Christianity is asserted as a map of all reality rather than argued to be the uniquely accurate map of all reality.",
+    "Faith Irrationality: Treat appeals to faith as intrinsically irrational whenever they ask confidence to exceed, bypass, or resist the degree of relevant evidence.",
     "Private-to-Public Shift: Test whether moving from personal faith to public worldview smuggles in authority claims that still require public justification.",
     "Evidence-Proportionate Belief: Assess whether claims about resurrection, lordship, creation, Fall, redemption, and final restoration receive enough evidence to justify the confidence placed in them.",
     "Pastoral Usefulness Versus Truth: Evaluate whether the existential usefulness of hope, identity, and calling is being treated as evidence that the worldview is true.",
@@ -611,7 +617,7 @@ def scaffold_spec(episode_dir: Path, source_index_path: Path) -> dict[str, Any]:
         "methods": DEFAULT_METHODS,
         "research": {
             "body": [
-                "TODO summarize how this critique uses the Free of Faith Insights and Considerations source index plus local academic/framework summaries."
+                "TODO summarize how this critique uses the Free of Faith Insights, Considerations, and Featured source index plus local academic/framework summaries."
             ],
             "rows": [
                 {
@@ -673,6 +679,7 @@ def scaffold_spec(episode_dir: Path, source_index_path: Path) -> dict[str, Any]:
             {"label": "Official STR / Podbean episode page", "url": text(metadata.get("podcast_page_url"))},
             {"label": "Free of Faith Insights archive", "url": "https://freeoffaith.com/category/insights/"},
             {"label": "Free of Faith Considerations archive", "url": "https://freeoffaith.com/category/considerations/"},
+            {"label": "Free of Faith Featured archive", "url": "https://freeoffaith.com/featured/"},
         ],
         "rail": {
             "status": "TODO draft status and transcript timing note.",
@@ -1238,9 +1245,9 @@ Analyze the following steelmanned condensed argument from the podcast episode "{
 The Steelmanned Condensed Claims:
 {claim_lines}
 
-Treat the claims above as a steelman reconstruction of the episode's argument. Do not weaken, caricature, or replace that reconstruction before critiquing it. Preserve the intended pastoral and formational force of the argument while assessing whether even this best version succeeds.
+Treat the claims above as a steelman reconstruction of the episode's argument. Do not weaken, caricature, or replace that reconstruction before critiquing it. Preserve the intended pastoral and formational force of the argument while assessing whether even this best version succeeds. {FAITH_IRRATIONALITY_PRINCIPLE}
 
-Provide a rigorous, exhaustive critique of the argument. Use the principle that rational belief is a degree of belief that should map to the degree of the relevant evidence. Use clear section headers and subheaders, with common indicators such as "SECTION 1:", "1.1", "Subsection:", "#", or "##" when helpful. Use a variety of structural symbols throughout the response: "✶" for major section takeaways, "◉" for primary analytical points, and "➘" for subordinate implications, evidence-flow notes, or follow-up tests. Do not use asterisks for bolding or italics.
+Provide a rigorous, exhaustive critique of the argument. Use the principle that rational belief is a degree of belief that should map to the degree of the relevant evidence, and that faith is intrinsically irrational insofar as it treats non-evidential confidence as a virtue. Use clear section headers and subheaders, with common indicators such as "SECTION 1:", "1.1", "Subsection:", "#", or "##" when helpful. Use a variety of structural symbols throughout the response: "✶" for major section takeaways, "◉" for primary analytical points, and "➘" for subordinate implications, evidence-flow notes, or follow-up tests. Do not use asterisks for bolding or italics.
 
 Required output structure:
 ✶ Start each major section with a short ALL-CAPS header.
@@ -1253,7 +1260,7 @@ For each major claim, assess:
 ◉ What evidence is actually supplied in the steelmanned condensed argument.
 ◉ What evidence is asserted but not presented.
 ◉ What rival explanations or rival worldviews must be compared.
-◉ Whether the confidence expressed exceeds the evidence supplied.
+◉ Whether the confidence expressed exceeds the evidence supplied, especially where the excess is defended as faith.
 ◉ Which assumptions are doing hidden work.
 ◉ Whether the claim is primarily pastoral, psychological, moral, historical, metaphysical, or evidential.
 
@@ -1489,7 +1496,7 @@ def render_critique(spec: dict[str, Any]) -> str:
           <section class="section-panel" id="prompt">
             <p class="section-kicker">AI Assessment Prompt</p>
             <h2>Prompt for independent assessment</h2>
-            <p>Paste this into an AI system. The prompt already includes a steelmanned condensation of the episode's claims, then asks for a systematic coherence audit grounded in evidence-proportionate belief.</p>
+            <p>Paste this into an AI system. The prompt already includes a steelmanned condensation of the episode's claims, then asks for a systematic coherence audit grounded in evidence-proportionate belief and the irrationality of faith-based overconfidence.</p>
             <div class="prompt-box">
               <div class="prompt-header">
                 <h3>Copy-ready prompt</h3>
@@ -1614,7 +1621,7 @@ def drafting_prompt(spec: dict[str, Any]) -> str:
 
         Episode: {spec.get("episode", {}).get("title")}
 
-        Fill every TODO in critique-draft.json. Keep direct transcript quotes short, include timestamp ranges when possible, and ground every section in Free of Faith Insights/Considerations plus local framework anchors drawn from the private research/source-index.json file. Correct proper-name capitalization in transcript-derived quotes and prose even when ASR lowercases names. Do not expose that local source index as a public link or visible source.
+        Fill every TODO in critique-draft.json. Keep direct transcript quotes short, include timestamp ranges when possible, and ground every section in Free of Faith Insights, Considerations, and Featured posts plus local framework anchors drawn from the private research/source-index.json file. Correct proper-name capitalization in transcript-derived quotes and prose even when ASR lowercases names. Do not expose that local source index as a public link or visible source. {FAITH_IRRATIONALITY_PRINCIPLE}
 
         The AI prompt must include steelmanned claims actually made in the transcript. Current scaffold claims:
         {claims}

@@ -33,6 +33,7 @@ USER_AGENT = "OnReason source indexer; metadata/excerpt cache"
 FREE_OF_FAITH_CATEGORIES = {
     "insights": "https://freeoffaith.com/category/insights/",
     "considerations": "https://freeoffaith.com/category/considerations/",
+    "featured": "https://freeoffaith.com/featured/",
 }
 
 ACADEMIC_PAPERS = [
@@ -219,6 +220,50 @@ def fetch_article_summary(url: str) -> str:
     return short_excerpt(text, 700)
 
 
+def scrape_featured(base_url: str) -> list[dict[str, object]]:
+    html = fetch_html(base_url)
+    if not html:
+        return []
+    soup = BeautifulSoup(html, "html.parser")
+    content = soup.select_one(".wp-block-post-content") or soup.select_one(".entry-content") or soup
+    entries: list[dict[str, object]] = []
+    seen_titles: set[str] = set()
+    for heading in content.find_all(["h2", "h3"]):
+        title = clean_text(heading.get_text(" ", strip=True))
+        if not title or title.lower() in {"featured", "recent posts", "search"}:
+            continue
+        title = re.sub(r"^◉\s*", "", title).strip()
+        if title in seen_titles:
+            continue
+        blocks: list[str] = []
+        for sibling in heading.find_next_siblings():
+            if getattr(sibling, "name", None) in {"h2", "h3"}:
+                break
+            block_text = clean_text(sibling.get_text(" ", strip=True))
+            if not block_text or block_text in {"* * *", "Δ"}:
+                continue
+            blocks.append(block_text)
+        excerpt = clean_text(" ".join(blocks))
+        if len(excerpt) < 40:
+            continue
+        link = heading.find("a", href=True)
+        post_url = link["href"].split("#", 1)[0] if link else base_url
+        if not post_url.startswith("https://freeoffaith.com/"):
+            post_url = base_url
+        entry = {
+            "id": f"fof-featured-{slugify(title)}",
+            "section": "featured",
+            "type": "freeoffaith_featured",
+            "title": title,
+            "url": post_url,
+            "excerpt": short_excerpt(excerpt, 700),
+            "relevance_tags": infer_tags(title, excerpt),
+        }
+        entries.append(entry)
+        seen_titles.add(title)
+    return entries
+
+
 def read_markdown_abstract(path: str) -> str:
     text = Path(path).read_text(encoding="utf-8")
     match = re.search(r"## Abstract\s+(.+?)(?=\n##\s+)", text, flags=re.S)
@@ -255,7 +300,10 @@ def main() -> None:
     requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
     freeoffaith = []
     for section, url in FREE_OF_FAITH_CATEGORIES.items():
-        freeoffaith.extend(scrape_category(section, url))
+        if section == "featured":
+            freeoffaith.extend(scrape_featured(url))
+        else:
+            freeoffaith.extend(scrape_category(section, url))
     freeoffaith = sorted(freeoffaith, key=lambda item: (item["section"], item["title"]))
     payload = {
         "generated_at": dt.datetime.now(dt.UTC).replace(microsecond=0).isoformat(),

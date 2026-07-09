@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-07T00:27:46+00:00",
+  "generated_at": "2026-07-09T19:59:01+00:00",
   "policy": "Metadata, short excerpts, and reflection summaries only; this file is not a full local mirror of Free of Faith articles or local PDFs.",
   "freeoffaith": [
     {
@@ -627,6 +627,287 @@
         "faith",
         "insider-authority",
         "moral-architecture"
+      ]
+    },
+    {
+      "id": "fof-featured-a-short-three-day-death",
+      "section": "featured",
+      "type": "freeoffaith_featured",
+      "title": "A Short Three-Day Death",
+      "url": "https://freeoffaith.com/a-short-three-day-death/",
+      "excerpt": "The thread critically examines the logical coherence of the Christian doctrine of substitutionary atonement, focusing on the sufficiency of Jesus’ three-day death relative to eternal punishment and exploring whether deviations (e.g., a 2-day or 4-day death) would challenge its validity. It highlights inconsistencies in proportional justice, the necessity of suffering for forgiveness, and reliance on symbolism or divine fiat, ultimately calling for rigorous explanations to justify the doctrine’s claims.",
+      "relevance_tags": [
+        "mythmaking",
+        "worldview"
+      ]
+    },
+    {
+      "id": "fof-featured-biblical-faith",
+      "section": "featured",
+      "type": "freeoffaith_featured",
+      "title": "Biblical Faith — πίστις & πιστεύω",
+      "url": "https://freeoffaith.com/biblical-faith/",
+      "excerpt": "The article “Biblical Faith” on Free of Faith provides a comprehensive analysis of the Greek terms πίστις (pistis, “faith”) and πιστεύω (pisteuō, “to believe”) as they appear in the New Testament. It examines each occurrence, assigning scores that reflect the extent to which the context emphasizes belief proportionate to evidence , accompanied by detailed commentaries justifying these assessments. The study includes a histogram summarizing the findings and related essays that delve deeper into the relationship between faith and evidence in biblical texts.",
+      "relevance_tags": [
+        "faith",
+        "insider-authority"
+      ]
+    },
+    {
+      "id": "fof-featured-binary-thinking",
+      "section": "featured",
+      "type": "freeoffaith_featured",
+      "title": "Binary Thinking",
+      "url": "https://freeoffaith.com/binary-thinking/",
+      "excerpt": "This essay explores the contrast between binary thinking and gradient thinking , highlighting how science thrives on probabilistic, inductive reasoning while religion often relies on rigid, deductive frameworks. It argues that gradient thinking leads to superior predictive success and reduces epistemic errors , whereas binary thinking fosters oversimplified models, flawed decisions, and an illusion of certainty. By emphasizing the importance of probabilistic reasoning and continuous belief updating , the essay advocates for adopting gradient thinking to better navigate complexity and uncertainty in the real world.",
+      "relevance_tags": [
+        "faith"
+      ]
+    },
+    {
+      "id": "fof-featured-borrowing-from-christianity",
+      "section": "featured",
+      "type": "freeoffaith_featured",
+      "title": "Borrowing from Christianity?",
+      "url": "https://freeoffaith.com/borrowing/",
+      "excerpt": "This post critiques the claim that secular systems “borrow” foundational concepts from Christianity, demonstrating through historical evidence and symbolic logic that these values are universal and not exclusive to any one tradition. It highlights the self-defeating nature of the borrowing argument, as Christianity itself borrows extensively from earlier traditions, exposing the inconsistency of this claim when applied universally. By examining the motivations behind the borrowing argument, such as reinforcing Christianity’s primacy and undermining competing worldviews, the analysis reveals its rhetorical nature rather than its intellectual soundness . Ultimately, the essays argue that...",
+      "relevance_tags": [
+        "faith",
+        "worldview"
+      ]
+    },
+    {
+      "id": "fof-featured-co-opting-a-plausible-deism-to-illegitimately-argue-for-an-incoherent-theism",
+      "section": "featured",
+      "type": "freeoffaith_featured",
+      "title": "Co-opting a Plausible Deism to Illegitimately Argue for an Incoherent Theism",
+      "url": "https://freeoffaith.com/co-opting-a-plausible-deism-to-illegitimately-argue-for-an-incoherent-theism/",
+      "excerpt": "Theistic Commandeering of a Deity Christian and Muslim apologists commonly use evidence supporting a deistic creator—such as cosmic fine-tuning or the Big Bang—as a foundation for asserting their specific theistic deity. However, the minimalist notion of a deistic god does not logically imply the complex attributes claimed by theism, leading to a conceptual and evidential mismatch. Consequently, the apologist’s leap from a general creator to a specific interventionist God remains an unsubstantiated jump that overlooks the profound logical incoherencies intrinsic to the attributes of many proposed theistic entities. Mouse droppings are evidence of mice, but not of Mickey Mouse.",
+      "relevance_tags": [
+        "faith",
+        "worldview"
+      ]
+    },
+    {
+      "id": "fof-featured-core-rationality",
+      "section": "featured",
+      "type": "freeoffaith_featured",
+      "title": "Core Rationality",
+      "url": "https://freeoffaith.com/core-rationality/",
+      "excerpt": "Core Rationality is the simple, conscious commitment to align one’s credence with the weight of the evidence at every step. It implicitly relies on Bayesian thinking to ensure beliefs adjust precisely in response to new data rather than emotional impulses or unfounded assumptions. By quantifying uncertainty and updating systematically, Core Rationality prevents unwarranted leaps and dogmatic entrenchment . This practice fosters intellectual humility, inviting continuous revision as the evidence evolves. Ultimately, embracing Core Rationality guards against polarization and the irrational certainties traditionally labeled as “faith.”",
+      "relevance_tags": [
+        "faith",
+        "resurrection"
+      ]
+    },
+    {
+      "id": "fof-featured-credencing-scenarios-for-apologists-pdf",
+      "section": "featured",
+      "type": "freeoffaith_featured",
+      "title": "Credencing Scenarios for Apologists (PDF)",
+      "url": "https://freeoffaith.com/the-state-of-christian-apologetics/",
+      "excerpt": "A 34-page book on Epistemology (2026) Contemporary Christian apologetics often relies on evidential arguments drawn from historical miracles and fulfilled prophecy to demand rational assent from skeptics. However, this enterprise is frequently undermined by an unacknowledged epistemic asymmetry: the standards of evidence applied to in-group historical claims are significantly lower than those applied to superior, multi-attested contemporary phenomena supporting rival worldviews. This volume presents a novel methodology designed to audit this inconsistency: the “Credencing Scenario” protocol. Acting as a “veil of ignorance” for supernatural claims, the protocol presents the reader with a...",
+      "relevance_tags": [
+        "bias-fallacy",
+        "faith",
+        "mythmaking",
+        "public-justification",
+        "resurrection",
+        "worldview"
+      ]
+    },
+    {
+      "id": "fof-featured-evidence-proportioned-belief",
+      "section": "featured",
+      "type": "freeoffaith_featured",
+      "title": "Evidence-Proportioned Belief",
+      "url": "https://freeoffaith.com/evidence-proportioned-belief/",
+      "excerpt": "This essay explores why many people resist the principle that rational belief should align with the degree of evidential support . It identifies key psychological factors such as the discomfort with uncertainty, the emotional appeal of certainty, and the influence of identity-protective cognition. Ultimately, the essay argues that while such resistance is humanly understandable, it leads to inferior predictive accuracy and undermines genuine rational inquiry.",
+      "relevance_tags": [
+        "faith",
+        "identity"
+      ]
+    },
+    {
+      "id": "fof-featured-evolving-notions-of-redemptive-faith",
+      "section": "featured",
+      "type": "freeoffaith_featured",
+      "title": "Evolving Notions of Redemptive Faith",
+      "url": "https://freeoffaith.com/evolving-notions-of-redemptive-faith/",
+      "excerpt": "This article examines the historical evolution of Christian redemptive belief, focusing on shifts from Fideism (faith without evidence) to partial evidence-based belief and modern apologetics. Early Christianity emphasized trust in divine mysteries, while later theologians like Augustine and Aquinas integrated reason into faith. The Reformation and Enlightenment further promoted evidence-based belief, though contemporary Christian thought still struggles to fully align faith with rational standards . Visualizations and logical arguments critiqued the coherence of redemptive belief, questioning whether a just and clear God would permit shifting salvation criteria.",
+      "relevance_tags": [
+        "faith"
+      ]
+    },
+    {
+      "id": "fof-featured-faith-vs-rationality",
+      "section": "featured",
+      "type": "freeoffaith_featured",
+      "title": "Faith vs Rationality",
+      "url": "https://freeoffaith.com/faith/",
+      "excerpt": "The article “Rationality vs Faith” on Free of Faith critically examines the concept of faith, defining it as belief that surpasses the degree of supporting evidence . It challenges arguments that attempt to normalize faith by conflating it with general belief systems, asserting that such conflation leads to semantic confusion and shields faith from critique. Through syllogistic reasoning, the article argues that faith, by exceeding evidence and resisting revision, is inherently irrational .",
+      "relevance_tags": [
+        "faith"
+      ]
+    },
+    {
+      "id": "fof-featured-immaterial-spiritual",
+      "section": "featured",
+      "type": "freeoffaith_featured",
+      "title": "Immaterial ≠ Spiritual",
+      "url": "https://freeoffaith.com/immaterial-%e2%89%a0-spiritual/",
+      "excerpt": "Many Christian apologists conflate the immaterial with the spiritual to suggest that thoughts point to a non-material, divine realm. However, this is a category error, as thoughts are immaterial but materially dependent, arising from the brain’s physical processes. The inability to “find a thought” in the brain doesn’t imply spiritual transcendence , any more than not finding a melody inside a piano implies magic. Clarifying this distinction defends a naturalist understanding of the mind without resorting to supernatural claims .",
+      "relevance_tags": [
+        "identity"
+      ]
+    },
+    {
+      "id": "fof-featured-inferring-the-intentions-of-a-hypothetical-creator",
+      "section": "featured",
+      "type": "freeoffaith_featured",
+      "title": "Inferring the Intentions of a Hypothetical Creator",
+      "url": "https://freeoffaith.com/inferring-the-intentions-of-a-hypothetical-creator/",
+      "excerpt": "Assessing a Creator’s Mind This collection of essays critiques common theistic arguments about a creator’s intentions, focusing on three main issues: the probative flaws behind the fine-tuning argument, the unfalsifiability of claims regarding God’s intentions, and the human-centered bias in theological reasoning . The discussion exposes how the idea of an omnipotent creator negates the need for fine-tuning, as God’s power should allow for the creation of life without reliance on specific physical constants. The historical record of religious cosmologies that were later disproven further demonstrates the inherent methodological biases in theological thinking. The essay comprises syllogistic...",
+      "relevance_tags": [
+        "bias-fallacy",
+        "hope-purpose",
+        "identity"
+      ]
+    },
+    {
+      "id": "fof-featured-pascal-s-wager",
+      "section": "featured",
+      "type": "freeoffaith_featured",
+      "title": "Pascal’s Wager",
+      "url": "https://freeoffaith.com/pascals-wager/",
+      "excerpt": "This article critiques Pascal’s Wager by highlighting its inability to address contradictory religious claims, such as Christianity and Islam, which both assert eternal punishment for disbelief. A symbolic logic analysis demonstrates that without evidence to favor one claim, the wager collapses into arbitrariness, as any fabricated or hypothetical deity could make similar threats. A fictional dialogue between a Christian and a Muslim illustrates the absurdity of mutually exclusive Hell claims, showing how such arguments ultimately cancel each other out and fail to provide a rational basis for belief.",
+      "relevance_tags": [
+        "faith"
+      ]
+    },
+    {
+      "id": "fof-featured-redemptive-belief",
+      "section": "featured",
+      "type": "freeoffaith_featured",
+      "title": "Redemptive Belief",
+      "url": "https://freeoffaith.com/redemptive-belief/",
+      "excerpt": "This article “Redemptive Belief” on Free of Faith examines the three dimensions of rational belief— degree , quality , and object —and their universal applicability across various domains of thought. It provides concrete examples, such as weather forecasting and medical diagnoses, to illustrate how these dimensions function in everyday decision-making. The discussion then transitions to soteriology, analyzing how these dimensions apply to beliefs about salvation and redemption.",
+      "relevance_tags": [
+        "faith"
+      ]
+    },
+    {
+      "id": "fof-featured-the-absence-of-a-coherent-biblical-morality",
+      "section": "featured",
+      "type": "freeoffaith_featured",
+      "title": "The Absence of a Coherent Biblical Morality",
+      "url": "https://freeoffaith.com/morality/",
+      "excerpt": "The survey data included in this essay reveals significant disagreements among Christians on key moral issues, particularly regarding sexuality, sin, and eternal punishment, with dissent values often exceeding 50-70% . Foundational concepts, such as moral accountability, the reliability of moral intuitions, and the role of emotions, display deep fragmentation. These divisions expose the absence of a coherent and objective biblical morality, undermining claims of divine moral consistency.",
+      "relevance_tags": [
+        "identity",
+        "insider-authority",
+        "moral-architecture"
+      ]
+    },
+    {
+      "id": "fof-featured-the-arguments-of-cs-lewis",
+      "section": "featured",
+      "type": "freeoffaith_featured",
+      "title": "The Arguments of CS Lewis",
+      "url": "https://freeoffaith.com/cs-lewis/",
+      "excerpt": "C.S. Lewis’ arguments for Christianity, including the arguments from morality, reason, innate desires, aesthetics, and the trilemma, aim to ground faith in logical and experiential claims. However, these arguments falter under scrutiny, as they often rely on flawed premises, such as the universality of moral laws, the necessity of God for reason, or the assumption that human longing implies a divine reality. By exploring alternative explanations rooted in psychology, evolution, and cultural variability, it becomes clear that these arguments fail to conclusively demonstrate the existence of a transcendent deity or the truth of Christianity .",
+      "relevance_tags": [
+        "faith",
+        "moral-architecture",
+        "public-justification",
+        "worldview"
+      ]
+    },
+    {
+      "id": "fof-featured-the-battle-for-meaning",
+      "section": "featured",
+      "type": "freeoffaith_featured",
+      "title": "The Battle for Meaning",
+      "url": "https://freeoffaith.com/the-battle-for-meaning/",
+      "excerpt": "The parable in this post illustrates that meaning and purpose cannot be imposed externally but must be realized internally by the individual. King Theo believes that he can assign purpose to his subjects through royal decree, yet Ethan, a master glassmaker, demonstrates that true purpose comes from personal passion and engagement . Ethan’s craft gives him immense meaning, and no external authority can override or replace the fulfillment he derives from it. His argument—that a pile of glass does not become a masterpiece by mere declaration—serves as an analogy for the human mind’s role in constructing its own meaning. The story ultimately challenges the notion that purpose can be dictated...",
+      "relevance_tags": [
+        "hope-purpose",
+        "identity",
+        "public-justification"
+      ]
+    },
+    {
+      "id": "fof-featured-the-bible-s-irrational-condemnation-of-rational-doubt",
+      "section": "featured",
+      "type": "freeoffaith_featured",
+      "title": "The Bible’s Irrational Condemnation of Rational Doubt",
+      "url": "https://freeoffaith.com/the-bibles-condemnation-of-rational-doubt/",
+      "excerpt": "This post discusses the role of doubt and confidence in rational thinking, emphasizing that while a rational mind can assess evidence, certainty is never absolute. It contrasts this with biblical teachings that condemn doubt, portraying it as instability. The conclusion argues that the Bible’s rejection of rational doubt undermines rational evaluation of evidence , asserting that the Bible is, therefore, irrational in its stance against doubt.",
+      "relevance_tags": [
+        "faith",
+        "identity",
+        "insider-authority"
+      ]
+    },
+    {
+      "id": "fof-featured-the-hemispheric-search-for-truth",
+      "section": "featured",
+      "type": "freeoffaith_featured",
+      "title": "The Hemispheric Search for Truth",
+      "url": "https://freeoffaith.com/the-hemispheric-search-for-truth/",
+      "excerpt": "This article critiques the hemispheric search for truth , where individuals selectively embrace comforting beliefs while dismissing unsettling possibilities, highlighting its dangers of intellectual stagnation, dishonesty, and distorted understanding. It exposes how theists exploit emotional vulnerabilities through tactics like fear, social pressure, and appeals to hope, conflating desire with evidence to promote belief. The article advocates for an honest, evidence-based search for truth that embraces discomfort and rejects the illusions of hope-driven inquiry.",
+      "relevance_tags": [
+        "faith",
+        "hope-purpose",
+        "public-justification"
+      ]
+    },
+    {
+      "id": "fof-featured-the-selective-blindness-of-faith",
+      "section": "featured",
+      "type": "freeoffaith_featured",
+      "title": "The Selective Blindness of Faith",
+      "url": "https://freeoffaith.com/the-selective-blindness-of-faith/",
+      "excerpt": "Theists often focus on external problems —such as social issues, political opponents, or scientific misrepresentations—rather than critically examining the internal contradictions of their own beliefs. This selective focus acts as an epistemic barrier , shielding faith-based claims from scrutiny while demanding high standards of evidence for opposing views. Many of these concerns, while sometimes legitimate , are used as distractions to avoid confronting logical inconsistencies and weak theological assumptions. Honest theists can overcome this by applying consistent skepticism to their own worldview, engaging with the 52 Considerations here at Free of Faith . Through intellectual honesty...",
+      "relevance_tags": [
+        "faith",
+        "worldview"
+      ]
+    },
+    {
+      "id": "fof-featured-the-state-of-christian-apologetics",
+      "section": "featured",
+      "type": "freeoffaith_featured",
+      "title": "The State of Christian Apologetics",
+      "url": "https://freeoffaith.com/the-state-of-christian-apologetics/",
+      "excerpt": "Coherent Apologetics – First Draft This series of pages presents a research-based assessment of Christian apologetic reasoning as observed in one of the world’s largest online forums for defenders of the faith. Drawing from 64 detailed responses to a single epistemic challenge—the fairness of divine judgment toward honest nonbelievers—the series exposes recurring logical and rhetorical flaws among self-identified apologists. Each page provides individualized feedback, aggregate performance data, and practical recommendations for instructors, pastors, and coaches seeking to strengthen the intellectual integrity of Christian discourse. The series functions as both diagnostic and instructional...",
+      "relevance_tags": [
+        "faith"
+      ]
+    },
+    {
+      "id": "fof-featured-the-unsiloed-reevaluation-of-belief-systems",
+      "section": "featured",
+      "type": "freeoffaith_featured",
+      "title": "The Unsiloed Reevaluation of Belief Systems",
+      "url": "https://freeoffaith.com/unsiloed-reevaluation-of-belief-systems/",
+      "excerpt": "This essay emphasizes the importance of unsiloed support for those facing doubts about their beliefs, highlighting how reliance on siloed support can reinforce dogma and suppress critical inquiry. Unsiloed support allows individuals to engage with diverse perspectives, promoting intellectual honesty and evidence-based reasoning during times of inner conflict. By fostering open dialogue and reflection, such support helps doubters to identify and pursue truth with autonomy and clarity.",
+      "relevance_tags": [
+        "faith",
+        "public-justification"
+      ]
+    },
+    {
+      "id": "fof-featured-unfalsifiability",
+      "section": "featured",
+      "type": "freeoffaith_featured",
+      "title": "Unfalsifiability",
+      "url": "https://freeoffaith.com/unfalsifiability/",
+      "excerpt": "This article demonstrates how Christianity’s explanations for both positive and negative outcomes render the belief system unfalsifiable . By offering post hoc theological interpretations for every possible event, Christianity insulates itself from disconfirmation, making it indistinguishable from random occurrences in a naturalistic reality. This lack of predictive and empirical testability undermines its rational credibility, reducing it to a self-reinforcing ideological framework.",
+      "relevance_tags": [
+        "bias-fallacy",
+        "faith",
+        "worldview"
       ]
     },
     {
@@ -1731,15 +2012,15 @@
       ]
     },
     {
-      "id": "fof-insights-the-stepping-stone-fallacy",
+      "id": "fof-insights-the-turek-mindset",
       "section": "insights",
       "type": "freeoffaith_article",
-      "title": "✓ The Stepping-Stone Fallacy",
-      "url": "https://freeoffaith.com/2025/03/25/%e2%9c%93-the-stepping-stone-fallacy/",
-      "excerpt": "The Stepping-Stone Fallacy is prevalent in online theistic debates, where theists quote non-theists misleadingly to support their beliefs. Notable figures like Einstein, Hawking, and Darwin are often misrepresented, creating a false sense of credibility. Each example illustrates individuals cherry-picking quotes, ignoring broader contexts, and misinterpreting original views, ultimately emphasizing the need for...",
+      "title": "✓ The Turek Mindset",
+      "url": "https://freeoffaith.com/2026/07/07/%e2%9c%93-the-turek-mindset/",
+      "excerpt": "The Biggest Logical Blunders in a Contemporary Christian Apologetics Corpus I recently surveyed a local transcript corpus from Frank Turek’s I Don’t Have Enough FAITH to Be an ATHEIST podcast. The point was not to catch one awkward sentence or score cheap rhetorical points. The point was to identify the recurring argumentative habits that shape the apologetic posture. The result…",
       "relevance_tags": [
-        "bias-fallacy",
-        "faith"
+        "faith",
+        "identity"
       ]
     },
     {
