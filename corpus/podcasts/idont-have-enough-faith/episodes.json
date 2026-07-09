@@ -14,9 +14,11 @@
       "slug": "2026-07-07-frank-addresses-candace-owens-conspiracy-theories",
       "title": "Frank Addresses Candace Owens’ Conspiracy Theories",
       "transcript": {
-        "reason": "No official transcript found and ASR credentials are not configured.",
-        "source": null,
-        "status": "pending_asr"
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
       },
       "youtube_url": null
     },
@@ -247,5 +249,5 @@
     "id": "idont-have-enough-faith",
     "title": "I Don't Have Enough FAITH to Be an ATHEIST"
   },
-  "updated_at": "2026-07-08T16:10:44Z"
+  "updated_at": "2026-07-09T19:04:58Z"
 }

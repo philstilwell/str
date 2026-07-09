@@ -37,7 +37,7 @@ Optional workflow environment variables:
 
 `MAX_EPISODES_PER_RUN`: cap on newly discovered episodes handled per scheduled run. Defaults to `2`.
 
-`TRANSCRIBE`: `auto`, `always`, or `never`. Defaults to `auto`, which transcribes only when credentials are available.
+`TRANSCRIBE`: `auto`, `always`, or `never`. The scheduled GitHub Action defaults to `always`, so a missing `OPENAI_API_KEY` secret fails the run visibly instead of leaving new episodes at `pending_asr`. Manual local runs may still use `auto` when you want transcription only if credentials are available.
 
 ## Transcript-Ready Notices
 

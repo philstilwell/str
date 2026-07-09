@@ -13,7 +13,7 @@ on:
       transcribe:
         description: "Transcription mode: auto, always, or never"
         required: false
-        default: "auto"
+        default: "always"
 
 permissions:
   contents: write
@@ -30,7 +30,7 @@ jobs:
       STR_FEED_URL: "https://feed.podbean.com/strweekly/feed.xml"
       CROSSEXAMINED_FEED_URL: "https://crossexamined.org/category/podcast/feed/"
       MAX_EPISODES_PER_RUN: ${{ github.event.inputs.max_episodes || '2' }}
-      TRANSCRIBE: ${{ github.event.inputs.transcribe || 'auto' }}
+      TRANSCRIBE: ${{ github.event.inputs.transcribe || 'always' }}
       ASR_MODEL: ${{ vars.ASR_MODEL || 'gpt-4o-mini-transcribe' }}
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 

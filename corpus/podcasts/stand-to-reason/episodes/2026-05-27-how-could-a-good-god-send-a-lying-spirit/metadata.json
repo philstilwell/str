@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-09T19:05:04Z",
+  "description_html": "Greg talks about distinguishing between descriptive and prescriptive passages, then he answers questions about a secular case against legalizing prostitution, how a good God could send a lying spirit, fulfilling a rash vow to God, and attending a wedding between a Christian and a non-Christian.",
+  "description_text": "Greg talks about distinguishing between descriptive and prescriptive passages, then he answers questions about a secular case against legalizing prostitution, how a good God could send a lying spirit, fulfilling a rash vow to God, and attending a wedding between a Christian and a non-Christian.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/2f9ab0be-f57d-3d2e-9e1b-7caac9e7974e",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/nhy465r27wvdj8h8/052726.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/how-could-a-good-god-send-a-lying-spirit/",
+  "pub_date": "2026-05-27",
+  "rss_transcript_tags": [],
+  "slug": "2026-05-27-how-could-a-good-god-send-a-lying-spirit",
+  "title": "How Could a Good God Send a Lying Spirit?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-09T19:05:04Z",
+  "youtube_url": null
+}

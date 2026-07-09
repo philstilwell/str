@@ -23,10 +23,12 @@
   "slug": "2026-07-07-frank-addresses-candace-owens-conspiracy-theories",
   "title": "Frank Addresses Candace Owens’ Conspiracy Theories",
   "transcript": {
-    "reason": "No official transcript found and ASR credentials are not configured.",
-    "source": null,
-    "status": "pending_asr"
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
   },
-  "updated_at": "2026-07-08T16:10:42Z",
+  "updated_at": "2026-07-09T19:02:46Z",
   "youtube_url": null
 }

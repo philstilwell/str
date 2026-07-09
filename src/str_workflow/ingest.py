@@ -83,6 +83,14 @@ def entry_guid(entry: Any) -> str:
     return str(guid).strip()
 
 
+def sorted_feed_entries(entries: list[Any]) -> list[Any]:
+    return sorted(
+        entries,
+        key=lambda entry: (parse_entry_date(entry) or "", text_or_none(entry.get("title")) or ""),
+        reverse=True,
+    )
+
+
 def entry_mp3_url(entry: Any) -> str | None:
     for enclosure in entry.get("enclosures", []):
         href = enclosure.get("href")
@@ -646,12 +654,17 @@ def select_entries_to_process(
     retry_pending: bool,
     transcribe_enabled: bool,
 ) -> list[Any]:
+    entries = sorted_feed_entries(entries)
     indexed_by_guid = {episode.get("guid"): episode for episode in index.get("episodes", [])}
+    indexed_dates = [episode.get("pub_date") for episode in index.get("episodes", []) if episode.get("pub_date")]
+    newest_indexed_date = max(indexed_dates) if indexed_dates else None
     selected: list[Any] = []
 
     for entry in entries:
         guid = entry_guid(entry)
-        if guid not in indexed_by_guid:
+        entry_date = parse_entry_date(entry)
+        is_current_or_new = not newest_indexed_date or not entry_date or entry_date >= newest_indexed_date
+        if guid not in indexed_by_guid and is_current_or_new:
             selected.append(entry)
         if len(selected) >= max_new:
             return selected
@@ -667,6 +680,17 @@ def select_entries_to_process(
             if status in PENDING_STATUSES:
                 selected.append(entry)
                 selected_guids.add(guid)
+            if len(selected) >= max_new:
+                break
+
+    if len(selected) < max_new:
+        selected_guids = {entry_guid(entry) for entry in selected}
+        for entry in entries:
+            guid = entry_guid(entry)
+            if guid in indexed_by_guid or guid in selected_guids:
+                continue
+            selected.append(entry)
+            selected_guids.add(guid)
             if len(selected) >= max_new:
                 break
 

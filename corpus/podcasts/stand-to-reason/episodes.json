@@ -14,9 +14,11 @@
       "slug": "2026-07-08-faith-is-not-opposed-to-knowledge",
       "title": "Faith Is Not Opposed to Knowledge",
       "transcript": {
-        "reason": "No official transcript found and ASR credentials are not configured.",
-        "source": null,
-        "status": "pending_asr"
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
       },
       "youtube_url": null
     },
@@ -139,6 +141,28 @@
         "status": "pending_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/2f9ab0be-f57d-3d2e-9e1b-7caac9e7974e",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/nhy465r27wvdj8h8/052726.mp3",
+      "path": "episodes/2026-05-27-how-could-a-good-god-send-a-lying-spirit",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/how-could-a-good-god-send-a-lying-spirit/",
+      "pub_date": "2026-05-27",
+      "slug": "2026-05-27-how-could-a-good-god-send-a-lying-spirit",
+      "title": "How Could a Good God Send a Lying Spirit?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -147,5 +171,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-07-09T16:39:11Z"
+  "updated_at": "2026-07-09T19:09:58Z"
 }

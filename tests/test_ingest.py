@@ -5,6 +5,7 @@ from str_workflow.ingest import (
     episode_slug,
     extract_audio_url_from_player_html,
     format_seconds,
+    select_entries_to_process,
     transcript_tags_by_guid,
 )
 from str_workflow.notifications import notice_from_metadata, transcript_became_ready
@@ -101,3 +102,67 @@ def test_transcript_notice_is_not_recreated_for_already_ready_transcript():
 
     assert not transcript_became_ready(current, previous)
     assert notice_from_metadata(metadata_path=Path("corpus/example/metadata.json"), current=current, previous=previous) is None
+
+
+def test_scheduled_ingest_requires_transcription_by_default():
+    workflow = Path(".github/workflows/ingest.yml").read_text(encoding="utf-8")
+
+    assert 'default: "always"' in workflow
+    assert "TRANSCRIBE: ${{ github.event.inputs.transcribe || 'always' }}" in workflow
+
+
+def test_pending_current_transcript_is_selected_before_stale_missing_backlog():
+    entries = [
+        {"id": "old-missing", "title": "Old Missing Episode", "published": "Wed, 27 May 2026 12:00:00 +0000"},
+        {"id": "latest-pending", "title": "Latest Pending Episode", "published": "Wed, 08 Jul 2026 12:00:00 +0000"},
+    ]
+    index = {
+        "episodes": [
+            {
+                "guid": "latest-pending",
+                "pub_date": "2026-07-08",
+                "transcript": {"status": "pending_asr"},
+            },
+            {
+                "guid": "previous-indexed",
+                "pub_date": "2026-07-01",
+                "transcript": {"status": "generated_asr"},
+            },
+        ]
+    }
+
+    selected = select_entries_to_process(
+        entries,
+        index,
+        max_new=1,
+        retry_pending=True,
+        transcribe_enabled=True,
+    )
+
+    assert [entry["id"] for entry in selected] == ["latest-pending"]
+
+
+def test_newer_unindexed_episode_is_selected_before_pending_retry():
+    entries = [
+        {"id": "latest-pending", "title": "Latest Pending Episode", "published": "Wed, 08 Jul 2026 12:00:00 +0000"},
+        {"id": "new-unindexed", "title": "New Unindexed Episode", "published": "Wed, 15 Jul 2026 12:00:00 +0000"},
+    ]
+    index = {
+        "episodes": [
+            {
+                "guid": "latest-pending",
+                "pub_date": "2026-07-08",
+                "transcript": {"status": "pending_asr"},
+            }
+        ]
+    }
+
+    selected = select_entries_to_process(
+        entries,
+        index,
+        max_new=1,
+        retry_pending=True,
+        transcribe_enabled=True,
+    )
+
+    assert [entry["id"] for entry in selected] == ["new-unindexed"]
