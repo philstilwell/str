@@ -17,6 +17,7 @@ The initial workflow:
 6. If no official transcript is found, transcribes the MP3 when an ASR provider is configured.
 7. Commits new metadata/transcripts back to `main`.
 8. Opens a GitHub issue when a transcript newly becomes ready for critique.
+9. Runs a second daily workflow two hours later to create, validate, and publish critiques for every ready transcript that does not yet have one.
 
 Raw audio is downloaded only into temporary workspace storage during a run and is intentionally ignored by git.
 
@@ -47,6 +48,20 @@ The scheduled ingest workflow creates a GitHub issue whenever an episode transcr
 - `generated_asr`
 
 Each issue includes the podcast, episode title, release date, transcript status, ASR model when applicable, official episode URL, transcript path, metadata path, workflow run, and a checklist item to create or update the OnReason critique page. The workflow compares changed metadata against `HEAD`, so reruns do not create a duplicate notice for transcripts that were already ready.
+
+## Scheduled Critique Generation
+
+`.github/workflows/critiques.yml` runs every day at `16:15 UTC`, two hours after the transcript ingest schedule. It finds every episode whose transcript status is `found_official` or `generated_asr` and whose `docs/episodes/<slug>/index.html` page is missing.
+
+For each missing page, the workflow uses structured model output to create five transcript-grounded critique sections. It verifies direct quotes against the stored transcript, resolves research anchors only from `research/source-index.json`, retries drafts that fail a quality check, renders the page atomically, refreshes adjacent-episode navigation and the five most recent homepage cards, rebuilds SEO discovery files, runs the full test suite, and commits only validated `docs/` changes.
+
+The workflow reuses the existing `OPENAI_API_KEY` secret. `CRITIQUE_MODEL` is optional and defaults to `gpt-5.5`; `CRITIQUE_REASONING_EFFORT` defaults to `high` in the batch command. A manual dispatch can override the model or limit the number of episodes, while the scheduled run processes all missing critiques.
+
+To inspect the queue without making an API call:
+
+```bash
+python -m str_workflow.critique_batch --dry-run
+```
 
 ## Local Use
 

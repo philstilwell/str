@@ -1,0 +1,75 @@
+name: Create missing transcript critiques
+
+on:
+  schedule:
+    # Two hours after the 14:15 UTC transcript-ingest schedule.
+    - cron: "15 16 * * *"
+  workflow_dispatch:
+    inputs:
+      max_episodes:
+        description: "Maximum missing critiques to create; 0 means all"
+        required: false
+        default: "0"
+      model:
+        description: "OpenAI model used for critique generation"
+        required: false
+        default: "gpt-5.5"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: critique-generation
+  cancel-in-progress: false
+
+jobs:
+  critique:
+    runs-on: ubuntu-latest
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      CRITIQUE_MODEL: ${{ github.event.inputs.model || vars.CRITIQUE_MODEL || 'gpt-5.5' }}
+      MAX_EPISODES: ${{ github.event.inputs.max_episodes || '0' }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install Python dependencies
+        run: python -m pip install -e ".[dev]"
+
+      - name: Create all missing transcript critiques
+        run: >
+          python -m str_workflow.critique_batch
+          --max-episodes "$MAX_EPISODES"
+          --model "$CRITIQUE_MODEL"
+
+      - name: Refresh SEO and discovery files
+        run: |
+          if [[ -n "$(git status --porcelain docs)" ]]; then
+            python tools/build_site_seo.py
+          else
+            echo "No critique pages changed; SEO refresh is unnecessary."
+          fi
+
+      - name: Run full quality suite
+        run: pytest
+
+      - name: Commit public critique updates
+        run: |
+          if [[ -z "$(git status --porcelain docs)" ]]; then
+            echo "No critique updates to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs
+          git commit -m "Add transcript critiques"
+          git pull --rebase origin "$GITHUB_REF_NAME"
+          git push origin "HEAD:$GITHUB_REF_NAME"
