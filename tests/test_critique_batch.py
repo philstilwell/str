@@ -3,8 +3,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from str_workflow.critique_batch import missing_critique_episode_dirs, quote_chunk
-from str_workflow.site import episode_nav_for, episode_records
+from str_workflow.critique_batch import compact_source_label, missing_critique_episode_dirs, quote_chunk
+from str_workflow.site import episode_nav_for, episode_records, refresh_homepage
 
 
 def write_episode(
@@ -60,6 +60,12 @@ def test_quote_chunk_accepts_only_exact_contiguous_four_to_fifteen_word_quotes()
     assert quote_chunk(chunks, "opposed to knowledge") is None
 
 
+def test_compact_source_label_removes_catalog_prefix_and_uses_word_boundary():
+    title = "#46 ✓ Consider: Why can we not simply ascribe everything we cannot explain to a God or the supernatural?"
+
+    assert compact_source_label(title, limit=60) == "Why can we not simply ascribe everything we cannot explain…"
+
+
 def test_episode_navigation_links_older_and_newer_critiques():
     records = [
         {"slug": "older", "title": "Older"},
@@ -91,6 +97,37 @@ def test_episode_records_preserve_public_pages_without_retained_metadata(tmp_pat
 
     assert records["stand-to-reason"][0]["slug"] == "2026-05-01-legacy"
     assert records["stand-to-reason"][0]["title"] == "Legacy Episode"
+
+
+def test_homepage_refresh_preserves_existing_card_copy(tmp_path):
+    docs = tmp_path / "docs" / "episodes"
+    homepage = docs.parent / "index.html"
+    existing_slug = "2026-07-01-existing"
+    new_slug = "2026-07-08-new"
+    for slug, lede in ((existing_slug, "Existing lede."), (new_slug, "New lede.")):
+        page = docs / slug / "index.html"
+        page.parent.mkdir(parents=True)
+        page.write_text(f'<header class="article-header"><p class="lede">{lede}</p></header>', encoding="utf-8")
+    homepage.write_text(
+        f'''<section class="episode-list compact-list" aria-label="Greg Koukl episode critiques">
+            <article class="episode-card">
+              <p>Hand-curated existing summary.</p>
+              <a href="./episodes/{existing_slug}/">Read critique</a>
+            </article>
+          </section>''',
+        encoding="utf-8",
+    )
+    records = {
+        "stand-to-reason": [
+            {"slug": existing_slug, "title": "Existing", "pub_date": "2026-07-01"},
+            {"slug": new_slug, "title": "New", "pub_date": "2026-07-08"},
+        ]
+    }
+
+    assert refresh_homepage(records, docs)
+    updated = homepage.read_text(encoding="utf-8")
+    assert "Hand-curated existing summary." in updated
+    assert "New lede." in updated
 
 
 def test_critique_workflow_runs_two_hours_after_ingest_and_uses_batch_quality_gate():

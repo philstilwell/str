@@ -15,6 +15,7 @@ NAV_RE = re.compile(
     r'<nav class="episode-nav-band" aria-label="Adjacent episode critiques">.*?</nav>',
     flags=re.DOTALL,
 )
+CARD_RE = re.compile(r'            <article class="episode-card">.*?            </article>', re.DOTALL)
 
 HOME_SECTIONS = {
     "stand-to-reason": "Greg Koukl episode critiques",
@@ -149,13 +150,25 @@ def refresh_homepage(records: dict[str, list[dict[str, Any]]], docs_dir: Path, l
         items = list(reversed(records.get(podcast_id, [])))[:limit]
         if not items:
             continue
-        cards = "\n\n".join(episode_card(item, docs_dir) for item in items)
         pattern = re.compile(
-            rf'(<section class="episode-list compact-list" aria-label="{re.escape(aria_label)}">).*?(\n          </section>)',
+            rf'(<section class="episode-list compact-list" aria-label="{re.escape(aria_label)}">)(.*?)(\n          </section>)',
             flags=re.DOTALL,
         )
+        section_match = pattern.search(updated)
+        if section_match is None:
+            raise RuntimeError(f"Could not find homepage section {aria_label!r}")
+        existing_cards: dict[str, str] = {}
+        for card_match in CARD_RE.finditer(section_match.group(2)):
+            card = card_match.group(0)
+            slug_match = re.search(r'href="\./episodes/([^/]+)/"', card)
+            if slug_match:
+                existing_cards[slug_match.group(1)] = card
+        cards = "\n\n".join(
+            existing_cards.get(str(item.get("slug") or "")) or episode_card(item, docs_dir)
+            for item in items
+        )
         updated, count = pattern.subn(
-            lambda match: f"{match.group(1)}\n{cards}{match.group(2)}", updated, count=1
+            lambda match: f"{match.group(1)}\n{cards}{match.group(3)}", updated, count=1
         )
         if count != 1:
             raise RuntimeError(f"Could not find homepage section {aria_label!r}")

@@ -277,6 +277,14 @@ def source_identity(metadata: dict[str, Any]) -> tuple[str, str]:
     return "Stand to Reason Weekly Podcast / Podbean", "Official STR / Podbean episode page"
 
 
+def compact_source_label(value: Any, limit: int = 96) -> str:
+    label = re.sub(r"^#?\d+\s*✓?\s*(?:Consider:\s*)?", "", str(value)).strip()
+    label = re.sub(r"^✓\s*", "", label).strip()
+    if len(label) <= limit:
+        return label
+    return label[:limit].rsplit(" ", 1)[0].rstrip(" ,;:-") + "…"
+
+
 def transcript_source_description(metadata: dict[str, Any]) -> str:
     transcript = metadata.get("transcript") if isinstance(metadata.get("transcript"), dict) else {}
     status = transcript.get("status")
@@ -327,7 +335,7 @@ def assemble_spec(
         used_ids.add(section_id)
         anchors = [
             {
-                "label": str(freeoffaith[anchor_id]["title"])[:96],
+                "label": compact_source_label(freeoffaith[anchor_id]["title"]),
                 "url": str(freeoffaith[anchor_id]["url"]),
                 "tone": "gold" if anchor_index == 0 else "blue",
             }
