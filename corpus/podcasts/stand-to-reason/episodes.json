@@ -99,6 +99,46 @@
         "status": "pending_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/7f98e5fb-2d41-34c9-819f-cd961c98c41e",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/8mq6uiufauat55gp/061026.mp3",
+      "path": "episodes/2026-06-10-greg-announces-stand-to-reasons-new-president-elect",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/greg-announces-stand-to-reason-s-new-president-elect/",
+      "pub_date": "2026-06-10",
+      "slug": "2026-06-10-greg-announces-stand-to-reasons-new-president-elect",
+      "title": "Greg Announces Stand to Reason’s New President-Elect",
+      "transcript": {
+        "reason": "No official transcript found and ASR credentials are not configured.",
+        "source": null,
+        "status": "pending_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/6020b712-ef05-3808-82ee-77730e99508c",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/78tyvz2xryqamq9x/060326.mp3",
+      "path": "episodes/2026-06-03-how-could-one-reconcile-death-before-the-fall-with-romans-5-and-8",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/how-could-one-reconcile-death-before-the-fall-with-romans-5-and-8/",
+      "pub_date": "2026-06-03",
+      "slug": "2026-06-03-how-could-one-reconcile-death-before-the-fall-with-romans-5-and-8",
+      "title": "How Could One Reconcile Death Before the Fall with Romans 5 and 8?",
+      "transcript": {
+        "reason": "No official transcript found and ASR credentials are not configured.",
+        "source": null,
+        "status": "pending_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -107,5 +147,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-07-08T16:10:39Z"
+  "updated_at": "2026-07-09T16:39:11Z"
 }
