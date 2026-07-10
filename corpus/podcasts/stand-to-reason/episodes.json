@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "strweekly.podbean.com/877673e8-faec-32a3-9279-c9eb86bb08bf",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/8d73k2hd9qgqvcuq/071026.mp3",
+      "path": "episodes/2026-07-10-what-are-the-reasons",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/what-are-the-reasons/",
+      "pub_date": "2026-07-10",
+      "slug": "2026-07-10-what-are-the-reasons",
+      "title": "What Are the Reasons?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "strweekly.podbean.com/8c83ac5c-8115-350c-9932-d74b7ada47cd",
       "mp3_url": "https://mcdn.podbean.com/mf/web/p7nkufaby6ewk8f4/070826.mp3",
       "path": "episodes/2026-07-08-faith-is-not-opposed-to-knowledge",
@@ -171,5 +193,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-07-09T19:09:58Z"
+  "updated_at": "2026-07-10T16:42:33Z"
 }
