@@ -111,6 +111,16 @@ def test_scheduled_ingest_requires_transcription_by_default():
     assert "TRANSCRIBE: ${{ github.event.inputs.transcribe || 'always' }}" in workflow
 
 
+def test_github_workflows_use_current_action_runtimes():
+    workflow_paths = sorted(Path(".github/workflows").glob("*.yml"))
+    assert workflow_paths
+
+    for workflow_path in workflow_paths:
+        workflow = workflow_path.read_text(encoding="utf-8")
+        assert "actions/checkout@v4" not in workflow
+        assert "actions/setup-python@v5" not in workflow
+
+
 def test_pending_current_transcript_is_selected_before_stale_missing_backlog():
     entries = [
         {"id": "old-missing", "title": "Old Missing Episode", "published": "Wed, 27 May 2026 12:00:00 +0000"},
