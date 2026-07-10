@@ -17,7 +17,7 @@ The initial workflow:
 6. If no official transcript is found, transcribes the MP3 when an ASR provider is configured.
 7. Commits new metadata/transcripts back to `main`.
 8. Opens a GitHub issue when a transcript newly becomes ready for critique.
-9. Runs a second daily workflow two hours later to create, validate, and publish critiques for every ready transcript that does not yet have one.
+9. Starts a second workflow after successful ingestion to create, validate, and publish critiques for every ready transcript that does not yet have one, with a daily recovery sweep as backup.
 
 Raw audio is downloaded only into temporary workspace storage during a run and is intentionally ignored by git.
 
@@ -51,7 +51,7 @@ Each issue includes the podcast, episode title, release date, transcript status,
 
 ## Scheduled Critique Generation
 
-`.github/workflows/critiques.yml` runs every day at `16:15 UTC`, two hours after the transcript ingest schedule. It finds every episode whose transcript status is `found_official` or `generated_asr` and whose `docs/episodes/<slug>/index.html` page is missing.
+`.github/workflows/critiques.yml` starts when the `Ingest podcast episodes` workflow completes successfully, so critique generation follows the actual availability of committed transcripts instead of assuming ingestion finishes within a fixed window. A daily `16:15 UTC` schedule remains as an idempotent recovery sweep, and manual dispatch remains available. Each run finds every episode whose transcript status is `found_official` or `generated_asr` and whose `docs/episodes/<slug>/index.html` page is missing.
 
 For each missing page, the workflow uses structured model output to create five transcript-grounded critique sections. It verifies direct quotes against the stored transcript, resolves research anchors only from `research/source-index.json`, retries drafts that fail a quality check, renders the page atomically, refreshes adjacent-episode navigation and the five most recent homepage cards, rebuilds SEO discovery files, runs the full test suite, and commits only validated `docs/` changes.
 

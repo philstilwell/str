@@ -130,11 +130,15 @@ def test_homepage_refresh_preserves_existing_card_copy(tmp_path):
     assert "New lede." in updated
 
 
-def test_critique_workflow_runs_two_hours_after_ingest_and_uses_batch_quality_gate():
+def test_critique_workflow_follows_successful_ingest_with_scheduled_recovery_sweep():
     ingest = Path(".github/workflows/ingest.yml").read_text(encoding="utf-8")
     critiques = Path(".github/workflows/critiques.yml").read_text(encoding="utf-8")
 
     assert 'cron: "15 14 * * *"' in ingest
+    assert 'workflows: ["Ingest podcast episodes"]' in critiques
+    assert "types: [completed]" in critiques
+    assert "branches: [main]" in critiques
+    assert "github.event.workflow_run.conclusion == 'success'" in critiques
     assert 'cron: "15 16 * * *"' in critiques
     assert "python -m str_workflow.critique_batch" in critiques
     assert "python tools/build_site_seo.py" in critiques

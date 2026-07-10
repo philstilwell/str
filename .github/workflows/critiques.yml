@@ -1,8 +1,12 @@
 name: Create missing transcript critiques
 
 on:
+  workflow_run:
+    workflows: ["Ingest podcast episodes"]
+    types: [completed]
+    branches: [main]
   schedule:
-    # Two hours after the 14:15 UTC transcript-ingest schedule.
+    # Daily recovery sweep in case the event-driven run was missed or failed.
     - cron: "15 16 * * *"
   workflow_dispatch:
     inputs:
@@ -24,6 +28,7 @@ concurrency:
 
 jobs:
   critique:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     env:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
