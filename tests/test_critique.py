@@ -237,7 +237,7 @@ def test_valid_spec_renders_page_with_required_onreason_features(tmp_path):
     assert "Diagnostic fit: High" in html
     assert "epistemic-reality" in html
     assert "Bounded Agency" in html
-    assert "faith is intrinsically irrational" in html
+    assert "Distinguish biblical faith-language expressing trust" in html
     assert "Free of Faith Featured archive" in html
     assert "https://freeoffaith.com/featured/" in html
     assert "quote-strip" not in html
@@ -270,14 +270,14 @@ def test_freeoffaith_source_index_includes_featured_posts():
     assert any(item.get("id") == "fof-featured-faith-vs-rationality" for item in featured)
 
 
-def test_critique_contract_treats_faith_as_intrinsically_irrational():
+def test_critique_contract_distinguishes_faith_from_evidence_category():
     method_text = " ".join(item["body"] for item in DEFAULT_METHODS)
     vulnerability_text = " ".join(DEFAULT_VULNERABILITIES)
     batch_prompt = Path("src/str_workflow/critique_batch.py").read_text(encoding="utf-8")
 
-    assert "Faith is intrinsically irrational" in method_text
-    assert "Faith Irrationality" in vulnerability_text
-    assert "Treat faith as intrinsically irrational" in batch_prompt
+    assert "faith-language expressing trust or loyalty" in method_text
+    assert "Faith and Evidence Categories" in vulnerability_text
+    assert "distinguish biblical faith-language expressing trust" in batch_prompt
 
 
 def test_validate_spec_rejects_missing_transcript_quote_explanations():
