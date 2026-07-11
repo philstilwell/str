@@ -17,10 +17,12 @@
   "slug": "2026-06-24-who-are-the-least-of-these",
   "title": "Who Are the “Least of These”?",
   "transcript": {
-    "reason": "No official transcript found and ASR credentials are not configured.",
-    "source": null,
-    "status": "pending_asr"
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
   },
-  "updated_at": "2026-07-07T16:41:40Z",
+  "updated_at": "2026-07-11T15:16:57Z",
   "youtube_url": null
 }

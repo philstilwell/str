@@ -58,9 +58,11 @@
       "slug": "2026-07-01-cultivating-a-big-enough-worldview-in-students",
       "title": "Cultivating a “Big Enough” Worldview in Students",
       "transcript": {
-        "reason": "No official transcript found and ASR credentials are not configured.",
-        "source": null,
-        "status": "pending_asr"
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
       },
       "youtube_url": null
     },
@@ -78,9 +80,11 @@
       "slug": "2026-06-24-who-are-the-least-of-these",
       "title": "Who Are the “Least of These”?",
       "transcript": {
-        "reason": "No official transcript found and ASR credentials are not configured.",
-        "source": null,
-        "status": "pending_asr"
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
       },
       "youtube_url": null
     },
@@ -193,5 +197,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-07-10T16:42:33Z"
+  "updated_at": "2026-07-11T15:19:12Z"
 }

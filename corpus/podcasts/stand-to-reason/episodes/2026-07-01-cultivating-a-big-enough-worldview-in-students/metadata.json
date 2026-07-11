@@ -17,10 +17,12 @@
   "slug": "2026-07-01-cultivating-a-big-enough-worldview-in-students",
   "title": "Cultivating a “Big Enough” Worldview in Students",
   "transcript": {
-    "reason": "No official transcript found and ASR credentials are not configured.",
-    "source": null,
-    "status": "pending_asr"
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
   },
-  "updated_at": "2026-07-06T19:07:41Z",
+  "updated_at": "2026-07-11T15:14:31Z",
   "youtube_url": null
 }

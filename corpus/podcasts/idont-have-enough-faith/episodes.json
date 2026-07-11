@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "https://crossexamined.org/?p=103788",
+      "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast_Mike-Licona_7-10-26.mp3",
+      "path": "episodes/2026-07-10-bible-expert-reveals-who-really-wrote-the-gospels",
+      "podcast": {
+        "home_url": "https://crossexamined.org/podcasts/",
+        "id": "idont-have-enough-faith",
+        "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+      },
+      "podcast_page_url": "https://crossexamined.org/bible-expert-reveals-who-really-wrote-the-gospels/",
+      "pub_date": "2026-07-10",
+      "slug": "2026-07-10-bible-expert-reveals-who-really-wrote-the-gospels",
+      "title": "Bible Expert Reveals Who REALLY Wrote the Gospels?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "https://crossexamined.org/?p=103779",
       "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek_Podcast_Frank_Solo_7-7-2026.mp3",
       "path": "episodes/2026-07-07-frank-addresses-candace-owens-conspiracy-theories",
@@ -249,5 +271,5 @@
     "id": "idont-have-enough-faith",
     "title": "I Don't Have Enough FAITH to Be an ATHEIST"
   },
-  "updated_at": "2026-07-09T19:04:58Z"
+  "updated_at": "2026-07-11T15:21:20Z"
 }
