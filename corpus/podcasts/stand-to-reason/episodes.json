@@ -102,9 +102,11 @@
       "slug": "2026-06-17-why-would-we-matter-to-god",
       "title": "Why Would We Matter to God?",
       "transcript": {
-        "reason": "No official transcript found and ASR credentials are not configured.",
-        "source": null,
-        "status": "pending_asr"
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
       },
       "youtube_url": null
     },
@@ -122,9 +124,11 @@
       "slug": "2026-06-12-what-a-good-young-man-looks-like",
       "title": "What a Good Young Man Looks Like",
       "transcript": {
-        "reason": "No official transcript found and ASR credentials are not configured.",
-        "source": null,
-        "status": "pending_asr"
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
       },
       "youtube_url": null
     },
@@ -197,5 +201,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-07-11T15:19:12Z"
+  "updated_at": "2026-07-12T15:19:24Z"
 }

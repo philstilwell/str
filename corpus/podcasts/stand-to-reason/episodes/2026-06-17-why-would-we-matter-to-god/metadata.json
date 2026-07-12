@@ -17,10 +17,12 @@
   "slug": "2026-06-17-why-would-we-matter-to-god",
   "title": "Why Would We Matter to God?",
   "transcript": {
-    "reason": "No official transcript found and ASR credentials are not configured.",
-    "source": null,
-    "status": "pending_asr"
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
   },
-  "updated_at": "2026-07-07T16:41:40Z",
+  "updated_at": "2026-07-12T15:14:42Z",
   "youtube_url": null
 }
