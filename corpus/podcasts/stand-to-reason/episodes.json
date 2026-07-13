@@ -146,9 +146,11 @@
       "slug": "2026-06-10-greg-announces-stand-to-reasons-new-president-elect",
       "title": "Greg Announces Stand to Reason’s New President-Elect",
       "transcript": {
-        "reason": "No official transcript found and ASR credentials are not configured.",
-        "source": null,
-        "status": "pending_asr"
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
       },
       "youtube_url": null
     },
@@ -166,9 +168,11 @@
       "slug": "2026-06-03-how-could-one-reconcile-death-before-the-fall-with-romans-5-and-8",
       "title": "How Could One Reconcile Death Before the Fall with Romans 5 and 8?",
       "transcript": {
-        "reason": "No official transcript found and ASR credentials are not configured.",
-        "source": null,
-        "status": "pending_asr"
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
       },
       "youtube_url": null
     },
@@ -201,5 +205,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-07-12T15:19:24Z"
+  "updated_at": "2026-07-13T16:48:29Z"
 }
