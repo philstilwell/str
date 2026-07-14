@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-14T15:43:33Z",
+  "description_html": "Greg answers questions about why we weren’t made sinless in the first place, the morality of using donor sperm to conceive, whether we would conclude the Holy Spirit is equal to the Father and Jesus without the Nicene Creed, how God knows the future, and baptism for the dead.",
+  "description_text": "Greg answers questions about why we weren’t made sinless in the first place, the morality of using donor sperm to conceive, whether we would conclude the Holy Spirit is equal to the Father and Jesus without the Nicene Creed, how God knows the future, and baptism for the dead.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/8c4c0104-dff4-352b-b7e1-78fe962bad90",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/wyucng9ej64h5vic/052026.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/why-weren-t-we-made-sinless-in-the-first-place/",
+  "pub_date": "2026-05-20",
+  "rss_transcript_tags": [],
+  "slug": "2026-05-20-why-werent-we-made-sinless-in-the-first-place",
+  "title": "Why Weren’t We Made Sinless in the First Place?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-14T15:43:33Z",
+  "youtube_url": null
+}

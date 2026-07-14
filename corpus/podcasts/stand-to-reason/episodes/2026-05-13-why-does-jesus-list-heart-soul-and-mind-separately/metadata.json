@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-14T15:45:56Z",
+  "description_html": "Greg answers questions about why Jesus lists heart, soul, and mind separately in Mark 12:29–30, whether the Bible is written for laypeople rather than scholars, responding to someone who thinks life is a simulation, and whether it’s wrong to forgive someone who hasn’t repented.",
+  "description_text": "Greg answers questions about why Jesus lists heart, soul, and mind separately in Mark 12:29–30, whether the Bible is written for laypeople rather than scholars, responding to someone who thinks life is a simulation, and whether it’s wrong to forgive someone who hasn’t repented.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/7ff90c25-7b87-394f-9ba5-6970d88ce636",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/jbnrtxw6p24h8pax/051326.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/why-does-jesus-list-heart-soul-and-mind-separately/",
+  "pub_date": "2026-05-13",
+  "rss_transcript_tags": [],
+  "slug": "2026-05-13-why-does-jesus-list-heart-soul-and-mind-separately",
+  "title": "Why Does Jesus List Heart, Soul, and Mind Separately?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-14T15:45:56Z",
+  "youtube_url": null
+}
