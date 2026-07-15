@@ -172,6 +172,19 @@ def valid_spec() -> dict:
                     "Pastoral usefulness is not enough to establish public truth.",
                 ],
             },
+            "challenge": {
+                "kicker": "The challenge",
+                "title": "Stop treating unearned certainty as argument",
+                "paragraphs": [
+                    "The weakest points in the transcript are the moments where insider claims are presented as though they had already survived public testing, even though the evidence supplied is mainly selected examples, pastoral resonance, or assertion.",
+                    "The challenge is direct: either provide the missing rival comparisons and public warrants, or lower the rhetoric to match what the episode actually establishes under evidence-proportionate belief.",
+                ],
+                "bullets": [
+                    "The worldview section must show why rival frameworks fail instead of treating Christian scope as self-validating.",
+                    "The resurrection section must argue the historical claim rather than borrowing confidence from its pastoral role.",
+                    "The moral section must supply public criteria instead of assuming scriptural authority settles contested claims for everyone.",
+                ],
+            },
         },
         "evidence_needed": [
             {
@@ -236,6 +249,8 @@ def test_valid_spec_renders_page_with_required_onreason_features(tmp_path):
     assert "The Steelmanned Condensed Claims:" in html
     assert "Diagnostic fit: High" in html
     assert "epistemic-reality" in html
+    assert "challenge-reality" in html
+    assert "The challenge" in html
     assert "Bounded Agency" in html
     assert "Distinguish biblical faith-language expressing trust" in html
     assert "Free of Faith Featured archive" in html
@@ -252,7 +267,7 @@ def test_valid_spec_renders_page_with_required_onreason_features(tmp_path):
     assert '<p class="section-kicker numbered-kicker">1. Worldview scope</p>' in html
     assert '<p class="section-kicker">Critique Framework</p>' in html
     assert '<p class="section-kicker numbered-kicker">Critique Framework</p>' not in html
-    assert "app.js?v=20260707-numbered-bars" in html
+    assert "app.js?v=20260715-challenge-section" in html
     assert '<link rel="canonical" href="https://onreason.com/episodes/2026-07-01-test-episode/">' in html
     assert '<meta property="og:type" content="article">' in html
     assert '<meta name="twitter:card" content="summary_large_image">' in html
@@ -351,6 +366,7 @@ def test_validate_spec_rejects_shallow_critique_depth_fields():
     weak["sections"][0]["tags"][0]["application"] = "Generic label."
     weak["evidence_needed"][0]["raise"] = "More evidence."
     weak["overall"]["epistemic_reality"]["bullets"] = ["Vague."]
+    weak["overall"]["challenge"]["bullets"] = ["Too vague."]
     weak["ai_prompt"]["steelman_claims"][0] = "Worldview claim."
 
     errors = validate_spec(weak)
@@ -362,6 +378,7 @@ def test_validate_spec_rejects_shallow_critique_depth_fields():
     assert any("tags[1].application" in error for error in errors)
     assert any("evidence_needed[1].raise" in error for error in errors)
     assert any("epistemic_reality must include at least three bullets" in error for error in errors)
+    assert any("overall.challenge must include at least three transcript-specific challenges" in error for error in errors)
     assert any("steelman_claims must be developed" in error for error in errors)
 
 
@@ -622,6 +639,16 @@ def test_numbered_section_kickers_use_dark_container_bar_contract():
     assert ".section-panel > .section-kicker.numbered-kicker" in styles
     assert "background: #111a15;" in styles
     assert "color: #f3f7f2;" in styles
+
+
+def test_challenge_section_uses_dark_red_contract():
+    styles = Path("docs/assets/styles.css").read_text(encoding="utf-8")
+    batch_prompt = Path("src/str_workflow/critique_batch.py").read_text(encoding="utf-8")
+
+    assert ".challenge-reality" in styles
+    assert "background: #461113;" in styles
+    assert "color: #fff3ee;" in styles
+    assert "dark red \"The challenge\" section" in batch_prompt
 
 
 def test_contents_menu_has_active_scroll_state_contract():

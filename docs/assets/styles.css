@@ -469,6 +469,55 @@ h3 {
   color: #e2bd6f;
 }
 
+.challenge-reality {
+  margin-top: 18px;
+  padding: 24px;
+  color: #fff3ee;
+  border: 1px solid #7a2a25;
+  border-radius: 8px;
+  background: #461113;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 7%);
+}
+
+.challenge-reality .dark-kicker {
+  margin: 0 0 12px;
+  color: #ffd0bd;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.challenge-reality h3 {
+  max-width: 860px;
+  margin: 0 0 16px;
+  color: #fff8f4;
+  font-size: 26px;
+}
+
+.challenge-reality p {
+  max-width: 930px;
+  margin: 0 0 15px;
+  color: #fbe9e2;
+}
+
+.challenge-reality p:last-child {
+  margin-bottom: 0;
+}
+
+.challenge-reality ul {
+  display: grid;
+  gap: 10px;
+  max-width: 930px;
+  margin: 16px 0 18px;
+  padding-left: 22px;
+  color: #fff7e3;
+}
+
+.challenge-reality li::marker {
+  color: #ffb49e;
+}
+
 .method-strip {
   grid-template-columns: repeat(5, minmax(0, 1fr));
   padding: 20px 0 28px;
@@ -1213,7 +1262,15 @@ h3 {
     padding: 20px;
   }
 
+  .challenge-reality {
+    padding: 20px;
+  }
+
   .epistemic-reality h3 {
+    font-size: 22px;
+  }
+
+  .challenge-reality h3 {
     font-size: 22px;
   }
 

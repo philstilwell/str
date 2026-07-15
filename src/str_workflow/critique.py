@@ -25,7 +25,7 @@ from .seo import (
     website_schema,
 )
 
-DEFAULT_ASSET_VERSION = "20260707-numbered-bars"
+DEFAULT_ASSET_VERSION = "20260715-challenge-section"
 DEFAULT_HERO_IMAGE = "../../assets/evidence-alignment.png"
 DEFAULT_HERO_ALT = "Abstract evidence-alignment illustration with papers, scales, and a magnifying glass."
 FAITH_EVIDENCE_PRINCIPLE = (
@@ -400,6 +400,11 @@ def spec_explanatory_texts(spec: dict[str, Any]) -> list[tuple[str, str]]:
         items.append((f"overall.epistemic_reality.paragraphs[{index}]", normalized_content(paragraph)))
     for index, bullet in enumerate(epistemic.get("bullets") or [], start=1):
         items.append((f"overall.epistemic_reality.bullets[{index}]", normalized_content(bullet)))
+    challenge = overall.get("challenge") if isinstance(overall.get("challenge"), dict) else {}
+    for index, paragraph in enumerate(challenge.get("paragraphs") or [], start=1):
+        items.append((f"overall.challenge.paragraphs[{index}]", normalized_content(paragraph)))
+    for index, bullet in enumerate(challenge.get("bullets") or [], start=1):
+        items.append((f"overall.challenge.bullets[{index}]", normalized_content(bullet)))
 
     intro = spec.get("evidence_intro")
     if intro:
@@ -661,6 +666,19 @@ def scaffold_spec(episode_dir: Path, source_index_path: Path) -> dict[str, Any]:
                     "TODO missing public warrant",
                 ],
             },
+            "challenge": {
+                "kicker": "The challenge",
+                "title": "TODO forceful polemic against the transcript's weakest points",
+                "paragraphs": [
+                    "TODO name the weakest transcript moves and explain why they fail under evidence-proportionate belief.",
+                    "TODO state the challenge the episode must meet if it wants to keep its strongest confidence claims.",
+                ],
+                "bullets": [
+                    "TODO weakest point tied to a specific transcript claim",
+                    "TODO second weakest point tied to a specific transcript claim",
+                    "TODO third weakest point tied to a specific transcript claim",
+                ],
+            },
         },
         "evidence_needed": [
             {
@@ -854,8 +872,10 @@ def validate_spec(spec: dict[str, Any]) -> list[str]:
 
     overall = spec.get("overall") if isinstance(spec.get("overall"), dict) else {}
     epistemic = overall.get("epistemic_reality") if isinstance(overall.get("epistemic_reality"), dict) else {}
+    challenge = overall.get("challenge") if isinstance(overall.get("challenge"), dict) else {}
     required(overall, "title", "overall", errors)
     required(epistemic, "title", "overall.epistemic_reality", errors)
+    required(challenge, "title", "overall.challenge", errors)
     overall_paragraphs = overall.get("paragraphs")
     if not isinstance(overall_paragraphs, list) or len(overall_paragraphs) < 2:
         errors.append("overall.paragraphs must include at least two assessment paragraphs")
@@ -877,6 +897,20 @@ def validate_spec(spec: dict[str, Any]) -> list[str]:
         for index, bullet in enumerate(epistemic_bullets, start=1):
             if word_count(bullet) < 8:
                 errors.append(f"overall.epistemic_reality.bullets[{index}] must name a concrete downgrade")
+    challenge_paragraphs = challenge.get("paragraphs")
+    challenge_bullets = challenge.get("bullets")
+    if not isinstance(challenge_paragraphs, list) or len(challenge_paragraphs) < 2:
+        errors.append("overall.challenge must include at least two polemical paragraphs")
+    else:
+        for index, paragraph in enumerate(challenge_paragraphs, start=1):
+            if word_count(paragraph) < 18:
+                errors.append(f"overall.challenge.paragraphs[{index}] must directly confront the weakest transcript points")
+    if not isinstance(challenge_bullets, list) or len(challenge_bullets) < 3:
+        errors.append("overall.challenge must include at least three transcript-specific challenges")
+    else:
+        for index, bullet in enumerate(challenge_bullets, start=1):
+            if word_count(bullet) < 10:
+                errors.append(f"overall.challenge.bullets[{index}] must name a specific weak point")
 
     evidence_needed = spec.get("evidence_needed")
     if not isinstance(evidence_needed, list) or len(evidence_needed) < len(sections):
@@ -945,6 +979,8 @@ def page_explanatory_texts(soup: BeautifulSoup) -> list[tuple[str, str]]:
         ("overall paragraph", "#overall > p:not(.section-kicker)"),
         ("epistemic paragraph", "#overall .epistemic-reality p:not(.dark-kicker)"),
         ("epistemic bullet", "#overall .epistemic-reality li"),
+        ("challenge paragraph", "#overall .challenge-reality p:not(.dark-kicker)"),
+        ("challenge bullet", "#overall .challenge-reality li"),
     ]
     items: list[tuple[str, str]] = []
     for label, selector in selectors:
@@ -987,6 +1023,7 @@ def validate_page(path: Path) -> list[str]:
         "diagnostic_fit": "Diagnostic fit:",
         "formal_latex": "\\[",
         "epistemic_reality": "epistemic-reality",
+        "challenge": "challenge-reality",
         "ai_prompt": "The Steelmanned Condensed Claims:",
         "symbols": "✶",
         "numbered_kicker_bar": "numbered-kicker",
@@ -1154,6 +1191,10 @@ def validate_page(path: Path) -> list[str]:
     epistemic_bullets = soup.select("#overall .epistemic-reality li")
     if len(epistemic_paragraphs) < 2 or len(epistemic_bullets) < 3:
         errors.append("page epistemic reality section must include two paragraphs and three concrete bullets")
+    challenge_paragraphs = soup.select("#overall .challenge-reality p:not(.dark-kicker)")
+    challenge_bullets = soup.select("#overall .challenge-reality li")
+    if len(challenge_paragraphs) < 2 or len(challenge_bullets) < 3:
+        errors.append("page challenge section must include two paragraphs and three transcript-specific bullets")
     return errors
 
 
@@ -1371,9 +1412,12 @@ def render_critique(spec: dict[str, Any]) -> str:
 
     overall = spec["overall"]
     epistemic = overall["epistemic_reality"]
+    challenge = overall["challenge"]
     overall_paragraphs = "\n".join(paragraph_html(item) for item in overall.get("paragraphs", []))
     epistemic_paragraphs = "\n".join(f"              <p>{esc(item)}</p>" for item in epistemic.get("paragraphs", []))
     epistemic_bullets = "\n".join(f"                <li>{esc(item)}</li>" for item in epistemic.get("bullets", []))
+    challenge_paragraphs = "\n".join(f"              <p>{esc(item)}</p>" for item in challenge.get("paragraphs", []))
+    challenge_bullets = "\n".join(f"                <li>{esc(item)}</li>" for item in challenge.get("bullets", []))
     research_intro = "\n".join(paragraph_html(item) for item in spec["research"].get("body", []))
     evidence_intro = evidence_intro_html(spec)
 
@@ -1482,6 +1526,14 @@ def render_critique(spec: dict[str, Any]) -> str:
 {epistemic_paragraphs}
               <ul>
 {epistemic_bullets}
+              </ul>
+            </div>
+            <div class="challenge-reality" aria-label="The challenge">
+              <p class="dark-kicker">{esc(challenge.get("kicker"))}</p>
+              <h3>{esc(challenge.get("title"))}</h3>
+{challenge_paragraphs}
+              <ul>
+{challenge_bullets}
               </ul>
             </div>
           </section>
@@ -1621,7 +1673,7 @@ def drafting_prompt(spec: dict[str, Any]) -> str:
 
         Episode: {spec.get("episode", {}).get("title")}
 
-        Fill every TODO in critique-draft.json. Keep direct transcript quotes short, include timestamp ranges when possible, and ground every section in Free of Faith Insights, Considerations, and Featured posts plus local framework anchors drawn from the private research/source-index.json file. Correct proper-name capitalization in transcript-derived quotes and prose even when ASR lowercases names. Do not expose that local source index as a public link or visible source. {FAITH_IRRATIONALITY_PRINCIPLE}
+        Fill every TODO in critique-draft.json. Keep direct transcript quotes short, include timestamp ranges when possible, and ground every section in Free of Faith Insights, Considerations, and Featured posts plus local framework anchors drawn from the private research/source-index.json file. Correct proper-name capitalization in transcript-derived quotes and prose even when ASR lowercases names. Add "The challenge" below "The epistemic reality" as a forceful, transcript-specific polemic against the weakest points in the episode; do not let it become generic denunciation. Do not expose that local source index as a public link or visible source. {FAITH_IRRATIONALITY_PRINCIPLE}
 
         The AI prompt must include steelmanned claims actually made in the transcript. Current scaffold claims:
         {claims}

@@ -462,6 +462,25 @@ def build_spec(episode: dict[str, Any], all_episodes: list[dict[str, Any]], inde
                     "Practical usefulness, civic motivation, or personal transformation can raise interest without independently proving the Christian interpretation.",
                 ],
             },
+            "challenge": {
+                "kicker": "The challenge",
+                "title": "Do not let forceful rhetoric stand in for evidence",
+                "paragraphs": [
+                    (
+                        f"The weakest points in this episode cluster around {section_names}: local anecdotes, testimony, moral urgency, or platform authority are asked to carry conclusions that need independent public warrant. "
+                        "That is where the critique should press hardest, because the transcript's confidence rises precisely where the comparison work becomes thinnest."
+                    ),
+                    (
+                        "The challenge is blunt: name the rival explanations, test them with the same generosity granted to the Christian reading, and then lower the rhetoric wherever the evidence does not exclude those rivals. "
+                        "Faith, identity, civic alarm, and pastoral usefulness may explain why the claim feels urgent, but they do not make the claim rationally credible at the level asserted."
+                    ),
+                ],
+                "bullets": [
+                    "If selected examples are doing the work, the episode must supply the omitted comparison class rather than treating memorable cases as decisive.",
+                    "If Christian interpretation is being presented as uniquely adequate, the transcript must show what rival secular, pluralist, historical, or theological readings fail to explain.",
+                    "If the conclusion depends on faith-protected confidence, that confidence should be downgraded until public evidence rather than commitment carries the load.",
+                ],
+            },
         },
         "evidence_needed": [
             {
