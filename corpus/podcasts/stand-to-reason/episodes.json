@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "strweekly.podbean.com/1ce95a64-6008-332f-87f3-c2c833d5f418",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/37yxzkvcsmh5vqxy/071526.mp3",
+      "path": "episodes/2026-07-15-we-have-an-obligation-to-help-the-poor",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/we-have-an-obligation-to-help-the-poor/",
+      "pub_date": "2026-07-15",
+      "slug": "2026-07-15-we-have-an-obligation-to-help-the-poor",
+      "title": "We Have an Obligation to Help the Poor",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "strweekly.podbean.com/877673e8-faec-32a3-9279-c9eb86bb08bf",
       "mp3_url": "https://mcdn.podbean.com/mf/web/8d73k2hd9qgqvcuq/071026.mp3",
       "path": "episodes/2026-07-10-what-are-the-reasons",
@@ -241,6 +263,28 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/8d1f0097-eb6e-37db-811e-3b7e047b78b6",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/g8kx96q8g5h4rb8r/050626.mp3",
+      "path": "episodes/2026-05-06-will-we-be-held-responsible-for-not-warning-non-believers-of-the-coming",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/will-we-be-held-responsible-for-not-warning-non-believers-of-the-coming-judgment/",
+      "pub_date": "2026-05-06",
+      "slug": "2026-05-06-will-we-be-held-responsible-for-not-warning-non-believers-of-the-coming",
+      "title": "Will We Be Held Responsible for Not Warning Non-Believers of the Coming Judgment?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -249,5 +293,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-07-14T15:48:13Z"
+  "updated_at": "2026-07-15T15:53:26Z"
 }

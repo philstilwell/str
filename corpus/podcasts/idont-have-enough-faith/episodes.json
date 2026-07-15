@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "https://crossexamined.org/?p=103794",
+      "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek_Podcast_Frank-Solo_7-14-2026.mp3",
+      "path": "episodes/2026-07-14-help-conspiracy-theories-are-ruining-my-marriage-37-questions-to",
+      "podcast": {
+        "home_url": "https://crossexamined.org/podcasts/",
+        "id": "idont-have-enough-faith",
+        "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+      },
+      "podcast_page_url": "https://crossexamined.org/help-conspiracy-theories-are-ruining-my-marriage-37-questions-to-consider/",
+      "pub_date": "2026-07-14",
+      "slug": "2026-07-14-help-conspiracy-theories-are-ruining-my-marriage-37-questions-to",
+      "title": "“HELP! Conspiracy Theories Are Ruining My Marriage!” 37 Questions to Consider",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "https://crossexamined.org/?p=103788",
       "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast_Mike-Licona_7-10-26.mp3",
       "path": "episodes/2026-07-10-bible-expert-reveals-who-really-wrote-the-gospels",
@@ -271,5 +293,5 @@
     "id": "idont-have-enough-faith",
     "title": "I Don't Have Enough FAITH to Be an ATHEIST"
   },
-  "updated_at": "2026-07-11T15:21:20Z"
+  "updated_at": "2026-07-15T15:55:36Z"
 }

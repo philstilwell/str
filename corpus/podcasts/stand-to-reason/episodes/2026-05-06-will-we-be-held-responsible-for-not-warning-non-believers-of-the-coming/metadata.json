@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-15T15:51:10Z",
+  "description_html": "Greg answers questions about relationships between former offenders and the offended on the new earth, applying Ezekiel 33:1–9 to Christians, handling a Sunday school situation, reading enough to get the author’s intent, and deceased loved ones communicating with us.",
+  "description_text": "Greg answers questions about relationships between former offenders and the offended on the new earth, applying Ezekiel 33:1–9 to Christians, handling a Sunday school situation, reading enough to get the author’s intent, and deceased loved ones communicating with us.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/8d1f0097-eb6e-37db-811e-3b7e047b78b6",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/g8kx96q8g5h4rb8r/050626.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/will-we-be-held-responsible-for-not-warning-non-believers-of-the-coming-judgment/",
+  "pub_date": "2026-05-06",
+  "rss_transcript_tags": [],
+  "slug": "2026-05-06-will-we-be-held-responsible-for-not-warning-non-believers-of-the-coming",
+  "title": "Will We Be Held Responsible for Not Warning Non-Believers of the Coming Judgment?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-15T15:51:10Z",
+  "youtube_url": null
+}

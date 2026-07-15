@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-15T15:48:44Z",
+  "description_html": "Greg discusses our obligation to help the poor, then he talks to a caller about the fate of saved people who get dementia later in life and answers questions about our conscience vs. the Holy Spirit, the government as an analogy for the Trinity, and the inclusivism of the Catholic Church.",
+  "description_text": "Greg discusses our obligation to help the poor, then he talks to a caller about the fate of saved people who get dementia later in life and answers questions about our conscience vs. the Holy Spirit, the government as an analogy for the Trinity, and the inclusivism of the Catholic Church.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/1ce95a64-6008-332f-87f3-c2c833d5f418",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/37yxzkvcsmh5vqxy/071526.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/we-have-an-obligation-to-help-the-poor/",
+  "pub_date": "2026-07-15",
+  "rss_transcript_tags": [],
+  "slug": "2026-07-15-we-have-an-obligation-to-help-the-poor",
+  "title": "We Have an Obligation to Help the Poor",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-15T15:48:44Z",
+  "youtube_url": null
+}
