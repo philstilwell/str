@@ -200,11 +200,11 @@ def test_notice_lifecycle_preserves_exact_text_and_builds_indexes(
     markdown = (outreach_dir / "index.md").read_text(encoding="utf-8")
     assert "2026-07-15 14:07 EDT" in markdown
     assert "verified_visible" in markdown
-    assert "| Status | Notice text | Public post |" in markdown
-    assert (
-        "<small>A new critique is available.<br><br>Contents: Thesis; method; "
-        "research; claim map; all five claims; assessment.<br></small>"
-    ) in markdown
+    assert "## Notice text" in markdown
+    assert f"### {notice_id}" in markdown
+    assert f"```text\n{exact_text}```" in markdown
+    assert "<small>" not in markdown
+    assert "<br>" not in markdown
     assert "[open](https://www.youtube.com/watch?v=abc123&lc=comment456)" in markdown
 
     rows = list(

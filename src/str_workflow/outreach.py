@@ -5,7 +5,6 @@ from __future__ import annotations
 import argparse
 import csv
 import hashlib
-import html
 import io
 import json
 import re
@@ -756,12 +755,12 @@ def markdown_link(label: str, url: str) -> str:
     return f"[{markdown_escape(label)}]({url})"
 
 
-def markdown_small_text(value: str) -> str:
-    """Render exact multiline text compactly inside a Markdown table cell."""
+def markdown_fenced_text(value: str) -> list[str]:
+    """Render exact text as a safe, plain-Markdown fenced code block."""
 
-    normalized = value.replace("\r\n", "\n").replace("\r", "\n")
-    escaped = html.escape(normalized).replace("|", "&#124;")
-    return f"<small>{escaped.replace(chr(10), '<br>')}</small>"
+    longest_run = max((len(match) for match in re.findall(r"`+", value)), default=0)
+    fence = "`" * max(3, longest_run + 1)
+    return [f"{fence}text", *value.rstrip("\n").splitlines(), fence]
 
 
 def render_markdown_index(
@@ -809,8 +808,8 @@ def render_markdown_index(
             "",
             "## Notices",
             "",
-            "| Posted (ET) | Podcast | Critique | Platform | Target | Status | Notice text | Public post |",
-            "| --- | --- | --- | --- | --- | --- | --- | --- |",
+            "| Posted (ET) | Podcast | Critique | Platform | Target | Status | Public post |",
+            "| --- | --- | --- | --- | --- | --- | --- |",
         ]
     )
     if rows:
@@ -828,14 +827,29 @@ def render_markdown_index(
                         markdown_escape(row["platform"]),
                         markdown_link(row["target_type"], row["target_url"]),
                         markdown_escape(row["status"]),
-                        markdown_small_text(row["notice_text"]),
                         public_post,
                     )
                 )
                 + " |"
             )
     else:
-        lines.append("| — | — | No notices logged | — | — | — | — | — |")
+        lines.append("| — | — | No notices logged | — | — | — | — |")
+
+    if rows:
+        lines.extend(["", "## Notice text"])
+        for row in rows:
+            lines.extend(
+                [
+                    "",
+                    f"### {markdown_escape(row['notice_id'])}",
+                    "",
+                    f"Platform: {markdown_escape(row['platform'])}",
+                    "",
+                    f"Target: {markdown_link(row['target_type'], row['target_url'])}",
+                    "",
+                    *markdown_fenced_text(row["notice_text"]),
+                ]
+            )
     return "\n".join(lines) + "\n"
 
 
