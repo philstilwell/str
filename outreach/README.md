@@ -100,4 +100,4 @@ python3 -m str_workflow.outreach --outreach-dir outreach validate
 python3 -m str_workflow.outreach --outreach-dir outreach rebuild
 ```
 
-JSON timestamps are stored in UTC. `index.md` displays Eastern time, while `index.csv` provides both UTC and Eastern columns. The CSV includes the exact notice text and is suitable for filtering or importing into a spreadsheet.
+JSON timestamps are stored in UTC. `index.md` displays Eastern time and the exact notice text in compact type, while `index.csv` provides both UTC and Eastern columns. The CSV also includes the exact notice text and is suitable for filtering or importing into a spreadsheet.
