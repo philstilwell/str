@@ -31,7 +31,34 @@
       "Exclusivism/sincere seekers"
     ]
   },
-  "notices": [],
+  "notices": [
+    {
+      "id": "podbean-7ffc489f4e0c",
+      "idempotency_key": "7ffc489f4e0c9b7d7d21806d773f1765e0688ac9664c5a5d89bb559c3214c535",
+      "platform": "podbean",
+      "target_type": "episode-page",
+      "target_url": "https://strweekly.podbean.com/e/we-have-an-obligation-to-help-the-poor/",
+      "notice_text": "Independent critique of “We Have an Obligation to Help the Poor”\n\nI’ve published an evidence-focused critique of this Stand to Reason episode. It recognizes the episode’s stronger points while examining several claims that may require additional evidence or argument.\n\nContents:\ni. Thesis and overview\nii. Method\niii. Research base\niv. Claim map\nv. 1. Jesus’ mission and social justice\nvi. 2. Charity, panhandlers, and Christian organizations\nvii. 3. Dementia and salvation security\nviii. 4. Conscience and the Holy Spirit\nix. 5. Exclusivism and sincere seekers\nx. Overall assessment\nxi. Evidence needed\nxii. AI prompt\n\nRead the critique:\nhttps://onreason.com/episodes/2026-07-15-we-have-an-obligation-to-help-the-poor/\n\nSubstantive corrections, objections, and responses are welcome.\n",
+      "status": "skipped",
+      "method": "browser_assisted",
+      "posted_url": null,
+      "created_at": "2026-07-15T20:48:27Z",
+      "updated_at": "2026-07-15T20:48:32Z",
+      "history": [
+        {
+          "event": "drafted",
+          "at": "2026-07-15T20:48:27Z",
+          "actor": "phil"
+        },
+        {
+          "event": "skipped",
+          "at": "2026-07-15T20:48:32Z",
+          "actor": "phil",
+          "note": "Official Podbean episode page has no public comment control. No matching episode-specific YouTube, Facebook, or X discussion was available; unrelated posts were intentionally avoided."
+        }
+      ]
+    }
+  ],
   "created_at": "2026-07-15T19:22:28Z",
-  "updated_at": "2026-07-15T19:22:28Z"
+  "updated_at": "2026-07-15T20:48:32Z"
 }

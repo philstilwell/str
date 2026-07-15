@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "critique": {
+    "slug": "2026-07-14-help-conspiracy-theories-are-ruining-my-marriage-37-questions-to",
+    "url": "https://onreason.com/episodes/2026-07-14-help-conspiracy-theories-are-ruining-my-marriage-37-questions-to/",
+    "podcast": "I Don't Have Enough FAITH to Be an ATHEIST",
+    "episode_title": "“HELP! Conspiracy Theories Are Ruining My Marriage!” 37 Questions to Consider",
+    "episode_source": {
+      "name": "CrossExamined / I Don't Have Enough FAITH to Be an ATHEIST",
+      "url": "https://crossexamined.org/help-conspiracy-theories-are-ruining-my-marriage-37-questions-to-consider/"
+    },
+    "contents": [
+      "Thesis and overview",
+      "Method",
+      "Research base",
+      "Claim map",
+      "1. Conspiracy falsifiability and evidence resistance",
+      "2. Preliminary evidence, conviction language, and capital punishment",
+      "3. Demonic diagnosis of lies, slander, and social destruction",
+      "4. Biblical authority, self-authority, and public warrant",
+      "5. Repentance, guilt, and Holy Spirit assurance",
+      "Overall assessment",
+      "Evidence needed",
+      "AI prompt"
+    ],
+    "compact_topics": [
+      "Conspiracy falsifiability/evidence resistance",
+      "Initial evidence/conviction/death penalty",
+      "Demonic diagnosis: lies/slander/social harm",
+      "Biblical authority/self-authority/public warrant",
+      "Repentance/guilt/Holy Spirit assurance"
+    ]
+  },
+  "notices": [
+    {
+      "id": "youtube-5c0c332765f6",
+      "idempotency_key": "5c0c332765f6cf3e8264a710fb2311e326d81e8eb9381290d5e21927713ec37c",
+      "platform": "youtube",
+      "target_type": "episode-video",
+      "target_url": "https://www.youtube.com/watch?v=lHfrm70-jeM",
+      "notice_text": "Independent critique of “HELP! Conspiracy Theories Are Ruining My Marriage!” 37 Questions to Consider\n\nI’ve published an evidence-focused critique of this CrossExamined episode. It recognizes the episode’s stronger points while examining several claims that may require additional evidence or argument.\n\nContents:\ni. Thesis and overview\nii. Method\niii. Research base\niv. Claim map\nv. 1. Conspiracy falsifiability and evidence resistance\nvi. 2. Preliminary evidence, conviction language, and capital punishment\nvii. 3. Demonic diagnosis of lies, slander, and social destruction\nviii. 4. Biblical authority, self-authority, and public warrant\nix. 5. Repentance, guilt, and Holy Spirit assurance\nx. Overall assessment\nxi. Evidence needed\nxii. AI prompt\n\nRead the critique:\nhttps://onreason.com/episodes/2026-07-14-help-conspiracy-theories-are-ruining-my-marriage-37-questions-to/\n\nSubstantive corrections, objections, and responses are welcome.\n",
+      "status": "verified_visible",
+      "method": "browser_assisted",
+      "posted_url": "https://www.youtube.com/watch?v=lHfrm70-jeM&lc=Ugwf42eP-6DpEUOoDC54AaABAg",
+      "created_at": "2026-07-15T20:22:40Z",
+      "updated_at": "2026-07-15T20:33:15Z",
+      "history": [
+        {
+          "event": "drafted",
+          "at": "2026-07-15T20:22:40Z",
+          "actor": "phil"
+        },
+        {
+          "event": "approved",
+          "at": "2026-07-15T20:22:44Z",
+          "actor": "phil",
+          "note": "User approved the normal full-Contents post format in the active task."
+        },
+        {
+          "event": "posted",
+          "at": "2026-07-15T20:33:09Z",
+          "actor": "phil",
+          "note": "Posted through the signed-in YouTube account @philstilwell."
+        },
+        {
+          "event": "verified_visible",
+          "at": "2026-07-15T20:33:15Z",
+          "actor": "phil",
+          "note": "Immediate post-submit visibility check; exact notice text and public permalink were visible."
+        }
+      ]
+    }
+  ],
+  "created_at": "2026-07-15T20:22:25Z",
+  "updated_at": "2026-07-15T20:33:15Z"
+}
