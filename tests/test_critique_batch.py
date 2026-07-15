@@ -3,7 +3,12 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from str_workflow.critique_batch import compact_source_label, missing_critique_episode_dirs, quote_chunk
+from str_workflow.critique_batch import (
+    compact_source_label,
+    missing_critique_episode_dirs,
+    normalize_evidence_test_text,
+    quote_chunk,
+)
 from str_workflow.site import episode_nav_for, episode_records, refresh_homepage
 
 
@@ -64,6 +69,17 @@ def test_compact_source_label_removes_catalog_prefix_and_uses_word_boundary():
     title = "#46 ✓ Consider: Why can we not simply ascribe everything we cannot explain to a God or the supernatural?"
 
     assert compact_source_label(title, limit=60) == "Why can we not simply ascribe everything we cannot explain…"
+
+
+def test_normalize_evidence_test_text_removes_banned_confidence_opener():
+    normalized = normalize_evidence_test_text(
+        "Confidence would rise if the episode supplied independently checkable evidence "
+        "that the obligation claim follows from the transcript's moral premise rather than from assumed theology alone."
+    )
+
+    assert "Confidence would rise if" not in normalized
+    assert normalized.startswith("The claim would earn stronger confidence only if")
+    assert "independently checkable evidence" in normalized
 
 
 def test_episode_navigation_links_older_and_newer_critiques():
