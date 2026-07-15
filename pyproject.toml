@@ -17,6 +17,7 @@ dependencies = [
 
 [project.scripts]
 str-critique = "str_workflow.critique:main"
+str-outreach = "str_workflow.outreach:main"
 
 [project.optional-dependencies]
 dev = [

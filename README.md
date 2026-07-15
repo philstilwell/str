@@ -182,6 +182,19 @@ The public page should cite only short excerpts and link back to official STR ep
 
 Research-map anchor styling is part of the production contract: rendered Free of Faith anchors use compact pill links in the source-map table, and the renderer/validator reject semicolon-separated link markup such as `</a>;`.
 
+## Outreach Post Log
+
+Published-critique notices are tracked in [`outreach/`](outreach/README.md). The canonical records preserve the complete Contents list, compact claim topics for character-limited platforms, exact notice text, destination, approval/posting state, public permalink, and append-only visibility history. Markdown and CSV indexes are regenerated after every logged change.
+
+Initialize the log entry for a newly rendered critique with:
+
+```bash
+python3 -m str_workflow.outreach --outreach-dir outreach init \
+  docs/episodes/YYYY-MM-DD-episode-slug/index.html
+```
+
+See the outreach README for the draft, approval, posting, verification, duplicate-protection, and validation commands.
+
 ## Quality Gates
 
 The `Validate OnReason workflow` GitHub Action runs the Python tests on push and pull request. The tests check RSS ingest helpers, critique spec validation, HTML generation, and the current public page's required features.
