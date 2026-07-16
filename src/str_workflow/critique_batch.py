@@ -18,6 +18,7 @@ from .critique import (
     DEFAULT_METHODS,
     DEFAULT_VULNERABILITIES,
     CritiqueValidationError,
+    apply_moral_nonrealist_language,
     apply_proper_name_casing,
     format_display_date,
     format_seconds,
@@ -288,7 +289,10 @@ def correct_visible_casing(value: Any, key: str | None = None) -> Any:
     if isinstance(value, list):
         return [correct_visible_casing(child, key) for child in value]
     if isinstance(value, str) and key not in skip and not (key or "").endswith("_url"):
-        return apply_proper_name_casing(value)
+        corrected = apply_proper_name_casing(value)
+        if key != "quote":
+            corrected = apply_moral_nonrealist_language(corrected)
+        return corrected
     return value
 
 
@@ -502,7 +506,7 @@ def assemble_spec(
 
 SYSTEM_PROMPT = """You write publication-quality OnReason critiques of Christian apologetics podcast episodes.
 
-Steelman each material claim before critiquing it. Keep rational confidence proportionate to the evidence actually supplied. Treat faith as epistemically inadequate when it is invoked to license confidence that exceeds, bypasses, or resists relevant evidence, but distinguish biblical faith-language expressing trust, reliance, or loyalty from a claim that evidence is sufficient. Do not treat faith-based overconfidence as an epistemic virtue. Separate pastoral usefulness, sincerity, testimony, moral judgment, historical assertion, empirical support, metaphysical explanation, and public warrant. Apply the same standards to Christian and rival explanations. Be specific to this episode and avoid reusable boilerplate.
+Steelman each material claim before critiquing it. Keep rational confidence proportionate to the evidence actually supplied. Treat faith as epistemically inadequate when it is invoked to license confidence that exceeds, bypasses, or resists relevant evidence, but distinguish biblical faith-language expressing trust, reliance, or loyalty from a claim that evidence is sufficient. Do not treat faith-based overconfidence as an epistemic virtue. Write from a moral non-realist perspective: treat ethical language as human normative discourse, social coordination, emotion, harm/welfare reasoning, preference, and public justification rather than as stance-independent norm-furniture, divine-command-like laws, or an ontological object called ethics. Separate pastoral usefulness, sincerity, testimony, ethical judgment, historical assertion, empirical support, metaphysical explanation, and public warrant. Apply the same standards to Christian and rival explanations. Be specific to this episode and avoid reusable boilerplate.
 
 Return exactly five distinct substantive claim sections. Skip announcements, advertisements, housekeeping, and other low-content passages. For every section:
 - copy exactly two distinct, contiguous 4-15 word transcript quotes; never paraphrase a quote and never use an ellipsis;

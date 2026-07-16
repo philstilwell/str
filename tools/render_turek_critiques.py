@@ -17,6 +17,7 @@ from str_workflow.critique import (  # noqa: E402
     DEFAULT_METHODS,
     DEFAULT_VULNERABILITIES,
     CritiqueValidationError,
+    apply_moral_nonrealist_language,
     apply_proper_name_casing,
     format_display_date,
     render_critique,
@@ -176,7 +177,21 @@ def load_json(path: Path) -> dict[str, Any]:
 def clean_sentence(value: str) -> str:
     value = re.sub(r"^#+\s*\d\d:\d\d:\d\d\s*-\s*\d\d:\d\d:\d\d\s*", "", value.strip())
     value = re.sub(r"\s+", " ", value)
-    return apply_proper_name_casing(value)
+    return apply_moral_nonrealist_language(apply_proper_name_casing(value))
+
+
+def normalize_visible_text(value: Any, key: str | None = None) -> Any:
+    skip = {"asset_version", "hero_image", "id", "latex", "slug", "source_url", "url"}
+    if isinstance(value, dict):
+        return {child_key: normalize_visible_text(child, child_key) for child_key, child in value.items()}
+    if isinstance(value, list):
+        return [normalize_visible_text(child, key) for child in value]
+    if isinstance(value, str) and key not in skip and not (key or "").endswith("_url"):
+        corrected = apply_proper_name_casing(value)
+        if key != "quote":
+            corrected = apply_moral_nonrealist_language(corrected)
+        return corrected
+    return value
 
 
 def sentence_chunks(chunks: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -532,7 +547,7 @@ def main() -> int:
         raise SystemExit(f"Missing section profiles for: {missing}")
 
     for i, episode in enumerate(episodes):
-        spec = build_spec(episode, episodes, i)
+        spec = normalize_visible_text(build_spec(episode, episodes, i))
         html = render_critique(spec)
         out_path = OUT_DIR / episode["slug"] / "index.html"
         out_path.parent.mkdir(parents=True, exist_ok=True)

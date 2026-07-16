@@ -135,7 +135,7 @@ def challenge_html(soup: BeautifulSoup) -> str:
         ),
         (
             "The challenge is blunt: either defend those claims under ordinary evidential discipline or reduce the rhetoric. "
-            "Faith, identity, reassurance, and moral urgency may explain why the claims matter to insiders, but they do not make "
+            "Faith, identity, reassurance, and ethical urgency may explain why the claims matter to insiders, but they do not make "
             "the claims rationally credible at the level asserted. Where faith protects confidence from evidence, the argument has stopped earning its confidence."
         ),
     ]

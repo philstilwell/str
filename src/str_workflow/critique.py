@@ -25,7 +25,7 @@ from .seo import (
     website_schema,
 )
 
-DEFAULT_ASSET_VERSION = "20260715-challenge-section"
+DEFAULT_ASSET_VERSION = "20260715-moral-nonrealism"
 DEFAULT_HERO_IMAGE = "../../assets/evidence-alignment.png"
 DEFAULT_HERO_ALT = "Abstract evidence-alignment illustration with papers, scales, and a magnifying glass."
 FAITH_EVIDENCE_PRINCIPLE = (
@@ -33,11 +33,16 @@ FAITH_EVIDENCE_PRINCIPLE = (
     "bypasses, or resists the degree of relevant evidence. Distinguish biblical faith-language expressing "
     "trust, reliance, or loyalty from a claim that the evidence is sufficient."
 )
+MORAL_NONREALISM_PRINCIPLE = (
+    "Write from a moral non-realist perspective: treat ethical language as human normative discourse, "
+    "social coordination, emotion, harm/welfare reasoning, preference, and public justification rather than "
+    "as stance-independent norm-furniture, divine-command-like laws, or an ontological object called ethics."
+)
 
 BOILERPLATE_EVIDENCE_PHRASES = [
     "Clear comparative evidence, independent warrant, and explicit treatment of rival explanations.",
     "More assertion, analogy, proof-texting, or pastoral usefulness without a public evidence bridge.",
-    "A comparative argument that shows why this reading or moral distinction better explains",
+    "A comparative argument that shows why this reading or ethical distinction better explains",
     "More insider assertion, analogy, or selective proof-texting without a public warrant bridge.",
     "TODO evidence that would raise confidence",
     "TODO evidence that would lower confidence",
@@ -50,9 +55,9 @@ BOILERPLATE_CRITIQUE_PHRASES = BOILERPLATE_EVIDENCE_PHRASES + [
     "The page therefore treats the claim as a proposal needing further support",
     "Transcript premise or example",
     "Public conclusion or confidence claim",
-    "Belief Overreach, Inductive Symmetry, Moral System Threshold",
+    "Belief Overreach, Inductive Symmetry, Normative-Claim Threshold",
     "The sources shape the confidence downgrade",
-    "A local answer is asked to do broader evidential or moral work",
+    "A local answer is asked to do broader evidential or normative work",
     "This critique uses the Free of Faith source index as a standing guardrail",
     "The charitable repair is to keep the best pastoral or interpretive insight",
     "The charitable repair is episode-specific",
@@ -122,6 +127,146 @@ PROPER_NAME_CASE_PATTERNS = [
     (lower, canonical, re.compile(rf"(?<![A-Za-z]){re.escape(lower)}(?![A-Za-z])", re.IGNORECASE))
     for lower, canonical in sorted(PROPER_NAME_CASE_MAP.items(), key=lambda item: len(item[0]), reverse=True)
 ]
+REIFIED_MORAL_LANGUAGE_PATTERNS = [
+    re.compile(pattern, flags=re.IGNORECASE)
+    for pattern in (
+        r"\bobjective morality\b",
+        r"\bmorality\b",
+        r"\bmoral lawgivers?\b",
+        r"\bmoral laws?\b",
+        r"\bmoral facts?\b",
+        r"\bmoral truths?\b",
+        r"\bmoral realism\b",
+        r"\bmoral realists?\b",
+        r"\bmoral systems?\b",
+        r"\bmoral architecture\b",
+        r"\bmoral authority\b",
+        r"\bmoral evidence\b",
+        r"\bmoral verdicts?\b",
+        r"\bmoral certainty\b",
+        r"\bmoral obligations?\b",
+        r"\bmoral duties\b",
+        r"\bmoral duty\b",
+        r"\bmoral profile\b",
+        r"\bmoral legitimacy\b",
+        r"\bmoral vindication\b",
+        r"\bmoral guidance\b",
+        r"\bmoral questions?\b",
+        r"\bmoral judgments?\b",
+        r"\bmoral claims?\b",
+        r"\bmoral issues?\b",
+        r"\bmoral categories\b",
+        r"\bmoral category\b",
+        r"\bmoral meaning\b",
+        r"\bmoral rules?\b",
+        r"\bmoral permission\b",
+        r"\bmoral responsibility\b",
+        r"\bmoral burden\b",
+        r"\bmoral distinctions?\b",
+        r"\bmoral work\b",
+        r"\bmoral motivations?\b",
+        r"\bmoral weight\b",
+        r"\bmoral concerns?\b",
+        r"\bmoral clarity\b",
+        r"\bmoral accountability\b",
+        r"\bmoral courage\b",
+        r"\bmoral directives?\b",
+        r"\bmoral values?\b",
+        r"\bmoral standard\b",
+        r"\bmoral standards\b",
+        r"\bmorally\b",
+        r"\bmoral\b(?!\s+(?:non[- ]realism|non[- ]realist|nonrealism|nonrealist|anti[- ]realism|anti[- ]realist))",
+    )
+]
+MORAL_NONREALISM_REPLACEMENTS: tuple[tuple[re.Pattern[str], str], ...] = tuple(
+    (re.compile(pattern, flags=re.IGNORECASE), replacement)
+    for pattern, replacement in (
+        (r"\ba complete normative frameworks\b", "a complete normative framework"),
+        (r"\ba public normative frameworks\b", "a public normative framework"),
+        (r"\ba complete public normative frameworks\b", "a complete public normative framework"),
+        (r"\ba normative frameworks\b", "a normative framework"),
+        (r"\bnot yet a normative frameworks\b", "not yet a normative framework"),
+        (r"\bthe normative frameworks\b", "the normative framework"),
+        (r"\bnormative frameworks construction\b", "normative-framework construction"),
+        (r"\ba contested theological and ethical questions\b", "a contested theological and ethical question"),
+        (r"\bthe ethical questions is\b", "the ethical question is"),
+        (r"\ba religious or ethical claims\b", "a religious or ethical claim"),
+        (r"\bthis ethical claims\b", "this ethical claim"),
+        (r"\ban ethical claims\b", "an ethical claim"),
+        (r"\ba ethical claims\b", "an ethical claim"),
+        (r"\bthe contested stance-independent norm claims is\b", "the contested stance-independent norm claim is"),
+        (r"\bpublic ethical verdicts about\b", "public ethical verdict about"),
+        (r"\bwhere communal expectations about endorsement shape the ethical verdicts\b", "where communal expectations about endorsement shape the ethical verdict"),
+        (r"\bMoral System Threshold\b", "Normative-Claim Threshold"),
+        (r"\bMoral Particulars Audit\b", "Case-Level Norms Audit"),
+        (r"\bMoral Anti-Realism\b", "Ethical Anti-Realism"),
+        (r"\bThe Absence of a Coherent Biblical Morality\b", "Biblical Norms Without Coherence"),
+        (r"\bobjective morality\b", "allegedly objective conduct norms"),
+        (r"\bmoral lawgivers\b", "divine command-givers"),
+        (r"\bmoral lawgiver\b", "divine command-giver"),
+        (r"\bmoral laws\b", "divine command norms"),
+        (r"\bmoral law\b", "divine command norm"),
+        (r"\bmoral facts\b", "stance-independent norm claims"),
+        (r"\bmoral fact\b", "stance-independent norm claim"),
+        (r"\bmoral truths\b", "stance-independent norm claims"),
+        (r"\bmoral truth\b", "stance-independent norm claim"),
+        (r"\bmoral realism\b", "ethical realism"),
+        (r"\bmoral realists\b", "ethical realists"),
+        (r"\bmoral realist\b", "ethical realist"),
+        (r"\bmoral systems\b", "normative frameworks"),
+        (r"\bmoral system\b", "normative framework"),
+        (r"\bmoral architecture\b", "normative architecture"),
+        (r"\bmoral authority\b", "normative authority"),
+        (r"\bmoral evidence\b", "normative support"),
+        (r"\bmoral verdicts\b", "ethical verdicts"),
+        (r"\bmoral verdict\b", "ethical verdict"),
+        (r"\bmoral certainty\b", "ethical certainty"),
+        (r"\bmoral obligations\b", "asserted obligations"),
+        (r"\bmoral obligation\b", "asserted obligation"),
+        (r"\bmoral duties\b", "asserted duties"),
+        (r"\bmoral duty\b", "asserted duty"),
+        (r"\bmoral profile\b", "ethical profile"),
+        (r"\bmoral legitimacy\b", "legitimacy under a stated norm framework"),
+        (r"\bmoral vindication\b", "ethical vindication claim"),
+        (r"\bmoral guidance\b", "conduct guidance"),
+        (r"\bmoral questions\b", "ethical questions"),
+        (r"\bmoral question\b", "ethical question"),
+        (r"\bmoral judgments\b", "ethical judgments"),
+        (r"\bmoral judgment\b", "ethical judgment"),
+        (r"\bmoral claims\b", "ethical claims"),
+        (r"\bmoral claim\b", "ethical claim"),
+        (r"\bmoral issues\b", "ethical issues"),
+        (r"\bmoral issue\b", "ethical issue"),
+        (r"\bmoral categories\b", "ethical categories"),
+        (r"\bmoral category\b", "ethical category"),
+        (r"\bmoral meaning\b", "normative meaning"),
+        (r"\bmoral rules\b", "conduct rules"),
+        (r"\bmoral rule\b", "conduct rule"),
+        (r"\bmoral permission\b", "normative permission"),
+        (r"\bmoral responsibility\b", "perceived responsibility"),
+        (r"\bmoral burden\b", "perceived burden"),
+        (r"\bmoral distinctions\b", "ethical distinctions"),
+        (r"\bmoral distinction\b", "ethical distinction"),
+        (r"\bmoral work\b", "normative work"),
+        (r"\bmoral motivations\b", "prosocial motivations"),
+        (r"\bmoral motivation\b", "prosocial motivation"),
+        (r"\bmoral weight\b", "emotional and normative force"),
+        (r"\bmoral concerns\b", "ethical concerns"),
+        (r"\bmoral concern\b", "ethical concern"),
+        (r"\bmoral clarity\b", "ethical clarity"),
+        (r"\bmoral accountability\b", "accountability language"),
+        (r"\bmoral courage\b", "civic courage"),
+        (r"\bmoral directives\b", "conduct directives"),
+        (r"\bmoral directive\b", "conduct directive"),
+        (r"\bmoral values\b", "ethical values"),
+        (r"\bmoral value\b", "ethical value"),
+        (r"\bmoral standards\b", "conduct standards"),
+        (r"\bmoral standard\b", "conduct standard"),
+        (r"\bmorality\b", "ethical discourse"),
+        (r"\bmorally\b", "ethically"),
+        (r"\bmoral\b(?!\s+(?:non[- ]realism|non[- ]realist|nonrealism|nonrealist|anti[- ]realism|anti[- ]realist))", "ethical"),
+    )
+)
 SPEC_PROPER_NAME_SKIP_KEYS = {
     "asset_version",
     "hero_image",
@@ -130,6 +275,10 @@ SPEC_PROPER_NAME_SKIP_KEYS = {
     "slug",
     "source_url",
     "url",
+}
+SPEC_REIFIED_MORAL_SKIP_KEYS = {
+    *SPEC_PROPER_NAME_SKIP_KEYS,
+    "quote",
 }
 
 DEFAULT_METHODS = [
@@ -143,7 +292,7 @@ DEFAULT_METHODS = [
     },
     {
         "title": "Architecture",
-        "body": "A source of moral rules is not yet a complete moral system with access, binding force, scope, and repair.",
+        "body": "A source of conduct rules is not yet a public normative framework with access, binding force, scope, and repair.",
     },
     {
         "title": "Alternatives",
@@ -193,8 +342,8 @@ DEFAULT_SECTION_BLUEPRINTS = [
     {
         "id": "identity",
         "number": 4,
-        "label": "Identity and morality",
-        "title": "A source-story is not yet a public moral system",
+        "label": "Identity and ethical claims",
+        "title": "A source-story is not yet a public conduct framework",
         "keywords": ["identity", "sexual", "fallen", "redeem", "created"],
         "tag_targets": [
             ("fallacy", "Equivocation", "https://logfall.com/fallacies/equivocation/"),
@@ -228,11 +377,11 @@ DEFAULT_VULNERABILITIES = [
     "Cultural-Moment Framing: Examine whether culture-war examples create a false dilemma, strawman, or asymmetric framing.",
     "Analogy Limits: Test whether literary or pastoral analogies legitimately support public conclusions.",
     "Historical Selectivity: Evaluate uses of church-history examples for cherry-picking, survivorship bias, halo effect, or hasty generalization.",
-    "Moral System Threshold: Ask whether theological categories generate determinate moral guidance without additional contested premises.",
+    "Normative-Claim Threshold: Ask whether theological categories generate determinate conduct guidance without additional contested premises.",
     "Inductive Symmetry: Compare the standards used to accept Christian explanatory claims with the standards required for rival worldviews.",
     "Scope Leakage: Identify moves from this helps Christian students live with hope and purpose to therefore Christianity is true or uniquely adequate.",
     "Burden of Proof and Special Pleading: Determine whether rival views are asked to justify themselves while Christian claims are exempted from comparable scrutiny.",
-    "Non Sequitur Risk: Identify conclusions that do not follow from premises, especially from moral motivation to metaphysical truth or from scriptural narrative to public epistemic warrant.",
+    "Non Sequitur Risk: Identify conclusions that do not follow from premises, especially from prosocial motivation to metaphysical truth or from scriptural narrative to public epistemic warrant.",
 ]
 
 
@@ -287,6 +436,13 @@ def apply_proper_name_casing(value: Any) -> str:
     return corrected
 
 
+def apply_moral_nonrealist_language(value: Any) -> str:
+    corrected = text(value)
+    for pattern, replacement in MORAL_NONREALISM_REPLACEMENTS:
+        corrected = pattern.sub(replacement, corrected)
+    return corrected
+
+
 def proper_name_case_hits(value: Any) -> list[tuple[str, str]]:
     hits: list[tuple[str, str]] = []
     content = normalized_content(value)
@@ -295,6 +451,15 @@ def proper_name_case_hits(value: Any) -> list[tuple[str, str]]:
             found = match.group(0)
             if found != canonical:
                 hits.append((found, canonical))
+    return hits
+
+
+def reified_moral_language_hits(value: Any) -> list[str]:
+    content = normalized_content(value)
+    hits: list[str] = []
+    for pattern in REIFIED_MORAL_LANGUAGE_PATTERNS:
+        for match in pattern.finditer(content):
+            hits.append(match.group(0))
     return hits
 
 
@@ -311,6 +476,24 @@ def proper_name_case_errors(value: Any, path: str, key: str | None = None) -> li
             return errors
         for found, canonical in proper_name_case_hits(value):
             errors.append(f'{path} contains lowercased proper name "{found}"; use "{canonical}" even when transcript casing is lower')
+    return errors
+
+
+def reified_moral_language_errors(value: Any, path: str, key: str | None = None) -> list[str]:
+    errors: list[str] = []
+    if isinstance(value, dict):
+        for child_key, child in value.items():
+            errors.extend(reified_moral_language_errors(child, f"{path}.{child_key}", child_key))
+    elif isinstance(value, list):
+        for index, child in enumerate(value, start=1):
+            errors.extend(reified_moral_language_errors(child, f"{path}[{index}]", key))
+    elif isinstance(value, str):
+        if key in SPEC_REIFIED_MORAL_SKIP_KEYS or key and key.endswith("_url"):
+            return errors
+        for found in reified_moral_language_hits(value):
+            errors.append(
+                f'{path} contains reified moral language "{found}"; use moral non-realist ethical/normative phrasing'
+            )
     return errors
 
 
@@ -414,6 +597,12 @@ def spec_explanatory_texts(spec: dict[str, Any]) -> list[tuple[str, str]]:
             items.append((f"evidence_needed[{index}].raise", normalized_content(row.get("raise"))))
             items.append((f"evidence_needed[{index}].lower", normalized_content(row.get("lower"))))
 
+    ai_prompt = spec.get("ai_prompt") if isinstance(spec.get("ai_prompt"), dict) else {}
+    for index, claim in enumerate(ai_prompt.get("steelman_claims") or [], start=1):
+        items.append((f"ai_prompt.steelman_claims[{index}]", normalized_content(claim)))
+    for index, vulnerability in enumerate(ai_prompt.get("vulnerabilities") or [], start=1):
+        items.append((f"ai_prompt.vulnerabilities[{index}]", normalized_content(vulnerability)))
+
     return [(path, content) for path, content in items if content]
 
 
@@ -516,7 +705,7 @@ def source_anchor_suggestions(source_index: dict[str, Any], tags: list[str], lim
         if not title or not item.get("url"):
             continue
         if item_tags.intersection(tags):
-            suggestions.append({"label": title[:64], "url": item["url"], "tone": "gold"})
+            suggestions.append({"label": apply_moral_nonrealist_language(title[:64]), "url": item["url"], "tone": "gold"})
         if len(suggestions) >= limit:
             return suggestions
     return suggestions
@@ -548,7 +737,7 @@ def scaffold_spec(episode_dir: Path, source_index_path: Path) -> dict[str, Any]:
                         "note_label": f"Expand {blueprint['label']} explanation",
                         "note": "TODO expansive elaboration: explain the inference, why it is weak or under-supported, and what would make it stronger.",
                     },
-                    "TODO critique paragraph that separates pastoral, psychological, moral, historical, and evidential claims.",
+                    "TODO critique paragraph that separates pastoral, psychological, ethical/normative, historical, and evidential claims.",
                 ],
                 "research_anchors": anchors
                 or [{"label": "TODO Free of Faith or framework anchor", "url": "https://freeoffaith.com/", "tone": "gold"}],
@@ -719,6 +908,7 @@ def validate_spec(spec: dict[str, Any]) -> list[str]:
         errors.append("quote_strip is deprecated; keep transcript quotes inside each substantive critique section")
     errors.extend(visible_url_errors(spec, "spec"))
     errors.extend(proper_name_case_errors(spec, "spec"))
+    errors.extend(reified_moral_language_errors(spec, "spec"))
     episode = spec.get("episode") if isinstance(spec.get("episode"), dict) else {}
     for key in ("title", "pub_date", "display_date", "slug", "source_url", "speaker", "transcript_source", "lede"):
         required(episode, key, "episode", errors)
@@ -959,6 +1149,10 @@ def validate_spec(spec: dict[str, Any]) -> list[str]:
     for path, content in explanatory_items:
         for phrase in boilerplate_hits(content):
             errors.append(f"{path} contains boilerplate phrase: {phrase}")
+        for phrase in reified_moral_language_hits(content):
+            errors.append(
+                f'{path} contains reified moral language "{phrase}"; use moral non-realist ethical/normative phrasing'
+            )
         if "..." in content:
             errors.append(f"{path} contains a mechanical ellipsis artifact")
     errors.extend(repeated_explanatory_text_errors(explanatory_items, "spec"))
@@ -1002,11 +1196,19 @@ def page_text_for_proper_name_scan(soup: BeautifulSoup) -> str:
     return normalized_content(scan_soup.get_text(" ", strip=True))
 
 
+def page_text_for_moral_nonrealism_scan(soup: BeautifulSoup) -> str:
+    scan_soup = BeautifulSoup(str(soup), "html.parser")
+    for node in scan_soup.select("script, style, code, .logic, q"):
+        node.decompose()
+    return normalized_content(scan_soup.get_text(" ", strip=True))
+
+
 def validate_page(path: Path) -> list[str]:
     html_text = path.read_text(encoding="utf-8")
     soup = BeautifulSoup(html_text, "html.parser")
     visible_text = normalized_content(soup.get_text(" ", strip=True))
     proper_name_scan_text = page_text_for_proper_name_scan(soup)
+    moral_nonrealism_scan_text = page_text_for_moral_nonrealism_scan(soup)
     errors: list[str] = []
     if "quote-strip" in html_text or "quote-chip" in html_text or "Short quote anchors" in html_text:
         errors.append("page must not include the deprecated top quote-strip summary cards")
@@ -1159,11 +1361,20 @@ def validate_page(path: Path) -> list[str]:
         errors.append("page must link biases to CogBias")
     for found, canonical in proper_name_case_hits(proper_name_scan_text):
         errors.append(f'page contains lowercased proper name "{found}"; use "{canonical}" even when transcript casing is lower')
+    for found in reified_moral_language_hits(moral_nonrealism_scan_text):
+        errors.append(
+            f'page contains reified moral language "{found}"; use moral non-realist ethical/normative phrasing'
+        )
     if "..." in visible_text:
         errors.append("page contains a mechanical ellipsis artifact")
     for phrase in boilerplate_hits(visible_text):
         errors.append(f"page contains boilerplate phrase: {phrase}")
     explanatory_items = page_explanatory_texts(soup)
+    for path_label, content in explanatory_items:
+        for phrase in reified_moral_language_hits(content):
+            errors.append(
+                f'{path_label} contains reified moral language "{phrase}"; use moral non-realist ethical/normative phrasing'
+            )
     errors.extend(repeated_explanatory_text_errors(explanatory_items, "page"))
     evidence_rows = [
         [cell.get_text(" ", strip=True) for cell in row.select("td")]
@@ -1286,9 +1497,9 @@ Analyze the following steelmanned condensed argument from the podcast episode "{
 The Steelmanned Condensed Claims:
 {claim_lines}
 
-Treat the claims above as a steelman reconstruction of the episode's argument. Do not weaken, caricature, or replace that reconstruction before critiquing it. Preserve the intended pastoral and formational force of the argument while assessing whether even this best version succeeds. {FAITH_EVIDENCE_PRINCIPLE}
+Treat the claims above as a steelman reconstruction of the episode's argument. Do not weaken, caricature, or replace that reconstruction before critiquing it. Preserve the intended pastoral and formational force of the argument while assessing whether even this best version succeeds. {FAITH_EVIDENCE_PRINCIPLE} {MORAL_NONREALISM_PRINCIPLE}
 
-Provide a rigorous, exhaustive critique of the argument. Use the principle that rational belief should map to the degree of relevant evidence, while distinguishing an act of faith or trust from a claim that evidence is sufficient. Treat faith as a rational defect only where it licenses confidence beyond the evidence. Use clear section headers and subheaders, with common indicators such as "SECTION 1:", "1.1", "Subsection:", "#", or "##" when helpful. Use a variety of structural symbols throughout the response: "✶" for major section takeaways, "◉" for primary analytical points, and "➘" for subordinate implications, evidence-flow notes, or follow-up tests. Do not use asterisks for bolding or italics.
+Provide a rigorous, exhaustive critique of the argument. Use the principle that rational belief should map to the degree of relevant evidence, while distinguishing an act of faith or trust from a claim that evidence is sufficient. Treat faith as a rational defect only where it licenses confidence beyond the evidence. Treat ethical claims as claims about human norms, harms, welfare, preferences, emotions, social coordination, and public justification; do not reify ethical discourse into stance-independent facts or laws. Use clear section headers and subheaders, with common indicators such as "SECTION 1:", "1.1", "Subsection:", "#", or "##" when helpful. Use a variety of structural symbols throughout the response: "✶" for major section takeaways, "◉" for primary analytical points, and "➘" for subordinate implications, evidence-flow notes, or follow-up tests. Do not use asterisks for bolding or italics.
 
 Required output structure:
 ✶ Start each major section with a short ALL-CAPS header.
@@ -1303,7 +1514,7 @@ For each major claim, assess:
 ◉ What rival explanations or rival worldviews must be compared.
 ◉ Whether the confidence expressed exceeds the evidence supplied, especially where faith is invoked to defend that excess.
 ◉ Which assumptions are doing hidden work.
-◉ Whether the claim is primarily pastoral, psychological, moral, historical, metaphysical, or evidential.
+◉ Whether the claim is primarily pastoral, psychological, ethical/normative, historical, metaphysical, or evidential.
 
 Ensure your analysis exhaustively addresses the following vulnerabilities in the original claims:
 {vulnerability_lines}

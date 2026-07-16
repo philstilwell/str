@@ -9,8 +9,10 @@ from bs4 import BeautifulSoup
 from str_workflow.critique import (
     DEFAULT_METHODS,
     DEFAULT_VULNERABILITIES,
+    page_text_for_moral_nonrealism_scan,
     page_text_for_proper_name_scan,
     proper_name_case_hits,
+    reified_moral_language_hits,
     render_critique,
     scaffold_spec,
     validate_page,
@@ -24,7 +26,7 @@ def valid_spec() -> dict:
         ("worldview", 1, "Worldview scope"),
         ("hope", 2, "Hope and resurrection"),
         ("story", 3, "Narrative framing"),
-        ("identity", 4, "Identity and morality"),
+        ("identity", 4, "Identity and ethical claims"),
     ]
     for section_id, number, label in labels:
         sections.append(
@@ -182,7 +184,7 @@ def valid_spec() -> dict:
                 "bullets": [
                     "The worldview section must show why rival frameworks fail instead of treating Christian scope as self-validating.",
                     "The resurrection section must argue the historical claim rather than borrowing confidence from its pastoral role.",
-                    "The moral section must supply public criteria instead of assuming scriptural authority settles contested claims for everyone.",
+                    "The ethical-claims section must supply public criteria instead of assuming scriptural authority settles contested claims for everyone.",
                 ],
             },
         },
@@ -206,7 +208,7 @@ def valid_spec() -> dict:
                 "The episode presents Christianity as a comprehensive worldview that can explain reality better than rivals.",
                 "The episode presents resurrection hope as reality-grounded rather than merely psychologically comforting.",
                 "The episode presents narrative closure as interpretively decisive for reading suffering and culture.",
-                "The episode presents creation and redemption as moral architecture for identity and conduct.",
+                "The episode presents creation and redemption as a normative architecture for identity and conduct.",
                 "The episode presents Christian calling as culturally constructive and evidence of worldview adequacy.",
             ],
             "vulnerabilities": [
@@ -267,7 +269,7 @@ def test_valid_spec_renders_page_with_required_onreason_features(tmp_path):
     assert '<p class="section-kicker numbered-kicker">1. Worldview scope</p>' in html
     assert '<p class="section-kicker">Critique Framework</p>' in html
     assert '<p class="section-kicker numbered-kicker">Critique Framework</p>' not in html
-    assert "app.js?v=20260715-challenge-section" in html
+    assert "app.js?v=20260715-moral-nonrealism" in html
     assert '<link rel="canonical" href="https://onreason.com/episodes/2026-07-01-test-episode/">' in html
     assert '<meta property="og:type" content="article">' in html
     assert '<meta name="twitter:card" content="summary_large_image">' in html
@@ -293,6 +295,18 @@ def test_critique_contract_distinguishes_faith_from_evidence_category():
     assert "faith-language expressing trust or loyalty" in method_text
     assert "Faith and Evidence Categories" in vulnerability_text
     assert "distinguish biblical faith-language expressing trust" in batch_prompt
+
+
+def test_critique_contract_uses_moral_nonrealist_language():
+    method_text = " ".join(item["body"] for item in DEFAULT_METHODS)
+    vulnerability_text = " ".join(DEFAULT_VULNERABILITIES)
+    batch_prompt = Path("src/str_workflow/critique_batch.py").read_text(encoding="utf-8")
+
+    assert "moral non-realist perspective" in batch_prompt
+    assert "conduct rules" in method_text
+    assert "Normative-Claim Threshold" in vulnerability_text
+    assert reified_moral_language_hits("moral non-realist perspective") == []
+    assert reified_moral_language_hits("moral truth and objective morality") != []
 
 
 def test_validate_spec_rejects_missing_transcript_quote_explanations():
@@ -416,6 +430,18 @@ def test_validate_spec_rejects_lowercase_proper_names():
     assert any('"jesus"' in error and '"Jesus"' in error for error in errors)
 
 
+def test_validate_spec_rejects_reified_moral_language():
+    spec = valid_spec()
+    weak = copy.deepcopy(spec)
+    weak["sections"][0]["paragraphs"][1] = (
+        "The claim treats moral truth and objective morality as if they had already been established."
+    )
+
+    errors = validate_spec(weak)
+
+    assert any("reified moral language" in error for error in errors)
+
+
 def test_validate_page_rejects_stale_boilerplate_phrase(tmp_path):
     spec = valid_spec()
     page = tmp_path / "index.html"
@@ -459,6 +485,21 @@ def test_validate_page_rejects_lowercase_proper_names(tmp_path):
     errors = validate_page(page)
 
     assert any('"christ"' in error and '"Christ"' in error for error in errors)
+
+
+def test_validate_page_rejects_reified_moral_language(tmp_path):
+    spec = valid_spec()
+    page = tmp_path / "index.html"
+    html = render_critique(spec).replace(
+        "Pastoral usefulness is not enough to establish public truth.",
+        "Pastoral usefulness is not enough to establish moral truth.",
+        1,
+    )
+    page.write_text(html, encoding="utf-8")
+
+    errors = validate_page(page)
+
+    assert any("reified moral language" in error for error in errors)
 
 
 def test_validate_page_rejects_missing_bounded_agency_method(tmp_path):
@@ -576,14 +617,17 @@ def test_public_methodology_page_is_local_and_explanatory():
 
     soup = BeautifulSoup(methodology_html, "html.parser")
     visible_text = page_text_for_proper_name_scan(soup)
+    moral_scan_text = page_text_for_moral_nonrealism_scan(soup)
     for phrase in [
         "Steelman before critique",
         "Separate assertion from support",
         "Apply the same standard to rivals",
         "Let belief come in degrees",
         "How a critique page is built",
+        "moral non-realist in stance",
     ]:
         assert phrase in visible_text
+    assert reified_moral_language_hits(moral_scan_text) == []
 
 
 def test_public_site_has_seo_metadata_and_discovery_files():
