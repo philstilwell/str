@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-16T15:46:52Z",
+  "description_html": "Greg answers questions about whether God has always been Father, Son, and Holy Spirit, his thoughts on women in ministry, how a layperson who isn’t into apologetics can defend the idea that Jesus is the only way, and how to approach loved ones who are following a false prophet.",
+  "description_text": "Greg answers questions about whether God has always been Father, Son, and Holy Spirit, his thoughts on women in ministry, how a layperson who isn’t into apologetics can defend the idea that Jesus is the only way, and how to approach loved ones who are following a false prophet.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/91d77c8d-8843-3845-b56d-5f78349f3f27",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/b755uzr5szqpuca3/042926.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/has-god-always-been-father-son-and-holy-spirit/",
+  "pub_date": "2026-04-29",
+  "rss_transcript_tags": [],
+  "slug": "2026-04-29-has-god-always-been-father-son-and-holy-spirit",
+  "title": "Has God Always Been Father, Son, and Holy Spirit?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-16T15:46:52Z",
+  "youtube_url": null
+}

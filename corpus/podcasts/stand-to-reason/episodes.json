@@ -285,6 +285,50 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/91d77c8d-8843-3845-b56d-5f78349f3f27",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/b755uzr5szqpuca3/042926.mp3",
+      "path": "episodes/2026-04-29-has-god-always-been-father-son-and-holy-spirit",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/has-god-always-been-father-son-and-holy-spirit/",
+      "pub_date": "2026-04-29",
+      "slug": "2026-04-29-has-god-always-been-father-son-and-holy-spirit",
+      "title": "Has God Always Been Father, Son, and Holy Spirit?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/c4d9b823-dad5-3637-84d0-f1f414ff2213",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/h5ubv63cpm9ggm5e/042426.mp3",
+      "path": "episodes/2026-04-24-objections-to-last-weeks-shows-on-antisemitism",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/objections-to-last-week-s-shows-on-antisemitism/",
+      "pub_date": "2026-04-24",
+      "slug": "2026-04-24-objections-to-last-weeks-shows-on-antisemitism",
+      "title": "Objections to Last Week’s Shows on Antisemitism",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -293,5 +337,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-07-15T15:53:26Z"
+  "updated_at": "2026-07-16T15:51:31Z"
 }

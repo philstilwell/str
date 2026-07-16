@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-16T15:49:12Z",
+  "description_html": "Greg responds to objections to last week’s shows on antisemitism, talks to a caller who objects to the term “antisemitism” and says it’s not hateful to notice patterns about people, and responds to a question about whether our justice system should also allow for substitutions like God does.",
+  "description_text": "Greg responds to objections to last week’s shows on antisemitism, talks to a caller who objects to the term “antisemitism” and says it’s not hateful to notice patterns about people, and responds to a question about whether our justice system should also allow for substitutions like God does.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/c4d9b823-dad5-3637-84d0-f1f414ff2213",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/h5ubv63cpm9ggm5e/042426.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/objections-to-last-week-s-shows-on-antisemitism/",
+  "pub_date": "2026-04-24",
+  "rss_transcript_tags": [],
+  "slug": "2026-04-24-objections-to-last-weeks-shows-on-antisemitism",
+  "title": "Objections to Last Week’s Shows on Antisemitism",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-16T15:49:12Z",
+  "youtube_url": null
+}
