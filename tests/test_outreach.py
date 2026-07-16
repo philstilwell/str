@@ -8,6 +8,7 @@ from pathlib import Path
 import pytest
 
 from str_workflow.outreach import (
+    NOTICE_SHEET_HEADERS,
     OutreachError,
     add_notice,
     append_event,
@@ -15,7 +16,13 @@ from str_workflow.outreach import (
     compact_topic,
     extract_critique,
     initialize_record,
+    load_google_sheet_config,
+    main,
+    notice_search_line,
+    notice_sheet_rows,
+    plan_notice_sheet_upsert,
     read_record,
+    recommended_notice_text,
     record_path,
     render_contents,
     validate_outreach,
@@ -329,3 +336,184 @@ def test_json_record_remains_human_readable(tmp_path: Path) -> None:
     assert "Jesus’ mission/social justice" in raw
     assert json.loads(raw)["critique"]["slug"] == SLUG
     assert path == record_path(path.parent.parent, SLUG)
+
+
+def test_link_free_notice_uses_approved_stand_to_reason_search_line(
+    tmp_path: Path,
+) -> None:
+    _, path = initialize(tmp_path)
+    notice_id = add_notice(
+        path,
+        platform="youtube",
+        target_type="episode-video",
+        target_url="https://www.youtube.com/watch?v=abc123",
+        notice_text=(
+            "Independent critique\n\n"
+            "Read the critique:\n"
+            "https://onreason.com/episodes/2026-07-15-we-have-an-obligation-to-help-the-poor/\n\n"
+            "Substantive corrections, objections, and responses are welcome.\n"
+        ),
+        at="2026-07-15T18:05:00Z",
+    )
+    record = read_record(path)
+    notice = next(item for item in record["notices"] if item["id"] == notice_id)
+
+    rendered = recommended_notice_text(record, notice)
+
+    assert "Search: 'OnReason, Stand to Reason'" in rendered
+    assert "https://onreason.com/" not in rendered
+    assert "Substantive corrections" in rendered
+
+
+def test_approved_search_lines_are_stable() -> None:
+    assert notice_search_line("I Don't Have Enough FAITH to Be an ATHEIST") == (
+        "Search 'OnReason, I Don't Have Enough FAITH to Be an ATHEIST'"
+    )
+    assert notice_search_line("Stand to Reason Weekly Podcast") == (
+        "Search: 'OnReason, Stand to Reason'"
+    )
+
+
+def test_sheet_rows_include_workflow_fields_and_link_free_notice(
+    tmp_path: Path,
+) -> None:
+    outreach_dir, path = initialize(tmp_path)
+    add_notice(
+        path,
+        platform="youtube",
+        target_type="episode-video",
+        target_url="https://www.youtube.com/watch?v=abc123",
+        notice_text=(
+            "Independent critique\n\n"
+            "Read the critique:\n"
+            "https://onreason.com/episodes/2026-07-15-we-have-an-obligation-to-help-the-poor/\n"
+        ),
+        at="2026-07-15T18:05:00Z",
+    )
+
+    rows = notice_sheet_rows([(path, read_record(path))])
+
+    assert len(rows) == 1
+    assert len(rows[0]) == 12
+    assert rows[0][4].startswith('=HYPERLINK("https://strweekly.podbean.com/')
+    assert rows[0][5].endswith('","Open critique")')
+    assert "Search: 'OnReason, Stand to Reason'" in rows[0][6]
+    assert rows[0][8].splitlines()[-1] == "5. Exclusivism/sincere seekers"
+    assert rows[0][10:] == ["drafted", "2026-07-15T18:05:00Z"]
+    assert outreach_dir == path.parent.parent
+
+
+def test_sheet_upsert_updates_only_canonical_columns_and_preserves_manual_fields() -> None:
+    existing = [
+        NOTICE_SHEET_HEADERS,
+        [
+            "notice-1",
+            "old",
+            "old",
+            "old",
+            "old",
+            "old",
+            "old",
+            "old",
+            "old",
+            "old",
+            "old",
+            "old",
+            "Posted",
+            "2026-07-15",
+            "https://example.com/comment",
+            "Visible",
+            "Keep this manual note",
+        ],
+    ]
+    canonical = [
+        [
+            "notice-1",
+            "2026-07-15",
+            "Podcast",
+            "Episode",
+            "source",
+            "critique",
+            "link-free",
+            "full",
+            "topics",
+            "destinations",
+            "verified_visible",
+            "2026-07-16T18:00:00Z",
+        ],
+        [
+            "notice-2",
+            "2026-07-16",
+            "Podcast",
+            "Episode 2",
+            "source",
+            "critique",
+            "link-free",
+            "full",
+            "topics",
+            "destinations",
+            "drafted",
+            "2026-07-16T19:00:00Z",
+        ],
+    ]
+
+    plan = plan_notice_sheet_upsert(canonical, existing)
+
+    assert plan["updated"] == 1
+    assert plan["inserted"] == 1
+    assert plan["writes"][0]["range"] == "'Notices'!A2:L2"
+    assert len(plan["writes"][0]["values"][0]) == 12
+    assert plan["writes"][1]["range"] == "'Notices'!A3:Q3"
+    assert plan["writes"][1]["values"][0][12:] == [
+        "Ready to post",
+        "",
+        "",
+        "Unchecked",
+        "",
+    ]
+
+
+def test_google_sheet_config_is_non_secret_and_validated(tmp_path: Path) -> None:
+    outreach_dir = tmp_path / "outreach"
+    outreach_dir.mkdir()
+    config = outreach_dir / "google-sheets.json"
+    config.write_text(
+        '{"spreadsheet_id":"sheet-123","notices_sheet":"Notices"}\n',
+        encoding="utf-8",
+    )
+
+    assert load_google_sheet_config(outreach_dir) == {
+        "spreadsheet_id": "sheet-123",
+        "notices_sheet": "Notices",
+    }
+
+
+def test_rebuild_command_runs_configured_sheet_sync(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    outreach_dir, _ = initialize(tmp_path)
+    (outreach_dir / "google-sheets.json").write_text(
+        '{"spreadsheet_id":"sheet-123","notices_sheet":"Notices"}\n',
+        encoding="utf-8",
+    )
+    calls: list[tuple[Path, bool]] = []
+
+    def fake_sync(
+        directory: Path,
+        *,
+        service: object | None = None,
+        required_config: bool = True,
+    ) -> dict[str, object]:
+        assert service is None
+        calls.append((directory, required_config))
+        return {
+            "sheet": "Notices",
+            "updated": 1,
+            "inserted": 0,
+        }
+
+    monkeypatch.setattr("str_workflow.outreach.sync_google_sheet", fake_sync)
+
+    assert main(["--outreach-dir", str(outreach_dir), "rebuild"]) == 0
+    assert calls == [(outreach_dir, False)]

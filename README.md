@@ -186,6 +186,10 @@ Research-map anchor styling is part of the production contract: rendered Free of
 
 Published-critique notices are tracked in [`outreach/`](outreach/README.md). The canonical records preserve the complete Contents list, compact claim topics for character-limited platforms, exact notice text, destination, approval/posting state, public permalink, and append-only visibility history. Markdown and CSV indexes are regenerated after every logged change.
 
+When `outreach/google-sheets.json` is present, outreach mutations and rebuilds also upsert
+the workflow-owned notice columns into the configured Google Sheet while preserving the
+manual posting fields.
+
 Initialize the log entry for a newly rendered critique with:
 
 ```bash

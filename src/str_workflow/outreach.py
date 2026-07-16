@@ -64,6 +64,43 @@ CSV_FIELDS = [
     "notice_text",
 ]
 
+SHEET_CONFIG_FILENAME = "google-sheets.json"
+GOOGLE_SHEETS_SCOPE = "https://www.googleapis.com/auth/spreadsheets"
+CROSS_EXAMINED_PODCAST = "I Don't Have Enough FAITH to Be an ATHEIST"
+STAND_TO_REASON_PODCAST = "Stand to Reason Weekly Podcast"
+NOTICE_CANONICAL_HEADERS = [
+    "Notice ID",
+    "Critique date",
+    "Podcast",
+    "Episode title",
+    "Episode source",
+    "Critique",
+    "Recommended notice (link-free)",
+    "Full notice with URL",
+    "Compact topics",
+    "Suggested destinations",
+    "Workflow status",
+    "Workflow updated (UTC)",
+]
+NOTICE_MANUAL_HEADERS = [
+    "Manual status",
+    "Posted date",
+    "Public post URL",
+    "Visibility",
+    "Notes",
+]
+NOTICE_SHEET_HEADERS = NOTICE_CANONICAL_HEADERS + NOTICE_MANUAL_HEADERS
+NOTICE_MANUAL_DEFAULTS = ["Ready to post", "", "", "Unchecked", ""]
+SUGGESTED_DESTINATIONS = {
+    CROSS_EXAMINED_PODCAST: (
+        "YouTube episode; matching YouTube Shorts; Facebook; Instagram; X; TikTok"
+    ),
+    STAND_TO_REASON_PODCAST: (
+        "YouTube; Facebook; Instagram; STR X; Greg Koukl X; LinkedIn — only "
+        "where a matching episode or topic post exists"
+    ),
+}
+
 
 class OutreachError(ValueError):
     """Raised when an outreach record or requested mutation is invalid."""
@@ -892,6 +929,491 @@ def validate_outreach(outreach_dir: Path, *, check_indexes: bool = True) -> list
     return errors
 
 
+def notice_search_line(podcast: str) -> str:
+    """Return the approved platform-safe discovery line for one podcast."""
+
+    if podcast == CROSS_EXAMINED_PODCAST:
+        return "Search 'OnReason, I Don't Have Enough FAITH to Be an ATHEIST'"
+    if podcast == STAND_TO_REASON_PODCAST:
+        return "Search: 'OnReason, Stand to Reason'"
+    return f"Search: 'OnReason, {podcast}'"
+
+
+def recommended_notice_text(record: dict[str, Any], notice: dict[str, Any]) -> str:
+    """Convert an exact notice to the approved link-free posting variant."""
+
+    text = notice["notice_text"]
+    search_line = notice_search_line(record["critique"]["podcast"])
+    locator_patterns = (
+        r"Read the critique:\s*\nhttps?://[^\s]+\s*",
+        r"Search OnReason for:\s*\n[^\n]+\s*",
+    )
+    for pattern in locator_patterns:
+        if re.search(pattern, text, flags=re.IGNORECASE):
+            return re.sub(
+                pattern,
+                f"{search_line}\n\n",
+                text,
+                count=1,
+                flags=re.IGNORECASE,
+            )
+
+    critique_url = record["critique"]["url"]
+    if critique_url in text:
+        return text.replace(critique_url, search_line, 1)
+    if search_line in text:
+        return text
+
+    closing = "Substantive corrections, objections, and responses are welcome."
+    if closing in text:
+        return text.replace(closing, f"{search_line}\n\n{closing}", 1)
+    return f"{text.rstrip()}\n\n{search_line}\n"
+
+
+def google_sheet_hyperlink(url: str, label: str) -> str:
+    """Return a Google Sheets HYPERLINK formula with safely escaped text."""
+
+    if not url:
+        return ""
+    escaped_url = url.replace('"', '""')
+    escaped_label = label.replace('"', '""')
+    return f'=HYPERLINK("{escaped_url}","{escaped_label}")'
+
+
+def notice_sheet_rows(
+    records: Iterable[tuple[Path, dict[str, Any]]],
+) -> list[list[str]]:
+    """Render the workflow-owned columns for the Google Sheets notice log."""
+
+    result: list[list[str]] = []
+    seen: set[str] = set()
+    for _, record in records:
+        critique = record["critique"]
+        topics = "\n".join(
+            f"{index}. {topic}"
+            for index, topic in enumerate(critique["compact_topics"], start=1)
+        )
+        source_url = critique.get("episode_source", {}).get("url", "")
+        for notice in record["notices"]:
+            notice_id = notice["id"]
+            if notice_id in seen:
+                raise OutreachError(f"Duplicate notice ID for sheet sync: {notice_id}")
+            seen.add(notice_id)
+            result.append(
+                [
+                    notice_id,
+                    critique["slug"][:10],
+                    critique["podcast"],
+                    critique["episode_title"],
+                    google_sheet_hyperlink(source_url, "Open episode source"),
+                    google_sheet_hyperlink(critique["url"], "Open critique"),
+                    recommended_notice_text(record, notice),
+                    notice["notice_text"],
+                    topics,
+                    SUGGESTED_DESTINATIONS.get(
+                        critique["podcast"],
+                        "Use only an official post that matches the episode or topic",
+                    ),
+                    notice["status"],
+                    notice["updated_at"],
+                ]
+            )
+    return result
+
+
+def quote_sheet_title(title: str) -> str:
+    return "'" + title.replace("'", "''") + "'"
+
+
+def plan_notice_sheet_upsert(
+    canonical_rows: Sequence[Sequence[str]],
+    existing_rows: Sequence[Sequence[str]],
+    *,
+    sheet_title: str = "Notices",
+) -> dict[str, Any]:
+    """Plan range writes without ever overwriting the five manual columns."""
+
+    canonical_width = len(NOTICE_CANONICAL_HEADERS)
+    full_width = len(NOTICE_SHEET_HEADERS)
+    for row in canonical_rows:
+        if len(row) != canonical_width:
+            raise OutreachError(
+                f"Canonical sheet rows must contain {canonical_width} values."
+            )
+
+    initialized = not existing_rows or not any(existing_rows[0])
+    if initialized:
+        rows: list[list[str]] = [list(NOTICE_SHEET_HEADERS)]
+    else:
+        header = list(existing_rows[0])
+        header += [""] * (full_width - len(header))
+        if header[:full_width] != NOTICE_SHEET_HEADERS:
+            raise OutreachError(
+                "The Notices sheet headers do not match the workflow schema; "
+                "refusing to overwrite manual columns."
+            )
+        rows = [list(row) for row in existing_rows]
+
+    existing_by_id: dict[str, int] = {}
+    for row_number, row in enumerate(rows[1:], start=2):
+        notice_id = row[0].strip() if row else ""
+        if not notice_id:
+            continue
+        if notice_id in existing_by_id:
+            raise OutreachError(f"Duplicate notice ID in Google Sheet: {notice_id}")
+        existing_by_id[notice_id] = row_number
+
+    last_used_row = max(
+        (index for index, row in enumerate(rows, start=1) if any(row)),
+        default=1,
+    )
+    sheet = quote_sheet_title(sheet_title)
+    writes: list[dict[str, Any]] = []
+    if initialized:
+        writes.append(
+            {
+                "range": f"{sheet}!A1:Q1",
+                "values": [NOTICE_SHEET_HEADERS],
+            }
+        )
+
+    inserted_rows: list[int] = []
+    updated = 0
+    seen_canonical: set[str] = set()
+    for canonical in canonical_rows:
+        notice_id = canonical[0]
+        if notice_id in seen_canonical:
+            raise OutreachError(f"Duplicate canonical notice ID: {notice_id}")
+        seen_canonical.add(notice_id)
+        if notice_id in existing_by_id:
+            row_number = existing_by_id[notice_id]
+            writes.append(
+                {
+                    "range": f"{sheet}!A{row_number}:L{row_number}",
+                    "values": [list(canonical)],
+                }
+            )
+            updated += 1
+            continue
+
+        last_used_row += 1
+        writes.append(
+            {
+                "range": f"{sheet}!A{last_used_row}:Q{last_used_row}",
+                "values": [list(canonical) + NOTICE_MANUAL_DEFAULTS],
+            }
+        )
+        inserted_rows.append(last_used_row)
+
+    return {
+        "writes": writes,
+        "updated": updated,
+        "inserted": len(inserted_rows),
+        "inserted_rows": inserted_rows,
+        "initialized": initialized,
+        "last_used_row": last_used_row,
+    }
+
+
+def load_google_sheet_config(
+    outreach_dir: Path,
+    *,
+    required: bool = False,
+) -> dict[str, str] | None:
+    """Load the non-secret Google Sheet destination configuration."""
+
+    path = outreach_dir / SHEET_CONFIG_FILENAME
+    if not path.is_file():
+        if required:
+            raise OutreachError(f"Google Sheet config does not exist: {path}")
+        return None
+    try:
+        config = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        raise OutreachError(f"Invalid Google Sheet config in {path}: {exc}") from exc
+    if not isinstance(config, dict):
+        raise OutreachError(f"Google Sheet config must be an object: {path}")
+    spreadsheet_id = config.get("spreadsheet_id")
+    notices_sheet = config.get("notices_sheet", "Notices")
+    if not isinstance(spreadsheet_id, str) or not spreadsheet_id.strip():
+        raise OutreachError(f"spreadsheet_id cannot be blank in {path}")
+    if not isinstance(notices_sheet, str) or not notices_sheet.strip():
+        raise OutreachError(f"notices_sheet cannot be blank in {path}")
+    return {
+        "spreadsheet_id": spreadsheet_id.strip(),
+        "notices_sheet": notices_sheet.strip(),
+    }
+
+
+def build_google_sheets_service() -> Any:
+    """Create an authenticated Sheets API client from local ADC credentials."""
+
+    try:
+        import google.auth
+        from googleapiclient.discovery import build
+    except ImportError as exc:
+        raise OutreachError(
+            "Google Sheets sync dependencies are missing; reinstall the project."
+        ) from exc
+    try:
+        credentials, _ = google.auth.default(scopes=[GOOGLE_SHEETS_SCOPE])
+    except Exception as exc:
+        raise OutreachError(
+            "Google Sheets sync needs Application Default Credentials. Set "
+            "GOOGLE_APPLICATION_CREDENTIALS to an editor service-account JSON "
+            "file or run `gcloud auth application-default login` once."
+        ) from exc
+    return build("sheets", "v4", credentials=credentials, cache_discovery=False)
+
+
+def _notice_sheet_format_requests(
+    *,
+    sheet_id: int,
+    inserted_rows: Sequence[int],
+    initialized: bool,
+    last_used_row: int,
+) -> list[dict[str, Any]]:
+    requests: list[dict[str, Any]] = []
+    if initialized:
+        requests.extend(
+            [
+                {
+                    "repeatCell": {
+                        "range": {
+                            "sheetId": sheet_id,
+                            "startRowIndex": 0,
+                            "endRowIndex": 1,
+                            "startColumnIndex": 0,
+                            "endColumnIndex": len(NOTICE_SHEET_HEADERS),
+                        },
+                        "cell": {
+                            "userEnteredFormat": {
+                                "backgroundColorStyle": {
+                                    "rgbColor": {
+                                        "red": 0.055,
+                                        "green": 0.31,
+                                        "blue": 0.25,
+                                    }
+                                },
+                                "textFormat": {
+                                    "bold": True,
+                                    "foregroundColorStyle": {
+                                        "rgbColor": {"red": 1, "green": 1, "blue": 1}
+                                    },
+                                },
+                                "horizontalAlignment": "CENTER",
+                                "verticalAlignment": "MIDDLE",
+                                "wrapStrategy": "WRAP",
+                            }
+                        },
+                        "fields": "userEnteredFormat",
+                    }
+                },
+                {
+                    "updateSheetProperties": {
+                        "properties": {
+                            "sheetId": sheet_id,
+                            "gridProperties": {"frozenRowCount": 1},
+                        },
+                        "fields": "gridProperties.frozenRowCount",
+                    }
+                },
+            ]
+        )
+
+    for row_number in inserted_rows:
+        start = row_number - 1
+        requests.extend(
+            [
+                {
+                    "repeatCell": {
+                        "range": {
+                            "sheetId": sheet_id,
+                            "startRowIndex": start,
+                            "endRowIndex": start + 1,
+                            "startColumnIndex": 0,
+                            "endColumnIndex": len(NOTICE_SHEET_HEADERS),
+                        },
+                        "cell": {
+                            "userEnteredFormat": {
+                                "verticalAlignment": "TOP",
+                                "wrapStrategy": "WRAP",
+                            }
+                        },
+                        "fields": (
+                            "userEnteredFormat.verticalAlignment,"
+                            "userEnteredFormat.wrapStrategy"
+                        ),
+                    }
+                },
+                {
+                    "setDataValidation": {
+                        "range": {
+                            "sheetId": sheet_id,
+                            "startRowIndex": start,
+                            "endRowIndex": start + 1,
+                            "startColumnIndex": 12,
+                            "endColumnIndex": 13,
+                        },
+                        "rule": {
+                            "condition": {
+                                "type": "ONE_OF_LIST",
+                                "values": [
+                                    {"userEnteredValue": "Ready to post"},
+                                    {"userEnteredValue": "Posted"},
+                                    {"userEnteredValue": "Skipped"},
+                                    {"userEnteredValue": "Failed"},
+                                ],
+                            },
+                            "strict": True,
+                            "showCustomUi": True,
+                        },
+                    }
+                },
+                {
+                    "setDataValidation": {
+                        "range": {
+                            "sheetId": sheet_id,
+                            "startRowIndex": start,
+                            "endRowIndex": start + 1,
+                            "startColumnIndex": 15,
+                            "endColumnIndex": 16,
+                        },
+                        "rule": {
+                            "condition": {
+                                "type": "ONE_OF_LIST",
+                                "values": [
+                                    {"userEnteredValue": "Unchecked"},
+                                    {"userEnteredValue": "Visible"},
+                                    {"userEnteredValue": "Missing / held"},
+                                    {"userEnteredValue": "Removed"},
+                                ],
+                            },
+                            "strict": True,
+                            "showCustomUi": True,
+                        },
+                    }
+                },
+                {
+                    "updateDimensionProperties": {
+                        "range": {
+                            "sheetId": sheet_id,
+                            "dimension": "ROWS",
+                            "startIndex": start,
+                            "endIndex": start + 1,
+                        },
+                        "properties": {"pixelSize": 560},
+                        "fields": "pixelSize",
+                    }
+                },
+            ]
+        )
+
+    if initialized or inserted_rows:
+        requests.extend(
+            [
+                {"clearBasicFilter": {"sheetId": sheet_id}},
+                {
+                    "setBasicFilter": {
+                        "filter": {
+                            "range": {
+                                "sheetId": sheet_id,
+                                "startRowIndex": 0,
+                                "endRowIndex": last_used_row,
+                                "startColumnIndex": 0,
+                                "endColumnIndex": len(NOTICE_SHEET_HEADERS),
+                            }
+                        }
+                    }
+                },
+            ]
+        )
+    return requests
+
+
+def sync_google_sheet(
+    outreach_dir: Path,
+    *,
+    service: Any | None = None,
+    required_config: bool = True,
+) -> dict[str, Any] | None:
+    """Upsert workflow fields by notice ID while preserving manual sheet fields."""
+
+    config = load_google_sheet_config(outreach_dir, required=required_config)
+    if config is None:
+        return None
+    client = service or build_google_sheets_service()
+    spreadsheet_id = config["spreadsheet_id"]
+    sheet_title = config["notices_sheet"]
+    quoted_sheet = quote_sheet_title(sheet_title)
+    try:
+        spreadsheets = client.spreadsheets()
+        existing = (
+            spreadsheets.values()
+            .get(
+                spreadsheetId=spreadsheet_id,
+                range=f"{quoted_sheet}!A:Q",
+                valueRenderOption="FORMULA",
+            )
+            .execute()
+            .get("values", [])
+        )
+        plan = plan_notice_sheet_upsert(
+            notice_sheet_rows(load_records(outreach_dir)),
+            existing,
+            sheet_title=sheet_title,
+        )
+        if plan["writes"]:
+            spreadsheets.values().batchUpdate(
+                spreadsheetId=spreadsheet_id,
+                body={
+                    "valueInputOption": "USER_ENTERED",
+                    "data": plan["writes"],
+                },
+            ).execute()
+
+        if plan["initialized"] or plan["inserted_rows"]:
+            metadata = spreadsheets.get(
+                spreadsheetId=spreadsheet_id,
+                fields="sheets.properties",
+            ).execute()
+            sheet_id = next(
+                (
+                    item["properties"]["sheetId"]
+                    for item in metadata.get("sheets", [])
+                    if item.get("properties", {}).get("title") == sheet_title
+                ),
+                None,
+            )
+            if sheet_id is None:
+                raise OutreachError(
+                    f"Google Sheet tab does not exist: {sheet_title}"
+                )
+            format_requests = _notice_sheet_format_requests(
+                sheet_id=sheet_id,
+                inserted_rows=plan["inserted_rows"],
+                initialized=plan["initialized"],
+                last_used_row=plan["last_used_row"],
+            )
+            if format_requests:
+                spreadsheets.batchUpdate(
+                    spreadsheetId=spreadsheet_id,
+                    body={"requests": format_requests},
+                ).execute()
+    except OutreachError:
+        raise
+    except Exception as exc:
+        raise OutreachError(f"Google Sheets sync failed: {exc}") from exc
+
+    return {
+        "spreadsheet_id": spreadsheet_id,
+        "sheet": sheet_title,
+        "updated": plan["updated"],
+        "inserted": plan["inserted"],
+        "manual_rows_preserved": plan["updated"],
+    }
+
+
 def render_contents(record: dict[str, Any], *, compact: bool = False) -> str:
     contents = record["critique"]["contents"]
     if compact:
@@ -909,6 +1431,11 @@ def build_parser() -> argparse.ArgumentParser:
         type=Path,
         default=Path("outreach"),
         help="Log directory (default: outreach)",
+    )
+    parser.add_argument(
+        "--no-sheet-sync",
+        action="store_true",
+        help="Skip the configured Google Sheet sync for this command",
     )
     subparsers = parser.add_subparsers(dest="command", required=True)
 
@@ -957,6 +1484,10 @@ def build_parser() -> argparse.ArgumentParser:
 
     subparsers.add_parser("rebuild", help="Regenerate Markdown and CSV indexes")
     subparsers.add_parser("validate", help="Validate JSON records and generated indexes")
+    subparsers.add_parser(
+        "sync-sheet",
+        help="Upsert canonical notice fields into the configured Google Sheet",
+    )
     return parser
 
 
@@ -964,6 +1495,23 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
     outreach_dir: Path = args.outreach_dir
+
+    def sync_if_configured(*, required: bool = False) -> None:
+        if args.no_sheet_sync:
+            if required:
+                raise OutreachError("sync-sheet cannot be used with --no-sheet-sync")
+            return
+        result = sync_google_sheet(
+            outreach_dir,
+            required_config=required,
+        )
+        if result:
+            print(
+                "Synced Google Sheet "
+                f"{result['sheet']}: {result['updated']} updated, "
+                f"{result['inserted']} inserted; manual fields preserved."
+            )
+
     try:
         if args.command == "init":
             path = initialize_record(
@@ -975,6 +1523,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                 at=args.at,
             )
             print(path)
+            sync_if_configured()
         elif args.command == "add-notice":
             if not args.notice_file.is_file():
                 raise OutreachError(f"Notice file does not exist: {args.notice_file}")
@@ -989,6 +1538,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                 at=args.at,
             )
             print(notice_id)
+            sync_if_configured()
         elif args.command == "event":
             append_event(
                 record_path(outreach_dir, args.slug),
@@ -1000,6 +1550,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                 at=args.at,
             )
             print(f"{args.notice_id}: {args.event}")
+            sync_if_configured()
         elif args.command == "contents":
             record = read_record(record_path(outreach_dir, args.slug))
             errors = validate_record(record, record_path(outreach_dir, args.slug))
@@ -1009,11 +1560,14 @@ def main(argv: Sequence[str] | None = None) -> int:
         elif args.command == "rebuild":
             rebuild_indexes(outreach_dir)
             print(f"Rebuilt {outreach_dir / 'index.md'} and {outreach_dir / 'index.csv'}")
+            sync_if_configured()
         elif args.command == "validate":
             errors = validate_outreach(outreach_dir)
             if errors:
                 raise OutreachError("\n".join(errors))
             print(f"Outreach log is valid: {outreach_dir}")
+        elif args.command == "sync-sheet":
+            sync_if_configured(required=True)
     except OutreachError as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 2

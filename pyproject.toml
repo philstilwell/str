@@ -7,6 +7,8 @@ dependencies = [
   "audioop-lts>=0.2.2; python_version >= '3.13'",
   "beautifulsoup4>=4.12.3",
   "feedparser>=6.0.11",
+  "google-api-python-client>=2.0.0",
+  "google-auth>=2.0.0",
   "openai>=2.36.0",
   "pydantic>=2.8.0",
   "pydub>=0.25.1",

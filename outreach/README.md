@@ -100,4 +100,33 @@ python3 -m str_workflow.outreach --outreach-dir outreach validate
 python3 -m str_workflow.outreach --outreach-dir outreach rebuild
 ```
 
+## Google Sheet synchronization
+
+`google-sheets.json` configures the **OnReason - Notices** workbook. The `init`,
+`add-notice`, `event`, and `rebuild` commands automatically upsert the workflow-owned
+columns in the **Notices** tab by notice ID. Existing manual fields—manual status,
+posted date, public post URL, visibility, and notes—are never overwritten.
+
+The sync requires Google Application Default Credentials with edit access to the
+workbook. Keep credentials outside this repository. Either set
+`GOOGLE_APPLICATION_CREDENTIALS` to an editor service-account JSON file, or authenticate
+once with:
+
+```bash
+gcloud auth application-default login \
+  --scopes=https://www.googleapis.com/auth/spreadsheets
+```
+
+The Google Sheets API must be enabled for the credential's Google Cloud project. A
+service account must also be shared onto the workbook as an editor.
+
+Run a sync without changing local records:
+
+```bash
+python3 -m str_workflow.outreach --outreach-dir outreach sync-sheet
+```
+
+For intentional offline work, add `--no-sheet-sync` before the subcommand. Sync failures
+are reported as command errors rather than being silently ignored.
+
 JSON timestamps are stored in UTC. `index.md` displays Eastern time and the exact notice text in plain-Markdown text blocks, while `index.csv` provides both UTC and Eastern columns. The CSV also includes the exact notice text and is suitable for filtering or importing into a spreadsheet.
