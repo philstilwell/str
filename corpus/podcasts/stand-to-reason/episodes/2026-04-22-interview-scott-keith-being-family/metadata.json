@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-17T15:40:46Z",
+  "description_html": "Greg interviews Scott Keith, author of Being Family: Passing Down the Faith Through the Generations, discussing the beauty and importance of the Christian vocations of marriage and family and how God works through both.",
+  "description_text": "Greg interviews Scott Keith, author of Being Family: Passing Down the Faith Through the Generations, discussing the beauty and importance of the Christian vocations of marriage and family and how God works through both.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/165a7cad-75c5-32ba-86cb-d0f8ee394446",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/euxmmzamgpfuiqfp/042226.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/interview-scott-keith-%e2%80%93-being-family/",
+  "pub_date": "2026-04-22",
+  "rss_transcript_tags": [],
+  "slug": "2026-04-22-interview-scott-keith-being-family",
+  "title": "Interview: Scott Keith – Being Family",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-17T15:40:46Z",
+  "youtube_url": null
+}

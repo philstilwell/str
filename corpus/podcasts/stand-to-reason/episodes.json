@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "strweekly.podbean.com/9e59a16b-7558-39ae-8406-d73713531937",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/muju2xvwdcem8vzs/071726.mp3",
+      "path": "episodes/2026-07-17-inclusivism-gives-people-false-hope",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/inclusivism-gives-people-false-hope/",
+      "pub_date": "2026-07-17",
+      "slug": "2026-07-17-inclusivism-gives-people-false-hope",
+      "title": "Inclusivism Gives People False Hope",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "strweekly.podbean.com/1ce95a64-6008-332f-87f3-c2c833d5f418",
       "mp3_url": "https://mcdn.podbean.com/mf/web/37yxzkvcsmh5vqxy/071526.mp3",
       "path": "episodes/2026-07-15-we-have-an-obligation-to-help-the-poor",
@@ -329,6 +351,28 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/165a7cad-75c5-32ba-86cb-d0f8ee394446",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/euxmmzamgpfuiqfp/042226.mp3",
+      "path": "episodes/2026-04-22-interview-scott-keith-being-family",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/interview-scott-keith-%e2%80%93-being-family/",
+      "pub_date": "2026-04-22",
+      "slug": "2026-04-22-interview-scott-keith-being-family",
+      "title": "Interview: Scott Keith – Being Family",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -337,5 +381,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-07-16T15:51:31Z"
+  "updated_at": "2026-07-17T15:43:23Z"
 }

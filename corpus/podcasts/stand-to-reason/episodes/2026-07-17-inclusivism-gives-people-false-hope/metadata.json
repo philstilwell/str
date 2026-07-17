@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-17T15:38:15Z",
+  "description_html": "Greg talks about the problems with inclusivism, then he answers questions about why it would be wrong to ask a saint for prayer if they can hear us, whether drawing lots is an approved practice, self-identified Christians who don’t show fruit, and whether the meaning of “doubt” has changed.",
+  "description_text": "Greg talks about the problems with inclusivism, then he answers questions about why it would be wrong to ask a saint for prayer if they can hear us, whether drawing lots is an approved practice, self-identified Christians who don’t show fruit, and whether the meaning of “doubt” has changed.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/9e59a16b-7558-39ae-8406-d73713531937",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/muju2xvwdcem8vzs/071726.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/inclusivism-gives-people-false-hope/",
+  "pub_date": "2026-07-17",
+  "rss_transcript_tags": [],
+  "slug": "2026-07-17-inclusivism-gives-people-false-hope",
+  "title": "Inclusivism Gives People False Hope",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-17T15:38:15Z",
+  "youtube_url": null
+}
