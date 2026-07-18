@@ -1,0 +1,34 @@
+{
+  "audio_source": {
+    "player_url": "https://player.blubrry.com/id/154402822?cache=1784307265#mode-Light&border-000000&progress-000000",
+    "source": "embedded_player",
+    "source_url": "https://crossexamined.org/how-to-demolish-your-christian-doubts-with-cliffe-stuart-knechtle/",
+    "url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast_Cliffe-and-Stuart-7-17-26.mp3"
+  },
+  "created_at": "2026-07-18T15:18:30Z",
+  "description_html": "<p>Are you looking for answers about faith that will satisfy both your heart and your mind? As the host and founder of Give Me an Answer, Cliffe Knechtle has four decades of experience answering questions about God&#8217;s existence, the presence of evil in the world, and the reliability of the Bible. Now in their new [&#8230;]</p>\n<p>The post <a href=\"https://crossexamined.org/how-to-demolish-your-christian-doubts-with-cliffe-stuart-knechtle/\">How to Demolish Your Christian Doubts with Cliffe &#038; Stuart Knechtle</a> appeared first on <a href=\"https://crossexamined.org\">CrossExamined</a>.</p>",
+  "description_text": "Are you looking for answers about faith that will satisfy both your heart and your mind? As the host and founder of Give Me an Answer, Cliffe Knechtle has four decades of experience answering questions about God’s existence, the presence of evil in the world, and the reliability of the Bible. Now in their new […] The post How to Demolish Your Christian Doubts with Cliffe & Stuart Knechtle appeared first on CrossExamined .",
+  "duration": null,
+  "feed_url": "https://crossexamined.org/category/podcast/feed/",
+  "guid": "https://crossexamined.org/?p=103813",
+  "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast_Cliffe-and-Stuart-7-17-26.mp3",
+  "podcast": {
+    "home_url": "https://crossexamined.org/podcasts/",
+    "id": "idont-have-enough-faith",
+    "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+  },
+  "podcast_page_url": "https://crossexamined.org/how-to-demolish-your-christian-doubts-with-cliffe-stuart-knechtle/",
+  "pub_date": "2026-07-17",
+  "rss_transcript_tags": [],
+  "slug": "2026-07-17-how-to-demolish-your-christian-doubts-with-cliffe-stuart-knechtle",
+  "title": "How to Demolish Your Christian Doubts with Cliffe & Stuart Knechtle",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-18T15:18:30Z",
+  "youtube_url": null
+}

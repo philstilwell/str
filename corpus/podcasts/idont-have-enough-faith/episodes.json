@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "https://crossexamined.org/?p=103813",
+      "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast_Cliffe-and-Stuart-7-17-26.mp3",
+      "path": "episodes/2026-07-17-how-to-demolish-your-christian-doubts-with-cliffe-stuart-knechtle",
+      "podcast": {
+        "home_url": "https://crossexamined.org/podcasts/",
+        "id": "idont-have-enough-faith",
+        "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+      },
+      "podcast_page_url": "https://crossexamined.org/how-to-demolish-your-christian-doubts-with-cliffe-stuart-knechtle/",
+      "pub_date": "2026-07-17",
+      "slug": "2026-07-17-how-to-demolish-your-christian-doubts-with-cliffe-stuart-knechtle",
+      "title": "How to Demolish Your Christian Doubts with Cliffe & Stuart Knechtle",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "https://crossexamined.org/?p=103794",
       "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek_Podcast_Frank-Solo_7-14-2026.mp3",
       "path": "episodes/2026-07-14-help-conspiracy-theories-are-ruining-my-marriage-37-questions-to",
@@ -293,5 +315,5 @@
     "id": "idont-have-enough-faith",
     "title": "I Don't Have Enough FAITH to Be an ATHEIST"
   },
-  "updated_at": "2026-07-15T15:55:36Z"
+  "updated_at": "2026-07-18T15:20:46Z"
 }

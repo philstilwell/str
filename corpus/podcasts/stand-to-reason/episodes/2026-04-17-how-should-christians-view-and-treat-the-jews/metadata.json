@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-18T15:13:18Z",
+  "description_html": "Greg and Amy continue their discussion about antisemitism, explaining what Romans 9–11 has to say about how we ought to view and treat the Jews and answering questions about the meaning of Revelation’s reference to the “synagogue of Satan” and whether Jews worship a different God.",
+  "description_text": "Greg and Amy continue their discussion about antisemitism, explaining what Romans 9–11 has to say about how we ought to view and treat the Jews and answering questions about the meaning of Revelation’s reference to the “synagogue of Satan” and whether Jews worship a different God.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/c20e96cf-7308-3c9a-bc27-d41f1b491d7e",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/deey97caxsnc733r/041726.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/how-should-christians-view-and-treat-the-jews/",
+  "pub_date": "2026-04-17",
+  "rss_transcript_tags": [],
+  "slug": "2026-04-17-how-should-christians-view-and-treat-the-jews",
+  "title": "How Should Christians View and Treat the Jews?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-18T15:13:18Z",
+  "youtube_url": null
+}

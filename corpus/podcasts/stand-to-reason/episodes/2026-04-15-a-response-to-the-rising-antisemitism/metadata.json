@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-18T15:15:54Z",
+  "description_html": "Greg and Amy talk about the antisemitism spreading among young conservative men and begin a discussion about what the Bible says about God’s relationship with the Jews and how Gentile believers in Christ ought to treat them.",
+  "description_text": "Greg and Amy talk about the antisemitism spreading among young conservative men and begin a discussion about what the Bible says about God’s relationship with the Jews and how Gentile believers in Christ ought to treat them.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/24c697ea-06e1-3324-bbac-67b3390f011c",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/rp3v7mgg32hqsa7m/041526.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/a-response-to-the-rising-antisemitism/",
+  "pub_date": "2026-04-15",
+  "rss_transcript_tags": [],
+  "slug": "2026-04-15-a-response-to-the-rising-antisemitism",
+  "title": "A Response to the Rising Antisemitism",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-18T15:15:54Z",
+  "youtube_url": null
+}

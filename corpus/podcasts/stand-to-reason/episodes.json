@@ -373,6 +373,50 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/c20e96cf-7308-3c9a-bc27-d41f1b491d7e",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/deey97caxsnc733r/041726.mp3",
+      "path": "episodes/2026-04-17-how-should-christians-view-and-treat-the-jews",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/how-should-christians-view-and-treat-the-jews/",
+      "pub_date": "2026-04-17",
+      "slug": "2026-04-17-how-should-christians-view-and-treat-the-jews",
+      "title": "How Should Christians View and Treat the Jews?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/24c697ea-06e1-3324-bbac-67b3390f011c",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/rp3v7mgg32hqsa7m/041526.mp3",
+      "path": "episodes/2026-04-15-a-response-to-the-rising-antisemitism",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/a-response-to-the-rising-antisemitism/",
+      "pub_date": "2026-04-15",
+      "slug": "2026-04-15-a-response-to-the-rising-antisemitism",
+      "title": "A Response to the Rising Antisemitism",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -381,5 +425,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-07-17T15:43:23Z"
+  "updated_at": "2026-07-18T15:18:29Z"
 }
