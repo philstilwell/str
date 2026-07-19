@@ -28,6 +28,10 @@ from str_workflow.seo import (  # noqa: E402
 
 DOCS_DIR = ROOT / "docs"
 EPISODE_DATE_RE = re.compile(r"^(\d{4}-\d{2}-\d{2})-")
+SEO_HEAD_RE = re.compile(
+    r"\s*<title\b[^>]*>.*?</title>.*?(?=<link\b(?=[^>]*\brel=[\"']icon[\"']))",
+    flags=re.DOTALL | re.IGNORECASE,
+)
 
 
 def site_base_url() -> str:
@@ -149,13 +153,7 @@ def update_html_page(path: Path, base_url: str) -> None:
         published_date=published_date(path),
         structured_data=structured_data,
     )
-    updated, replacements = re.subn(
-        r"    <title>.*?\n    <link rel=\"icon\"",
-        f"{seo_head}\n    <link rel=\"icon\"",
-        html,
-        count=1,
-        flags=re.DOTALL,
-    )
+    updated, replacements = SEO_HEAD_RE.subn(f"\n{seo_head}\n    ", html, count=1)
     if replacements != 1:
         raise RuntimeError(f"Could not update SEO head for {path}")
     path.write_text(updated, encoding="utf-8")

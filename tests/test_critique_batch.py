@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import importlib.util
 import json
 from pathlib import Path
 
@@ -11,6 +12,12 @@ from str_workflow.critique_batch import (
     quote_chunk,
 )
 from str_workflow.site import episode_nav_for, episode_records, refresh_episode_navigation, refresh_homepage
+
+
+BUILD_SITE_SEO_SPEC = importlib.util.spec_from_file_location("build_site_seo", Path("tools/build_site_seo.py"))
+assert BUILD_SITE_SEO_SPEC and BUILD_SITE_SEO_SPEC.loader
+build_site_seo = importlib.util.module_from_spec(BUILD_SITE_SEO_SPEC)
+BUILD_SITE_SEO_SPEC.loader.exec_module(build_site_seo)
 
 
 def write_episode(
@@ -133,6 +140,20 @@ def test_refresh_episode_navigation_accepts_compacted_attribute_order(tmp_path):
     updated = (docs / "current" / "index.html").read_text(encoding="utf-8")
     assert 'href="../older/"' in updated
     assert 'href="../newer/"' in updated
+
+
+def test_seo_head_replacement_accepts_compacted_methodology_head():
+    compact = (
+        '<!doctype html><html><head><meta charset="utf-8"><title>Methodology | OnReason</title>'
+        '<meta name="description" content="old"><script type="application/ld+json">{}</script>'
+        '<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"></head></html>'
+    )
+
+    updated, replacements = build_site_seo.SEO_HEAD_RE.subn("SEO\n    ", compact, count=1)
+
+    assert replacements == 1
+    assert 'meta name="description" content="old"' not in updated
+    assert '<link rel="icon" href="../assets/favicon.svg"' in updated
 
 
 def test_episode_records_preserve_public_pages_without_retained_metadata(tmp_path):
