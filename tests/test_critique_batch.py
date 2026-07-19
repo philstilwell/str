@@ -5,13 +5,20 @@ import json
 from pathlib import Path
 
 from str_workflow.critique_batch import (
+    build_parser,
     compact_source_label,
     missing_critique_episode_dirs,
     normalize_display_latex,
     normalize_evidence_test_text,
     quote_chunk,
 )
-from str_workflow.site import episode_nav_for, episode_records, refresh_episode_navigation, refresh_homepage
+from str_workflow.site import (
+    build_parser as build_site_parser,
+    episode_nav_for,
+    episode_records,
+    refresh_episode_navigation,
+    refresh_homepage,
+)
 
 
 BUILD_SITE_SEO_SPEC = importlib.util.spec_from_file_location("build_site_seo", Path("tools/build_site_seo.py"))
@@ -211,12 +218,31 @@ def test_critique_workflow_follows_successful_ingest_with_scheduled_recovery_swe
     critiques = Path(".github/workflows/critiques.yml").read_text(encoding="utf-8")
 
     assert 'cron: "15 14 * * *"' in ingest
+    assert "9:15 EST / 10:15 EDT" in ingest
     assert 'workflows: ["Ingest podcast episodes"]' in critiques
     assert "types: [completed]" in critiques
     assert "branches: [main]" in critiques
     assert "github.event.workflow_run.conclusion == 'success'" in critiques
     assert 'cron: "15 16 * * *"' in critiques
+    assert "11:15 EST / 12:15 EDT" in critiques
     assert "python -m str_workflow.critique_batch" in critiques
+    assert "--skip-site-refresh" in critiques
+    assert "actions/upload-artifact@v4" in critiques
+    assert "critique-generation-recovery-${{ github.run_id }}" in critiques
+    assert "python -m str_workflow.site" in critiques
     assert "python tools/build_site_seo.py" in critiques
     assert "run: pytest" in critiques
     assert "git add docs" in critiques
+
+
+def test_critique_batch_can_render_pages_without_site_refresh():
+    args = build_parser().parse_args(["--skip-site-refresh"])
+
+    assert args.skip_site_refresh is True
+
+
+def test_site_refresh_has_cli_arguments():
+    args = build_site_parser().parse_args(["--corpus-dir", "corpus/podcasts", "--docs-dir", "docs/episodes"])
+
+    assert args.corpus_dir == Path("corpus/podcasts")
+    assert args.docs_dir == Path("docs/episodes")

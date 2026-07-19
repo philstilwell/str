@@ -2,7 +2,7 @@ name: Ingest podcast episodes
 
 on:
   schedule:
-    # GitHub Actions schedules run in UTC. 14:15 UTC is 9:15 EST.
+    # GitHub Actions schedules run in UTC. 14:15 UTC is 9:15 EST / 10:15 EDT.
     - cron: "15 14 * * *"
   workflow_dispatch:
     inputs:

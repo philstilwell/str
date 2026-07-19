@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 import html
 import json
 import re
@@ -182,3 +183,24 @@ def refresh_public_site(corpus_dir: Path, docs_dir: Path) -> None:
     records = episode_records(corpus_dir, docs_dir)
     refresh_episode_navigation(records, docs_dir)
     refresh_homepage(records, docs_dir)
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description="Refresh OnReason public homepage and episode navigation.")
+    parser.add_argument("--corpus-dir", type=Path, default=Path("corpus/podcasts"))
+    parser.add_argument("--docs-dir", type=Path, default=Path("docs/episodes"))
+    return parser
+
+
+def main() -> int:
+    args = build_parser().parse_args()
+    records = episode_records(args.corpus_dir, args.docs_dir)
+    nav_updates = refresh_episode_navigation(records, args.docs_dir)
+    homepage_updated = refresh_homepage(records, args.docs_dir)
+    print(f"Refreshed episode navigation on {nav_updates} page(s).")
+    print(f"Homepage {'updated' if homepage_updated else 'already current'}.")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

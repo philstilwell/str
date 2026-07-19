@@ -663,6 +663,7 @@ def run_batch(
     max_attempts: int,
     max_episodes: int = 0,
     dry_run: bool = False,
+    skip_site_refresh: bool = False,
 ) -> int:
     candidates = missing_critique_episode_dirs(corpus_dir, docs_dir)
     if max_episodes > 0:
@@ -704,6 +705,13 @@ def run_batch(
         created += 1
         print(f"Rendered validated critique: {docs_dir / slug / 'index.html'}", flush=True)
 
+    if skip_site_refresh:
+        print(
+            f"Created {created} validated critique page(s); public navigation refresh was skipped.",
+            flush=True,
+        )
+        return created
+
     refresh_public_site(corpus_dir, docs_dir)
     for page in docs_dir.glob("*/index.html"):
         errors = validate_page(page)
@@ -728,6 +736,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--max-attempts", type=int, default=3)
     parser.add_argument("--max-episodes", type=int, default=0, help="0 means all missing critiques.")
     parser.add_argument("--dry-run", action="store_true", help="List missing critiques without calling the API.")
+    parser.add_argument(
+        "--skip-site-refresh",
+        action="store_true",
+        help="Render validated episode pages only; leave homepage/navigation refresh to a later non-API step.",
+    )
     return parser
 
 
@@ -743,6 +756,7 @@ def main() -> int:
         max_attempts=args.max_attempts,
         max_episodes=args.max_episodes,
         dry_run=args.dry_run,
+        skip_site_refresh=args.skip_site_refresh,
     )
     return 0
 
