@@ -139,7 +139,9 @@ class GeneratedSection(StrictModel):
     transcript_claim: str
     audit_rows: list[GeneratedAuditRow] = Field(min_length=2, max_length=2)
     formalization_intro: str
-    formalization_latex: str
+    formalization_latex: str = Field(
+        description="LaTeX display math wrapped in \\[ and \\]; do not use inline delimiters or bare LaTeX."
+    )
     formalization_assessment: str
     fallacy: GeneratedFallacy
     bias: GeneratedBias
@@ -322,6 +324,25 @@ def normalize_evidence_test_text(value: str) -> str:
     return text[:1].upper() + text[1:] if text else text
 
 
+def normalize_display_latex(value: str) -> str:
+    """Return model-generated LaTeX as one MathJax display block."""
+    latex = str(value).strip()
+    if not latex:
+        return latex
+
+    fenced = re.fullmatch(r"```(?:latex|tex|math)?\s*(.*?)\s*```", latex, flags=re.IGNORECASE | re.DOTALL)
+    if fenced:
+        latex = fenced.group(1).strip()
+
+    delimiter_pairs = (("\\[", "\\]"), ("$$", "$$"), ("\\(", "\\)"), ("$", "$"))
+    for opening, closing in delimiter_pairs:
+        if latex.startswith(opening) and latex.endswith(closing) and len(latex) >= len(opening) + len(closing):
+            latex = latex[len(opening) : -len(closing)].strip()
+            break
+
+    return f"\\[\n{latex}\n\\]"
+
+
 def transcript_source_description(metadata: dict[str, Any]) -> str:
     transcript = metadata.get("transcript") if isinstance(metadata.get("transcript"), dict) else {}
     status = transcript.get("status")
@@ -404,7 +425,7 @@ def assemble_spec(
                 "audit_rows": [row.model_dump() for row in item.audit_rows],
                 "formalization": {
                     "intro": item.formalization_intro,
-                    "latex": item.formalization_latex,
+                    "latex": normalize_display_latex(item.formalization_latex),
                     "assessment": item.formalization_assessment,
                 },
                 "tags": tags,
@@ -513,6 +534,7 @@ Return exactly five distinct substantive claim sections. Skip announcements, adv
 - select exactly two Free of Faith source IDs and one local framework or academic source ID from the private catalog;
 - explain how those sources bear on this exact inference without naming or linking the private catalog itself;
 - include two developed prose paragraphs, a 35+ word expandable note, a 35+ word research note, two audit rows, a natural LaTeX formalization, and claim-specific fallacy and bias applications;
+- write every formalization_latex value as display math wrapped in \\[ and \\]; never use \\( and \\), dollar delimiters, or bare LaTeX;
 - make the raise/lower evidence tests concrete, falsifiable, distinct, and at least 20 words each;
 - do not start evidence tests with stock confidence phrasing such as "Confidence would rise if"; start with the episode-specific evidence or missing test;
 - keep every explanatory passage distinct across sections.
