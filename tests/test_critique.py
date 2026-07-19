@@ -254,7 +254,7 @@ def test_valid_spec_renders_page_with_required_onreason_features(tmp_path):
     assert "challenge-reality" in html
     assert "The challenge" in html
     assert "Bounded Agency" in html
-    assert "Distinguish biblical faith-language expressing trust" in html
+    assert "Treat epistemic faith as intrinsically irrational" in html
     assert "Free of Faith Featured archive" in html
     assert "https://freeoffaith.com/featured/" in html
     assert "quote-strip" not in html
@@ -287,14 +287,15 @@ def test_freeoffaith_source_index_includes_featured_posts():
     assert any(item.get("id") == "fof-featured-faith-vs-rationality" for item in featured)
 
 
-def test_critique_contract_distinguishes_faith_from_evidence_category():
+def test_critique_contract_treats_epistemic_faith_as_intrinsically_irrational():
     method_text = " ".join(item["body"] for item in DEFAULT_METHODS)
     vulnerability_text = " ".join(DEFAULT_VULNERABILITIES)
     batch_prompt = Path("src/str_workflow/critique_batch.py").read_text(encoding="utf-8")
 
-    assert "faith-language expressing trust or loyalty" in method_text
+    assert "epistemic faith" in method_text
     assert "Faith and Evidence Categories" in vulnerability_text
-    assert "distinguish biblical faith-language expressing trust" in batch_prompt
+    assert "Treat epistemic faith as intrinsically irrational" in batch_prompt
+    assert "relational commitment, not evidence for truth" in batch_prompt
 
 
 def test_critique_contract_uses_moral_nonrealist_language():

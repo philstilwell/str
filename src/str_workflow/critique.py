@@ -29,9 +29,10 @@ DEFAULT_ASSET_VERSION = "20260715-moral-nonrealism"
 DEFAULT_HERO_IMAGE = "../../assets/evidence-alignment.png"
 DEFAULT_HERO_ALT = "Abstract evidence-alignment illustration with papers, scales, and a magnifying glass."
 FAITH_EVIDENCE_PRINCIPLE = (
-    "Treat faith as epistemically inadequate only where it is invoked to license confidence that exceeds, "
-    "bypasses, or resists the degree of relevant evidence. Distinguish biblical faith-language expressing "
-    "trust, reliance, or loyalty from a claim that the evidence is sufficient."
+    "Treat epistemic faith as intrinsically irrational: confidence should be proportioned to evidence, "
+    "and any appeal to faith as a basis for belief is a rational defect rather than an epistemic virtue. "
+    "Distinguish biblical faith-language expressing trust, reliance, or loyalty as relational commitment, "
+    "not evidence for truth or a warrant for belief."
 )
 MORAL_NONREALISM_PRINCIPLE = (
     "Write from a moral non-realist perspective: treat ethical language as human normative discourse, "
@@ -284,7 +285,7 @@ SPEC_REIFIED_MORAL_SKIP_KEYS = {
 DEFAULT_METHODS = [
     {
         "title": "Calibration",
-        "body": "Belief should track evidential support rather than identity, comfort, or group pressure; faith-language expressing trust or loyalty is not itself an evidential category.",
+        "body": "Belief should track evidential support rather than identity, comfort, group pressure, or epistemic faith; trust or loyalty is not evidence for truth.",
     },
     {
         "title": "Symmetry",
@@ -365,7 +366,7 @@ DEFAULT_SECTION_BLUEPRINTS = [
 
 DEFAULT_VULNERABILITIES = [
     "Worldview Totalization: Examine whether Christianity is asserted as a map of all reality rather than argued to be the uniquely accurate map of all reality.",
-    "Faith and Evidence Categories: Distinguish biblical faith as trust, reliance, or loyalty from a claim that evidence is sufficient; criticize faith only where it licenses confidence beyond relevant evidence.",
+    "Faith and Evidence Categories: Distinguish relational trust, reliance, or loyalty from epistemic faith; treat epistemic faith as intrinsically irrational wherever it functions as a basis for belief rather than evidence-proportionate confidence.",
     "Private-to-Public Shift: Test whether moving from personal faith to public worldview smuggles in authority claims that still require public justification.",
     "Evidence-Proportionate Belief: Assess whether claims about resurrection, lordship, creation, Fall, redemption, and final restoration receive enough evidence to justify the confidence placed in them.",
     "Pastoral Usefulness Versus Truth: Evaluate whether the existential usefulness of hope, identity, and calling is being treated as evidence that the worldview is true.",
@@ -1499,7 +1500,7 @@ The Steelmanned Condensed Claims:
 
 Treat the claims above as a steelman reconstruction of the episode's argument. Do not weaken, caricature, or replace that reconstruction before critiquing it. Preserve the intended pastoral and formational force of the argument while assessing whether even this best version succeeds. {FAITH_EVIDENCE_PRINCIPLE} {MORAL_NONREALISM_PRINCIPLE}
 
-Provide a rigorous, exhaustive critique of the argument. Use the principle that rational belief should map to the degree of relevant evidence, while distinguishing an act of faith or trust from a claim that evidence is sufficient. Treat faith as a rational defect only where it licenses confidence beyond the evidence. Treat ethical claims as claims about human norms, harms, welfare, preferences, emotions, social coordination, and public justification; do not reify ethical discourse into stance-independent facts or laws. Use clear section headers and subheaders, with common indicators such as "SECTION 1:", "1.1", "Subsection:", "#", or "##" when helpful. Use a variety of structural symbols throughout the response: "✶" for major section takeaways, "◉" for primary analytical points, and "➘" for subordinate implications, evidence-flow notes, or follow-up tests. Do not use asterisks for bolding or italics.
+Provide a rigorous, exhaustive critique of the argument. Use the principle that rational belief should map to the degree of relevant evidence, while distinguishing relational trust or loyalty from epistemic faith. Treat epistemic faith as intrinsically irrational wherever it functions as a basis for belief rather than evidence-proportionate confidence. Treat ethical claims as claims about human norms, harms, welfare, preferences, emotions, social coordination, and public justification; do not reify ethical discourse into stance-independent facts or laws. Use clear section headers and subheaders, with common indicators such as "SECTION 1:", "1.1", "Subsection:", "#", or "##" when helpful. Use a variety of structural symbols throughout the response: "✶" for major section takeaways, "◉" for primary analytical points, and "➘" for subordinate implications, evidence-flow notes, or follow-up tests. Do not use asterisks for bolding or italics.
 
 Required output structure:
 ✶ Start each major section with a short ALL-CAPS header.
@@ -1512,7 +1513,7 @@ For each major claim, assess:
 ◉ What evidence is actually supplied in the steelmanned condensed argument.
 ◉ What evidence is asserted but not presented.
 ◉ What rival explanations or rival worldviews must be compared.
-◉ Whether the confidence expressed exceeds the evidence supplied, especially where faith is invoked to defend that excess.
+◉ Whether the confidence expressed exceeds the evidence supplied, especially where faith is invoked as a substitute for evidence.
 ◉ Which assumptions are doing hidden work.
 ◉ Whether the claim is primarily pastoral, psychological, ethical/normative, historical, metaphysical, or evidential.
 
