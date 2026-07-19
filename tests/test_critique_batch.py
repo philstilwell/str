@@ -6,6 +6,7 @@ from pathlib import Path
 from str_workflow.critique_batch import (
     compact_source_label,
     missing_critique_episode_dirs,
+    normalize_display_latex,
     normalize_evidence_test_text,
     quote_chunk,
 )
@@ -80,6 +81,21 @@ def test_normalize_evidence_test_text_removes_banned_confidence_opener():
     assert "Confidence would rise if" not in normalized
     assert normalized.startswith("The claim would earn stronger confidence only if")
     assert "independently checkable evidence" in normalized
+
+
+def test_normalize_display_latex_wraps_common_model_output_variants():
+    body = r"P \not\Rightarrow Q"
+    variants = (
+        body,
+        f"${body}$",
+        f"$${body}$$",
+        f"\\({body}\\)",
+        f"\\[{body}\\]",
+        f"```latex\n{body}\n```",
+    )
+
+    for value in variants:
+        assert normalize_display_latex(value) == f"\\[\n{body}\n\\]"
 
 
 def test_episode_navigation_links_older_and_newer_critiques():
