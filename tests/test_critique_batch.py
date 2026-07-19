@@ -10,7 +10,7 @@ from str_workflow.critique_batch import (
     normalize_evidence_test_text,
     quote_chunk,
 )
-from str_workflow.site import episode_nav_for, episode_records, refresh_homepage
+from str_workflow.site import episode_nav_for, episode_records, refresh_episode_navigation, refresh_homepage
 
 
 def write_episode(
@@ -110,6 +110,29 @@ def test_episode_navigation_links_older_and_newer_critiques():
         "next": {"title": "Newer", "url": "../newer/"},
     }
     assert episode_nav_for("newer", records)["next"] is None
+
+
+def test_refresh_episode_navigation_accepts_compacted_attribute_order(tmp_path):
+    docs = tmp_path / "docs" / "episodes"
+    records = [
+        {"slug": "older", "title": "Older", "pub_date": "2026-07-01"},
+        {"slug": "current", "title": "Current", "pub_date": "2026-07-08"},
+        {"slug": "newer", "title": "Newer", "pub_date": "2026-07-15"},
+    ]
+    for item in records:
+        page = docs / item["slug"] / "index.html"
+        page.parent.mkdir(parents=True)
+        page.write_text(
+            '<article><nav aria-label="Adjacent episode critiques" class="episode-nav-band">'
+            '<span aria-disabled="true">Previous</span>'
+            '</nav><header class="article-header"><h1>Current</h1></header></article>',
+            encoding="utf-8",
+        )
+
+    assert refresh_episode_navigation({"stand-to-reason": records}, docs) == 3
+    updated = (docs / "current" / "index.html").read_text(encoding="utf-8")
+    assert 'href="../older/"' in updated
+    assert 'href="../newer/"' in updated
 
 
 def test_episode_records_preserve_public_pages_without_retained_metadata(tmp_path):

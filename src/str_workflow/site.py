@@ -12,7 +12,7 @@ from .critique import episode_nav_control, format_display_date
 
 
 NAV_RE = re.compile(
-    r'<nav class="episode-nav-band" aria-label="Adjacent episode critiques">.*?</nav>',
+    r'<nav\b(?=[^>]*\bclass=["\'][^"\']*\bepisode-nav-band\b[^"\']*["\'])(?=[^>]*\baria-label=["\']Adjacent episode critiques["\'])[^>]*>.*?</nav>',
     flags=re.DOTALL,
 )
 CARD_RE = re.compile(r'            <article class="episode-card">.*?            </article>', re.DOTALL)
