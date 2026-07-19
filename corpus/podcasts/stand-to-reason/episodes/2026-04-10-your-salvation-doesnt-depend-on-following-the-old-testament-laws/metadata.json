@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-19T15:13:36Z",
+  "description_html": "Greg talks about a card he received from a group saying we have to follow the Old Testament laws to be saved, then he answers questions about what happens to everyone who doesn’t trust in Jesus, making a case God sustains the universe, and a couple in a celibate same-sex marriage serving in a church.",
+  "description_text": "Greg talks about a card he received from a group saying we have to follow the Old Testament laws to be saved, then he answers questions about what happens to everyone who doesn’t trust in Jesus, making a case God sustains the universe, and a couple in a celibate same-sex marriage serving in a church.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/f877c15b-489c-3ec1-b18d-a906ac36a4b0",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/hcr3xpir2j7zsi6y/041026.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/your-salvation-doesn-t-depend-on-following-the-old-testament-laws/",
+  "pub_date": "2026-04-10",
+  "rss_transcript_tags": [],
+  "slug": "2026-04-10-your-salvation-doesnt-depend-on-following-the-old-testament-laws",
+  "title": "Your Salvation Doesn’t Depend on Following the Old Testament Laws",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-19T15:13:36Z",
+  "youtube_url": null
+}

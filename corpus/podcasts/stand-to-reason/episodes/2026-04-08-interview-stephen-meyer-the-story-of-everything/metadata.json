@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-19T15:15:56Z",
+  "description_html": "Greg talks to Stephen Meyer about The Story of Everything, a film based on Meyer’s book Return of the God Hypothesis, discussing the two competing stories of reality in our culture—one materialist and one theist—and scientific evidence that points to God.",
+  "description_text": "Greg talks to Stephen Meyer about The Story of Everything, a film based on Meyer’s book Return of the God Hypothesis, discussing the two competing stories of reality in our culture—one materialist and one theist—and scientific evidence that points to God.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/32f28cde-78a2-3cd8-a576-ddbd9addc9bb",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/j6jx2zmk6viha5hv/040826.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/interview-stephen-meyer-%e2%80%93-the-story-of-everything/",
+  "pub_date": "2026-04-08",
+  "rss_transcript_tags": [],
+  "slug": "2026-04-08-interview-stephen-meyer-the-story-of-everything",
+  "title": "Interview: Stephen Meyer – The Story of Everything",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-19T15:15:56Z",
+  "youtube_url": null
+}

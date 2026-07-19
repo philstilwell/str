@@ -417,6 +417,50 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/f877c15b-489c-3ec1-b18d-a906ac36a4b0",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/hcr3xpir2j7zsi6y/041026.mp3",
+      "path": "episodes/2026-04-10-your-salvation-doesnt-depend-on-following-the-old-testament-laws",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/your-salvation-doesn-t-depend-on-following-the-old-testament-laws/",
+      "pub_date": "2026-04-10",
+      "slug": "2026-04-10-your-salvation-doesnt-depend-on-following-the-old-testament-laws",
+      "title": "Your Salvation Doesn’t Depend on Following the Old Testament Laws",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/32f28cde-78a2-3cd8-a576-ddbd9addc9bb",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/j6jx2zmk6viha5hv/040826.mp3",
+      "path": "episodes/2026-04-08-interview-stephen-meyer-the-story-of-everything",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/interview-stephen-meyer-%e2%80%93-the-story-of-everything/",
+      "pub_date": "2026-04-08",
+      "slug": "2026-04-08-interview-stephen-meyer-the-story-of-everything",
+      "title": "Interview: Stephen Meyer – The Story of Everything",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -425,5 +469,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-07-18T15:18:29Z"
+  "updated_at": "2026-07-19T15:18:20Z"
 }
