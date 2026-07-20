@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-20T16:03:34Z",
+  "description_html": "Greg talks about the grounding for morality, then he answers questions about whether the criteria for the canon is contained in Scripture, how it’s possible that Satan rebelled if there was no sin in Heaven, and how Satan was able to be in the garden of Eden in the first place if it was perfect.",
+  "description_text": "Greg talks about the grounding for morality, then he answers questions about whether the criteria for the canon is contained in Scripture, how it’s possible that Satan rebelled if there was no sin in Heaven, and how Satan was able to be in the garden of Eden in the first place if it was perfect.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/292eaeaf-5972-35f3-ac4e-4dfa91b01473",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/ejreap64cjgsij53/040126.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/is-morality-just-limited-to-god-s-say-so/",
+  "pub_date": "2026-04-01",
+  "rss_transcript_tags": [],
+  "slug": "2026-04-01-is-morality-just-limited-to-gods-say-so",
+  "title": "Is Morality Just Limited to God’s Say-So?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-20T16:03:34Z",
+  "youtube_url": null
+}

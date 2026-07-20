@@ -461,6 +461,50 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/f5831c44-0beb-350d-a879-6cc126f70b10",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/bhj6mznv7wu97pbk/040326.mp3",
+      "path": "episodes/2026-04-03-an-april-fools-day-story",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/an-april-fools-day-story/",
+      "pub_date": "2026-04-03",
+      "slug": "2026-04-03-an-april-fools-day-story",
+      "title": "An April Fools’ Day Story",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/292eaeaf-5972-35f3-ac4e-4dfa91b01473",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/ejreap64cjgsij53/040126.mp3",
+      "path": "episodes/2026-04-01-is-morality-just-limited-to-gods-say-so",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/is-morality-just-limited-to-god-s-say-so/",
+      "pub_date": "2026-04-01",
+      "slug": "2026-04-01-is-morality-just-limited-to-gods-say-so",
+      "title": "Is Morality Just Limited to God’s Say-So?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -469,5 +513,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-07-19T15:18:20Z"
+  "updated_at": "2026-07-20T16:05:53Z"
 }

@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-20T16:01:10Z",
+  "description_html": "Greg tells an April Fools’ Day story from his past, then he answers questions about using people’s preferred names and pronouns, what becoming saved looks like if it doesn’t involve asking Jesus into your life, and not feeling the love for God that other people seem to feel.",
+  "description_text": "Greg tells an April Fools’ Day story from his past, then he answers questions about using people’s preferred names and pronouns, what becoming saved looks like if it doesn’t involve asking Jesus into your life, and not feeling the love for God that other people seem to feel.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/f5831c44-0beb-350d-a879-6cc126f70b10",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/bhj6mznv7wu97pbk/040326.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/an-april-fools-day-story/",
+  "pub_date": "2026-04-03",
+  "rss_transcript_tags": [],
+  "slug": "2026-04-03-an-april-fools-day-story",
+  "title": "An April Fools’ Day Story",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-20T16:01:10Z",
+  "youtube_url": null
+}
