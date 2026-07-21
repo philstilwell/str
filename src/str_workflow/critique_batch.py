@@ -3,11 +3,13 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import random
 import re
+import time
 from pathlib import Path
-from typing import Any, Literal
+from typing import Any, Callable, Literal, TypeVar
 
-from openai import OpenAI
+from openai import APIConnectionError, APITimeoutError, InternalServerError, OpenAI, RateLimitError
 from pydantic import BaseModel, ConfigDict, Field
 from slugify import slugify
 
@@ -35,6 +37,10 @@ from .site import episode_nav_for, episode_records, refresh_public_site
 READY_TRANSCRIPT_STATUSES = {"found_official", "generated_asr"}
 DEFAULT_MODEL = "gpt-5.5"
 DEFAULT_REASONING_EFFORT = "high"
+DEFAULT_REQUEST_MAX_ATTEMPTS = 3
+DEFAULT_REQUEST_RETRY_DELAY_SECONDS = 60.0
+RETRYABLE_OPENAI_ERRORS = (APIConnectionError, APITimeoutError, InternalServerError, RateLimitError)
+ResponseT = TypeVar("ResponseT")
 EVIDENCE_TEXT_REPLACEMENTS = (
     (
         re.compile(r"\bconfidence would rise if\b", flags=re.IGNORECASE),
@@ -590,6 +596,64 @@ def repair_prompt(errors: list[str]) -> str:
     )
 
 
+def retry_after_seconds(error: Exception) -> float | None:
+    """Return a numeric server-directed retry delay when one is available."""
+    candidates: list[Any] = []
+    response = getattr(error, "response", None)
+    headers = getattr(response, "headers", None)
+    if headers is not None:
+        candidates.append(headers.get("retry-after"))
+
+    body = getattr(error, "body", None)
+    if isinstance(body, dict):
+        candidates.append(body.get("retry_after"))
+        nested_error = body.get("error")
+        if isinstance(nested_error, dict):
+            candidates.append(nested_error.get("retry_after"))
+
+    for value in candidates:
+        try:
+            delay = float(value)
+        except (TypeError, ValueError):
+            continue
+        if delay >= 0:
+            return delay
+    return None
+
+
+def request_with_retries(
+    request: Callable[[], ResponseT],
+    *,
+    max_attempts: int,
+    base_delay_seconds: float,
+    sleep: Callable[[float], None] = time.sleep,
+    jitter: Callable[[float, float], float] = random.uniform,
+) -> ResponseT:
+    """Retry transient OpenAI failures without swallowing permanent request errors."""
+    if max_attempts < 1:
+        raise ValueError("max_attempts must be at least 1")
+    if base_delay_seconds < 0:
+        raise ValueError("base_delay_seconds must not be negative")
+
+    for attempt in range(1, max_attempts + 1):
+        try:
+            return request()
+        except RETRYABLE_OPENAI_ERRORS as error:
+            if attempt == max_attempts:
+                raise
+            exponential_delay = base_delay_seconds * (2 ** (attempt - 1))
+            delay = max(exponential_delay, retry_after_seconds(error) or 0.0)
+            delay += jitter(0.0, min(delay * 0.1, 10.0))
+            print(
+                f"OpenAI request failed with {type(error).__name__}; "
+                f"retrying attempt {attempt + 1}/{max_attempts} in {delay:.1f}s.",
+                flush=True,
+            )
+            sleep(delay)
+
+    raise AssertionError("unreachable")
+
+
 def generate_spec(
     client: OpenAI,
     episode_dir: Path,
@@ -613,13 +677,19 @@ def generate_spec(
         if attempt > 1:
             input_value.append({"role": "user", "content": repair_prompt(errors)})
 
-        response = client.responses.parse(
-            model=model,
-            input=input_value,
-            text_format=GeneratedCritique,
-            reasoning={"effort": reasoning_effort},
-            max_output_tokens=50_000,
-            store=False,
+        response = request_with_retries(
+            lambda: client.responses.parse(
+                model=model,
+                input=input_value,
+                text_format=GeneratedCritique,
+                reasoning={"effort": reasoning_effort},
+                max_output_tokens=50_000,
+                store=False,
+            ),
+            max_attempts=int(os.getenv("OPENAI_REQUEST_MAX_ATTEMPTS", str(DEFAULT_REQUEST_MAX_ATTEMPTS))),
+            base_delay_seconds=float(
+                os.getenv("OPENAI_REQUEST_RETRY_DELAY_SECONDS", str(DEFAULT_REQUEST_RETRY_DELAY_SECONDS))
+            ),
         )
         generated = response.output_parsed
         if generated is None:
@@ -681,7 +751,7 @@ def run_batch(
     source_index = load_json(source_index_path)
     planned_slugs = {episode_dir.name for episode_dir in candidates}
     records = episode_records(corpus_dir, docs_dir, include_slugs=planned_slugs)
-    client = OpenAI(timeout=float(os.getenv("OPENAI_TIMEOUT_SECONDS", "1800")))
+    client = OpenAI(timeout=float(os.getenv("OPENAI_TIMEOUT_SECONDS", "1800")), max_retries=0)
     created = 0
     for episode_dir in candidates:
         metadata = load_json(episode_dir / "metadata.json")
