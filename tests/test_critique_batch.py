@@ -4,13 +4,20 @@ import importlib.util
 import json
 from pathlib import Path
 
+import pytest
+from openai import APIConnectionError, APITimeoutError, InternalServerError, RateLimitError
+
+import str_workflow.critique_batch as critique_batch
 from str_workflow.critique_batch import (
+    RETRYABLE_OPENAI_ERRORS,
     build_parser,
     compact_source_label,
     missing_critique_episode_dirs,
     normalize_display_latex,
     normalize_evidence_test_text,
     quote_chunk,
+    request_with_retries,
+    retry_after_seconds,
 )
 from str_workflow.site import (
     build_parser as build_site_parser,
@@ -110,6 +117,66 @@ def test_normalize_display_latex_wraps_common_model_output_variants():
 
     for value in variants:
         assert normalize_display_latex(value) == f"\\[\n{body}\n\\]"
+
+
+def test_openai_request_retries_transient_failure_and_honors_server_delay(monkeypatch):
+    class RetryableError(Exception):
+        body = {"retry_after": 60}
+
+    outcomes = iter([RetryableError("temporary failure"), "success"])
+    sleeps: list[float] = []
+    monkeypatch.setattr(critique_batch, "RETRYABLE_OPENAI_ERRORS", (RetryableError,))
+
+    def request():
+        outcome = next(outcomes)
+        if isinstance(outcome, Exception):
+            raise outcome
+        return outcome
+
+    result = request_with_retries(
+        request,
+        max_attempts=3,
+        base_delay_seconds=5,
+        sleep=sleeps.append,
+        jitter=lambda _start, _end: 0,
+    )
+
+    assert result == "success"
+    assert sleeps == [60]
+
+
+def test_openai_request_stops_after_bounded_attempts(monkeypatch):
+    class RetryableError(Exception):
+        pass
+
+    attempts = 0
+    sleeps: list[float] = []
+    monkeypatch.setattr(critique_batch, "RETRYABLE_OPENAI_ERRORS", (RetryableError,))
+
+    def always_fails():
+        nonlocal attempts
+        attempts += 1
+        raise RetryableError("still unavailable")
+
+    with pytest.raises(RetryableError):
+        request_with_retries(
+            always_fails,
+            max_attempts=3,
+            base_delay_seconds=2,
+            sleep=sleeps.append,
+            jitter=lambda _start, _end: 0,
+        )
+
+    assert attempts == 3
+    assert sleeps == [2, 4]
+
+
+def test_openai_retry_policy_covers_observed_transient_sdk_errors():
+    assert APIConnectionError in RETRYABLE_OPENAI_ERRORS
+    assert APITimeoutError in RETRYABLE_OPENAI_ERRORS
+    assert InternalServerError in RETRYABLE_OPENAI_ERRORS
+    assert RateLimitError in RETRYABLE_OPENAI_ERRORS
+    assert retry_after_seconds(Exception("no metadata")) is None
 
 
 def test_episode_navigation_links_older_and_newer_critiques():
