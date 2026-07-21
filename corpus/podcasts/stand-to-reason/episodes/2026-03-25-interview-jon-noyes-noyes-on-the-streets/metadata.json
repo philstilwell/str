@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-21T15:54:59Z",
+  "description_html": "Greg talks to Jon Noyes about his new YouTube project, Noyes on the Streets, where he has conversations about spiritual and ethical topics with people in public places and then breaks them down for viewers and gives tips on how to make your case with clarity and compassion.",
+  "description_text": "Greg talks to Jon Noyes about his new YouTube project, Noyes on the Streets, where he has conversations about spiritual and ethical topics with people in public places and then breaks them down for viewers and gives tips on how to make your case with clarity and compassion.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/a1fce173-9d2c-3280-84e9-0a90bfa8ebfa",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/z6ped8yka4dgyicg/032526.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/interview-jon-noyes-%e2%80%93-noyes-on-the-streets/",
+  "pub_date": "2026-03-25",
+  "rss_transcript_tags": [],
+  "slug": "2026-03-25-interview-jon-noyes-noyes-on-the-streets",
+  "title": "Interview: Jon Noyes – Noyes on the Streets",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-21T15:54:59Z",
+  "youtube_url": null
+}

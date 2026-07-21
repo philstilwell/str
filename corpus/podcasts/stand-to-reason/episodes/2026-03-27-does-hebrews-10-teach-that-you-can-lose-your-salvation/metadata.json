@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-21T15:52:35Z",
+  "description_html": "Greg goes step by step through the passage in Hebrews 10 that many interpret to mean you can lose your salvation, then he answers questions about 1 Corinthians 2:10–16 in light of his view on hearing God’s voice and the mechanism by which the Holy Spirit comforts, convicts, etc.",
+  "description_text": "Greg goes step by step through the passage in Hebrews 10 that many interpret to mean you can lose your salvation, then he answers questions about 1 Corinthians 2:10–16 in light of his view on hearing God’s voice and the mechanism by which the Holy Spirit comforts, convicts, etc.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/0c81a953-f1c3-3b4f-bc8f-04a46df1bd84",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/mj3gfr26k6qsjwm3/032726.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/does-hebrews-10-teach-that-you-can-lose-your-salvation/",
+  "pub_date": "2026-03-27",
+  "rss_transcript_tags": [],
+  "slug": "2026-03-27-does-hebrews-10-teach-that-you-can-lose-your-salvation",
+  "title": "Does Hebrews 10 Teach That You Can Lose Your Salvation?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-21T15:52:35Z",
+  "youtube_url": null
+}

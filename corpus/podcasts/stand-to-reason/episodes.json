@@ -505,6 +505,50 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/0c81a953-f1c3-3b4f-bc8f-04a46df1bd84",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/mj3gfr26k6qsjwm3/032726.mp3",
+      "path": "episodes/2026-03-27-does-hebrews-10-teach-that-you-can-lose-your-salvation",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/does-hebrews-10-teach-that-you-can-lose-your-salvation/",
+      "pub_date": "2026-03-27",
+      "slug": "2026-03-27-does-hebrews-10-teach-that-you-can-lose-your-salvation",
+      "title": "Does Hebrews 10 Teach That You Can Lose Your Salvation?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/a1fce173-9d2c-3280-84e9-0a90bfa8ebfa",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/z6ped8yka4dgyicg/032526.mp3",
+      "path": "episodes/2026-03-25-interview-jon-noyes-noyes-on-the-streets",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/interview-jon-noyes-%e2%80%93-noyes-on-the-streets/",
+      "pub_date": "2026-03-25",
+      "slug": "2026-03-25-interview-jon-noyes-noyes-on-the-streets",
+      "title": "Interview: Jon Noyes – Noyes on the Streets",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -513,5 +557,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-07-20T16:05:53Z"
+  "updated_at": "2026-07-21T15:57:30Z"
 }
