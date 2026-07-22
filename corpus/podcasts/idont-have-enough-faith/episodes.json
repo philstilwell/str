@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "https://crossexamined.org/?p=103835",
+      "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek_Podcast_Cliffe-and-Stuart_7-21-2026.mp3",
+      "path": "episodes/2026-07-21-anything-but-christianity-answering-college-students-toughest-objections",
+      "podcast": {
+        "home_url": "https://crossexamined.org/podcasts/",
+        "id": "idont-have-enough-faith",
+        "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+      },
+      "podcast_page_url": "https://crossexamined.org/anything-but-christianity-answering-college-students-toughest-objections-with-cliffe-stuart-knechtle/",
+      "pub_date": "2026-07-21",
+      "slug": "2026-07-21-anything-but-christianity-answering-college-students-toughest-objections",
+      "title": "Anything But Christianity? Answering College Students’ Toughest Objections with Cliffe & Stuart Knechtle",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "https://crossexamined.org/?p=103813",
       "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast_Cliffe-and-Stuart-7-17-26.mp3",
       "path": "episodes/2026-07-17-how-to-demolish-your-christian-doubts-with-cliffe-stuart-knechtle",
@@ -315,5 +337,5 @@
     "id": "idont-have-enough-faith",
     "title": "I Don't Have Enough FAITH to Be an ATHEIST"
   },
-  "updated_at": "2026-07-18T15:20:46Z"
+  "updated_at": "2026-07-22T15:58:37Z"
 }

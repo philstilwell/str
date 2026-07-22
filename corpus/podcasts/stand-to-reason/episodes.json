@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "strweekly.podbean.com/779a6b5b-108d-30ab-a150-a45f790758e2",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/5qgwpisqrqfqxqww/072226.mp3",
+      "path": "episodes/2026-07-22-what-about-baptism-for-the-dead",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/what-about-baptism-for-the-dead/",
+      "pub_date": "2026-07-22",
+      "slug": "2026-07-22-what-about-baptism-for-the-dead",
+      "title": "What About Baptism for the Dead?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "strweekly.podbean.com/9e59a16b-7558-39ae-8406-d73713531937",
       "mp3_url": "https://mcdn.podbean.com/mf/web/muju2xvwdcem8vzs/071726.mp3",
       "path": "episodes/2026-07-17-inclusivism-gives-people-false-hope",
@@ -549,6 +571,28 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/84fad105-86e9-35ca-9e42-8c2558bc45b5",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/8e9trmwz4r2ps2su/032026.mp3",
+      "path": "episodes/2026-03-20-what-happens-to-people-who-never-heard-the-gospel",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/what-happens-to-people-who-never-heard-the-gospel/",
+      "pub_date": "2026-03-20",
+      "slug": "2026-03-20-what-happens-to-people-who-never-heard-the-gospel",
+      "title": "What Happens to People Who Never Heard the Gospel?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -557,5 +601,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-07-21T15:57:30Z"
+  "updated_at": "2026-07-22T15:56:11Z"
 }

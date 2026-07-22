@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-22T15:53:43Z",
+  "description_html": "Greg answers questions about apologetics resources for young children, the fate of people who never heard the gospel, catering to those who have been historically marginalized, reconciling Romans 3 with the idea that those who seek God find him, and whether the atonement is illogical.",
+  "description_text": "Greg answers questions about apologetics resources for young children, the fate of people who never heard the gospel, catering to those who have been historically marginalized, reconciling Romans 3 with the idea that those who seek God find him, and whether the atonement is illogical.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/84fad105-86e9-35ca-9e42-8c2558bc45b5",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/8e9trmwz4r2ps2su/032026.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/what-happens-to-people-who-never-heard-the-gospel/",
+  "pub_date": "2026-03-20",
+  "rss_transcript_tags": [],
+  "slug": "2026-03-20-what-happens-to-people-who-never-heard-the-gospel",
+  "title": "What Happens to People Who Never Heard the Gospel?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-22T15:53:43Z",
+  "youtube_url": null
+}

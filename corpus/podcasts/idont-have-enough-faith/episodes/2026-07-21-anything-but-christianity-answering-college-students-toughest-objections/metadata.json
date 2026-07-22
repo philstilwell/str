@@ -1,0 +1,34 @@
+{
+  "audio_source": {
+    "player_url": "https://player.blubrry.com/id/154446259?cache=1784659920#mode-Light&border-000000&progress-000000",
+    "source": "embedded_player",
+    "source_url": "https://crossexamined.org/anything-but-christianity-answering-college-students-toughest-objections-with-cliffe-stuart-knechtle/",
+    "url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek_Podcast_Cliffe-and-Stuart_7-21-2026.mp3"
+  },
+  "created_at": "2026-07-22T15:56:12Z",
+  "description_html": "<p>Frank welcomes back father-son duo, Cliffe and Stuart Knechtle, to unpack the objections they hear most often from college students who remain unconvinced by Christianity, share how they respond to skeptics in the heat of the moment, and help Christians prepare for similar conversations. Tune in as they answer questions like: What doubts about Christianity [&#8230;]</p>\n<p>The post <a href=\"https://crossexamined.org/anything-but-christianity-answering-college-students-toughest-objections-with-cliffe-stuart-knechtle/\">Anything But Christianity? Answering College Students&#8217; Toughest Objections with Cliffe &#038; Stuart Knechtle</a> appeared first on <a href=\"https://crossexamined.org\">CrossExamined</a>.</p>",
+  "description_text": "Frank welcomes back father-son duo, Cliffe and Stuart Knechtle, to unpack the objections they hear most often from college students who remain unconvinced by Christianity, share how they respond to skeptics in the heat of the moment, and help Christians prepare for similar conversations. Tune in as they answer questions like: What doubts about Christianity […] The post Anything But Christianity? Answering College Students’ Toughest Objections with Cliffe & Stuart Knechtle appeared first on CrossExamined .",
+  "duration": null,
+  "feed_url": "https://crossexamined.org/category/podcast/feed/",
+  "guid": "https://crossexamined.org/?p=103835",
+  "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek_Podcast_Cliffe-and-Stuart_7-21-2026.mp3",
+  "podcast": {
+    "home_url": "https://crossexamined.org/podcasts/",
+    "id": "idont-have-enough-faith",
+    "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+  },
+  "podcast_page_url": "https://crossexamined.org/anything-but-christianity-answering-college-students-toughest-objections-with-cliffe-stuart-knechtle/",
+  "pub_date": "2026-07-21",
+  "rss_transcript_tags": [],
+  "slug": "2026-07-21-anything-but-christianity-answering-college-students-toughest-objections",
+  "title": "Anything But Christianity? Answering College Students’ Toughest Objections with Cliffe & Stuart Knechtle",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-22T15:56:12Z",
+  "youtube_url": null
+}
