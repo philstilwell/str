@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-23T16:05:07Z",
+  "description_html": "Greg talks to a caller about whether a church should formulate a specific position on Israel, reviews an AI article on reasons for and against converting to Christianity, and answers a question on whether people are confusing the idea of hearing the voice of God with being led by the Spirit.",
+  "description_text": "Greg talks to a caller about whether a church should formulate a specific position on Israel, reviews an AI article on reasons for and against converting to Christianity, and answers a question on whether people are confusing the idea of hearing the voice of God with being led by the Spirit.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/dea900ed-d909-3922-b480-364bec65b7c0",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/yn8yqhfufffy9gcf/031326.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/reasons-for-and-against-converting-to-christianity/",
+  "pub_date": "2026-03-13",
+  "rss_transcript_tags": [],
+  "slug": "2026-03-13-reasons-for-and-against-converting-to-christianity",
+  "title": "Reasons for and Against Converting to Christianity",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-23T16:05:07Z",
+  "youtube_url": null
+}

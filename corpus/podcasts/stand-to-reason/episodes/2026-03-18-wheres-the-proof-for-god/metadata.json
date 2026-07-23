@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-23T16:02:33Z",
+  "description_html": "Greg responds to the claim that there’s no proof for God, then he answers questions about whether the parables in Luke 12 indicate salvation can be lost, Sarah sending away Hagar, how sin moved from an angel to a tree, and what it means to say Jesus took on the sins of the world.",
+  "description_text": "Greg responds to the claim that there’s no proof for God, then he answers questions about whether the parables in Luke 12 indicate salvation can be lost, Sarah sending away Hagar, how sin moved from an angel to a tree, and what it means to say Jesus took on the sins of the world.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/66e5aea1-414f-3e0a-9d72-c23bf655231c",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/w8hgknkuhwhgpcgf/031826.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/where-s-the-proof-for-god/",
+  "pub_date": "2026-03-18",
+  "rss_transcript_tags": [],
+  "slug": "2026-03-18-wheres-the-proof-for-god",
+  "title": "Where’s the Proof for God?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-23T16:02:33Z",
+  "youtube_url": null
+}

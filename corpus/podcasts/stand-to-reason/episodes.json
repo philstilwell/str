@@ -593,6 +593,50 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/66e5aea1-414f-3e0a-9d72-c23bf655231c",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/w8hgknkuhwhgpcgf/031826.mp3",
+      "path": "episodes/2026-03-18-wheres-the-proof-for-god",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/where-s-the-proof-for-god/",
+      "pub_date": "2026-03-18",
+      "slug": "2026-03-18-wheres-the-proof-for-god",
+      "title": "Where’s the Proof for God?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/dea900ed-d909-3922-b480-364bec65b7c0",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/yn8yqhfufffy9gcf/031326.mp3",
+      "path": "episodes/2026-03-13-reasons-for-and-against-converting-to-christianity",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/reasons-for-and-against-converting-to-christianity/",
+      "pub_date": "2026-03-13",
+      "slug": "2026-03-13-reasons-for-and-against-converting-to-christianity",
+      "title": "Reasons for and Against Converting to Christianity",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -601,5 +645,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-07-22T15:56:11Z"
+  "updated_at": "2026-07-23T16:07:28Z"
 }
