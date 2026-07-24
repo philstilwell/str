@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "strweekly.podbean.com/84e5df52-2cb8-3794-bc96-6e9b9c55ebea",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/25ireydxpk6yphb4/072426.mp3",
+      "path": "episodes/2026-07-24-questions-for-someone-who-casually-refers-to-karma",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/questions-for-someone-who-casually-refers-to-karma/",
+      "pub_date": "2026-07-24",
+      "slug": "2026-07-24-questions-for-someone-who-casually-refers-to-karma",
+      "title": "Questions for Someone Who Casually Refers to Karma",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "strweekly.podbean.com/779a6b5b-108d-30ab-a150-a45f790758e2",
       "mp3_url": "https://mcdn.podbean.com/mf/web/5qgwpisqrqfqxqww/072226.mp3",
       "path": "episodes/2026-07-22-what-about-baptism-for-the-dead",
@@ -637,6 +659,28 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/59b977d8-f80c-300e-910a-00b17a543cfc",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/2tccq587r937naze/031126.mp3",
+      "path": "episodes/2026-03-11-just-tell-them-the-truth",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/just-tell-them-the-truth/",
+      "pub_date": "2026-03-11",
+      "slug": "2026-03-11-just-tell-them-the-truth",
+      "title": "Just Tell Them the Truth",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -645,5 +689,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-07-23T16:07:28Z"
+  "updated_at": "2026-07-24T15:47:39Z"
 }

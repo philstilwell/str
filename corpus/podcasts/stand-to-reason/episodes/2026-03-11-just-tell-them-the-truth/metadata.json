@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-24T15:45:22Z",
+  "description_html": "Greg talks about a clip from Wes Huff’s interview on Diary of a CEO and responds to objections to Hell, then he answers a question about whether ancient Greeks viewed their mythology the way we view Christianity now and people in the future will view Christianity the way we view Greek mythology now.",
+  "description_text": "Greg talks about a clip from Wes Huff’s interview on Diary of a CEO and responds to objections to Hell, then he answers a question about whether ancient Greeks viewed their mythology the way we view Christianity now and people in the future will view Christianity the way we view Greek mythology now.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/59b977d8-f80c-300e-910a-00b17a543cfc",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/2tccq587r937naze/031126.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/just-tell-them-the-truth/",
+  "pub_date": "2026-03-11",
+  "rss_transcript_tags": [],
+  "slug": "2026-03-11-just-tell-them-the-truth",
+  "title": "Just Tell Them the Truth",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-24T15:45:22Z",
+  "youtube_url": null
+}

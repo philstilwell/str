@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-24T15:42:57Z",
+  "description_html": "Greg talks about the upcoming Reality season, then he responds to questions about what to ask someone who casually refers to karma, the Latter-day Saint claim that they received the true priesthood authority, and whether new Christians ought to go back and correct past wrongs.",
+  "description_text": "Greg talks about the upcoming Reality season, then he responds to questions about what to ask someone who casually refers to karma, the Latter-day Saint claim that they received the true priesthood authority, and whether new Christians ought to go back and correct past wrongs.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/84e5df52-2cb8-3794-bc96-6e9b9c55ebea",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/25ireydxpk6yphb4/072426.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/questions-for-someone-who-casually-refers-to-karma/",
+  "pub_date": "2026-07-24",
+  "rss_transcript_tags": [],
+  "slug": "2026-07-24-questions-for-someone-who-casually-refers-to-karma",
+  "title": "Questions for Someone Who Casually Refers to Karma",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-24T15:42:57Z",
+  "youtube_url": null
+}
