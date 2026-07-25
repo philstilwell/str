@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-25T15:20:41Z",
+  "description_html": "Greg responds to the charge that God is a bad father, then he answers a question from a caller about why we have to go through sanctification when people who die shortly after salvation are immediately glorified.",
+  "description_text": "Greg responds to the charge that God is a bad father, then he answers a question from a caller about why we have to go through sanctification when people who die shortly after salvation are immediately glorified.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/ba47da6b-ae91-3e1c-a33b-9af0b4034505",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/ukjcpr4sw3xynvkj/030426.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/is-god-a-bad-father/",
+  "pub_date": "2026-03-04",
+  "rss_transcript_tags": [],
+  "slug": "2026-03-04-is-god-a-bad-father",
+  "title": "Is God a Bad Father?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-25T15:20:41Z",
+  "youtube_url": null
+}

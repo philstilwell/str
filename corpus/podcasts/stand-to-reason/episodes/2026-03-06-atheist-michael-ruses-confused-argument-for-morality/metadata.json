@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-25T15:18:23Z",
+  "description_html": "Greg talks about an argument atheist Michael Ruse made for people to be “moral” even though there are no grounds for being good, then he answers questions about Frank Turek’s claim that the Calvinist God is like Allah, and whether the continued existence of the Jews is evidence for God.",
+  "description_text": "Greg talks about an argument atheist Michael Ruse made for people to be “moral” even though there are no grounds for being good, then he answers questions about Frank Turek’s claim that the Calvinist God is like Allah, and whether the continued existence of the Jews is evidence for God.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/19f6f2c7-5c33-39a8-9790-72ad5c63394e",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/9tgkqbryj56vy7zf/030626.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/atheist-michael-ruse-s-confused-argument-for-morality/",
+  "pub_date": "2026-03-06",
+  "rss_transcript_tags": [],
+  "slug": "2026-03-06-atheist-michael-ruses-confused-argument-for-morality",
+  "title": "Atheist Michael Ruse’s Confused Argument for Morality",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-25T15:18:23Z",
+  "youtube_url": null
+}

@@ -681,6 +681,50 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/19f6f2c7-5c33-39a8-9790-72ad5c63394e",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/9tgkqbryj56vy7zf/030626.mp3",
+      "path": "episodes/2026-03-06-atheist-michael-ruses-confused-argument-for-morality",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/atheist-michael-ruse-s-confused-argument-for-morality/",
+      "pub_date": "2026-03-06",
+      "slug": "2026-03-06-atheist-michael-ruses-confused-argument-for-morality",
+      "title": "Atheist Michael Ruse’s Confused Argument for Morality",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/ba47da6b-ae91-3e1c-a33b-9af0b4034505",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/ukjcpr4sw3xynvkj/030426.mp3",
+      "path": "episodes/2026-03-04-is-god-a-bad-father",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/is-god-a-bad-father/",
+      "pub_date": "2026-03-04",
+      "slug": "2026-03-04-is-god-a-bad-father",
+      "title": "Is God a Bad Father?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -689,5 +733,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-07-24T15:47:39Z"
+  "updated_at": "2026-07-25T15:22:59Z"
 }

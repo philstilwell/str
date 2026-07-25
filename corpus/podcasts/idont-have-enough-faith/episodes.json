@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "https://crossexamined.org/?p=103851",
+      "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast_TimBarton_7-24-26.mp3",
+      "path": "episodes/2026-07-24-rewriting-history-debunking-the-lies-youve-always-been-told-about-with",
+      "podcast": {
+        "home_url": "https://crossexamined.org/podcasts/",
+        "id": "idont-have-enough-faith",
+        "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+      },
+      "podcast_page_url": "https://crossexamined.org/rewriting-history-debunking-the-lies-youve-always-been-told-about-america-with-tim-barton/",
+      "pub_date": "2026-07-24",
+      "slug": "2026-07-24-rewriting-history-debunking-the-lies-youve-always-been-told-about-with",
+      "title": "Rewriting History – Debunking the Lies You’ve Always Been Told About America with Tim Barton",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "https://crossexamined.org/?p=103835",
       "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek_Podcast_Cliffe-and-Stuart_7-21-2026.mp3",
       "path": "episodes/2026-07-21-anything-but-christianity-answering-college-students-toughest-objections",
@@ -337,5 +359,5 @@
     "id": "idont-have-enough-faith",
     "title": "I Don't Have Enough FAITH to Be an ATHEIST"
   },
-  "updated_at": "2026-07-22T15:58:37Z"
+  "updated_at": "2026-07-25T15:25:03Z"
 }
