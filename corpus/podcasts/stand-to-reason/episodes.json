@@ -725,6 +725,50 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/d678864e-eedd-3e9b-b17d-db1c46ef9173",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/bfrsvv2nxbw4piva/022726.mp3",
+      "path": "episodes/2026-02-27-arguments-for-the-a-theory-of-time",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/arguments-for-the-a-theory-of-time/",
+      "pub_date": "2026-02-27",
+      "slug": "2026-02-27-arguments-for-the-a-theory-of-time",
+      "title": "Arguments for the A-Theory of Time",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/99eec59e-3ccc-3e03-8205-55b26ece4028",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/6fiusmmcujcr36sp/022526.mp3",
+      "path": "episodes/2026-02-25-a-three-point-response-to-the-problem-of-evil",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/a-three-point-response-to-the-problem-of-evil/",
+      "pub_date": "2026-02-25",
+      "slug": "2026-02-25-a-three-point-response-to-the-problem-of-evil",
+      "title": "A Three-Point Response to the Problem of Evil",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -733,5 +777,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-07-25T15:22:59Z"
+  "updated_at": "2026-07-26T15:24:00Z"
 }

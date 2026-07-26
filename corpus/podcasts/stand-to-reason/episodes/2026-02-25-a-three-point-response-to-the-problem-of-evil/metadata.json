@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-26T15:21:46Z",
+  "description_html": "Greg explains a three-point response to the problem of evil, then he talks to callers about a strategic question to ask someone who doesn’t trust the Bible because he thinks anything touched by man has been tainted, and whether Acts 17:26–27 is a good proof text for Molinism.",
+  "description_text": "Greg explains a three-point response to the problem of evil, then he talks to callers about a strategic question to ask someone who doesn’t trust the Bible because he thinks anything touched by man has been tainted, and whether Acts 17:26–27 is a good proof text for Molinism.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/99eec59e-3ccc-3e03-8205-55b26ece4028",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/6fiusmmcujcr36sp/022526.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/a-three-point-response-to-the-problem-of-evil/",
+  "pub_date": "2026-02-25",
+  "rss_transcript_tags": [],
+  "slug": "2026-02-25-a-three-point-response-to-the-problem-of-evil",
+  "title": "A Three-Point Response to the Problem of Evil",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-26T15:21:46Z",
+  "youtube_url": null
+}
