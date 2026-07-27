@@ -769,6 +769,50 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/b62fd2e0-a9f2-3ea2-81ab-4c5495729b6d",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/x4zf4mgi7wifnjtj/022026.mp3",
+      "path": "episodes/2026-02-20-how-do-we-dive-into-controversial-conversations-in-a-sensible-way",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/how-do-we-dive-into-controversial-conversations-in-a-sensible-way/",
+      "pub_date": "2026-02-20",
+      "slug": "2026-02-20-how-do-we-dive-into-controversial-conversations-in-a-sensible-way",
+      "title": "How Do We Dive into Controversial Conversations in a Sensible Way?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/b98e08d3-358f-3563-ba3a-89f6c95b6a29",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/myzb2qve3tccnmua/021826.mp3",
+      "path": "episodes/2026-02-18-the-continental-divide-in-worldviews",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/the-continental-divide-in-worldviews/",
+      "pub_date": "2026-02-18",
+      "slug": "2026-02-18-the-continental-divide-in-worldviews",
+      "title": "The Continental Divide in Worldviews",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -777,5 +821,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-07-26T15:24:00Z"
+  "updated_at": "2026-07-27T16:38:27Z"
 }

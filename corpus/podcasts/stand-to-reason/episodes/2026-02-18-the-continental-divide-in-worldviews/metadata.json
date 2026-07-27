@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-27T16:36:12Z",
+  "description_html": "Greg talks about the “continental divide” in worldviews, then he answers questions about a possible interpretation of Matthew 18:7–9, how to explain the sovereignty of God when a surgeon’s choice leads to someone’s death, and how a surgeon can find peace with that kind of responsibility.",
+  "description_text": "Greg talks about the “continental divide” in worldviews, then he answers questions about a possible interpretation of Matthew 18:7–9, how to explain the sovereignty of God when a surgeon’s choice leads to someone’s death, and how a surgeon can find peace with that kind of responsibility.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/b98e08d3-358f-3563-ba3a-89f6c95b6a29",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/myzb2qve3tccnmua/021826.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/the-continental-divide-in-worldviews/",
+  "pub_date": "2026-02-18",
+  "rss_transcript_tags": [],
+  "slug": "2026-02-18-the-continental-divide-in-worldviews",
+  "title": "The Continental Divide in Worldviews",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-27T16:36:12Z",
+  "youtube_url": null
+}
