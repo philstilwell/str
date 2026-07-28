@@ -813,6 +813,50 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/e434d89d-aba7-3d9b-9f7b-6ea48a71fe90",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/tuv6dpus6bntxtt7/021326.mp3",
+      "path": "episodes/2026-02-13-waiting-is-a-normal-part-of-the-christian-life",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/waiting-is-a-normal-part-of-the-christian-life/",
+      "pub_date": "2026-02-13",
+      "slug": "2026-02-13-waiting-is-a-normal-part-of-the-christian-life",
+      "title": "Waiting Is a Normal Part of the Christian Life",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/e6a5c986-07ca-31ca-b990-f67210ca0120",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/vt9yyppi7k6qjg4e/021126.mp3",
+      "path": "episodes/2026-02-11-two-historical-films-worth-watching",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/two-historical-films-worth-watching/",
+      "pub_date": "2026-02-11",
+      "slug": "2026-02-11-two-historical-films-worth-watching",
+      "title": "Two Historical Films Worth Watching",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -821,5 +865,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-07-27T16:38:27Z"
+  "updated_at": "2026-07-28T16:20:09Z"
 }
