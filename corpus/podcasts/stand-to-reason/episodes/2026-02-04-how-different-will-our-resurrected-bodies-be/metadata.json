@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-29T16:00:46Z",
+  "description_html": "Greg answers questions about how different our resurrected bodies will be, whether something is good so long as someone thinks it brings them closer to God, justification by allegiance alone, and the rationale for saying the human spirit doesn’t have a spatial location.",
+  "description_text": "Greg answers questions about how different our resurrected bodies will be, whether something is good so long as someone thinks it brings them closer to God, justification by allegiance alone, and the rationale for saying the human spirit doesn’t have a spatial location.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/48bd30d0-f036-3955-9919-c94cac8d04ad",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/fgcnwxtvhxmusbju/020426.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/how-different-will-our-resurrected-bodies-be/",
+  "pub_date": "2026-02-04",
+  "rss_transcript_tags": [],
+  "slug": "2026-02-04-how-different-will-our-resurrected-bodies-be",
+  "title": "How Different Will Our Resurrected Bodies Be?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-29T16:00:46Z",
+  "youtube_url": null
+}

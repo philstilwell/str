@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-29T15:58:10Z",
+  "description_html": "Greg talks about finding a good Bible translation and sticking with it, then he responds to callers’ questions about when to answer questions about hypothetical situations, whether there’s a waiting place when we die, where Greg and Amy disagree, and a non-biblical argument for the afterlife.",
+  "description_text": "Greg talks about finding a good Bible translation and sticking with it, then he responds to callers’ questions about when to answer questions about hypothetical situations, whether there’s a waiting place when we die, where Greg and Amy disagree, and a non-biblical argument for the afterlife.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/a9f42971-2354-3b59-aee9-1c8fa70b7f86",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/ya4ktah4mr8k8pis/072926.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/find-a-good-bible-translation-and-stick-with-it/",
+  "pub_date": "2026-07-29",
+  "rss_transcript_tags": [],
+  "slug": "2026-07-29-find-a-good-bible-translation-and-stick-with-it",
+  "title": "Find a Good Bible Translation and Stick with It",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-29T15:58:10Z",
+  "youtube_url": null
+}

@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "strweekly.podbean.com/a9f42971-2354-3b59-aee9-1c8fa70b7f86",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/ya4ktah4mr8k8pis/072926.mp3",
+      "path": "episodes/2026-07-29-find-a-good-bible-translation-and-stick-with-it",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/find-a-good-bible-translation-and-stick-with-it/",
+      "pub_date": "2026-07-29",
+      "slug": "2026-07-29-find-a-good-bible-translation-and-stick-with-it",
+      "title": "Find a Good Bible Translation and Stick with It",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "strweekly.podbean.com/84e5df52-2cb8-3794-bc96-6e9b9c55ebea",
       "mp3_url": "https://mcdn.podbean.com/mf/web/25ireydxpk6yphb4/072426.mp3",
       "path": "episodes/2026-07-24-questions-for-someone-who-casually-refers-to-karma",
@@ -857,6 +879,28 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/48bd30d0-f036-3955-9919-c94cac8d04ad",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/fgcnwxtvhxmusbju/020426.mp3",
+      "path": "episodes/2026-02-04-how-different-will-our-resurrected-bodies-be",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/how-different-will-our-resurrected-bodies-be/",
+      "pub_date": "2026-02-04",
+      "slug": "2026-02-04-how-different-will-our-resurrected-bodies-be",
+      "title": "How Different Will Our Resurrected Bodies Be?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -865,5 +909,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-07-28T16:20:09Z"
+  "updated_at": "2026-07-29T16:03:07Z"
 }
