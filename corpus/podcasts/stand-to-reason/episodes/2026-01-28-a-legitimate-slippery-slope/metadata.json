@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-30T16:02:56Z",
+  "description_html": "Greg discusses IVF’s slippery slope, then he talks to callers about a strategy he could have used on Diary of a CEO, and how to know when to stay in a church to try to change what’s happening and when to leave.",
+  "description_text": "Greg discusses IVF’s slippery slope, then he talks to callers about a strategy he could have used on Diary of a CEO, and how to know when to stay in a church to try to change what’s happening and when to leave.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/0e429d7d-816a-30c3-9243-73285e22870f",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/iu9xb4raxhhwvsix/012826.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/a-legitimate-slippery-slope/",
+  "pub_date": "2026-01-28",
+  "rss_transcript_tags": [],
+  "slug": "2026-01-28-a-legitimate-slippery-slope",
+  "title": "A Legitimate Slippery Slope",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-30T16:02:56Z",
+  "youtube_url": null
+}

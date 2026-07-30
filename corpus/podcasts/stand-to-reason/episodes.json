@@ -901,6 +901,50 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/71e54a23-378a-37f2-a48e-e2bd7b3145d4",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/sidvqmckqi4xqusy/013026.mp3",
+      "path": "episodes/2026-01-30-is-this-similar-to-learning-to-hear-gods-voice",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/is-this-similar-to-learning-to-hear-god-s-voice/",
+      "pub_date": "2026-01-30",
+      "slug": "2026-01-30-is-this-similar-to-learning-to-hear-gods-voice",
+      "title": "Is This Similar to Learning to Hear God’s Voice?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/0e429d7d-816a-30c3-9243-73285e22870f",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/iu9xb4raxhhwvsix/012826.mp3",
+      "path": "episodes/2026-01-28-a-legitimate-slippery-slope",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/a-legitimate-slippery-slope/",
+      "pub_date": "2026-01-28",
+      "slug": "2026-01-28-a-legitimate-slippery-slope",
+      "title": "A Legitimate Slippery Slope",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -909,5 +953,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-07-29T16:03:07Z"
+  "updated_at": "2026-07-30T16:05:36Z"
 }

@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-30T16:00:19Z",
+  "description_html": "Greg answers questions about an analogy to learning to hear God’s voice, taking communion after arguing with a Christian, the point of praying when God’s will is already set, apologetics curriculum for teens, and why one should pray in front of an abortion clinic instead of at home.",
+  "description_text": "Greg answers questions about an analogy to learning to hear God’s voice, taking communion after arguing with a Christian, the point of praying when God’s will is already set, apologetics curriculum for teens, and why one should pray in front of an abortion clinic instead of at home.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/71e54a23-378a-37f2-a48e-e2bd7b3145d4",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/sidvqmckqi4xqusy/013026.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/is-this-similar-to-learning-to-hear-god-s-voice/",
+  "pub_date": "2026-01-30",
+  "rss_transcript_tags": [],
+  "slug": "2026-01-30-is-this-similar-to-learning-to-hear-gods-voice",
+  "title": "Is This Similar to Learning to Hear God’s Voice?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-30T16:00:19Z",
+  "youtube_url": null
+}
