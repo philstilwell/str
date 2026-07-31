@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "strweekly.podbean.com/bbc6fd63-2804-3adb-821b-d96126162bf9",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/ykwdhnugebykptb4/073126.mp3",
+      "path": "episodes/2026-07-31-does-age-always-match-the-appearance-of-age",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/does-age-always-match-the-appearance-of-age/",
+      "pub_date": "2026-07-31",
+      "slug": "2026-07-31-does-age-always-match-the-appearance-of-age",
+      "title": "Does Age Always Match the Appearance of Age?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "strweekly.podbean.com/a9f42971-2354-3b59-aee9-1c8fa70b7f86",
       "mp3_url": "https://mcdn.podbean.com/mf/web/ya4ktah4mr8k8pis/072926.mp3",
       "path": "episodes/2026-07-29-find-a-good-bible-translation-and-stick-with-it",
@@ -945,6 +967,28 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/8caac872-ea06-3828-bf01-4ff7b53c1f67",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/npmpyfxxhmky7t6j/012326.mp3",
+      "path": "episodes/2026-01-23-is-this-a-flaw-in-the-moral-argument",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/is-this-a-flaw-in-the-moral-argument/",
+      "pub_date": "2026-01-23",
+      "slug": "2026-01-23-is-this-a-flaw-in-the-moral-argument",
+      "title": "Is This a Flaw in the Moral Argument?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -953,5 +997,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-07-30T16:05:36Z"
+  "updated_at": "2026-07-31T16:15:10Z"
 }

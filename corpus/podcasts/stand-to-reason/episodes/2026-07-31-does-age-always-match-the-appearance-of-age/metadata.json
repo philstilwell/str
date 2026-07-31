@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-31T16:10:16Z",
+  "description_html": "Greg answers questions about whether or not images are in your brain, various questions about appearance of age and the age of the earth, why Paul says he isn’t lying in Galatians 1:20, and how to share the gospel with people whose loved ones died outside of Christ.",
+  "description_text": "Greg answers questions about whether or not images are in your brain, various questions about appearance of age and the age of the earth, why Paul says he isn’t lying in Galatians 1:20, and how to share the gospel with people whose loved ones died outside of Christ.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/bbc6fd63-2804-3adb-821b-d96126162bf9",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/ykwdhnugebykptb4/073126.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/does-age-always-match-the-appearance-of-age/",
+  "pub_date": "2026-07-31",
+  "rss_transcript_tags": [],
+  "slug": "2026-07-31-does-age-always-match-the-appearance-of-age",
+  "title": "Does Age Always Match the Appearance of Age?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-31T16:10:16Z",
+  "youtube_url": null
+}

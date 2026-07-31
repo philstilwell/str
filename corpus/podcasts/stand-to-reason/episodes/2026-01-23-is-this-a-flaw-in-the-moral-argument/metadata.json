@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-31T16:12:47Z",
+  "description_html": "Greg answers questions about responding to someone in ministry who’s avoiding controversial truths with the students, suggestions for witnessing to a brother after his stroke, whether God sees salvation as a single moment in time, a possible problem with the moral argument, and the flood.",
+  "description_text": "Greg answers questions about responding to someone in ministry who’s avoiding controversial truths with the students, suggestions for witnessing to a brother after his stroke, whether God sees salvation as a single moment in time, a possible problem with the moral argument, and the flood.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/8caac872-ea06-3828-bf01-4ff7b53c1f67",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/npmpyfxxhmky7t6j/012326.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/is-this-a-flaw-in-the-moral-argument/",
+  "pub_date": "2026-01-23",
+  "rss_transcript_tags": [],
+  "slug": "2026-01-23-is-this-a-flaw-in-the-moral-argument",
+  "title": "Is This a Flaw in the Moral Argument?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-07-31T16:12:47Z",
+  "youtube_url": null
+}
