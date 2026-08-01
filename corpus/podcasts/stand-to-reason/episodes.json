@@ -989,6 +989,50 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/d6e8ae42-1f68-3868-9d78-e1dbfc8b7be3",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/9s5vif6a7suf9agr/012126.mp3",
+      "path": "episodes/2026-01-21-two-types-of-legalism",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/two-types-of-legalism/",
+      "pub_date": "2026-01-21",
+      "slug": "2026-01-21-two-types-of-legalism",
+      "title": "Two Types of Legalism",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/a60b607d-6e9b-3d6f-92db-ff48a229d4b9",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/iptbrqdk4ndawhm2/011626.mp3",
+      "path": "episodes/2026-01-16-one-true-reality",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/one-true-reality/",
+      "pub_date": "2026-01-16",
+      "slug": "2026-01-16-one-true-reality",
+      "title": "One True Reality",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -997,5 +1041,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-07-31T16:15:10Z"
+  "updated_at": "2026-08-01T15:34:48Z"
 }

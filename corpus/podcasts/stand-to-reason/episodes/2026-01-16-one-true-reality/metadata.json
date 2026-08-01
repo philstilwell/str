@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-01T15:32:28Z",
+  "description_html": "Greg reflects on why our culture has difficulty with the idea that there can only be one true religion, then he answers questions about apologetics in the church, stories that make it sound like God does whisper to us, and the line between spiritual correction and spiritual abuse.",
+  "description_text": "Greg reflects on why our culture has difficulty with the idea that there can only be one true religion, then he answers questions about apologetics in the church, stories that make it sound like God does whisper to us, and the line between spiritual correction and spiritual abuse.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/a60b607d-6e9b-3d6f-92db-ff48a229d4b9",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/iptbrqdk4ndawhm2/011626.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/one-true-reality/",
+  "pub_date": "2026-01-16",
+  "rss_transcript_tags": [],
+  "slug": "2026-01-16-one-true-reality",
+  "title": "One True Reality",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-01T15:32:28Z",
+  "youtube_url": null
+}
