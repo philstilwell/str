@@ -2,15 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://onreason.com/</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://onreason.com/methodology/</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://onreason.com/episodes/2026-01-07-descriptive-vs-prescriptive/</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://onreason.com/episodes/2026-01-14-the-intersectionality-wheel-of-privilege/</loc>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://onreason.com/episodes/2026-01-16-one-true-reality/</loc>
