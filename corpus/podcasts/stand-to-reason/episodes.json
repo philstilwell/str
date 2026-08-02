@@ -1033,6 +1033,50 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/3b39bf46-d7f7-37c7-88a7-80bb63247024",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/z5mftgwphqpvwuaz/011426.mp3",
+      "path": "episodes/2026-01-14-the-intersectionality-wheel-of-privilege",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/the-intersectionality-wheel-of-privilege/",
+      "pub_date": "2026-01-14",
+      "slug": "2026-01-14-the-intersectionality-wheel-of-privilege",
+      "title": "The Intersectionality Wheel of Privilege",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/63bf6753-12fb-3668-831d-a88dc2b0a93d",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/2a6jhcefc4ghfd68/010726.mp3",
+      "path": "episodes/2026-01-07-descriptive-vs-prescriptive",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/descriptive-vs-prescriptive/",
+      "pub_date": "2026-01-07",
+      "slug": "2026-01-07-descriptive-vs-prescriptive",
+      "title": "Descriptive vs. Prescriptive",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -1041,5 +1085,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-08-01T15:34:48Z"
+  "updated_at": "2026-08-02T15:22:48Z"
 }

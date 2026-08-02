@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-02T15:18:19Z",
+  "description_html": "Greg talks about the “Intersectionality Wheel of Privilege” his daughter had to place herself on as part of a school assignment, then he answers a question about how we can be sure there’s only one true religion.",
+  "description_text": "Greg talks about the “Intersectionality Wheel of Privilege” his daughter had to place herself on as part of a school assignment, then he answers a question about how we can be sure there’s only one true religion.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/3b39bf46-d7f7-37c7-88a7-80bb63247024",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/z5mftgwphqpvwuaz/011426.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/the-intersectionality-wheel-of-privilege/",
+  "pub_date": "2026-01-14",
+  "rss_transcript_tags": [],
+  "slug": "2026-01-14-the-intersectionality-wheel-of-privilege",
+  "title": "The Intersectionality Wheel of Privilege",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-02T15:18:19Z",
+  "youtube_url": null
+}

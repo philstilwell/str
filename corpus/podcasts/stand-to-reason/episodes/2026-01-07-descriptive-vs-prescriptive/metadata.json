@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-02T15:20:36Z",
+  "description_html": "Greg highlights the distinction between descriptive and prescriptive passages in the Bible then answers questions about a pro-choice challenge, helping someone in memory care, baptismal regeneration, responding to “Love is my religion,” animal blessings, and Bible translations.",
+  "description_text": "Greg highlights the distinction between descriptive and prescriptive passages in the Bible then answers questions about a pro-choice challenge, helping someone in memory care, baptismal regeneration, responding to “Love is my religion,” animal blessings, and Bible translations.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/63bf6753-12fb-3668-831d-a88dc2b0a93d",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/2a6jhcefc4ghfd68/010726.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/descriptive-vs-prescriptive/",
+  "pub_date": "2026-01-07",
+  "rss_transcript_tags": [],
+  "slug": "2026-01-07-descriptive-vs-prescriptive",
+  "title": "Descriptive vs. Prescriptive",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-02T15:20:36Z",
+  "youtube_url": null
+}
