@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-03T16:42:50Z",
+  "description_html": "Greg talks about fundamental differences between Latter-day Saint and Christian theology, explaining that we can’t both be Christian, then he talks to callers about whether being a winsome ambassador is irrelevant if God draws people, and attending a megachurch.",
+  "description_text": "Greg talks about fundamental differences between Latter-day Saint and Christian theology, explaining that we can’t both be Christian, then he talks to callers about whether being a winsome ambassador is irrelevant if God draws people, and attending a megachurch.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/04a42b42-976c-3f41-b7f7-b7aa61215954",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/vpdtzivx8vfd4nzs/122625.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/we-can-t-both-be-christian/",
+  "pub_date": "2025-12-26",
+  "rss_transcript_tags": [],
+  "slug": "2025-12-26-we-cant-both-be-christian",
+  "title": "We Can’t Both Be Christian",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-03T16:42:50Z",
+  "youtube_url": null
+}

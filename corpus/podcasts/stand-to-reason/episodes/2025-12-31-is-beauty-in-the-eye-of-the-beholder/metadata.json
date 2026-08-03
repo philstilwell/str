@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-03T16:40:20Z",
+  "description_html": "Greg answers questions about beauty being “in the eye of the beholder,” what it looks like to follow the greatest commandment and how to teach it to students, and how to explain to a skeptic what we mean by “faith.”",
+  "description_text": "Greg answers questions about beauty being “in the eye of the beholder,” what it looks like to follow the greatest commandment and how to teach it to students, and how to explain to a skeptic what we mean by “faith.”",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/2dae60df-48f4-301f-aaad-7c9da91ce4f2",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/jpw3c8upn84p8yze/123125.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/is-beauty-in-the-eye-of-the-beholder/",
+  "pub_date": "2025-12-31",
+  "rss_transcript_tags": [],
+  "slug": "2025-12-31-is-beauty-in-the-eye-of-the-beholder",
+  "title": "Is Beauty in the Eye of the Beholder?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-03T16:40:20Z",
+  "youtube_url": null
+}

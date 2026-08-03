@@ -1077,6 +1077,50 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/2dae60df-48f4-301f-aaad-7c9da91ce4f2",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/jpw3c8upn84p8yze/123125.mp3",
+      "path": "episodes/2025-12-31-is-beauty-in-the-eye-of-the-beholder",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/is-beauty-in-the-eye-of-the-beholder/",
+      "pub_date": "2025-12-31",
+      "slug": "2025-12-31-is-beauty-in-the-eye-of-the-beholder",
+      "title": "Is Beauty in the Eye of the Beholder?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/04a42b42-976c-3f41-b7f7-b7aa61215954",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/vpdtzivx8vfd4nzs/122625.mp3",
+      "path": "episodes/2025-12-26-we-cant-both-be-christian",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/we-can-t-both-be-christian/",
+      "pub_date": "2025-12-26",
+      "slug": "2025-12-26-we-cant-both-be-christian",
+      "title": "We Can’t Both Be Christian",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -1085,5 +1129,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-08-02T15:22:48Z"
+  "updated_at": "2026-08-03T16:45:16Z"
 }
