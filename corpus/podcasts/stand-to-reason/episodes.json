@@ -1121,6 +1121,50 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/7378eead-52dc-3197-86db-0064a8ba4b02",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/pt7k547abcdvzhrh/122425.mp3",
+      "path": "episodes/2025-12-24-if-jesus-is-the-firstborn-does-that-mean-hes-part-of-creation",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/if-jesus-is-the-firstborn-does-that-mean-he-s-part-of-creation/",
+      "pub_date": "2025-12-24",
+      "slug": "2025-12-24-if-jesus-is-the-firstborn-does-that-mean-hes-part-of-creation",
+      "title": "If Jesus Is the Firstborn, Does That Mean He’s Part of Creation?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/77198714-e2dd-3573-9ec0-760ff2f59468",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/vxna95djwm6zy5ks/121925.mp3",
+      "path": "episodes/2025-12-19-are-all-values-and-duties-subjective-since-they-only-exist-in-minds",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/are-all-values-and-duties-subjective-since-they-only-exist-in-minds/",
+      "pub_date": "2025-12-19",
+      "slug": "2025-12-19-are-all-values-and-duties-subjective-since-they-only-exist-in-minds",
+      "title": "Are All Values and Duties Subjective Since They Only Exist in Minds?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -1129,5 +1173,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-08-03T16:45:16Z"
+  "updated_at": "2026-08-04T16:26:52Z"
 }

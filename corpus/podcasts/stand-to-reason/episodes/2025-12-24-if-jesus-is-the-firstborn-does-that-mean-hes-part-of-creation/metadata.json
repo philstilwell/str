@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-04T16:22:04Z",
+  "description_html": "Greg talks to a caller about whether Colossians 1:15 implies that Jesus is part of creation since it says he is the “firstborn,” then he reflects on the first Christmas and the birth of Jesus.",
+  "description_text": "Greg talks to a caller about whether Colossians 1:15 implies that Jesus is part of creation since it says he is the “firstborn,” then he reflects on the first Christmas and the birth of Jesus.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/7378eead-52dc-3197-86db-0064a8ba4b02",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/pt7k547abcdvzhrh/122425.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/if-jesus-is-the-firstborn-does-that-mean-he-s-part-of-creation/",
+  "pub_date": "2025-12-24",
+  "rss_transcript_tags": [],
+  "slug": "2025-12-24-if-jesus-is-the-firstborn-does-that-mean-hes-part-of-creation",
+  "title": "If Jesus Is the Firstborn, Does That Mean He’s Part of Creation?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-04T16:22:04Z",
+  "youtube_url": null
+}
