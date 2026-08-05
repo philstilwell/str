@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "strweekly.podbean.com/b75ccd68-68d7-35a5-9009-d13728657fc0",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/ahbpfwuphquqm6qa/080526.mp3",
+      "path": "episodes/2026-08-05-when-one-person-is-equipped-thousands-more-are-impacted",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/when-one-person-is-equipped-thousands-more-are-impacted/",
+      "pub_date": "2026-08-05",
+      "slug": "2026-08-05-when-one-person-is-equipped-thousands-more-are-impacted",
+      "title": "When One Person Is Equipped, Thousands More Are Impacted",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "strweekly.podbean.com/bbc6fd63-2804-3adb-821b-d96126162bf9",
       "mp3_url": "https://mcdn.podbean.com/mf/web/ykwdhnugebykptb4/073126.mp3",
       "path": "episodes/2026-07-31-does-age-always-match-the-appearance-of-age",
@@ -1165,6 +1187,28 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/3a3ee125-1add-361f-99c0-6d519b1a3e62",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/dvdb27bdi7g4f28u/121725.mp3",
+      "path": "episodes/2025-12-17-thoughts-on-annihilationism",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/thoughts-on-annihilationism/",
+      "pub_date": "2025-12-17",
+      "slug": "2025-12-17-thoughts-on-annihilationism",
+      "title": "Thoughts on Annihilationism",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -1173,5 +1217,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-08-04T16:26:52Z"
+  "updated_at": "2026-08-05T16:13:04Z"
 }

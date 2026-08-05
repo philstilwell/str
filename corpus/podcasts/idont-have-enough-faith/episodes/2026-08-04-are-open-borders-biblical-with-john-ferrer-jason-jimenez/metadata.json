@@ -1,0 +1,34 @@
+{
+  "audio_source": {
+    "player_url": "https://player.blubrry.com/id/154935346?cache=1785866075#mode-Light&border-000000&progress-000000",
+    "source": "embedded_player",
+    "source_url": "https://crossexamined.org/are-open-borders-biblical-with-john-ferrer-jason-jimenez/",
+    "url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek_Podcast_Jason-and-John_8-4-2026.mp3"
+  },
+  "created_at": "2026-08-05T16:13:05Z",
+  "description_html": "<p>Dr. John Ferrer and Pastor Jason Jimenez return for Part 2 of their &#8220;4 I&#8217;s&#8221; series to tackle one of today&#8217;s most controversial issues by asking one simple question: What does the Bible REALLY say about open borders and immigration? You&#8217;ll learn: What are the 3 key distinctions between legal and illegal immigrants in the [&#8230;]</p>\n<p>The post <a href=\"https://crossexamined.org/are-open-borders-biblical-with-john-ferrer-jason-jimenez/\">Are Open Borders Biblical? with John Ferrer &#038; Jason Jimenez</a> appeared first on <a href=\"https://crossexamined.org\">CrossExamined</a>.</p>",
+  "description_text": "Dr. John Ferrer and Pastor Jason Jimenez return for Part 2 of their “4 I’s” series to tackle one of today’s most controversial issues by asking one simple question: What does the Bible REALLY say about open borders and immigration? You’ll learn: What are the 3 key distinctions between legal and illegal immigrants in the […] The post Are Open Borders Biblical? with John Ferrer & Jason Jimenez appeared first on CrossExamined .",
+  "duration": null,
+  "feed_url": "https://crossexamined.org/category/podcast/feed/",
+  "guid": "https://crossexamined.org/?p=103874",
+  "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek_Podcast_Jason-and-John_8-4-2026.mp3",
+  "podcast": {
+    "home_url": "https://crossexamined.org/podcasts/",
+    "id": "idont-have-enough-faith",
+    "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+  },
+  "podcast_page_url": "https://crossexamined.org/are-open-borders-biblical-with-john-ferrer-jason-jimenez/",
+  "pub_date": "2026-08-04",
+  "rss_transcript_tags": [],
+  "slug": "2026-08-04-are-open-borders-biblical-with-john-ferrer-jason-jimenez",
+  "title": "Are Open Borders Biblical? with John Ferrer & Jason Jimenez",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-05T16:13:05Z",
+  "youtube_url": null
+}

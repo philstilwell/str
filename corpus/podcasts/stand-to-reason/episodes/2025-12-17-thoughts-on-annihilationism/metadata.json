@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-05T16:10:27Z",
+  "description_html": "Greg comments on the current conversation on annihilationism and calls for charity when disagreeing with others on this issue, then he answers a question about how to deal with doubts when Christianity seems unlikely to you.",
+  "description_text": "Greg comments on the current conversation on annihilationism and calls for charity when disagreeing with others on this issue, then he answers a question about how to deal with doubts when Christianity seems unlikely to you.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/3a3ee125-1add-361f-99c0-6d519b1a3e62",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/dvdb27bdi7g4f28u/121725.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/thoughts-on-annihilationism/",
+  "pub_date": "2025-12-17",
+  "rss_transcript_tags": [],
+  "slug": "2025-12-17-thoughts-on-annihilationism",
+  "title": "Thoughts on Annihilationism",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-05T16:10:27Z",
+  "youtube_url": null
+}
