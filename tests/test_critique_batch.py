@@ -172,6 +172,7 @@ def test_openai_request_stops_after_bounded_attempts(monkeypatch):
 
 
 def test_openai_retry_policy_covers_observed_transient_sdk_errors():
+    assert critique_batch.DEFAULT_REQUEST_MAX_ATTEMPTS == 5
     assert APIConnectionError in RETRYABLE_OPENAI_ERRORS
     assert APITimeoutError in RETRYABLE_OPENAI_ERRORS
     assert InternalServerError in RETRYABLE_OPENAI_ERRORS
