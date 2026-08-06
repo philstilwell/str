@@ -37,7 +37,7 @@ from .site import episode_nav_for, episode_records, refresh_public_site
 READY_TRANSCRIPT_STATUSES = {"found_official", "generated_asr"}
 DEFAULT_MODEL = "gpt-5.5"
 DEFAULT_REASONING_EFFORT = "high"
-DEFAULT_REQUEST_MAX_ATTEMPTS = 3
+DEFAULT_REQUEST_MAX_ATTEMPTS = 5
 DEFAULT_REQUEST_RETRY_DELAY_SECONDS = 60.0
 RETRYABLE_OPENAI_ERRORS = (APIConnectionError, APITimeoutError, InternalServerError, RateLimitError)
 ResponseT = TypeVar("ResponseT")
