@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-07T15:11:51Z",
+  "description_html": "Greg answers a question about the “hermeneutical spiral” and getting an objective meaning from the text, then he chats with a caller who doesn’t believe in God about his objection to Greg’s definition of atheism and why he is currently deconstructing.",
+  "description_text": "Greg answers a question about the “hermeneutical spiral” and getting an objective meaning from the text, then he chats with a caller who doesn’t believe in God about his objection to Greg’s definition of atheism and why he is currently deconstructing.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/a65a63ed-241a-3bee-b8b5-f5aa20cab16a",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/23skczss22z8r78y/121225.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/are-we-able-to-get-an-objective-meaning-from-the-text/",
+  "pub_date": "2025-12-12",
+  "rss_transcript_tags": [],
+  "slug": "2025-12-12-are-we-able-to-get-an-objective-meaning-from-the-text",
+  "title": "Are We Able to Get an Objective Meaning from the Text?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-07T15:11:51Z",
+  "youtube_url": null
+}

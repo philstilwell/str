@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-07T15:08:24Z",
+  "description_html": "Greg answers questions about how God’s voice can be unmistakable in light of John 10 and 1 Samuel 3, whether the impulse to witness to someone is coming from the conscience or the Holy Spirit, and why worship is required.",
+  "description_text": "Greg answers questions about how God’s voice can be unmistakable in light of John 10 and 1 Samuel 3, whether the impulse to witness to someone is coming from the conscience or the Holy Spirit, and why worship is required.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/8f124ffd-67c9-3985-b086-8cba0dddda27",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/uit5g68pupvznr6y/080726.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/how-can-god-s-voice-be-unmistakable-in-light-of-these-passages/",
+  "pub_date": "2026-08-07",
+  "rss_transcript_tags": [],
+  "slug": "2026-08-07-how-can-gods-voice-be-unmistakable-in-light-of-these-passages",
+  "title": "How Can God’s Voice Be Unmistakable in Light of These Passages?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-07T15:08:24Z",
+  "youtube_url": null
+}

@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "strweekly.podbean.com/8f124ffd-67c9-3985-b086-8cba0dddda27",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/uit5g68pupvznr6y/080726.mp3",
+      "path": "episodes/2026-08-07-how-can-gods-voice-be-unmistakable-in-light-of-these-passages",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/how-can-god-s-voice-be-unmistakable-in-light-of-these-passages/",
+      "pub_date": "2026-08-07",
+      "slug": "2026-08-07-how-can-gods-voice-be-unmistakable-in-light-of-these-passages",
+      "title": "How Can God’s Voice Be Unmistakable in Light of These Passages?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "strweekly.podbean.com/b75ccd68-68d7-35a5-9009-d13728657fc0",
       "mp3_url": "https://mcdn.podbean.com/mf/web/ahbpfwuphquqm6qa/080526.mp3",
       "path": "episodes/2026-08-05-when-one-person-is-equipped-thousands-more-are-impacted",
@@ -1209,6 +1231,28 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/a65a63ed-241a-3bee-b8b5-f5aa20cab16a",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/23skczss22z8r78y/121225.mp3",
+      "path": "episodes/2025-12-12-are-we-able-to-get-an-objective-meaning-from-the-text",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/are-we-able-to-get-an-objective-meaning-from-the-text/",
+      "pub_date": "2025-12-12",
+      "slug": "2025-12-12-are-we-able-to-get-an-objective-meaning-from-the-text",
+      "title": "Are We Able to Get an Objective Meaning from the Text?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -1217,5 +1261,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-08-05T16:13:04Z"
+  "updated_at": "2026-08-07T15:16:02Z"
 }
