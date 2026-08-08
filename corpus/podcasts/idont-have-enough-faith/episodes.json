@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "https://crossexamined.org/?p=103898",
+      "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast_Phoenix_8-7-26.mp3",
+      "path": "episodes/2026-08-07-how-to-recover-truth-in-a-world-that-celebrates-lies-with-phoenix-hayes",
+      "podcast": {
+        "home_url": "https://crossexamined.org/podcasts/",
+        "id": "idont-have-enough-faith",
+        "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+      },
+      "podcast_page_url": "https://crossexamined.org/how-to-recover-truth-in-a-world-that-celebrates-lies-with-phoenix-hayes/",
+      "pub_date": "2026-08-07",
+      "slug": "2026-08-07-how-to-recover-truth-in-a-world-that-celebrates-lies-with-phoenix-hayes",
+      "title": "How to Recover TRUTH in a World That Celebrates LIES with Phoenix Hayes",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "https://crossexamined.org/?p=103874",
       "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek_Podcast_Jason-and-John_8-4-2026.mp3",
       "path": "episodes/2026-08-04-are-open-borders-biblical-with-john-ferrer-jason-jimenez",
@@ -425,5 +447,5 @@
     "id": "idont-have-enough-faith",
     "title": "I Don't Have Enough FAITH to Be an ATHEIST"
   },
-  "updated_at": "2026-08-05T16:15:12Z"
+  "updated_at": "2026-08-08T14:55:25Z"
 }

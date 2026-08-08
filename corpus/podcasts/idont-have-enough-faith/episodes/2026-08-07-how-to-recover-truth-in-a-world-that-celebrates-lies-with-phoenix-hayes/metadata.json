@@ -1,0 +1,34 @@
+{
+  "audio_source": {
+    "player_url": "https://player.blubrry.com/id/154968413?cache=1786116566#mode-Light&border-000000&progress-000000",
+    "source": "embedded_player",
+    "source_url": "https://crossexamined.org/how-to-recover-truth-in-a-world-that-celebrates-lies-with-phoenix-hayes/",
+    "url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast_Phoenix_8-7-26.mp3"
+  },
+  "created_at": "2026-08-08T14:53:18Z",
+  "description_html": "<p>Non-birthing persons, pregnant men, using racism to fight racism, and Marxist ideologies that keep everyone in a perpetual state of outrage and victimhood&#8230;Ever feel like you’re in the minority when it comes to keeping your feet planted in reality? You’re not! This week, Frank welcomes his co-author, Phoenix Hayes, to discuss their new book (now [&#8230;]</p>\n<p>The post <a href=\"https://crossexamined.org/how-to-recover-truth-in-a-world-that-celebrates-lies-with-phoenix-hayes/\">How to Recover TRUTH in a World That Celebrates LIES with Phoenix Hayes</a> appeared first on <a href=\"https://crossexamined.org\">CrossExamined</a>.</p>",
+  "description_text": "Non-birthing persons, pregnant men, using racism to fight racism, and Marxist ideologies that keep everyone in a perpetual state of outrage and victimhood…Ever feel like you’re in the minority when it comes to keeping your feet planted in reality? You’re not! This week, Frank welcomes his co-author, Phoenix Hayes, to discuss their new book (now […] The post How to Recover TRUTH in a World That Celebrates LIES with Phoenix Hayes appeared first on CrossExamined .",
+  "duration": null,
+  "feed_url": "https://crossexamined.org/category/podcast/feed/",
+  "guid": "https://crossexamined.org/?p=103898",
+  "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast_Phoenix_8-7-26.mp3",
+  "podcast": {
+    "home_url": "https://crossexamined.org/podcasts/",
+    "id": "idont-have-enough-faith",
+    "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+  },
+  "podcast_page_url": "https://crossexamined.org/how-to-recover-truth-in-a-world-that-celebrates-lies-with-phoenix-hayes/",
+  "pub_date": "2026-08-07",
+  "rss_transcript_tags": [],
+  "slug": "2026-08-07-how-to-recover-truth-in-a-world-that-celebrates-lies-with-phoenix-hayes",
+  "title": "How to Recover TRUTH in a World That Celebrates LIES with Phoenix Hayes",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-08T14:53:18Z",
+  "youtube_url": null
+}

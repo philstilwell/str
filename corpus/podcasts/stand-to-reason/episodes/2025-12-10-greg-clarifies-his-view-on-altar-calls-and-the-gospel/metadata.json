@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-08T14:48:32Z",
+  "description_html": "Greg clarifies some comments he made about altar calls and the gospel last week, then he answers questions about whether we’re skipping Christ’s intercession if we pray to the Father, and what he thinks about certain tactics being used by a pro-life organization.",
+  "description_text": "Greg clarifies some comments he made about altar calls and the gospel last week, then he answers questions about whether we’re skipping Christ’s intercession if we pray to the Father, and what he thinks about certain tactics being used by a pro-life organization.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/20f30703-2d34-3cd9-8ead-144018dddfcf",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/38ji2szgacskh3yf/121025.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/greg-clarifies-his-view-on-altar-calls-and-the-gospel/",
+  "pub_date": "2025-12-10",
+  "rss_transcript_tags": [],
+  "slug": "2025-12-10-greg-clarifies-his-view-on-altar-calls-and-the-gospel",
+  "title": "Greg Clarifies His View on Altar Calls and the Gospel",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-08T14:48:32Z",
+  "youtube_url": null
+}

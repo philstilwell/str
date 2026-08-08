@@ -1253,6 +1253,50 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/20f30703-2d34-3cd9-8ead-144018dddfcf",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/38ji2szgacskh3yf/121025.mp3",
+      "path": "episodes/2025-12-10-greg-clarifies-his-view-on-altar-calls-and-the-gospel",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/greg-clarifies-his-view-on-altar-calls-and-the-gospel/",
+      "pub_date": "2025-12-10",
+      "slug": "2025-12-10-greg-clarifies-his-view-on-altar-calls-and-the-gospel",
+      "title": "Greg Clarifies His View on Altar Calls and the Gospel",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/d78a669f-eb4e-3971-8ba7-09fd6209bce0",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/qif7te6wpkmvzgpx/120525.mp3",
+      "path": "episodes/2025-12-05-what-suggestions-do-you-have-for-a-first-time-pastor",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/what-suggestions-do-you-have-for-a-first-time-pastor/",
+      "pub_date": "2025-12-05",
+      "slug": "2025-12-05-what-suggestions-do-you-have-for-a-first-time-pastor",
+      "title": "What Suggestions Do You Have for a First-Time Pastor?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -1261,5 +1305,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-08-07T15:16:02Z"
+  "updated_at": "2026-08-08T14:53:17Z"
 }

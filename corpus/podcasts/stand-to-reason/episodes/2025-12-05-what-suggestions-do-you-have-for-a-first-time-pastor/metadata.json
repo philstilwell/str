@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-08T14:50:54Z",
+  "description_html": "Greg answers questions about suggestions for a first-time pastor, responding to someone who says people always report the same thing about their near-death experiences, and how much interaction to have with LDS neighbors in light of 2 John 10.",
+  "description_text": "Greg answers questions about suggestions for a first-time pastor, responding to someone who says people always report the same thing about their near-death experiences, and how much interaction to have with LDS neighbors in light of 2 John 10.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/d78a669f-eb4e-3971-8ba7-09fd6209bce0",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/qif7te6wpkmvzgpx/120525.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/what-suggestions-do-you-have-for-a-first-time-pastor/",
+  "pub_date": "2025-12-05",
+  "rss_transcript_tags": [],
+  "slug": "2025-12-05-what-suggestions-do-you-have-for-a-first-time-pastor",
+  "title": "What Suggestions Do You Have for a First-Time Pastor?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-08T14:50:54Z",
+  "youtube_url": null
+}
