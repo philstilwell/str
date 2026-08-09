@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-09T14:53:22Z",
+  "description_html": "Greg talks about whether or not we’re obliged to pray only to the Father, then he answers a question about how he determined he was being stirred by God to start Stand to Reason.",
+  "description_text": "Greg talks about whether or not we’re obliged to pray only to the Father, then he answers a question about how he determined he was being stirred by God to start Stand to Reason.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/0dbf9d51-7d7d-3e36-bd03-56c828c37abb",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/fdw6dtc6uavefuhh/112825.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/are-we-obliged-to-pray-only-to-the-father/",
+  "pub_date": "2025-11-28",
+  "rss_transcript_tags": [],
+  "slug": "2025-11-28-are-we-obliged-to-pray-only-to-the-father",
+  "title": "Are We Obliged to Pray Only to the Father?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-09T14:53:22Z",
+  "youtube_url": null
+}

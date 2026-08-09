@@ -1297,6 +1297,50 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/35807d4e-46f9-3c09-8435-479b3254bc44",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/u9xyajqqxwgvauxs/120325.mp3",
+      "path": "episodes/2025-12-03-didnt-jesus-teach-that-we-were-supposed-to-love-and-accept-one-another",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/didn-t-jesus-teach-that-we-were-supposed-to-love-and-accept-one-another/",
+      "pub_date": "2025-12-03",
+      "slug": "2025-12-03-didnt-jesus-teach-that-we-were-supposed-to-love-and-accept-one-another",
+      "title": "Didn’t Jesus Teach That We Were Supposed to Love and Accept One Another?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/0dbf9d51-7d7d-3e36-bd03-56c828c37abb",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/fdw6dtc6uavefuhh/112825.mp3",
+      "path": "episodes/2025-11-28-are-we-obliged-to-pray-only-to-the-father",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/are-we-obliged-to-pray-only-to-the-father/",
+      "pub_date": "2025-11-28",
+      "slug": "2025-11-28-are-we-obliged-to-pray-only-to-the-father",
+      "title": "Are We Obliged to Pray Only to the Father?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -1305,5 +1349,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-08-08T14:53:17Z"
+  "updated_at": "2026-08-09T14:55:32Z"
 }
