@@ -1341,6 +1341,50 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/699e190f-34fa-38a4-b42e-5d64e21460d8",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/r48yy5uzjixyagxb/112625.mp3",
+      "path": "episodes/2025-11-26-how-can-i-become-a-better-thinker",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/how-can-i-become-a-better-thinker/",
+      "pub_date": "2025-11-26",
+      "slug": "2025-11-26-how-can-i-become-a-better-thinker",
+      "title": "How Can I Become a Better Thinker?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/5c87a98a-8c4f-3896-9847-b558e14acfbb",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/vffy2s624b56w6at/111925.mp3",
+      "path": "episodes/2025-11-19-should-i-attend-an-unmarried-womans-baby-shower",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/should-i-attend-an-unmarried-woman-s-baby-shower/",
+      "pub_date": "2025-11-19",
+      "slug": "2025-11-19-should-i-attend-an-unmarried-womans-baby-shower",
+      "title": "Should I Attend an Unmarried Woman’s Baby Shower?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -1349,5 +1393,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-08-09T14:55:32Z"
+  "updated_at": "2026-08-10T15:20:26Z"
 }

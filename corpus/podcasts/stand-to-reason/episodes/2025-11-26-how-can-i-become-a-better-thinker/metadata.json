@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-10T15:15:27Z",
+  "description_html": "Greg talks to callers about how to become a better thinker, how to get better at responding to people in conversations, and whether the Israelites stole stories and laws from other cultures to create the Old Testament.",
+  "description_text": "Greg talks to callers about how to become a better thinker, how to get better at responding to people in conversations, and whether the Israelites stole stories and laws from other cultures to create the Old Testament.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/699e190f-34fa-38a4-b42e-5d64e21460d8",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/r48yy5uzjixyagxb/112625.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/how-can-i-become-a-better-thinker/",
+  "pub_date": "2025-11-26",
+  "rss_transcript_tags": [],
+  "slug": "2025-11-26-how-can-i-become-a-better-thinker",
+  "title": "How Can I Become a Better Thinker?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-10T15:15:27Z",
+  "youtube_url": null
+}
