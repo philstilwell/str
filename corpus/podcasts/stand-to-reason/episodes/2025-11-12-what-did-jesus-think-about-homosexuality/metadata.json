@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-11T15:18:31Z",
+  "description_html": "Greg talks about what Jesus thought about homosexuality, reads a parable written by a listener describing the panel discussion on The Diary of a CEO, then answers a question about whether God had to try a few times to get Samuel’s attention before he was able to.",
+  "description_text": "Greg talks about what Jesus thought about homosexuality, reads a parable written by a listener describing the panel discussion on The Diary of a CEO, then answers a question about whether God had to try a few times to get Samuel’s attention before he was able to.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/e50171db-9709-3318-a144-005e2e5f9b94",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/xprnj4h3esmtdarx/111225.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/what-did-jesus-think-about-homosexuality/",
+  "pub_date": "2025-11-12",
+  "rss_transcript_tags": [],
+  "slug": "2025-11-12-what-did-jesus-think-about-homosexuality",
+  "title": "What Did Jesus Think About Homosexuality?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-11T15:18:31Z",
+  "youtube_url": null
+}

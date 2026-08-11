@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-11T15:15:59Z",
+  "description_html": "Greg talks about how even Christians are getting used to radical things in the culture, then he answers questions about annihilationism, people who appeal to emotion in response to arguments, and what to do when someone is telling you about a dialogue they had with God.",
+  "description_text": "Greg talks about how even Christians are getting used to radical things in the culture, then he answers questions about annihilationism, people who appeal to emotion in response to arguments, and what to do when someone is telling you about a dialogue they had with God.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/cb4c1f0e-fb1e-33e1-b130-fe06b4b2b16f",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/fjdttqaucxkfpr77/111425.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/even-christians-are-becoming-culturally-velocitized/",
+  "pub_date": "2025-11-14",
+  "rss_transcript_tags": [],
+  "slug": "2025-11-14-even-christians-are-becoming-culturally-velocitized",
+  "title": "Even Christians Are Becoming Culturally Velocitized",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-11T15:15:59Z",
+  "youtube_url": null
+}
