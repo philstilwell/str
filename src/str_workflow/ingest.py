@@ -187,6 +187,43 @@ def transcript_tags_by_guid(feed_xml: bytes) -> dict[str, list[dict[str, str | N
     return tags_by_guid
 
 
+def audio_candidates_by_guid(feed_xml: bytes) -> dict[str, dict[str, Any]]:
+    """Preserve embedded audio players that feedparser sanitizes from entry HTML."""
+    try:
+        root = ET.fromstring(feed_xml)
+    except ET.ParseError:
+        return {}
+
+    candidates_by_guid: dict[str, dict[str, Any]] = {}
+    for item in root.iter():
+        if local_name(item.tag) != "item":
+            continue
+
+        guid = None
+        fallback_link = None
+        for child in item:
+            name = local_name(child.tag)
+            if name == "guid" and child.text:
+                guid = child.text.strip()
+            elif name == "link" and child.text:
+                fallback_link = child.text.strip()
+
+        item_key = guid or fallback_link
+        if not item_key:
+            continue
+
+        for child in item:
+            name = local_name(child.tag)
+            if name not in {"encoded", "description"} or not child.text:
+                continue
+            candidate = audio_candidate_from_page_html(fallback_link or "", child.text)
+            if candidate:
+                candidates_by_guid[item_key] = {**candidate, "feed_element": name}
+                break
+
+    return candidates_by_guid
+
+
 def fetch_text_url(session: requests.Session, url: str) -> str | None:
     response = session.get(url, timeout=60)
     response.raise_for_status()
@@ -242,17 +279,10 @@ def audio_candidate_from_page_html(page_url: str, page_html: str) -> dict[str, A
     return None
 
 
-def discover_page_audio_url(session: requests.Session, page_url: str | None) -> dict[str, Any] | None:
-    if not page_url or not page_url.startswith(("http://", "https://")):
-        return None
-
-    try:
-        response = session.get(page_url, timeout=60)
-        response.raise_for_status()
-    except requests.RequestException:
-        return None
-
-    candidate = audio_candidate_from_page_html(page_url, response.text)
+def resolve_audio_candidate(
+    session: requests.Session,
+    candidate: dict[str, Any] | None,
+) -> dict[str, Any] | None:
     if not candidate:
         return None
     if candidate.get("url"):
@@ -276,6 +306,20 @@ def discover_page_audio_url(session: requests.Session, page_url: str | None) -> 
         **candidate,
         "url": audio_url,
     }
+
+
+def discover_page_audio_url(session: requests.Session, page_url: str | None) -> dict[str, Any] | None:
+    if not page_url or not page_url.startswith(("http://", "https://")):
+        return None
+
+    try:
+        response = session.get(page_url, timeout=60)
+        response.raise_for_status()
+    except requests.RequestException:
+        return None
+
+    candidate = audio_candidate_from_page_html(page_url, response.text)
+    return resolve_audio_candidate(session, candidate)
 
 
 def fetch_transcript_from_tags(
@@ -543,6 +587,7 @@ def process_episode(
     out_dir: Path,
     session: requests.Session,
     transcript_tags: list[dict[str, str | None]],
+    rss_audio_candidate: dict[str, Any] | None,
     transcribe_mode: str,
     asr_model: str,
     asr_prompt: str | None,
@@ -571,7 +616,9 @@ def process_episode(
     metadata["updated_at"] = utc_now_iso()
 
     if not metadata.get("mp3_url"):
-        audio = discover_page_audio_url(session, metadata.get("podcast_page_url"))
+        audio = resolve_audio_candidate(session, rss_audio_candidate)
+        if not audio:
+            audio = discover_page_audio_url(session, metadata.get("podcast_page_url"))
         if audio and audio.get("url"):
             metadata["mp3_url"] = audio["url"]
             metadata["audio_source"] = audio
@@ -723,6 +770,7 @@ def main(argv: list[str] | None = None) -> int:
 
     feed_xml, parsed = fetch_feed(session, args.feed_url)
     transcript_tags = transcript_tags_by_guid(feed_xml)
+    audio_candidates = audio_candidates_by_guid(feed_xml)
     index = load_index(args.out_dir)
     index["feed_url"] = args.feed_url
     index["podcast"] = {
@@ -754,6 +802,7 @@ def main(argv: list[str] | None = None) -> int:
             out_dir=args.out_dir,
             session=session,
             transcript_tags=transcript_tags.get(guid, []),
+            rss_audio_candidate=audio_candidates.get(guid),
             transcribe_mode=args.transcribe,
             asr_model=args.asr_model,
             asr_prompt=asr_prompt,
