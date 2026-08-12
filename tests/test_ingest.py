@@ -1,10 +1,12 @@
 from pathlib import Path
 
 from str_workflow.ingest import (
+    audio_candidates_by_guid,
     audio_candidate_from_page_html,
     episode_slug,
     extract_audio_url_from_player_html,
     format_seconds,
+    resolve_audio_candidate,
     select_entries_to_process,
     transcript_tags_by_guid,
 )
@@ -56,6 +58,61 @@ def test_audio_candidate_from_page_html_reads_blubrry_media_url():
         "source": "embedded_player_media_url",
         "source_url": "https://example.com/episode/",
         "player_url": "https://player.blubrry.com/?media_url=https%3A%2F%2Fmedia.example.com%2Fepisode.mp3",
+    }
+
+
+def test_audio_candidates_by_guid_preserves_player_removed_by_feedparser():
+    feed_xml = b"""<?xml version="1.0"?>
+    <rss xmlns:content="http://purl.org/rss/1.0/modules/content/">
+      <channel>
+        <item>
+          <guid>episode-1</guid>
+          <link>https://example.com/episode/</link>
+          <content:encoded><![CDATA[
+            <iframe title="Blubrry Podcast Player"
+              src="https://player.blubrry.com/id/154991956?cache=123"></iframe>
+          ]]></content:encoded>
+        </item>
+      </channel>
+    </rss>
+    """
+
+    assert audio_candidates_by_guid(feed_xml) == {
+        "episode-1": {
+            "source": "embedded_player",
+            "source_url": "https://example.com/episode/",
+            "player_url": "https://player.blubrry.com/id/154991956?cache=123",
+            "feed_element": "encoded",
+        }
+    }
+
+
+def test_resolve_audio_candidate_reads_mp3_from_embedded_player():
+    class Response:
+        text = (
+            'let media_url = "https:\\/\\/media.blubrry.com\\/show\\/b\\/'
+            'content.blubrry.com\\/show\\/episode.mp3";'
+        )
+
+        def raise_for_status(self):
+            return None
+
+    class Session:
+        def get(self, url, timeout):
+            assert url == "https://player.blubrry.com/id/154991956"
+            assert timeout == 60
+            return Response()
+
+    candidate = {
+        "source": "embedded_player",
+        "source_url": "https://example.com/episode/",
+        "player_url": "https://player.blubrry.com/id/154991956",
+        "feed_element": "encoded",
+    }
+
+    assert resolve_audio_candidate(Session(), candidate) == {
+        **candidate,
+        "url": "https://media.blubrry.com/show/b/content.blubrry.com/show/episode.mp3",
     }
 
 
