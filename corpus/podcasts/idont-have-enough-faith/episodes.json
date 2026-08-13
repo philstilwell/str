@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "https://crossexamined.org/?p=103910",
+      "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek-Podcast-GregKoukl_8-11-2026.mp3",
+      "path": "episodes/2026-08-11-hearing-the-voice-of-god-is-it-biblical-with-greg-koukl",
+      "podcast": {
+        "home_url": "https://crossexamined.org/podcasts/",
+        "id": "idont-have-enough-faith",
+        "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+      },
+      "podcast_page_url": "https://crossexamined.org/hearing-the-voice-of-god-is-it-biblical-with-greg-koukl/",
+      "pub_date": "2026-08-11",
+      "slug": "2026-08-11-hearing-the-voice-of-god-is-it-biblical-with-greg-koukl",
+      "title": "“Hearing” the Voice of God – Is It Biblical? with Greg Koukl",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "https://crossexamined.org/?p=103898",
       "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast_Phoenix_8-7-26.mp3",
       "path": "episodes/2026-08-07-how-to-recover-truth-in-a-world-that-celebrates-lies-with-phoenix-hayes",
@@ -447,5 +469,5 @@
     "id": "idont-have-enough-faith",
     "title": "I Don't Have Enough FAITH to Be an ATHEIST"
   },
-  "updated_at": "2026-08-08T14:55:25Z"
+  "updated_at": "2026-08-13T15:20:53Z"
 }

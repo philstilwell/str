@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-13T15:13:23Z",
+  "description_html": "Greg answers questions about whether or not we can see evidence that God sustains the universe, and how to respond to someone who says autonomy is his guiding principle for morality.",
+  "description_text": "Greg answers questions about whether or not we can see evidence that God sustains the universe, and how to respond to someone who says autonomy is his guiding principle for morality.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/cbf74ca0-ac61-3331-882c-26d353ad5a2e",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/yza9n9iq2q346twe/081226.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/problems-with-using-autonomy-as-your-guiding-moral-principle/",
+  "pub_date": "2026-08-12",
+  "rss_transcript_tags": [],
+  "slug": "2026-08-12-problems-with-using-autonomy-as-your-guiding-moral-principle",
+  "title": "Problems with Using Autonomy as Your Guiding Moral Principle",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-13T15:13:23Z",
+  "youtube_url": null
+}

@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "strweekly.podbean.com/cbf74ca0-ac61-3331-882c-26d353ad5a2e",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/yza9n9iq2q346twe/081226.mp3",
+      "path": "episodes/2026-08-12-problems-with-using-autonomy-as-your-guiding-moral-principle",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/problems-with-using-autonomy-as-your-guiding-moral-principle/",
+      "pub_date": "2026-08-12",
+      "slug": "2026-08-12-problems-with-using-autonomy-as-your-guiding-moral-principle",
+      "title": "Problems with Using Autonomy as Your Guiding Moral Principle",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "strweekly.podbean.com/8f124ffd-67c9-3985-b086-8cba0dddda27",
       "mp3_url": "https://mcdn.podbean.com/mf/web/uit5g68pupvznr6y/080726.mp3",
       "path": "episodes/2026-08-07-how-can-gods-voice-be-unmistakable-in-light-of-these-passages",
@@ -1429,6 +1451,28 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/33f0ee56-7a89-3e0a-8549-1d52023b4758",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/upepxjy2h69bu22f/110725.mp3",
+      "path": "episodes/2025-11-07-thoughts-on-a-podcast-discussion-with-former-christians",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/thoughts-on-a-podcast-discussion-with-former-christians/",
+      "pub_date": "2025-11-07",
+      "slug": "2025-11-07-thoughts-on-a-podcast-discussion-with-former-christians",
+      "title": "Thoughts on a Podcast Discussion with Former Christians",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -1437,5 +1481,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-08-11T15:21:01Z"
+  "updated_at": "2026-08-13T15:18:03Z"
 }

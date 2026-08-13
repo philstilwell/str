@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-13T15:15:46Z",
+  "description_html": "Greg talks about a discussion he had on a podcast with former Christians, then he answers questions from callers about Christians using an artificial-sounding voice in church, recognizing demonic influence, praying to Jesus, and what “forsaking all others” includes.",
+  "description_text": "Greg talks about a discussion he had on a podcast with former Christians, then he answers questions from callers about Christians using an artificial-sounding voice in church, recognizing demonic influence, praying to Jesus, and what “forsaking all others” includes.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/33f0ee56-7a89-3e0a-8549-1d52023b4758",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/upepxjy2h69bu22f/110725.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/thoughts-on-a-podcast-discussion-with-former-christians/",
+  "pub_date": "2025-11-07",
+  "rss_transcript_tags": [],
+  "slug": "2025-11-07-thoughts-on-a-podcast-discussion-with-former-christians",
+  "title": "Thoughts on a Podcast Discussion with Former Christians",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-13T15:15:46Z",
+  "youtube_url": null
+}
