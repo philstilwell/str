@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "strweekly.podbean.com/844ae770-885a-3edd-a150-6aec001ebf0e",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/cm4e5z5gqcfurutu/081426.mp3",
+      "path": "episodes/2026-08-14-the-biggest-challenge-that-has-tested-gregs-faith",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/the-biggest-challenge-that-has-tested-greg-s-faith/",
+      "pub_date": "2026-08-14",
+      "slug": "2026-08-14-the-biggest-challenge-that-has-tested-gregs-faith",
+      "title": "The Biggest Challenge That Has Tested Greg’s Faith",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "strweekly.podbean.com/cbf74ca0-ac61-3331-882c-26d353ad5a2e",
       "mp3_url": "https://mcdn.podbean.com/mf/web/yza9n9iq2q346twe/081226.mp3",
       "path": "episodes/2026-08-12-problems-with-using-autonomy-as-your-guiding-moral-principle",
@@ -1473,6 +1495,28 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/c768a0b7-53df-3898-825a-c1d56f30ea0d",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/wr8hhszpp9wqy7nf/110525.mp3",
+      "path": "episodes/2025-11-05-interview-alisa-childers-another-gospel-for-students",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/interview-alisa-childers-%e2%80%93-another-gospel-for-students/",
+      "pub_date": "2025-11-05",
+      "slug": "2025-11-05-interview-alisa-childers-another-gospel-for-students",
+      "title": "Interview: Alisa Childers – Another Gospel for Students",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -1481,5 +1525,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-08-13T15:18:03Z"
+  "updated_at": "2026-08-14T15:10:40Z"
 }

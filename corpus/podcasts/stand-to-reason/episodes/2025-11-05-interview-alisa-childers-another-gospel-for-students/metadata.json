@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-14T15:08:18Z",
+  "description_html": "Greg talks to Alisa Childers about helping students respond to progressive Christianity in a discussion about her new book, a student edition of Another Gospel? A Lifelong Christian Seeks Truth in Response to Progressive Christianity.",
+  "description_text": "Greg talks to Alisa Childers about helping students respond to progressive Christianity in a discussion about her new book, a student edition of Another Gospel? A Lifelong Christian Seeks Truth in Response to Progressive Christianity.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/c768a0b7-53df-3898-825a-c1d56f30ea0d",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/wr8hhszpp9wqy7nf/110525.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/interview-alisa-childers-%e2%80%93-another-gospel-for-students/",
+  "pub_date": "2025-11-05",
+  "rss_transcript_tags": [],
+  "slug": "2025-11-05-interview-alisa-childers-another-gospel-for-students",
+  "title": "Interview: Alisa Childers – Another Gospel for Students",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-14T15:08:18Z",
+  "youtube_url": null
+}

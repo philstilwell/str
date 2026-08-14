@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-14T15:06:00Z",
+  "description_html": "Greg answers questions about how to interpret “gates of Hell” in Matthew 16:18, whether parents should treat a child who hasn’t professed Christ differently, the biggest challenge that has tested his faith, whether Matthew 24:24 means it’s possible for the elect to be led astray, and more.",
+  "description_text": "Greg answers questions about how to interpret “gates of Hell” in Matthew 16:18, whether parents should treat a child who hasn’t professed Christ differently, the biggest challenge that has tested his faith, whether Matthew 24:24 means it’s possible for the elect to be led astray, and more.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/844ae770-885a-3edd-a150-6aec001ebf0e",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/cm4e5z5gqcfurutu/081426.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/the-biggest-challenge-that-has-tested-greg-s-faith/",
+  "pub_date": "2026-08-14",
+  "rss_transcript_tags": [],
+  "slug": "2026-08-14-the-biggest-challenge-that-has-tested-gregs-faith",
+  "title": "The Biggest Challenge That Has Tested Greg’s Faith",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-14T15:06:00Z",
+  "youtube_url": null
+}
