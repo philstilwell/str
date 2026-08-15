@@ -19,7 +19,17 @@ NAV_RE = re.compile(
 CARD_RE = re.compile(r'            <article class="episode-card">.*?            </article>', re.DOTALL)
 ARCHIVE_START = "      <!-- archive:start -->"
 ARCHIVE_END = "      <!-- archive:end -->"
-ARCHIVE_PAGE_SIZE = 20
+ARCHIVE_MONTH_RANGES = (
+    ("Jan-Feb", 1, 2),
+    ("Mar-Apr", 3, 4),
+    ("May-Jun", 5, 6),
+    ("Jul-Aug", 7, 8),
+    ("Sep-Oct", 9, 10),
+    ("Nov-Dec", 11, 12),
+)
+ARCHIVE_MONTH_RANGE_BY_BUCKET = {
+    bucket: label for bucket, (label, _start, _end) in enumerate(ARCHIVE_MONTH_RANGES, start=1)
+}
 
 HOME_SECTIONS = {
     "stand-to-reason": "Greg Koukl episode critiques",
@@ -173,6 +183,22 @@ def archive_items(records: dict[str, list[dict[str, Any]]], recent_limit: int) -
     return items
 
 
+def archive_period(item: dict[str, Any]) -> tuple[int, int, str]:
+    pub_date = str(item.get("pub_date") or item.get("slug") or "")
+    match = re.match(r"(\d{4})-(\d{2})", pub_date)
+    if not match:
+        return (0, 0, "Undated")
+    year = int(match.group(1))
+    month = int(match.group(2))
+    bucket = ((month - 1) // 2) + 1
+    label = ARCHIVE_MONTH_RANGE_BY_BUCKET.get(bucket, "Undated")
+    return (year, bucket, f"{label} {year}")
+
+
+def archive_page_id(label: str) -> str:
+    return "older-assessments-" + re.sub(r"[^a-z0-9]+", "-", label.lower()).strip("-")
+
+
 def archive_item_html(item: dict[str, Any], position: int) -> str:
     slug = html.escape(str(item.get("slug") or ""), quote=True)
     title = html.escape(str(item.get("title") or "Untitled assessment"))
@@ -188,22 +214,30 @@ def archive_item_html(item: dict[str, Any], position: int) -> str:
     )
 
 
-def archive_section(records: dict[str, list[dict[str, Any]]], recent_limit: int, page_size: int = ARCHIVE_PAGE_SIZE) -> str:
+def archive_period_groups(items: list[dict[str, Any]]) -> list[tuple[str, list[dict[str, Any]]]]:
+    groups: dict[tuple[int, int, str], list[dict[str, Any]]] = {}
+    for item in items:
+        groups.setdefault(archive_period(item), []).append(item)
+    return [(label, groups[key]) for key in sorted(groups, reverse=True) for label in [key[2]]]
+
+
+def archive_section(records: dict[str, list[dict[str, Any]]], recent_limit: int) -> str:
     items = archive_items(records, recent_limit)
     if not items:
         return ""
 
-    pages = [items[index : index + page_size] for index in range(0, len(items), page_size)]
+    groups = archive_period_groups(items)
     page_buttons = []
     page_sections = []
-    for page_index, page_items in enumerate(pages, start=1):
-        start = ((page_index - 1) * page_size) + 1
+    position = 1
+    for page_index, (label, page_items) in enumerate(groups, start=1):
+        start = position
         end = start + len(page_items) - 1
-        page_id = f"older-assessments-page-{page_index}"
+        page_id = archive_page_id(label)
         current = ' aria-current="page"' if page_index == 1 else ""
         page_buttons.append(
             f'              <button type="button" data-archive-target="{page_id}"{current}>'
-            f"{start}-{end}</button>"
+            f"{html.escape(label)}</button>"
         )
         list_items = "\n".join(
             archive_item_html(item, position)
@@ -212,12 +246,13 @@ def archive_section(records: dict[str, list[dict[str, Any]]], recent_limit: int,
         hidden = " hidden" if page_index != 1 else ""
         page_sections.append(
             f'              <section class="archive-page" id="{page_id}" data-archive-page{hidden} '
-            f'aria-label="Older assessments {start} through {end}">\n'
+            f'aria-label="Older assessments from {html.escape(label)}">\n'
             f'                <ol class="archive-list" start="{start}">\n'
             f"{list_items}\n"
             "                </ol>\n"
             "              </section>"
         )
+        position = end + 1
 
     pagination = ""
     if len(page_buttons) > 1:

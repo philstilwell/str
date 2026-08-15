@@ -282,23 +282,38 @@ def test_homepage_refresh_preserves_existing_card_copy(tmp_path):
     assert "New lede." in updated
 
 
-def test_homepage_refresh_adds_paginated_archive(tmp_path):
+def test_homepage_refresh_adds_calendar_period_archive(tmp_path):
     docs = tmp_path / "docs" / "episodes"
     homepage = docs.parent / "index.html"
     records = {"stand-to-reason": []}
-    for day in range(1, 27):
-        slug = f"2026-07-{day:02d}-episode"
+    dates = [
+        "2026-03-01",
+        "2026-03-15",
+        "2026-04-01",
+        "2026-05-01",
+        "2026-06-01",
+        "2026-07-01",
+        "2026-07-15",
+        "2026-08-01",
+        "2026-09-01",
+        "2026-09-02",
+        "2026-09-03",
+        "2026-09-04",
+        "2026-09-05",
+    ]
+    for index, pub_date in enumerate(dates, start=1):
+        slug = f"{pub_date}-episode"
         page = docs / slug / "index.html"
         page.parent.mkdir(parents=True)
         page.write_text(
-            f'<header class="article-header"><p class="lede">Episode {day} lede.</p></header>',
+            f'<header class="article-header"><p class="lede">Episode {index} lede.</p></header>',
             encoding="utf-8",
         )
         records["stand-to-reason"].append(
             {
                 "slug": slug,
-                "title": f"Episode {day}",
-                "pub_date": f"2026-07-{day:02d}",
+                "title": f"Episode {index}",
+                "pub_date": pub_date,
                 "podcast": {"id": "stand-to-reason"},
             }
         )
@@ -318,12 +333,16 @@ def test_homepage_refresh_adds_paginated_archive(tmp_path):
     pages = archive.select("[data-archive-page]")
 
     assert archive.select_one("details.archive-accordion")
-    assert len(archive.select(".archive-item")) == 21
-    assert len(pages) == 2
-    assert len(pages[0].select(".archive-item")) == 20
-    assert len(pages[1].select(".archive-item")) == 1
+    assert len(archive.select(".archive-item")) == 8
+    assert len(pages) == 3
+    assert [len(page.select(".archive-item")) for page in pages] == [3, 2, 3]
     assert pages[1].has_attr("hidden")
-    assert [button.get_text(" ", strip=True) for button in archive.select("[data-archive-target]")] == ["1-20", "21-21"]
+    assert pages[2].has_attr("hidden")
+    assert [button.get_text(" ", strip=True) for button in archive.select("[data-archive-target]")] == [
+        "Jul-Aug 2026",
+        "May-Jun 2026",
+        "Mar-Apr 2026",
+    ]
 
 
 def test_critique_workflow_follows_successful_ingest_with_scheduled_recovery_sweep():
