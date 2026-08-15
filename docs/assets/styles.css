@@ -1196,6 +1196,112 @@ h3 {
   font-size: 12px;
 }
 
+.archive-section {
+  margin-top: 26px;
+}
+
+.archive-accordion {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.archive-accordion summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px 20px;
+  cursor: pointer;
+}
+
+.archive-accordion summary::marker {
+  color: var(--green);
+}
+
+.archive-accordion summary strong {
+  display: block;
+  margin-top: 2px;
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--ink);
+  font-size: 24px;
+  line-height: 1.15;
+}
+
+.archive-count {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.archive-body {
+  padding: 0 20px 20px;
+  border-top: 1px solid var(--line);
+}
+
+.archive-body > p {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.archive-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.archive-pagination button {
+  min-height: 32px;
+  padding: 6px 11px;
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  color: var(--green);
+  background: #fff;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.archive-pagination button.is-active,
+.archive-pagination button[aria-current="page"] {
+  color: #fff;
+  background: var(--green);
+}
+
+.archive-list {
+  display: grid;
+  gap: 0;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.archive-item {
+  display: grid;
+  grid-template-columns: minmax(190px, 0.35fr) minmax(0, 1fr);
+  gap: 12px;
+  align-items: baseline;
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+}
+
+.archive-meta {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.archive-item a {
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
 .compact-list .episode-card {
   gap: 9px;
   padding: 16px 18px;
@@ -1284,6 +1390,7 @@ h3 {
   .method-strip,
   .formal-block,
   .critique-columns,
+  .archive-item,
   .methodology-grid,
   .methodology-hero,
   .methodology-split,

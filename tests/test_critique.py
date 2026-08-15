@@ -631,6 +631,33 @@ def test_public_methodology_page_is_local_and_explanatory():
     assert reified_moral_language_hits(moral_scan_text) == []
 
 
+def test_public_homepage_archive_is_accordion_with_twenty_item_pages():
+    homepage = Path("docs/index.html")
+    soup = BeautifulSoup(homepage.read_text(encoding="utf-8"), "html.parser")
+    episode_pages = sorted(Path("docs/episodes").glob("*/index.html"))
+    archive = soup.select_one(".archive-section")
+
+    assert archive is not None
+    assert archive.select_one("details.archive-accordion")
+    assert archive.select_one("summary #older-assessments-title").get_text(" ", strip=True) == "Older assessments"
+    assert soup.select_one('script[src^="./assets/app.js"]')
+
+    archive_items = archive.select(".archive-item")
+    archive_pages = archive.select("[data-archive-page]")
+    page_buttons = archive.select("[data-archive-target]")
+    assert len(archive_items) == len(episode_pages) - 10
+    assert sum(len(page.select(".archive-item")) for page in archive_pages) == len(archive_items)
+    assert len(page_buttons) == len(archive_pages)
+    for index, page in enumerate(archive_pages):
+        assert 1 <= len(page.select(".archive-item")) <= 20
+        assert ("hidden" in page.attrs) == (index != 0)
+    assert all(not item.select_one("p") for item in archive_items)
+    if len(archive_items) > 20:
+        assert len(archive_pages) >= 2
+        assert page_buttons[0].get_text(" ", strip=True) == "1-20"
+        assert page_buttons[-1].get_text(" ", strip=True).endswith(str(len(archive_items)))
+
+
 def test_public_site_has_seo_metadata_and_discovery_files():
     pages = [
         Path("docs/index.html"),

@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 
 import pytest
+from bs4 import BeautifulSoup
 from openai import APIConnectionError, APITimeoutError, InternalServerError, RateLimitError
 
 import str_workflow.critique_batch as critique_batch
@@ -279,6 +280,50 @@ def test_homepage_refresh_preserves_existing_card_copy(tmp_path):
     updated = homepage.read_text(encoding="utf-8")
     assert "Hand-curated existing summary." in updated
     assert "New lede." in updated
+
+
+def test_homepage_refresh_adds_paginated_archive(tmp_path):
+    docs = tmp_path / "docs" / "episodes"
+    homepage = docs.parent / "index.html"
+    records = {"stand-to-reason": []}
+    for day in range(1, 27):
+        slug = f"2026-07-{day:02d}-episode"
+        page = docs / slug / "index.html"
+        page.parent.mkdir(parents=True)
+        page.write_text(
+            f'<header class="article-header"><p class="lede">Episode {day} lede.</p></header>',
+            encoding="utf-8",
+        )
+        records["stand-to-reason"].append(
+            {
+                "slug": slug,
+                "title": f"Episode {day}",
+                "pub_date": f"2026-07-{day:02d}",
+                "podcast": {"id": "stand-to-reason"},
+            }
+        )
+    homepage.write_text(
+        '''<main>
+          <section class="episode-list compact-list" aria-label="Greg Koukl episode critiques">
+          </section>
+          <!-- archive:start -->
+          <!-- archive:end -->
+        </main>''',
+        encoding="utf-8",
+    )
+
+    assert refresh_homepage(records, docs)
+    soup = BeautifulSoup(homepage.read_text(encoding="utf-8"), "html.parser")
+    archive = soup.select_one(".archive-section")
+    pages = archive.select("[data-archive-page]")
+
+    assert archive.select_one("details.archive-accordion")
+    assert len(archive.select(".archive-item")) == 21
+    assert len(pages) == 2
+    assert len(pages[0].select(".archive-item")) == 20
+    assert len(pages[1].select(".archive-item")) == 1
+    assert pages[1].has_attr("hidden")
+    assert [button.get_text(" ", strip=True) for button in archive.select("[data-archive-target]")] == ["1-20", "21-21"]
 
 
 def test_critique_workflow_follows_successful_ingest_with_scheduled_recovery_sweep():

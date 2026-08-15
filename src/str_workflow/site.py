@@ -17,10 +17,18 @@ NAV_RE = re.compile(
     flags=re.DOTALL,
 )
 CARD_RE = re.compile(r'            <article class="episode-card">.*?            </article>', re.DOTALL)
+ARCHIVE_START = "      <!-- archive:start -->"
+ARCHIVE_END = "      <!-- archive:end -->"
+ARCHIVE_PAGE_SIZE = 20
 
 HOME_SECTIONS = {
     "stand-to-reason": "Greg Koukl episode critiques",
     "idont-have-enough-faith": "Frank Turek episode critiques",
+}
+
+PODCAST_ARCHIVE_LABELS = {
+    "stand-to-reason": "Greg Koukl",
+    "idont-have-enough-faith": "Frank Turek",
 }
 
 
@@ -143,6 +151,119 @@ def episode_card(item: dict[str, Any], docs_dir: Path) -> str:
             </article>'''
 
 
+def recent_homepage_slugs(records: dict[str, list[dict[str, Any]]], limit: int) -> set[str]:
+    recent: set[str] = set()
+    for podcast_id in HOME_SECTIONS:
+        for item in list(reversed(records.get(podcast_id, [])))[:limit]:
+            slug = str(item.get("slug") or "")
+            if slug:
+                recent.add(slug)
+    return recent
+
+
+def archive_items(records: dict[str, list[dict[str, Any]]], recent_limit: int) -> list[dict[str, Any]]:
+    recent = recent_homepage_slugs(records, recent_limit)
+    items = [
+        item
+        for podcast_items in records.values()
+        for item in podcast_items
+        if str(item.get("slug") or "") not in recent
+    ]
+    items.sort(key=lambda item: (str(item.get("pub_date") or ""), str(item.get("slug") or "")), reverse=True)
+    return items
+
+
+def archive_item_html(item: dict[str, Any], position: int) -> str:
+    slug = html.escape(str(item.get("slug") or ""), quote=True)
+    title = html.escape(str(item.get("title") or "Untitled assessment"))
+    date = html.escape(format_display_date(str(item.get("pub_date") or "")))
+    podcast = item.get("podcast") if isinstance(item.get("podcast"), dict) else {}
+    podcast_id = str(podcast.get("id") or "")
+    podcast_label = html.escape(PODCAST_ARCHIVE_LABELS.get(podcast_id, str(item.get("source_label") or "Assessment")))
+    return (
+        '                  <li class="archive-item">\n'
+        f'                    <span class="archive-meta">{position}. {date} · {podcast_label}</span>\n'
+        f'                    <a href="./episodes/{slug}/">{title}</a>\n'
+        "                  </li>"
+    )
+
+
+def archive_section(records: dict[str, list[dict[str, Any]]], recent_limit: int, page_size: int = ARCHIVE_PAGE_SIZE) -> str:
+    items = archive_items(records, recent_limit)
+    if not items:
+        return ""
+
+    pages = [items[index : index + page_size] for index in range(0, len(items), page_size)]
+    page_buttons = []
+    page_sections = []
+    for page_index, page_items in enumerate(pages, start=1):
+        start = ((page_index - 1) * page_size) + 1
+        end = start + len(page_items) - 1
+        page_id = f"older-assessments-page-{page_index}"
+        current = ' aria-current="page"' if page_index == 1 else ""
+        page_buttons.append(
+            f'              <button type="button" data-archive-target="{page_id}"{current}>'
+            f"{start}-{end}</button>"
+        )
+        list_items = "\n".join(
+            archive_item_html(item, position)
+            for position, item in enumerate(page_items, start=start)
+        )
+        hidden = " hidden" if page_index != 1 else ""
+        page_sections.append(
+            f'              <section class="archive-page" id="{page_id}" data-archive-page{hidden} '
+            f'aria-label="Older assessments {start} through {end}">\n'
+            f'                <ol class="archive-list" start="{start}">\n'
+            f"{list_items}\n"
+            "                </ol>\n"
+            "              </section>"
+        )
+
+    pagination = ""
+    if len(page_buttons) > 1:
+        pagination = (
+            '            <div class="archive-pagination" aria-label="Older assessment pages">\n'
+            + "\n".join(page_buttons)
+            + "\n            </div>\n"
+        )
+
+    assessment_label = "assessment" if len(items) == 1 else "assessments"
+    return (
+        '      <section class="archive-section" aria-labelledby="older-assessments-title">\n'
+        '        <details class="archive-accordion">\n'
+        "          <summary>\n"
+        "            <span>\n"
+        '              <span class="date">Archive</span>\n'
+        '              <strong id="older-assessments-title">Older assessments</strong>\n'
+        "            </span>\n"
+        f'            <span class="archive-count">{len(items)} {assessment_label}</span>\n'
+        "          </summary>\n"
+        '          <div class="archive-body" data-paginated-archive>\n'
+        "            <p>Published assessments beyond the ten most recent shown above.</p>\n"
+        f"{pagination}"
+        + "\n\n".join(page_sections)
+        + "\n          </div>\n"
+        "        </details>\n"
+        "      </section>"
+    )
+
+
+def refresh_archive_section(updated: str, records: dict[str, list[dict[str, Any]]], limit: int) -> str:
+    section = archive_section(records, limit)
+    if not section:
+        return updated
+    block = f"{ARCHIVE_START}\n{section}\n{ARCHIVE_END}"
+    if ARCHIVE_START in updated and ARCHIVE_END in updated:
+        pattern = re.compile(rf"{re.escape(ARCHIVE_START)}.*?{re.escape(ARCHIVE_END)}", re.DOTALL)
+        updated, count = pattern.subn(lambda _: block, updated, count=1)
+        if count != 1:
+            raise RuntimeError("Could not refresh homepage archive section")
+        return updated
+    if "\n    </main>" in updated:
+        return updated.replace("\n    </main>", f"\n{block}\n    </main>", 1)
+    return f"{updated.rstrip()}\n{block}\n"
+
+
 def refresh_homepage(records: dict[str, list[dict[str, Any]]], docs_dir: Path, limit: int = 5) -> bool:
     homepage = docs_dir.parent / "index.html"
     original = homepage.read_text(encoding="utf-8")
@@ -173,6 +294,7 @@ def refresh_homepage(records: dict[str, list[dict[str, Any]]], docs_dir: Path, l
         )
         if count != 1:
             raise RuntimeError(f"Could not find homepage section {aria_label!r}")
+    updated = refresh_archive_section(updated, records, limit)
     if updated == original:
         return False
     homepage.write_text(updated, encoding="utf-8")

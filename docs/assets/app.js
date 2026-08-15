@@ -148,3 +148,33 @@ if (toc && tocToggle) {
     });
   });
 }
+
+const paginatedArchives = document.querySelectorAll("[data-paginated-archive]");
+
+paginatedArchives.forEach((archive) => {
+  const pages = Array.from(archive.querySelectorAll("[data-archive-page]"));
+  const buttons = Array.from(archive.querySelectorAll("[data-archive-target]"));
+  if (!pages.length || !buttons.length) return;
+
+  function showArchivePage(pageId) {
+    pages.forEach((page) => {
+      page.hidden = page.id !== pageId;
+    });
+    buttons.forEach((button) => {
+      const isActive = button.dataset.archiveTarget === pageId;
+      button.classList.toggle("is-active", isActive);
+      if (isActive) {
+        button.setAttribute("aria-current", "page");
+      } else {
+        button.removeAttribute("aria-current");
+      }
+    });
+  }
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => showArchivePage(button.dataset.archiveTarget));
+  });
+
+  const activeButton = buttons.find((button) => button.getAttribute("aria-current") === "page") || buttons[0];
+  showArchivePage(activeButton.dataset.archiveTarget);
+});
