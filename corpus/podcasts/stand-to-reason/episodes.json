@@ -1517,6 +1517,50 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/d0d9f313-c1e7-3a83-99ad-fba0bcc006fd",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/qgpjairytn8p7uwc/103125.mp3",
+      "path": "episodes/2025-10-31-what-does-it-mean-to-be-made-in-gods-image",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/what-does-it-mean-to-be-made-in-god-s-image/",
+      "pub_date": "2025-10-31",
+      "slug": "2025-10-31-what-does-it-mean-to-be-made-in-gods-image",
+      "title": "What Does It Mean to Be Made in God’s Image?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/2f2e2de2-456a-3c8c-b06d-5e8c5841e06c",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/vkkmcdfq6rxbe6yj/102925.mp3",
+      "path": "episodes/2025-10-29-how-do-we-know-objective-values-arent-a-delusion",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/how-do-we-know-objective-values-aren-t-a-delusion/",
+      "pub_date": "2025-10-29",
+      "slug": "2025-10-29-how-do-we-know-objective-values-arent-a-delusion",
+      "title": "How Do We Know Objective Values Aren’t a Delusion?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -1525,5 +1569,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-08-14T15:10:40Z"
+  "updated_at": "2026-08-15T14:42:06Z"
 }

@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "https://crossexamined.org/?p=103932",
+      "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast_Allen-Bobby_8-14-26.mp3",
+      "path": "episodes/2026-08-14-addictions-generational-curses-how-to-break-free-with-allen-parr-bobby",
+      "podcast": {
+        "home_url": "https://crossexamined.org/podcasts/",
+        "id": "idont-have-enough-faith",
+        "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+      },
+      "podcast_page_url": "https://crossexamined.org/addictions-generational-curses-how-to-break-free-with-allen-parr-bobby-conway/",
+      "pub_date": "2026-08-14",
+      "slug": "2026-08-14-addictions-generational-curses-how-to-break-free-with-allen-parr-bobby",
+      "title": "Addictions? Generational Curses? How to Break Free with Allen Parr & Bobby Conway",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "https://crossexamined.org/?p=103910",
       "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek-Podcast-GregKoukl_8-11-2026.mp3",
       "path": "episodes/2026-08-11-hearing-the-voice-of-god-is-it-biblical-with-greg-koukl",
@@ -469,5 +491,5 @@
     "id": "idont-have-enough-faith",
     "title": "I Don't Have Enough FAITH to Be an ATHEIST"
   },
-  "updated_at": "2026-08-13T15:20:53Z"
+  "updated_at": "2026-08-15T14:44:13Z"
 }

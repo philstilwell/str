@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-15T14:39:40Z",
+  "description_html": "Greg chats with callers about how we know objective values exist and aren’t a delusion, how to redirect someone who’s on the wrong theological road, and how to navigate bringing apologetics to a church in a denomination that doesn’t allow outside speakers.",
+  "description_text": "Greg chats with callers about how we know objective values exist and aren’t a delusion, how to redirect someone who’s on the wrong theological road, and how to navigate bringing apologetics to a church in a denomination that doesn’t allow outside speakers.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/2f2e2de2-456a-3c8c-b06d-5e8c5841e06c",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/vkkmcdfq6rxbe6yj/102925.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/how-do-we-know-objective-values-aren-t-a-delusion/",
+  "pub_date": "2025-10-29",
+  "rss_transcript_tags": [],
+  "slug": "2025-10-29-how-do-we-know-objective-values-arent-a-delusion",
+  "title": "How Do We Know Objective Values Aren’t a Delusion?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-15T14:39:40Z",
+  "youtube_url": null
+}

@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-15T14:37:10Z",
+  "description_html": "Greg answers questions from callers about what it means to be made in God’s image, whether Jesus was omniscient while he was on earth, how to best disciple your kids, whether Jeremiah 29:11 applies to us because all promises are yes in Christ, and recognizing a calling to ministry.",
+  "description_text": "Greg answers questions from callers about what it means to be made in God’s image, whether Jesus was omniscient while he was on earth, how to best disciple your kids, whether Jeremiah 29:11 applies to us because all promises are yes in Christ, and recognizing a calling to ministry.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/d0d9f313-c1e7-3a83-99ad-fba0bcc006fd",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/qgpjairytn8p7uwc/103125.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/what-does-it-mean-to-be-made-in-god-s-image/",
+  "pub_date": "2025-10-31",
+  "rss_transcript_tags": [],
+  "slug": "2025-10-31-what-does-it-mean-to-be-made-in-gods-image",
+  "title": "What Does It Mean to Be Made in God’s Image?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-15T14:37:10Z",
+  "youtube_url": null
+}

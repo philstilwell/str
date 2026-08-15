@@ -1,0 +1,35 @@
+{
+  "audio_source": {
+    "feed_element": "encoded",
+    "player_url": "https://player.blubrry.com/id/155012391?cache=1786725577#mode-Light&border-000000&progress-000000",
+    "source": "embedded_player",
+    "source_url": "https://crossexamined.org/addictions-generational-curses-how-to-break-free-with-allen-parr-bobby-conway/",
+    "url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast_Allen-Bobby_8-14-26.mp3"
+  },
+  "created_at": "2026-08-15T14:42:07Z",
+  "description_html": "<p>John 8:36 states, &#8220;If the Son sets you free, you will be free indeed.&#8221; So why can the same old sins, fears, habits, and wounds keep dragging us down? Frank joins fellow apologists Allen Parr and Bobby Conway from CIA 2026 in Charlotte, NC for a candid conversation about the battles Christians don’t always like [&#8230;]</p>\n<p>The post <a href=\"https://crossexamined.org/addictions-generational-curses-how-to-break-free-with-allen-parr-bobby-conway/\">Addictions? Generational Curses? How to Break Free with Allen Parr &#038; Bobby Conway</a> appeared first on <a href=\"https://crossexamined.org\">CrossExamined</a>.</p>",
+  "description_text": "John 8:36 states, “If the Son sets you free, you will be free indeed.” So why can the same old sins, fears, habits, and wounds keep dragging us down? Frank joins fellow apologists Allen Parr and Bobby Conway from CIA 2026 in Charlotte, NC for a candid conversation about the battles Christians don’t always like […] The post Addictions? Generational Curses? How to Break Free with Allen Parr & Bobby Conway appeared first on CrossExamined .",
+  "duration": null,
+  "feed_url": "https://crossexamined.org/category/podcast/feed/",
+  "guid": "https://crossexamined.org/?p=103932",
+  "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast_Allen-Bobby_8-14-26.mp3",
+  "podcast": {
+    "home_url": "https://crossexamined.org/podcasts/",
+    "id": "idont-have-enough-faith",
+    "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+  },
+  "podcast_page_url": "https://crossexamined.org/addictions-generational-curses-how-to-break-free-with-allen-parr-bobby-conway/",
+  "pub_date": "2026-08-14",
+  "rss_transcript_tags": [],
+  "slug": "2026-08-14-addictions-generational-curses-how-to-break-free-with-allen-parr-bobby",
+  "title": "Addictions? Generational Curses? How to Break Free with Allen Parr & Bobby Conway",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-15T14:42:07Z",
+  "youtube_url": null
+}
