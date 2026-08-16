@@ -1561,6 +1561,50 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/94847eb5-618b-303c-8761-1eef96a110fc",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/wrkd24c8qh8gtrgv/102425.mp3",
+      "path": "episodes/2025-10-24-what-if-a-darwinist-denies-theres-something-wrong-with-the-world",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/what-if-a-darwinist-denies-there-s-something-wrong-with-the-world/",
+      "pub_date": "2025-10-24",
+      "slug": "2025-10-24-what-if-a-darwinist-denies-theres-something-wrong-with-the-world",
+      "title": "What If a Darwinist Denies There’s Something Wrong with the World?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/2bcbc193-41ac-3d72-9a23-53728b63ce11",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/fe8y48pz243kkn4e/102225.mp3",
+      "path": "episodes/2025-10-22-beauty-is-real",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/beauty-is-real/",
+      "pub_date": "2025-10-22",
+      "slug": "2025-10-22-beauty-is-real",
+      "title": "Beauty Is Real",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -1569,5 +1613,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-08-15T14:42:06Z"
+  "updated_at": "2026-08-16T14:41:16Z"
 }

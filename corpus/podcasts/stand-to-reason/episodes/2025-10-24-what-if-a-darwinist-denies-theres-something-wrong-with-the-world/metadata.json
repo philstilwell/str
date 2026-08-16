@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-16T14:36:38Z",
+  "description_html": "Greg answers questions about Darwinists who deny there’s something wrong with the world, attending a baptism at an LGBTQ-affirming church, why Christians have pets instead of giving the money to orphans, the name “Lord of Hosts,” and singing worship songs about our feelings.",
+  "description_text": "Greg answers questions about Darwinists who deny there’s something wrong with the world, attending a baptism at an LGBTQ-affirming church, why Christians have pets instead of giving the money to orphans, the name “Lord of Hosts,” and singing worship songs about our feelings.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/94847eb5-618b-303c-8761-1eef96a110fc",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/wrkd24c8qh8gtrgv/102425.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/what-if-a-darwinist-denies-there-s-something-wrong-with-the-world/",
+  "pub_date": "2025-10-24",
+  "rss_transcript_tags": [],
+  "slug": "2025-10-24-what-if-a-darwinist-denies-theres-something-wrong-with-the-world",
+  "title": "What If a Darwinist Denies There’s Something Wrong with the World?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-16T14:36:38Z",
+  "youtube_url": null
+}

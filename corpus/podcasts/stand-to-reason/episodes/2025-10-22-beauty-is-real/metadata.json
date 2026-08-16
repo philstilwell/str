@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-16T14:38:57Z",
+  "description_html": "Megan Almon talks about the reality and nature of beauty, answers questions about introducing heavy cultural topics to young people who aren’t already asking about them and whether or not God would have destroyed the Israelites if Moses hadn’t intervened, and more.",
+  "description_text": "Megan Almon talks about the reality and nature of beauty, answers questions about introducing heavy cultural topics to young people who aren’t already asking about them and whether or not God would have destroyed the Israelites if Moses hadn’t intervened, and more.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/2bcbc193-41ac-3d72-9a23-53728b63ce11",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/fe8y48pz243kkn4e/102225.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/beauty-is-real/",
+  "pub_date": "2025-10-22",
+  "rss_transcript_tags": [],
+  "slug": "2025-10-22-beauty-is-real",
+  "title": "Beauty Is Real",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-16T14:38:57Z",
+  "youtube_url": null
+}
