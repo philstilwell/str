@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-17T14:42:12Z",
+  "description_html": "Greg and Tim finish their conversation about The Diary of a CEO, discussing anchoring one’s life in Christianity, the existence of evidence for Christianity, why the world is broken, pre-human animal suffering, evolving morality, advice for someone searching for meaning, and more.",
+  "description_text": "Greg and Tim finish their conversation about The Diary of a CEO, discussing anchoring one’s life in Christianity, the existence of evidence for Christianity, why the world is broken, pre-human animal suffering, evolving morality, advice for someone searching for meaning, and more.",
+  "duration": "3736",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/75f4a693-89e6-36ab-9729-dd2860e928be",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/2j665g3p8yy8dk62/101725.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/christianity-can-anchor-your-life-because-it-s-true/",
+  "pub_date": "2025-10-17",
+  "rss_transcript_tags": [],
+  "slug": "2025-10-17-christianity-can-anchor-your-life-because-its-true",
+  "title": "Christianity Can Anchor Your Life Because It’s True",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-17T14:42:12Z",
+  "youtube_url": null
+}

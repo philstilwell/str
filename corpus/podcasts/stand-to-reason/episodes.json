@@ -1605,6 +1605,50 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/75f4a693-89e6-36ab-9729-dd2860e928be",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/2j665g3p8yy8dk62/101725.mp3",
+      "path": "episodes/2025-10-17-christianity-can-anchor-your-life-because-its-true",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/christianity-can-anchor-your-life-because-it-s-true/",
+      "pub_date": "2025-10-17",
+      "slug": "2025-10-17-christianity-can-anchor-your-life-because-its-true",
+      "title": "Christianity Can Anchor Your Life Because It’s True",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/990c4f11-f4c3-386c-84a3-c4736c51e88c",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/igcvh7jb23uhqekh/101525.mp3",
+      "path": "episodes/2025-10-15-can-evolution-explain-our-sense-of-meaning",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/can-evolution-explain-our-sense-of-meaning/",
+      "pub_date": "2025-10-15",
+      "slug": "2025-10-15-can-evolution-explain-our-sense-of-meaning",
+      "title": "Can Evolution Explain Our Sense of Meaning?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -1613,5 +1657,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-08-16T14:41:16Z"
+  "updated_at": "2026-08-17T14:47:34Z"
 }

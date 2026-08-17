@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-17T14:44:57Z",
+  "description_html": "Greg and Tim continue evaluating clips from The Diary of a CEO, discussing the need for meaning to inform purpose, whether evolution can explain our sense of meaning, whether subjective experience can be evidential, atheist Alex O’Connor’s advice for finding meaning, and more.",
+  "description_text": "Greg and Tim continue evaluating clips from The Diary of a CEO, discussing the need for meaning to inform purpose, whether evolution can explain our sense of meaning, whether subjective experience can be evidential, atheist Alex O’Connor’s advice for finding meaning, and more.",
+  "duration": "3493",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/990c4f11-f4c3-386c-84a3-c4736c51e88c",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/igcvh7jb23uhqekh/101525.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/can-evolution-explain-our-sense-of-meaning/",
+  "pub_date": "2025-10-15",
+  "rss_transcript_tags": [],
+  "slug": "2025-10-15-can-evolution-explain-our-sense-of-meaning",
+  "title": "Can Evolution Explain Our Sense of Meaning?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-17T14:44:57Z",
+  "youtube_url": null
+}
