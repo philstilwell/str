@@ -505,6 +505,103 @@ def normalize_openai_text(response: Any) -> str:
     return str(response).strip()
 
 
+def openai_error_code(error: BaseException) -> str | None:
+    body = getattr(error, "body", None)
+    if not isinstance(body, dict):
+        return None
+    detail = body.get("error", body)
+    if not isinstance(detail, dict):
+        return None
+    return text_or_none(detail.get("code"))
+
+
+def split_audio_chunk_in_half(
+    chunk: AudioChunk,
+    scratch_dir: Path,
+    label: str,
+    minimum_chunk_seconds: float,
+) -> list[AudioChunk]:
+    from pydub import AudioSegment
+
+    audio = AudioSegment.from_file(chunk.path)
+    if len(audio) <= minimum_chunk_seconds * 1000:
+        raise RuntimeError(
+            f"ASR rejected a {len(audio) / 1000:.1f}-second audio chunk as too large; "
+            "cannot split it below the configured safety floor"
+        )
+
+    midpoint_ms = len(audio) // 2
+    base_start = chunk.start_seconds or 0.0
+    parts: list[AudioChunk] = []
+    ranges = ((0, midpoint_ms), (midpoint_ms, len(audio)))
+    for part_number, (start_ms, end_ms) in enumerate(ranges, start=1):
+        part_path = scratch_dir / f"chunk-{label}-{part_number}.mp3"
+        audio[start_ms:end_ms].export(part_path, format="mp3", bitrate="64k")
+        if part_number == 2 and chunk.end_seconds is not None:
+            part_end = chunk.end_seconds
+        else:
+            part_end = base_start + end_ms / 1000
+        parts.append(
+            AudioChunk(
+                part_path,
+                base_start + start_ms / 1000,
+                part_end,
+            )
+        )
+    return parts
+
+
+def transcribe_audio_chunk(
+    client: Any,
+    chunk: AudioChunk,
+    model: str,
+    prompt: str | None,
+    scratch_dir: Path,
+    label: str,
+    minimum_chunk_seconds: float = 60.0,
+) -> list[tuple[AudioChunk, str]]:
+    try:
+        with chunk.path.open("rb") as audio_file:
+            request: dict[str, Any] = {
+                "model": model,
+                "file": audio_file,
+                "response_format": "text",
+            }
+            if prompt:
+                request["prompt"] = prompt
+            response = client.audio.transcriptions.create(**request)
+        return [(chunk, normalize_openai_text(response))]
+    except Exception as error:
+        if openai_error_code(error) != "input_too_large":
+            raise
+
+        print(
+            f"ASR input {format_seconds(chunk.start_seconds)}-{format_seconds(chunk.end_seconds)} "
+            "exceeded the model context; splitting it and retrying.",
+            flush=True,
+        )
+        smaller_chunks = split_audio_chunk_in_half(
+            chunk,
+            scratch_dir,
+            label,
+            minimum_chunk_seconds,
+        )
+        results: list[tuple[AudioChunk, str]] = []
+        for part_number, smaller_chunk in enumerate(smaller_chunks, start=1):
+            results.extend(
+                transcribe_audio_chunk(
+                    client,
+                    smaller_chunk,
+                    model,
+                    prompt,
+                    scratch_dir,
+                    f"{label}-{part_number}",
+                    minimum_chunk_seconds,
+                )
+            )
+        return results
+
+
 def transcribe_with_openai(
     audio_path: Path,
     model: str,
@@ -521,23 +618,26 @@ def transcribe_with_openai(
         audio_chunks = chunk_audio_for_upload(audio_path, scratch_dir, max_bytes, chunk_minutes)
         transcript_chunks: list[dict[str, Any]] = []
 
+        transcribed_chunks: list[tuple[AudioChunk, str]] = []
         for index, chunk in enumerate(audio_chunks, start=1):
-            with chunk.path.open("rb") as audio_file:
-                request: dict[str, Any] = {
-                    "model": model,
-                    "file": audio_file,
-                    "response_format": "text",
-                }
-                if prompt:
-                    request["prompt"] = prompt
-                response = client.audio.transcriptions.create(**request)
+            transcribed_chunks.extend(
+                transcribe_audio_chunk(
+                    client,
+                    chunk,
+                    model,
+                    prompt,
+                    scratch_dir,
+                    f"{index:03d}",
+                )
+            )
 
+        for index, (chunk, text) in enumerate(transcribed_chunks, start=1):
             transcript_chunks.append(
                 {
                     "index": index,
                     "start_seconds": chunk.start_seconds,
                     "end_seconds": chunk.end_seconds,
-                    "text": normalize_openai_text(response),
+                    "text": text,
                 }
             )
 
