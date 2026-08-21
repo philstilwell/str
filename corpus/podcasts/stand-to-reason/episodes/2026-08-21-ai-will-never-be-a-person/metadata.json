@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-21T14:52:16Z",
+  "description_html": "Greg explains why AI will never be a person, then he answers questions about how to address the declining birthrate and encourage people to have more children, and whether or not Muslims worship the true God.",
+  "description_text": "Greg explains why AI will never be a person, then he answers questions about how to address the declining birthrate and encourage people to have more children, and whether or not Muslims worship the true God.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/b43a4b2c-2de9-3bc4-9861-78f56b713624",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/p3rwqxiqw56himbg/082126.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/ai-will-never-be-a-person/",
+  "pub_date": "2026-08-21",
+  "rss_transcript_tags": [],
+  "slug": "2026-08-21-ai-will-never-be-a-person",
+  "title": "AI Will Never Be a Person",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-21T14:52:16Z",
+  "youtube_url": null
+}

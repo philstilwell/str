@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-21T14:54:44Z",
+  "description_html": "Greg talks to Stephen Driscoll, author of Made in Our Image: God, Artificial Intelligence, and You, about AI—what it is, the challenges and opportunities it will bring, how Christians should think about it, and more.",
+  "description_text": "Greg talks to Stephen Driscoll, author of Made in Our Image: God, Artificial Intelligence, and You, about AI—what it is, the challenges and opportunities it will bring, how Christians should think about it, and more.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/abd5b1c9-cac8-3116-aa0a-9e0c4a41db60",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/7fkkuhjxzf5g7kw9/081926.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/interview-stephen-driscoll-%e2%80%93-god-artificial-intelligence-and-you/",
+  "pub_date": "2026-08-19",
+  "rss_transcript_tags": [],
+  "slug": "2026-08-19-interview-stephen-driscoll-god-artificial-intelligence-and-you",
+  "title": "Interview: Stephen Driscoll – God, Artificial Intelligence, and You",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-21T14:54:44Z",
+  "youtube_url": null
+}

@@ -1,0 +1,35 @@
+{
+  "audio_source": {
+    "feed_element": "encoded",
+    "player_url": "https://player.blubrry.com/id/155048287?cache=1787074881#mode-Light&border-000000&progress-000000",
+    "source": "embedded_player",
+    "source_url": "https://crossexamined.org/the-1-most-dangerous-place-to-live-in-america-with-phoenix-hayes/",
+    "url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek_Podcast-Phoenix_8-18-2026.mp3"
+  },
+  "created_at": "2026-08-21T14:57:18Z",
+  "description_html": "<p>What happens to a culture when “my choice” becomes its highest moral authority? This week, Phoenix Hayes, co-authorof &#8216;The War on Reality&#8216;, joins Frank to unpack a recent change to Massachusetts&#8217; abortion law and the bigger cultural shift that made it possible. From linguistic theft and Church silence to slavery, racial disparities, and the biblical [&#8230;]</p>\n<p>The post <a href=\"https://crossexamined.org/the-1-most-dangerous-place-to-live-in-america-with-phoenix-hayes/\">The #1 Most Dangerous Place to Live in America with Phoenix Hayes</a> appeared first on <a href=\"https://crossexamined.org\">CrossExamined</a>.</p>",
+  "description_text": "What happens to a culture when “my choice” becomes its highest moral authority? This week, Phoenix Hayes, co-authorof ‘The War on Reality‘, joins Frank to unpack a recent change to Massachusetts’ abortion law and the bigger cultural shift that made it possible. From linguistic theft and Church silence to slavery, racial disparities, and the biblical […] The post The #1 Most Dangerous Place to Live in America with Phoenix Hayes appeared first on CrossExamined .",
+  "duration": null,
+  "feed_url": "https://crossexamined.org/category/podcast/feed/",
+  "guid": "https://crossexamined.org/?p=103951",
+  "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek_Podcast-Phoenix_8-18-2026.mp3",
+  "podcast": {
+    "home_url": "https://crossexamined.org/podcasts/",
+    "id": "idont-have-enough-faith",
+    "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+  },
+  "podcast_page_url": "https://crossexamined.org/the-1-most-dangerous-place-to-live-in-america-with-phoenix-hayes/",
+  "pub_date": "2026-08-18",
+  "rss_transcript_tags": [],
+  "slug": "2026-08-18-the-1-most-dangerous-place-to-live-in-america-with-phoenix-hayes",
+  "title": "The #1 Most Dangerous Place to Live in America with Phoenix Hayes",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-21T14:57:18Z",
+  "youtube_url": null
+}
