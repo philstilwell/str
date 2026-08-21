@@ -1,6 +1,12 @@
 from pathlib import Path
+from types import SimpleNamespace
+
+import pytest
+
+import str_workflow.ingest as ingest
 
 from str_workflow.ingest import (
+    AudioChunk,
     audio_candidates_by_guid,
     audio_candidate_from_page_html,
     episode_slug,
@@ -8,6 +14,7 @@ from str_workflow.ingest import (
     format_seconds,
     resolve_audio_candidate,
     select_entries_to_process,
+    transcribe_audio_chunk,
     transcript_tags_by_guid,
 )
 from str_workflow.notifications import notice_from_metadata, transcript_became_ready
@@ -120,6 +127,75 @@ def test_extract_audio_url_from_player_html_reads_json_escaped_mp3_url():
     html = '{"media_url":"https:\\/\\/content.blubrry.com\\/cross_examined\\/episode.mp3"}'
 
     assert extract_audio_url_from_player_html(html) == "https://content.blubrry.com/cross_examined/episode.mp3"
+
+
+def test_transcription_splits_only_rejected_chunk_and_preserves_timestamps(tmp_path, monkeypatch):
+    original_path = tmp_path / "episode.mp3"
+    first_half_path = tmp_path / "first-half.mp3"
+    second_half_path = tmp_path / "second-half.mp3"
+    for path in (original_path, first_half_path, second_half_path):
+        path.write_bytes(b"audio")
+
+    class InputTooLargeError(Exception):
+        body = {"error": {"code": "input_too_large"}}
+
+    calls: list[str] = []
+
+    def create(**request):
+        filename = Path(request["file"].name).name
+        calls.append(filename)
+        if filename == original_path.name:
+            raise InputTooLargeError("audio exceeds the model context")
+        return {"text": f"Transcript for {filename}"}
+
+    monkeypatch.setattr(
+        ingest,
+        "split_audio_chunk_in_half",
+        lambda chunk, scratch_dir, label, minimum_chunk_seconds: [
+            AudioChunk(first_half_path, 120.0, 420.0),
+            AudioChunk(second_half_path, 420.0, 720.0),
+        ],
+    )
+    client = SimpleNamespace(audio=SimpleNamespace(transcriptions=SimpleNamespace(create=create)))
+
+    results = transcribe_audio_chunk(
+        client,
+        AudioChunk(original_path, 120.0, 720.0),
+        "gpt-4o-mini-transcribe",
+        "Preserve names.",
+        tmp_path,
+        "001",
+    )
+
+    assert calls == ["episode.mp3", "first-half.mp3", "second-half.mp3"]
+    assert results == [
+        (AudioChunk(first_half_path, 120.0, 420.0), "Transcript for first-half.mp3"),
+        (AudioChunk(second_half_path, 420.0, 720.0), "Transcript for second-half.mp3"),
+    ]
+
+
+def test_transcription_does_not_split_unrelated_api_errors(tmp_path, monkeypatch):
+    audio_path = tmp_path / "episode.mp3"
+    audio_path.write_bytes(b"audio")
+
+    def create(**request):
+        raise RuntimeError("temporary API failure")
+
+    def unexpected_split(*args, **kwargs):
+        raise AssertionError("unrelated errors must not split audio")
+
+    monkeypatch.setattr(ingest, "split_audio_chunk_in_half", unexpected_split)
+    client = SimpleNamespace(audio=SimpleNamespace(transcriptions=SimpleNamespace(create=create)))
+
+    with pytest.raises(RuntimeError, match="temporary API failure"):
+        transcribe_audio_chunk(
+            client,
+            AudioChunk(audio_path, 0.0, 600.0),
+            "gpt-4o-mini-transcribe",
+            None,
+            tmp_path,
+            "001",
+        )
 
 
 def test_transcript_notice_is_created_only_when_transcript_becomes_ready():
