@@ -1693,6 +1693,50 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/24d28d73-fb21-372b-a307-ed6a2724ed14",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/tfn9qsmfyhx3rzq2/101025.mp3",
+      "path": "episodes/2025-10-10-which-worldview-best-explains-meaning-and-purpose",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/which-worldview-best-explains-meaning-and-purpose/",
+      "pub_date": "2025-10-10",
+      "slug": "2025-10-10-which-worldview-best-explains-meaning-and-purpose",
+      "title": "Which Worldview Best Explains Meaning and Purpose?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/5f4bfd30-3561-381f-8686-a238fb69aee6",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/k323x9nt7mjvrd7s/100825.mp3",
+      "path": "episodes/2025-10-08-are-these-my-thoughts-or-is-god-speaking-to-me",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/are-these-my-thoughts-or-is-god-speaking-to-me/",
+      "pub_date": "2025-10-08",
+      "slug": "2025-10-08-are-these-my-thoughts-or-is-god-speaking-to-me",
+      "title": "Are These My Thoughts, or Is God Speaking to Me?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -1701,5 +1745,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-08-21T14:57:17Z"
+  "updated_at": "2026-08-22T14:41:45Z"
 }

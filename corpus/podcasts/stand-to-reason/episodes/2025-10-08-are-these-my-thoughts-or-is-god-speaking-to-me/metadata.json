@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-22T14:39:22Z",
+  "description_html": "Greg answers questions about how to tell the difference between your own thoughts and God speaking to you, near death experiences, cremation vs. the regular burial process, leaving a church without feeling a calling from God, and dealing with burnout in ministry.",
+  "description_text": "Greg answers questions about how to tell the difference between your own thoughts and God speaking to you, near death experiences, cremation vs. the regular burial process, leaving a church without feeling a calling from God, and dealing with burnout in ministry.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/5f4bfd30-3561-381f-8686-a238fb69aee6",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/k323x9nt7mjvrd7s/100825.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/are-these-my-thoughts-or-is-god-speaking-to-me/",
+  "pub_date": "2025-10-08",
+  "rss_transcript_tags": [],
+  "slug": "2025-10-08-are-these-my-thoughts-or-is-god-speaking-to-me",
+  "title": "Are These My Thoughts, or Is God Speaking to Me?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-22T14:39:22Z",
+  "youtube_url": null
+}

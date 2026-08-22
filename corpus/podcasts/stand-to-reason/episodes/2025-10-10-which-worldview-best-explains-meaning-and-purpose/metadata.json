@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-22T14:36:14Z",
+  "description_html": "Greg and Tim review clips from a conversation between Greg, atheist Alex O’Connor, and Hindu Alok Kanojia, discussing why human beings flourish in a particular way, the foundation of meaning and purpose, the meaning crisis, Alex’s paperclip analogy, and more.",
+  "description_text": "Greg and Tim review clips from a conversation between Greg, atheist Alex O’Connor, and Hindu Alok Kanojia, discussing why human beings flourish in a particular way, the foundation of meaning and purpose, the meaning crisis, Alex’s paperclip analogy, and more.",
+  "duration": "2988",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/24d28d73-fb21-372b-a307-ed6a2724ed14",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/tfn9qsmfyhx3rzq2/101025.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/which-worldview-best-explains-meaning-and-purpose/",
+  "pub_date": "2025-10-10",
+  "rss_transcript_tags": [],
+  "slug": "2025-10-10-which-worldview-best-explains-meaning-and-purpose",
+  "title": "Which Worldview Best Explains Meaning and Purpose?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-22T14:36:14Z",
+  "youtube_url": null
+}
