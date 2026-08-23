@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-23T14:36:49Z",
+  "description_html": "Greg talks about atheist Alex O’Connor’s use of suffering as an argument against God, then he answers a caller’s question about how God could create people with autism—something that adds such difficulties to a person’s life and makes it harder for people to connect with God.",
+  "description_text": "Greg talks about atheist Alex O’Connor’s use of suffering as an argument against God, then he answers a caller’s question about how God could create people with autism—something that adds such difficulties to a person’s life and makes it harder for people to connect with God.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/c3defd4b-f43a-370d-a0f2-118ee96f4324",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/9vj96nz4vifmpdna/100325.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/why-an-emotivist-can-t-use-suffering-to-argue-against-the-existence-of-god/",
+  "pub_date": "2025-10-03",
+  "rss_transcript_tags": [],
+  "slug": "2025-10-03-why-an-emotivist-cant-use-suffering-to-argue-against-the-existence-of",
+  "title": "Why an Emotivist Can’t Use Suffering to Argue Against the Existence of God",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-23T14:36:49Z",
+  "youtube_url": null
+}

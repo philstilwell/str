@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-23T14:39:18Z",
+  "description_html": "Greg talks about his experience on The Diary of a CEO podcast talking about meaning and purpose with Alex O’Connor and Alok Kanojia, then he answers questions about whether the term “innocent” can be applied to a fetal human being and whether Cain went to Heaven.",
+  "description_text": "Greg talks about his experience on The Diary of a CEO podcast talking about meaning and purpose with Alex O’Connor and Alok Kanojia, then he answers questions about whether the term “innocent” can be applied to a fetal human being and whether Cain went to Heaven.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/d9465646-6757-3608-825e-b13d75abe4c9",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/c9mdeijwc8wwxrv9/100125.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/greg-s-experience-on-the-diary-of-a-ceo-podcast/",
+  "pub_date": "2025-10-01",
+  "rss_transcript_tags": [],
+  "slug": "2025-10-01-gregs-experience-on-the-diary-of-a-ceo-podcast",
+  "title": "Greg’s Experience on The Diary of a CEO Podcast",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-23T14:39:18Z",
+  "youtube_url": null
+}
