@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-24T14:58:34Z",
+  "description_html": "Greg gives advice to students starting college and responds to a question about being aware of what’s being taught that might go against Christianity, then he gives advice to callers on making a case for the Christian God at a local university and apologetics topics to cover in a youth group.",
+  "description_text": "Greg gives advice to students starting college and responds to a question about being aware of what’s being taught that might go against Christianity, then he gives advice to callers on making a case for the Christian God at a local university and apologetics topics to cover in a youth group.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/f860e8cb-ace7-30bb-b6c9-81b3d42e8c26",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/yikvamgsh7w2ybuq/092425.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/how-would-you-make-a-case-for-the-christian-god/",
+  "pub_date": "2025-09-24",
+  "rss_transcript_tags": [],
+  "slug": "2025-09-24-how-would-you-make-a-case-for-the-christian-god",
+  "title": "How Would You Make a Case for the Christian God?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-24T14:58:34Z",
+  "youtube_url": null
+}

@@ -1781,6 +1781,50 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/f860e8cb-ace7-30bb-b6c9-81b3d42e8c26",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/yikvamgsh7w2ybuq/092425.mp3",
+      "path": "episodes/2025-09-24-how-would-you-make-a-case-for-the-christian-god",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/how-would-you-make-a-case-for-the-christian-god/",
+      "pub_date": "2025-09-24",
+      "slug": "2025-09-24-how-would-you-make-a-case-for-the-christian-god",
+      "title": "How Would You Make a Case for the Christian God?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/99739c7d-ce26-32b5-b5ac-284ea016721e",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/wuwamys99rbb3pah/091925.mp3",
+      "path": "episodes/2025-09-19-the-assassination-of-charlie-kirk",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/the-assassination-of-charlie-kirk/",
+      "pub_date": "2025-09-19",
+      "slug": "2025-09-19-the-assassination-of-charlie-kirk",
+      "title": "The Assassination of Charlie Kirk",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -1789,5 +1833,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-08-23T14:41:48Z"
+  "updated_at": "2026-08-24T15:03:41Z"
 }

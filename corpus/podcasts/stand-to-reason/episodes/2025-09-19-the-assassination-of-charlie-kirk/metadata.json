@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-24T15:01:05Z",
+  "description_html": "Greg reflects on the assassination of Charlie Kirk and a question he received about why God would let something like this happen, then he talks to a caller about what it means to be a biblically faithful Christian in politics right now.",
+  "description_text": "Greg reflects on the assassination of Charlie Kirk and a question he received about why God would let something like this happen, then he talks to a caller about what it means to be a biblically faithful Christian in politics right now.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/99739c7d-ce26-32b5-b5ac-284ea016721e",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/wuwamys99rbb3pah/091925.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/the-assassination-of-charlie-kirk/",
+  "pub_date": "2025-09-19",
+  "rss_transcript_tags": [],
+  "slug": "2025-09-19-the-assassination-of-charlie-kirk",
+  "title": "The Assassination of Charlie Kirk",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-24T15:01:05Z",
+  "youtube_url": null
+}
