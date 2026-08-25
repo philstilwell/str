@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-25T15:05:16Z",
+  "description_html": "Greg answers questions about whether it’s okay to quote a single verse, why Jesus didn’t heal everyone, recommended study Bibles and commentaries, persevering with someone who isn’t responding well, and whether couples should agree on secondary and tertiary issues.",
+  "description_text": "Greg answers questions about whether it’s okay to quote a single verse, why Jesus didn’t heal everyone, recommended study Bibles and commentaries, persevering with someone who isn’t responding well, and whether couples should agree on secondary and tertiary issues.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/f7244862-662a-3a79-90d1-41f2d9fde938",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/73t3gacrpc4syjm2/091025.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/it-s-okay-to-quote-a-single-verseif-you-understand-the-context/",
+  "pub_date": "2025-09-10",
+  "rss_transcript_tags": [],
+  "slug": "2025-09-10-its-okay-to-quote-a-single-verse-if-you-understand-the-context",
+  "title": "It’s Okay to Quote a Single Verse...If You Understand the Context",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-25T15:05:16Z",
+  "youtube_url": null
+}

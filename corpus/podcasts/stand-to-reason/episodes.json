@@ -1825,6 +1825,50 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/bde0dadf-831a-3655-b8f1-41fc018c0817",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/ky2wyypuaphy8dep/091725.mp3",
+      "path": "episodes/2025-09-17-interview-john-stonestreet-truth-rising",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/interview-john-stonestreet-%e2%80%93-truth-rising/",
+      "pub_date": "2025-09-17",
+      "slug": "2025-09-17-interview-john-stonestreet-truth-rising",
+      "title": "Interview: John Stonestreet – Truth Rising",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/f7244862-662a-3a79-90d1-41f2d9fde938",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/73t3gacrpc4syjm2/091025.mp3",
+      "path": "episodes/2025-09-10-its-okay-to-quote-a-single-verse-if-you-understand-the-context",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/it-s-okay-to-quote-a-single-verseif-you-understand-the-context/",
+      "pub_date": "2025-09-10",
+      "slug": "2025-09-10-its-okay-to-quote-a-single-verse-if-you-understand-the-context",
+      "title": "It’s Okay to Quote a Single Verse...If You Understand the Context",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -1833,5 +1877,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-08-24T15:03:41Z"
+  "updated_at": "2026-08-25T15:07:33Z"
 }

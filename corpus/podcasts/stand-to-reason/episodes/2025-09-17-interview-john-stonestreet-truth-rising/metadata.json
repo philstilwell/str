@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-25T15:02:47Z",
+  "description_html": "Greg talks to John Stonestreet about the Truth Rising documentary, the civilizational moment we’re in, what we’re called to do in light of this, and stories of some who are currently standing for Christ and the truth, then he answers a question about how to communicate the gospel.",
+  "description_text": "Greg talks to John Stonestreet about the Truth Rising documentary, the civilizational moment we’re in, what we’re called to do in light of this, and stories of some who are currently standing for Christ and the truth, then he answers a question about how to communicate the gospel.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/bde0dadf-831a-3655-b8f1-41fc018c0817",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/ky2wyypuaphy8dep/091725.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/interview-john-stonestreet-%e2%80%93-truth-rising/",
+  "pub_date": "2025-09-17",
+  "rss_transcript_tags": [],
+  "slug": "2025-09-17-interview-john-stonestreet-truth-rising",
+  "title": "Interview: John Stonestreet – Truth Rising",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-25T15:02:47Z",
+  "youtube_url": null
+}
