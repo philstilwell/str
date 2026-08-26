@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-26T15:22:25Z",
+  "description_html": "Greg answers questions on how Christians interpreted Jeremiah 31:35–36 before the reestablishment of the state of Israel, evidence the world was ever unbroken, and the best tactic to engage a Jehovah’s Witness and build a relationship with him.",
+  "description_text": "Greg answers questions on how Christians interpreted Jeremiah 31:35–36 before the reestablishment of the state of Israel, evidence the world was ever unbroken, and the best tactic to engage a Jehovah’s Witness and build a relationship with him.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/1468edb1-2046-3703-ae70-517431313b64",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/pkdprwstm6gwwss4/082626.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/jeremiah-3135%e2%80%9336-and-the-state-of-israel/",
+  "pub_date": "2026-08-26",
+  "rss_transcript_tags": [],
+  "slug": "2026-08-26-jeremiah-31-35-36-and-the-state-of-israel",
+  "title": "Jeremiah 31:35–36 and the State of Israel",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-26T15:22:25Z",
+  "youtube_url": null
+}

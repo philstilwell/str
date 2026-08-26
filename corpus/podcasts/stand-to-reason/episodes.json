@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "strweekly.podbean.com/1468edb1-2046-3703-ae70-517431313b64",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/pkdprwstm6gwwss4/082626.mp3",
+      "path": "episodes/2026-08-26-jeremiah-31-35-36-and-the-state-of-israel",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/jeremiah-3135%e2%80%9336-and-the-state-of-israel/",
+      "pub_date": "2026-08-26",
+      "slug": "2026-08-26-jeremiah-31-35-36-and-the-state-of-israel",
+      "title": "Jeremiah 31:35–36 and the State of Israel",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "strweekly.podbean.com/b43a4b2c-2de9-3bc4-9861-78f56b713624",
       "mp3_url": "https://mcdn.podbean.com/mf/web/p3rwqxiqw56himbg/082126.mp3",
       "path": "episodes/2026-08-21-ai-will-never-be-a-person",
@@ -1869,6 +1891,28 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/2c8a6f96-c4ba-31ca-8369-4cf31c4364b7",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/q8vcvhuf5w6rfjeh/090525.mp3",
+      "path": "episodes/2025-09-05-mans-free-will-doesnt-determine-the-course-of-the-universe",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/man-s-free-will-doesn-t-determine-the-course-of-the-universe/",
+      "pub_date": "2025-09-05",
+      "slug": "2025-09-05-mans-free-will-doesnt-determine-the-course-of-the-universe",
+      "title": "Man’s Free Will Doesn’t Determine the Course of the Universe",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -1877,5 +1921,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-08-25T15:07:33Z"
+  "updated_at": "2026-08-26T15:27:02Z"
 }

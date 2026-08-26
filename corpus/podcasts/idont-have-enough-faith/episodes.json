@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "https://crossexamined.org/?p=103983",
+      "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek_Podcast_CIA_Hillary-Natasha-Alisa_8-25-2026.mp3",
+      "path": "episodes/2026-08-25-the-1-thing-that-will-prevent-you-from-being-deceived-feat-the-women-of",
+      "podcast": {
+        "home_url": "https://crossexamined.org/podcasts/",
+        "id": "idont-have-enough-faith",
+        "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+      },
+      "podcast_page_url": "https://crossexamined.org/the-1-thing-that-will-prevent-you-from-being-deceived-feat-the-women-of-apologetics/",
+      "pub_date": "2026-08-25",
+      "slug": "2026-08-25-the-1-thing-that-will-prevent-you-from-being-deceived-feat-the-women-of",
+      "title": "The #1 Thing That Will Prevent You From Being Deceived feat. the Women of Apologetics",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "https://crossexamined.org/?p=103968",
       "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast_Nathan-Natasha-Phx_8-21-26.mp3",
       "path": "episodes/2026-08-21-17-year-old-tech-prodigy-explains-what-every-christian-needs-to-know-ai",
@@ -535,5 +557,5 @@
     "id": "idont-have-enough-faith",
     "title": "I Don't Have Enough FAITH to Be an ATHEIST"
   },
-  "updated_at": "2026-08-22T14:44:04Z"
+  "updated_at": "2026-08-26T15:30:18Z"
 }
