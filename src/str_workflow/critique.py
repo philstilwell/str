@@ -1204,10 +1204,27 @@ def page_text_for_moral_nonrealism_scan(soup: BeautifulSoup) -> str:
     return normalized_content(scan_soup.get_text(" ", strip=True))
 
 
+def page_text_for_ellipsis_scan(soup: BeautifulSoup) -> str:
+    """Return page text with canonical episode-title occurrences removed.
+
+    Source titles are metadata rather than generated critique prose and may
+    legitimately contain three periods. The title is repeated in the document
+    title, article heading, and copy-ready AI prompt, so remove every exact
+    occurrence before applying the mechanical-ellipsis quality gate.
+    """
+    visible_text = normalized_content(soup.get_text(" ", strip=True))
+    heading = soup.select_one("h1")
+    if heading is None:
+        return visible_text
+    episode_title = normalized_content(heading.get_text(" ", strip=True))
+    return normalized_content(visible_text.replace(episode_title, "")) if episode_title else visible_text
+
+
 def validate_page(path: Path) -> list[str]:
     html_text = path.read_text(encoding="utf-8")
     soup = BeautifulSoup(html_text, "html.parser")
     visible_text = normalized_content(soup.get_text(" ", strip=True))
+    ellipsis_scan_text = page_text_for_ellipsis_scan(soup)
     proper_name_scan_text = page_text_for_proper_name_scan(soup)
     moral_nonrealism_scan_text = page_text_for_moral_nonrealism_scan(soup)
     errors: list[str] = []
@@ -1366,8 +1383,8 @@ def validate_page(path: Path) -> list[str]:
         errors.append(
             f'page contains reified moral language "{found}"; use moral non-realist ethical/normative phrasing'
         )
-    if "..." in visible_text:
-        errors.append("page contains a mechanical ellipsis artifact")
+    if "..." in ellipsis_scan_text:
+        errors.append("page contains a mechanical ellipsis artifact outside the canonical episode title")
     for phrase in boilerplate_hits(visible_text):
         errors.append(f"page contains boilerplate phrase: {phrase}")
     explanatory_items = page_explanatory_texts(soup)
