@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-26T15:52:10Z",
+  "description_html": "Greg responds to the challenge that it’s arbitrary for God to limit our opportunity to repent and believe to this lifetime, then he talks to callers about a contradiction in Genesis, the lack of spiritual growth in babies who are never born, and whether God or parents create souls.",
+  "description_text": "Greg responds to the challenge that it’s arbitrary for God to limit our opportunity to repent and believe to this lifetime, then he talks to callers about a contradiction in Genesis, the lack of spiritual growth in babies who are never born, and whether God or parents create souls.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/b89fa2a5-f42f-3944-9820-debd84f9dddf",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/56fw3uhrys4hjchn/090325.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/why-does-god-limit-our-opportunity-to-repent-and-believe-to-this-lifetime/",
+  "pub_date": "2025-09-03",
+  "rss_transcript_tags": [],
+  "slug": "2025-09-03-why-does-god-limit-our-opportunity-to-repent-and-believe-to-this",
+  "title": "Why Does God Limit Our Opportunity to Repent and Believe to This Lifetime?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-26T15:52:10Z",
+  "youtube_url": null
+}

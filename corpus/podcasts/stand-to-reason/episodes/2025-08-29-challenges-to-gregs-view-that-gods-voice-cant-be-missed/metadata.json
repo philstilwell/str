@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-26T15:54:41Z",
+  "description_html": "Greg responds to objections to his view that God’s voice can’t be missed, then he answers questions about thanking God for his goodness when something bad doesn’t happen, defending penal substitutionary atonement, Iran and the Ezekiel 38 prophecy, and the nature of identity.",
+  "description_text": "Greg responds to objections to his view that God’s voice can’t be missed, then he answers questions about thanking God for his goodness when something bad doesn’t happen, defending penal substitutionary atonement, Iran and the Ezekiel 38 prophecy, and the nature of identity.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/eaac0694-01b9-3144-a4f8-ef471cfef820",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/7dnnhvpytk4fzqjg/082925.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/challenges-to-greg-s-view-that-god-s-voice-can-t-be-missed/",
+  "pub_date": "2025-08-29",
+  "rss_transcript_tags": [],
+  "slug": "2025-08-29-challenges-to-gregs-view-that-gods-voice-cant-be-missed",
+  "title": "Challenges to Greg’s View That God’s Voice Can’t Be Missed",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-26T15:54:41Z",
+  "youtube_url": null
+}

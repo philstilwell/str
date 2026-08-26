@@ -1913,6 +1913,50 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/b89fa2a5-f42f-3944-9820-debd84f9dddf",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/56fw3uhrys4hjchn/090325.mp3",
+      "path": "episodes/2025-09-03-why-does-god-limit-our-opportunity-to-repent-and-believe-to-this",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/why-does-god-limit-our-opportunity-to-repent-and-believe-to-this-lifetime/",
+      "pub_date": "2025-09-03",
+      "slug": "2025-09-03-why-does-god-limit-our-opportunity-to-repent-and-believe-to-this",
+      "title": "Why Does God Limit Our Opportunity to Repent and Believe to This Lifetime?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/eaac0694-01b9-3144-a4f8-ef471cfef820",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/7dnnhvpytk4fzqjg/082925.mp3",
+      "path": "episodes/2025-08-29-challenges-to-gregs-view-that-gods-voice-cant-be-missed",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/challenges-to-greg-s-view-that-god-s-voice-can-t-be-missed/",
+      "pub_date": "2025-08-29",
+      "slug": "2025-08-29-challenges-to-gregs-view-that-gods-voice-cant-be-missed",
+      "title": "Challenges to Greg’s View That God’s Voice Can’t Be Missed",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -1921,5 +1965,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-08-26T15:27:02Z"
+  "updated_at": "2026-08-26T15:57:08Z"
 }
