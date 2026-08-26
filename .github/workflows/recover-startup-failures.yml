@@ -1,0 +1,35 @@
+name: Recover workflow startup failures
+
+on:
+  workflow_run:
+    workflows:
+      - Create missing transcript critiques
+      - pages build and deployment
+    types: [completed]
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: recover-startup-${{ github.event.workflow_run.id }}
+  cancel-in-progress: false
+
+jobs:
+  rerun:
+    if: >-
+      ${{
+        github.event.workflow_run.conclusion == 'startup_failure' &&
+        github.event.workflow_run.run_attempt < 3
+      }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Re-run workflow after transient GitHub startup failure
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ github.event.workflow_run.id }}
+        run: >-
+          gh api
+          --method POST
+          "repos/${GITHUB_REPOSITORY}/actions/runs/${RUN_ID}/rerun"
