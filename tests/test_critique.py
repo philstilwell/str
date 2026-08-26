@@ -458,6 +458,33 @@ def test_validate_page_rejects_stale_boilerplate_phrase(tmp_path):
     assert any("page contains boilerplate phrase" in error for error in errors)
 
 
+def test_validate_page_allows_ascii_ellipsis_in_canonical_episode_title(tmp_path):
+    spec = valid_spec()
+    title = "It’s Okay to Quote a Single Verse...If You Understand the Context"
+    spec["episode"]["title"] = title
+    spec["episode"]["page_title"] = title
+    spec["ai_prompt"]["episode_title"] = title
+    page = tmp_path / "index.html"
+    page.write_text(render_critique(spec), encoding="utf-8")
+
+    assert validate_page(page) == []
+
+
+def test_validate_page_rejects_ascii_ellipsis_outside_episode_title(tmp_path):
+    spec = valid_spec()
+    page = tmp_path / "index.html"
+    html = render_critique(spec).replace(
+        "The assessment can move, but only through claim-matched evidence.",
+        "The assessment can move...but only through claim-matched evidence.",
+        1,
+    )
+    page.write_text(html, encoding="utf-8")
+
+    errors = validate_page(page)
+
+    assert any("mechanical ellipsis artifact outside the canonical episode title" in error for error in errors)
+
+
 def test_validate_page_rejects_public_source_index_links(tmp_path):
     spec = valid_spec()
     page = tmp_path / "index.html"
