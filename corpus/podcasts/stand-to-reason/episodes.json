@@ -1957,6 +1957,50 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/c9d43bfe-d6fd-33ba-8ed9-31be9841769c",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/7aphbsjx9pbxv7yi/082725.mp3",
+      "path": "episodes/2025-08-27-we-have-a-relationship-with-god-on-his-terms-not-on-ours",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/we-have-a-relationship-with-god-on-his-terms-not-on-ours/",
+      "pub_date": "2025-08-27",
+      "slug": "2025-08-27-we-have-a-relationship-with-god-on-his-terms-not-on-ours",
+      "title": "We Have a Relationship with God on His Terms, Not on Ours",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/07b048e3-7ef2-35e5-9775-a2d6c2508f11",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/c3sw3wfagynmqe8e/082225.mp3",
+      "path": "episodes/2025-08-22-how-can-i-believe-in-god-or-anything-supernatural",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/how-can-i-believe-in-god-or-anything-supernatural/",
+      "pub_date": "2025-08-22",
+      "slug": "2025-08-22-how-can-i-believe-in-god-or-anything-supernatural",
+      "title": "How Can I Believe in God or Anything Supernatural?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -1965,5 +2009,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-08-26T15:57:08Z"
+  "updated_at": "2026-08-27T23:54:47Z"
 }

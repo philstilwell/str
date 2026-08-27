@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-27T23:50:19Z",
+  "description_html": "Greg explains that a relationship with God doesn’t look the same as one with a human being, then he talks to callers about an apologetics approach, why Jesus seems to downplay being called the Son of God, and why God doesn’t always answer prayers for someone’s salvation.",
+  "description_text": "Greg explains that a relationship with God doesn’t look the same as one with a human being, then he talks to callers about an apologetics approach, why Jesus seems to downplay being called the Son of God, and why God doesn’t always answer prayers for someone’s salvation.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/c9d43bfe-d6fd-33ba-8ed9-31be9841769c",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/7aphbsjx9pbxv7yi/082725.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/we-have-a-relationship-with-god-on-his-terms-not-on-ours/",
+  "pub_date": "2025-08-27",
+  "rss_transcript_tags": [],
+  "slug": "2025-08-27-we-have-a-relationship-with-god-on-his-terms-not-on-ours",
+  "title": "We Have a Relationship with God on His Terms, Not on Ours",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-27T23:50:19Z",
+  "youtube_url": null
+}
