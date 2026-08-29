@@ -20,6 +20,65 @@ from str_workflow.ingest import (
 from str_workflow.notifications import notice_from_metadata, transcript_became_ready
 
 
+def test_fetch_feed_retries_transient_connection_timeouts(monkeypatch):
+    class Response:
+        content = b'<rss version="2.0"><channel><title>Test</title></channel></rss>'
+
+        def raise_for_status(self):
+            return None
+
+    class Session:
+        calls = 0
+
+        def get(self, url, timeout):
+            assert url == "https://example.com/feed.xml"
+            assert timeout == 60
+            self.calls += 1
+            if self.calls < 3:
+                raise ingest.requests.ConnectTimeout("temporary timeout")
+            return Response()
+
+    sleeps = []
+    monkeypatch.setattr(ingest.time, "sleep", sleeps.append)
+    session = Session()
+
+    feed_xml, parsed = ingest.fetch_feed(session, "https://example.com/feed.xml")
+
+    assert feed_xml == Response.content
+    assert not parsed.bozo
+    assert session.calls == 3
+    assert sleeps == [5.0, 10.0]
+
+
+def test_fetch_feed_does_not_retry_permanent_http_errors(monkeypatch):
+    class Response:
+        content = b""
+
+        def raise_for_status(self):
+            response = ingest.requests.Response()
+            response.status_code = 404
+            raise ingest.requests.HTTPError("not found", response=response)
+
+    class Session:
+        calls = 0
+
+        def get(self, url, timeout):
+            self.calls += 1
+            return Response()
+
+    monkeypatch.setattr(
+        ingest.time,
+        "sleep",
+        lambda _delay: pytest.fail("permanent failures must not be retried"),
+    )
+    session = Session()
+
+    with pytest.raises(ingest.requests.HTTPError):
+        ingest.fetch_feed(session, "https://example.com/missing.xml")
+
+    assert session.calls == 1
+
+
 def test_transcript_tags_by_guid_reads_podcast_namespace():
     feed_xml = b"""<?xml version="1.0"?>
     <rss xmlns:podcast="https://podcastindex.org/namespace/1.0">
