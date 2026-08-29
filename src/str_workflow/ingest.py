@@ -7,6 +7,7 @@ import os
 import re
 import sys
 import tempfile
+import time
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -32,6 +33,9 @@ DEFAULT_ASR_PROMPT_TEMPLATE = (
     "apologetics terminology, punctuation, and readable paragraphs."
 )
 PENDING_STATUSES = {"pending_asr", "not_found", "asr_failed"}
+FEED_FETCH_MAX_ATTEMPTS = 3
+FEED_FETCH_RETRY_BACKOFF_SECONDS = 5.0
+RETRYABLE_FEED_HTTP_STATUSES = {408, 429, 500, 502, 503, 504}
 
 
 @dataclass(frozen=True)
@@ -136,9 +140,30 @@ def upsert_index_episode(index: dict[str, Any], episode: dict[str, Any]) -> None
     index["updated_at"] = utc_now_iso()
 
 
+def retryable_feed_error(error: requests.RequestException) -> bool:
+    response = getattr(error, "response", None)
+    if response is not None:
+        return response.status_code in RETRYABLE_FEED_HTTP_STATUSES
+    return isinstance(error, (requests.ConnectionError, requests.Timeout))
+
+
 def fetch_feed(session: requests.Session, feed_url: str) -> tuple[bytes, Any]:
-    response = session.get(feed_url, timeout=60)
-    response.raise_for_status()
+    for attempt in range(1, FEED_FETCH_MAX_ATTEMPTS + 1):
+        try:
+            response = session.get(feed_url, timeout=60)
+            response.raise_for_status()
+            break
+        except requests.RequestException as error:
+            if attempt == FEED_FETCH_MAX_ATTEMPTS or not retryable_feed_error(error):
+                raise
+            delay = FEED_FETCH_RETRY_BACKOFF_SECONDS * (2 ** (attempt - 1))
+            print(
+                f"Feed request failed ({error}); retrying "
+                f"attempt {attempt + 1}/{FEED_FETCH_MAX_ATTEMPTS} in {delay:.0f}s.",
+                flush=True,
+            )
+            time.sleep(delay)
+
     feed_bytes = response.content
     parsed = feedparser.parse(feed_bytes)
     if parsed.bozo:
