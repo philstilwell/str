@@ -1,0 +1,35 @@
+{
+  "audio_source": {
+    "feed_element": "encoded",
+    "player_url": "https://player.blubrry.com/id/155175786?cache=1787938319#mode-Light&border-000000&progress-000000",
+    "source": "embedded_player",
+    "source_url": "https://crossexamined.org/the-bible-a-book-of-stories-or-historical-accounts-with-dinesh-dsouza/",
+    "url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast_Dinesh_8-14-26.mp3"
+  },
+  "created_at": "2026-08-29T17:48:10Z",
+  "description_html": "<p>For centuries, skeptics have argued that parts of the Bible are legend, exaggeration, or history written long after the fact. But what happens when archaeologists start finding the names, places, civilizations, and events recorded in Scripture&#8211;do those same skeptics ever change their minds? This week, author, flimmaker, and scholar, Dinesh D&#8217;Souza, joins Frank to reveal [&#8230;]</p>\n<p>The post <a href=\"https://crossexamined.org/the-bible-a-book-of-stories-or-historical-accounts-with-dinesh-dsouza/\">The Bible: A Book of &#8220;Stories&#8221; or Historical Accounts? with Dinesh D&#8217;Souza</a> appeared first on <a href=\"https://crossexamined.org\">CrossExamined</a>.</p>",
+  "description_text": "For centuries, skeptics have argued that parts of the Bible are legend, exaggeration, or history written long after the fact. But what happens when archaeologists start finding the names, places, civilizations, and events recorded in Scripture–do those same skeptics ever change their minds? This week, author, flimmaker, and scholar, Dinesh D’Souza, joins Frank to reveal […] The post The Bible: A Book of “Stories” or Historical Accounts? with Dinesh D’Souza appeared first on CrossExamined .",
+  "duration": null,
+  "feed_url": "https://crossexamined.org/category/podcast/feed/",
+  "guid": "https://crossexamined.org/?p=103990",
+  "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast_Dinesh_8-14-26.mp3",
+  "podcast": {
+    "home_url": "https://crossexamined.org/podcasts/",
+    "id": "idont-have-enough-faith",
+    "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+  },
+  "podcast_page_url": "https://crossexamined.org/the-bible-a-book-of-stories-or-historical-accounts-with-dinesh-dsouza/",
+  "pub_date": "2026-08-28",
+  "rss_transcript_tags": [],
+  "slug": "2026-08-28-the-bible-a-book-of-stories-or-historical-accounts-with-dinesh-dsouza",
+  "title": "The Bible: A Book of “Stories” or Historical Accounts? with Dinesh D’Souza",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-29T17:48:10Z",
+  "youtube_url": null
+}

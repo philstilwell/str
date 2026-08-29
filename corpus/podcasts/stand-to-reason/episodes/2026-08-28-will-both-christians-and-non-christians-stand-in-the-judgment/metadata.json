@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-29T17:43:22Z",
+  "description_html": "Greg answers questions about whether Christian schools ought to accept children with non-Christian parents, whether both Christians and non-Christians will stand in the judgment, and how to be as charitable as possible without weakening your position tactically.",
+  "description_text": "Greg answers questions about whether Christian schools ought to accept children with non-Christian parents, whether both Christians and non-Christians will stand in the judgment, and how to be as charitable as possible without weakening your position tactically.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/e0b15b9f-72c0-3fe2-a0b4-18afb17e936f",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/2kk92xnfbbj35c6c/082826.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/will-both-christians-and-non-christians-stand-in-the-judgment/",
+  "pub_date": "2026-08-28",
+  "rss_transcript_tags": [],
+  "slug": "2026-08-28-will-both-christians-and-non-christians-stand-in-the-judgment",
+  "title": "Will Both Christians and Non-Christians Stand in the Judgment?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-29T17:43:22Z",
+  "youtube_url": null
+}

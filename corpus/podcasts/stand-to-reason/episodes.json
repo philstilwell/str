@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "strweekly.podbean.com/e0b15b9f-72c0-3fe2-a0b4-18afb17e936f",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/2kk92xnfbbj35c6c/082826.mp3",
+      "path": "episodes/2026-08-28-will-both-christians-and-non-christians-stand-in-the-judgment",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/will-both-christians-and-non-christians-stand-in-the-judgment/",
+      "pub_date": "2026-08-28",
+      "slug": "2026-08-28-will-both-christians-and-non-christians-stand-in-the-judgment",
+      "title": "Will Both Christians and Non-Christians Stand in the Judgment?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "strweekly.podbean.com/1468edb1-2046-3703-ae70-517431313b64",
       "mp3_url": "https://mcdn.podbean.com/mf/web/pkdprwstm6gwwss4/082626.mp3",
       "path": "episodes/2026-08-26-jeremiah-31-35-36-and-the-state-of-israel",
@@ -2001,6 +2023,28 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/c44100b8-9e0b-316d-aaa1-bd953235564e",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/mfbjte8hmsfhq3qe/082025.mp3",
+      "path": "episodes/2025-08-20-alan-shlemon-on-the-topics-of-jesus-deity-in-the-gospels-and",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/alan-shlemon-on-the-topics-of-jesus-deity-in-the-gospels-and-transgenderism/",
+      "pub_date": "2025-08-20",
+      "slug": "2025-08-20-alan-shlemon-on-the-topics-of-jesus-deity-in-the-gospels-and",
+      "title": "Alan Shlemon on the Topics of Jesus’ Deity in the Gospels and Transgenderism",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -2009,5 +2053,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-08-27T23:54:47Z"
+  "updated_at": "2026-08-29T17:48:08Z"
 }
