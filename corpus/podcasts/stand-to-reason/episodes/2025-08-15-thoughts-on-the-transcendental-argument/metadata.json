@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-30T18:03:38Z",
+  "description_html": "Greg answers questions from callers on the transcendental argument, the scapegoat theory of the atonement that’s popular in progressive circles, and an objection an atheist would make to Greg’s “blind beach-writer” argument for intelligent design.",
+  "description_text": "Greg answers questions from callers on the transcendental argument, the scapegoat theory of the atonement that’s popular in progressive circles, and an objection an atheist would make to Greg’s “blind beach-writer” argument for intelligent design.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/d63deabe-9f95-360a-bc1b-070f62f6837a",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/vjejmgtqcu7r5r45/081525.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/thoughts-on-the-transcendental-argument/",
+  "pub_date": "2025-08-15",
+  "rss_transcript_tags": [],
+  "slug": "2025-08-15-thoughts-on-the-transcendental-argument",
+  "title": "Thoughts on the Transcendental Argument",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-30T18:03:38Z",
+  "youtube_url": null
+}

@@ -2045,6 +2045,50 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/d63deabe-9f95-360a-bc1b-070f62f6837a",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/vjejmgtqcu7r5r45/081525.mp3",
+      "path": "episodes/2025-08-15-thoughts-on-the-transcendental-argument",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/thoughts-on-the-transcendental-argument/",
+      "pub_date": "2025-08-15",
+      "slug": "2025-08-15-thoughts-on-the-transcendental-argument",
+      "title": "Thoughts on the Transcendental Argument",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/c4a99b0a-85e4-3b2e-a356-fd5ff53864a5",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/wu8hvhw9nv7nzm64/081325.mp3",
+      "path": "episodes/2025-08-13-objections-to-gregs-view-on-hearing-the-voice-of-god",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/objections-to-greg-s-view-on-hearing-the-voice-of-god/",
+      "pub_date": "2025-08-13",
+      "slug": "2025-08-13-objections-to-gregs-view-on-hearing-the-voice-of-god",
+      "title": "Objections to Greg’s View on Hearing the Voice of God",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -2053,5 +2097,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-08-29T17:48:08Z"
+  "updated_at": "2026-08-30T18:08:19Z"
 }

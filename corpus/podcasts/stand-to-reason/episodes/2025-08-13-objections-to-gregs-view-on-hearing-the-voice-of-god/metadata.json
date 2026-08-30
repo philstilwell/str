@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-30T18:05:56Z",
+  "description_html": "Greg responds to objections to his view on hearing the voice of God, then he talks to a caller about Columbo #3 questions he can use in conversations with a family member about whether or not it’s wrong to be angry at politicians.",
+  "description_text": "Greg responds to objections to his view on hearing the voice of God, then he talks to a caller about Columbo #3 questions he can use in conversations with a family member about whether or not it’s wrong to be angry at politicians.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/c4a99b0a-85e4-3b2e-a356-fd5ff53864a5",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/wu8hvhw9nv7nzm64/081325.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/objections-to-greg-s-view-on-hearing-the-voice-of-god/",
+  "pub_date": "2025-08-13",
+  "rss_transcript_tags": [],
+  "slug": "2025-08-13-objections-to-gregs-view-on-hearing-the-voice-of-god",
+  "title": "Objections to Greg’s View on Hearing the Voice of God",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-30T18:05:56Z",
+  "youtube_url": null
+}
