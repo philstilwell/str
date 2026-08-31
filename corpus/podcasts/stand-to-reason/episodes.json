@@ -2089,6 +2089,50 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/f9a0c4ea-72e4-3c98-adfe-f126d44fb00e",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/ivnkqch9xminnsrm/080825.mp3",
+      "path": "episodes/2025-08-08-what-miracles-have-you-witnessed",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/what-miracles-have-you-witnessed/",
+      "pub_date": "2025-08-08",
+      "slug": "2025-08-08-what-miracles-have-you-witnessed",
+      "title": "What Miracles Have You Witnessed?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/a19e5199-d422-318f-8550-a8a5df7281f8",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/bwxpbnccv988zdb9/080625.mp3",
+      "path": "episodes/2025-08-06-how-ai-and-social-media-are-making-us-dumber",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/how-ai-and-social-media-are-making-us-dumber/",
+      "pub_date": "2025-08-06",
+      "slug": "2025-08-06-how-ai-and-social-media-are-making-us-dumber",
+      "title": "How AI and Social Media are Making Us Dumber",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -2097,5 +2141,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-08-30T18:08:19Z"
+  "updated_at": "2026-08-31T20:07:01Z"
 }

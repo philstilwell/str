@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-31T20:01:46Z",
+  "description_html": "Greg answers questions from callers about what makes being gay or lesbian harmful, whether apologists are unwilling to give straight answers to certain questions for tactical reasons, and miracles Greg has witnessed.",
+  "description_text": "Greg answers questions from callers about what makes being gay or lesbian harmful, whether apologists are unwilling to give straight answers to certain questions for tactical reasons, and miracles Greg has witnessed.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/f9a0c4ea-72e4-3c98-adfe-f126d44fb00e",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/ivnkqch9xminnsrm/080825.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/what-miracles-have-you-witnessed/",
+  "pub_date": "2025-08-08",
+  "rss_transcript_tags": [],
+  "slug": "2025-08-08-what-miracles-have-you-witnessed",
+  "title": "What Miracles Have You Witnessed?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-31T20:01:46Z",
+  "youtube_url": null
+}

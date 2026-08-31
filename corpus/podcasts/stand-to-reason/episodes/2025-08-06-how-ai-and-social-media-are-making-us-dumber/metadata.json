@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-08-31T20:04:24Z",
+  "description_html": "Tim Barnett joins Greg to talk about the need to learn how to be good thinkers, the danger of ending up in an echo chamber, how AI and social media are making us dumber, and more.",
+  "description_text": "Tim Barnett joins Greg to talk about the need to learn how to be good thinkers, the danger of ending up in an echo chamber, how AI and social media are making us dumber, and more.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/a19e5199-d422-318f-8550-a8a5df7281f8",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/bwxpbnccv988zdb9/080625.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/how-ai-and-social-media-are-making-us-dumber/",
+  "pub_date": "2025-08-06",
+  "rss_transcript_tags": [],
+  "slug": "2025-08-06-how-ai-and-social-media-are-making-us-dumber",
+  "title": "How AI and Social Media are Making Us Dumber",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-08-31T20:04:24Z",
+  "youtube_url": null
+}
