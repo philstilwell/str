@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-09-01T17:51:14Z",
+  "description_html": "Greg answers questions about whether demons still have a chance to be saved, whether evolution can give us a belief in morality, how to define Christian suffering, and whether justification is a one-time thing or it happens in stages.",
+  "description_text": "Greg answers questions about whether demons still have a chance to be saved, whether evolution can give us a belief in morality, how to define Christian suffering, and whether justification is a one-time thing or it happens in stages.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/92ec5f3e-a1a7-327b-a7d7-eba518a0f591",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/4knqa7cszthptcmn/073025.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/do-demons-still-have-a-chance-to-be-saved/",
+  "pub_date": "2025-07-30",
+  "rss_transcript_tags": [],
+  "slug": "2025-07-30-do-demons-still-have-a-chance-to-be-saved",
+  "title": "Do Demons Still Have a Chance to Be Saved?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-09-01T17:51:14Z",
+  "youtube_url": null
+}

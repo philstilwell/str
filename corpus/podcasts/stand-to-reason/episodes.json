@@ -2133,6 +2133,50 @@
         "status": "generated_asr"
       },
       "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/da23c112-ab53-368e-8ed1-a31b02b12cb2",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/mr4nv2sc8h3zxrhe/080125.mp3",
+      "path": "episodes/2025-08-01-is-it-normal-for-a-believer-to-struggle-with-doubt",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/is-it-normal-for-a-believer-to-struggle-with-doubt/",
+      "pub_date": "2025-08-01",
+      "slug": "2025-08-01-is-it-normal-for-a-believer-to-struggle-with-doubt",
+      "title": "Is It Normal for a Believer to Struggle with Doubt?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
+      "guid": "strweekly.podbean.com/92ec5f3e-a1a7-327b-a7d7-eba518a0f591",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/4knqa7cszthptcmn/073025.mp3",
+      "path": "episodes/2025-07-30-do-demons-still-have-a-chance-to-be-saved",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/do-demons-still-have-a-chance-to-be-saved/",
+      "pub_date": "2025-07-30",
+      "slug": "2025-07-30-do-demons-still-have-a-chance-to-be-saved",
+      "title": "Do Demons Still Have a Chance to Be Saved?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
     }
   ],
   "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
@@ -2141,5 +2185,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-08-31T20:07:01Z"
+  "updated_at": "2026-09-01T17:53:36Z"
 }

@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-09-01T17:48:44Z",
+  "description_html": "Greg answers questions about whether it’s normal for a believer to struggle with doubt, resolving alleged contradictions in the Gospels, why Greg thinks Paul isn’t the author of Hebrews, people’s old ages in Genesis, and reasons to think all sentient beings have a soul.",
+  "description_text": "Greg answers questions about whether it’s normal for a believer to struggle with doubt, resolving alleged contradictions in the Gospels, why Greg thinks Paul isn’t the author of Hebrews, people’s old ages in Genesis, and reasons to think all sentient beings have a soul.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/da23c112-ab53-368e-8ed1-a31b02b12cb2",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/mr4nv2sc8h3zxrhe/080125.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/is-it-normal-for-a-believer-to-struggle-with-doubt/",
+  "pub_date": "2025-08-01",
+  "rss_transcript_tags": [],
+  "slug": "2025-08-01-is-it-normal-for-a-believer-to-struggle-with-doubt",
+  "title": "Is It Normal for a Believer to Struggle with Doubt?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-09-01T17:48:44Z",
+  "youtube_url": null
+}
