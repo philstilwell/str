@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-09-02T17:53:46Z",
+  "description_html": "Greg reflects on the phenomenon of topics coming up that he just read about in the Bible, then he answers questions about the New Testament quoting variants in the Septuagint rather than what was originally inspired, whether Adam had no choice but to sin, and women in ministry.",
+  "description_text": "Greg reflects on the phenomenon of topics coming up that he just read about in the Bible, then he answers questions about the New Testament quoting variants in the Septuagint rather than what was originally inspired, whether Adam had no choice but to sin, and women in ministry.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/e2c52a9c-b75e-3e9f-8e96-3ca37ab3deb5",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/zcghhmvb38wv97p4/090226.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/god-will-use-what-you-read-in-the-bible/",
+  "pub_date": "2026-09-02",
+  "rss_transcript_tags": [],
+  "slug": "2026-09-02-god-will-use-what-you-read-in-the-bible",
+  "title": "God Will Use What You Read in the Bible",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-09-02T17:53:46Z",
+  "youtube_url": null
+}

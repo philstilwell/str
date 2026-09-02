@@ -1,0 +1,35 @@
+{
+  "audio_source": {
+    "feed_element": "encoded",
+    "player_url": "https://player.blubrry.com/id/155234416?cache=1788289577#mode-Light&border-000000&progress-000000",
+    "source": "embedded_player",
+    "source_url": "https://crossexamined.org/what-america-forgot-about-george-washington-with-eric-metaxas/",
+    "url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek_Podcast_Metaxas_9-1-2026.mp3"
+  },
+  "created_at": "2026-09-02T17:56:32Z",
+  "description_html": "<p>George Washington is one of the most recognizable names in American history. But before the presidency, the monuments, and the dollar bill, he was a military leader carrying the weight of a revolution that could easily have failed. This week, Eric Metaxas joins Frank to discuss his new book, &#8216;Revolution: The Birth of the Greatest [&#8230;]</p>\n<p>The post <a href=\"https://crossexamined.org/what-america-forgot-about-george-washington-with-eric-metaxas/\">What America Forgot About George Washington with Eric Metaxas</a> appeared first on <a href=\"https://crossexamined.org\">CrossExamined</a>.</p>",
+  "description_text": "George Washington is one of the most recognizable names in American history. But before the presidency, the monuments, and the dollar bill, he was a military leader carrying the weight of a revolution that could easily have failed. This week, Eric Metaxas joins Frank to discuss his new book, ‘Revolution: The Birth of the Greatest […] The post What America Forgot About George Washington with Eric Metaxas appeared first on CrossExamined .",
+  "duration": null,
+  "feed_url": "https://crossexamined.org/category/podcast/feed/",
+  "guid": "https://crossexamined.org/?p=104013",
+  "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek_Podcast_Metaxas_9-1-2026.mp3",
+  "podcast": {
+    "home_url": "https://crossexamined.org/podcasts/",
+    "id": "idont-have-enough-faith",
+    "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+  },
+  "podcast_page_url": "https://crossexamined.org/what-america-forgot-about-george-washington-with-eric-metaxas/",
+  "pub_date": "2026-09-01",
+  "rss_transcript_tags": [],
+  "slug": "2026-09-01-what-america-forgot-about-george-washington-with-eric-metaxas",
+  "title": "What America Forgot About George Washington with Eric Metaxas",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-09-02T17:56:32Z",
+  "youtube_url": null
+}

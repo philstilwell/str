@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "strweekly.podbean.com/e2c52a9c-b75e-3e9f-8e96-3ca37ab3deb5",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/zcghhmvb38wv97p4/090226.mp3",
+      "path": "episodes/2026-09-02-god-will-use-what-you-read-in-the-bible",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/god-will-use-what-you-read-in-the-bible/",
+      "pub_date": "2026-09-02",
+      "slug": "2026-09-02-god-will-use-what-you-read-in-the-bible",
+      "title": "God Will Use What You Read in the Bible",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "strweekly.podbean.com/e0b15b9f-72c0-3fe2-a0b4-18afb17e936f",
       "mp3_url": "https://mcdn.podbean.com/mf/web/2kk92xnfbbj35c6c/082826.mp3",
       "path": "episodes/2026-08-28-will-both-christians-and-non-christians-stand-in-the-judgment",
@@ -2185,5 +2207,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-09-01T17:53:36Z"
+  "updated_at": "2026-09-02T17:56:31Z"
 }
