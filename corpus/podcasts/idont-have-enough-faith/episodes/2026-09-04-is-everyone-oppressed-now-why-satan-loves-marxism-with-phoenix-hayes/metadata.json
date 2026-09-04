@@ -1,0 +1,35 @@
+{
+  "audio_source": {
+    "feed_element": "encoded",
+    "player_url": "https://player.blubrry.com/id/155282280?cache=1788541782#mode-Light&border-000000&progress-000000",
+    "source": "embedded_player",
+    "source_url": "https://crossexamined.org/is-everyone-oppressed-now-why-satan-loves-marxism-with-phoenix-hayes/",
+    "url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast_Phoenix_9-4-26.mp3"
+  },
+  "created_at": "2026-09-04T17:35:27Z",
+  "description_html": "<p>We’re told men can have babies, math is racist, abortion is healthcare, castrating children is also healthcare, and disagreement somehow qualifies as hate speech. How did we get here, and what do these seemingly unrelated ideas all have in common? Phoenix Hayes, co-author of &#8216;The War on Reality&#8216;, joins Frank to unpack one of their [&#8230;]</p>\n<p>The post <a href=\"https://crossexamined.org/is-everyone-oppressed-now-why-satan-loves-marxism-with-phoenix-hayes/\">Is Everyone Oppressed Now? Why Satan Loves Marxism with Phoenix Hayes</a> appeared first on <a href=\"https://crossexamined.org\">CrossExamined</a>.</p>",
+  "description_text": "We’re told men can have babies, math is racist, abortion is healthcare, castrating children is also healthcare, and disagreement somehow qualifies as hate speech. How did we get here, and what do these seemingly unrelated ideas all have in common? Phoenix Hayes, co-author of ‘The War on Reality‘, joins Frank to unpack one of their […] The post Is Everyone Oppressed Now? Why Satan Loves Marxism with Phoenix Hayes appeared first on CrossExamined .",
+  "duration": null,
+  "feed_url": "https://crossexamined.org/category/podcast/feed/",
+  "guid": "https://crossexamined.org/?p=104021",
+  "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast_Phoenix_9-4-26.mp3",
+  "podcast": {
+    "home_url": "https://crossexamined.org/podcasts/",
+    "id": "idont-have-enough-faith",
+    "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+  },
+  "podcast_page_url": "https://crossexamined.org/is-everyone-oppressed-now-why-satan-loves-marxism-with-phoenix-hayes/",
+  "pub_date": "2026-09-04",
+  "rss_transcript_tags": [],
+  "slug": "2026-09-04-is-everyone-oppressed-now-why-satan-loves-marxism-with-phoenix-hayes",
+  "title": "Is Everyone Oppressed Now? Why Satan Loves Marxism with Phoenix Hayes",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-09-04T17:35:27Z",
+  "youtube_url": null
+}
