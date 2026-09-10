@@ -1,0 +1,35 @@
+{
+  "audio_source": {
+    "feed_element": "encoded",
+    "player_url": "https://player.blubrry.com/id/155325365?cache=1788890161#mode-Light&border-000000&progress-000000",
+    "source": "embedded_player",
+    "source_url": "https://crossexamined.org/can-we-declare-reality-manifestation-affirmation-christian-occultism-with-phoenix-hayes/",
+    "url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek_Podcast-Phoenix_9-8-2026.mp3"
+  },
+  "created_at": "2026-09-10T17:43:58Z",
+  "description_html": "<p>Today is the day! &#8216;The War on Reality&#8216; has officially been released, and Frank and Phoenix are celebrating by turning the spotlight on a question that might ruffle a few feathers: Can Christians fall into the same trap of trying to bend reality to fit what they want to believe? From health, wealth, and prosperity [&#8230;]</p>\n<p>The post <a href=\"https://crossexamined.org/can-we-declare-reality-manifestation-affirmation-christian-occultism-with-phoenix-hayes/\">Can We Declare Reality? Manifestation, Affirmation, &#038; Christian Occultism with Phoenix Hayes</a> appeared first on <a href=\"https://crossexamined.org\">CrossExamined</a>.</p>",
+  "description_text": "Today is the day! ‘The War on Reality‘ has officially been released, and Frank and Phoenix are celebrating by turning the spotlight on a question that might ruffle a few feathers: Can Christians fall into the same trap of trying to bend reality to fit what they want to believe? From health, wealth, and prosperity […] The post Can We Declare Reality? Manifestation, Affirmation, & Christian Occultism with Phoenix Hayes appeared first on CrossExamined .",
+  "duration": null,
+  "feed_url": "https://crossexamined.org/category/podcast/feed/",
+  "guid": "https://crossexamined.org/?p=104025",
+  "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek_Podcast-Phoenix_9-8-2026.mp3",
+  "podcast": {
+    "home_url": "https://crossexamined.org/podcasts/",
+    "id": "idont-have-enough-faith",
+    "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+  },
+  "podcast_page_url": "https://crossexamined.org/can-we-declare-reality-manifestation-affirmation-christian-occultism-with-phoenix-hayes/",
+  "pub_date": "2026-09-08",
+  "rss_transcript_tags": [],
+  "slug": "2026-09-08-can-we-declare-reality-manifestation-affirmation-christian-occultism",
+  "title": "Can We Declare Reality? Manifestation, Affirmation, & Christian Occultism with Phoenix Hayes",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-09-10T17:43:58Z",
+  "youtube_url": null
+}

@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-09-10T17:41:39Z",
+  "description_html": "Greg responds to the idea that science contradicts the Bible, then he answers a question about how we can be sure the Protestant view of communion is correct as opposed to the Catholic view.",
+  "description_text": "Greg responds to the idea that science contradicts the Bible, then he answers a question about how we can be sure the Protestant view of communion is correct as opposed to the Catholic view.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/03bf85fc-91e9-37d5-b926-4f4d504e10ef",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/7sccex4bthvb27zb/090926.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/does-science-contradict-the-bible/",
+  "pub_date": "2026-09-09",
+  "rss_transcript_tags": [],
+  "slug": "2026-09-09-does-science-contradict-the-bible",
+  "title": "Does Science Contradict the Bible?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-09-10T17:41:39Z",
+  "youtube_url": null
+}
