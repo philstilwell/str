@@ -1,0 +1,35 @@
+{
+  "audio_source": {
+    "feed_element": "encoded",
+    "player_url": "https://player.blubrry.com/id/155362295?cache=1789146492#mode-Light&border-000000&progress-000000",
+    "source": "embedded_player",
+    "source_url": "https://crossexamined.org/my-story-a-spiritual-intellectual-journey-with-john-lennox/",
+    "url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast_Lennox_9-11-26.mp3"
+  },
+  "created_at": "2026-09-11T17:44:30Z",
+  "description_html": "<p>From his humble beginnings in Northern Ireland to debating the world&#8217;s most prominent atheists on the global stage, Dr. John C. Lennox has spent a lifetime (more than sixty years!) showing how faith, science, and reason can stand together. In this exclusive interview recorded at St. Ebbe’s Church in Oxford, England, Frank and John discuss [&#8230;]</p>\n<p>The post <a href=\"https://crossexamined.org/my-story-a-spiritual-intellectual-journey-with-john-lennox/\">MY STORY: A Spiritual &#038; Intellectual Journey with John Lennox</a> appeared first on <a href=\"https://crossexamined.org\">CrossExamined</a>.</p>",
+  "description_text": "From his humble beginnings in Northern Ireland to debating the world’s most prominent atheists on the global stage, Dr. John C. Lennox has spent a lifetime (more than sixty years!) showing how faith, science, and reason can stand together. In this exclusive interview recorded at St. Ebbe’s Church in Oxford, England, Frank and John discuss […] The post MY STORY: A Spiritual & Intellectual Journey with John Lennox appeared first on CrossExamined .",
+  "duration": null,
+  "feed_url": "https://crossexamined.org/category/podcast/feed/",
+  "guid": "https://crossexamined.org/?p=104041",
+  "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast_Lennox_9-11-26.mp3",
+  "podcast": {
+    "home_url": "https://crossexamined.org/podcasts/",
+    "id": "idont-have-enough-faith",
+    "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+  },
+  "podcast_page_url": "https://crossexamined.org/my-story-a-spiritual-intellectual-journey-with-john-lennox/",
+  "pub_date": "2026-09-11",
+  "rss_transcript_tags": [],
+  "slug": "2026-09-11-my-story-a-spiritual-intellectual-journey-with-john-lennox",
+  "title": "MY STORY: A Spiritual & Intellectual Journey with John Lennox",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-09-11T17:44:30Z",
+  "youtube_url": null
+}
