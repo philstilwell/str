@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-09-16T18:10:55Z",
+  "description_html": "Greg talks to Frank Turek and Phoenix Hayes, authors of The War on Reality: Recovering Truth in a World That Celebrates Lies, about foundational ideas behind the controversies in our culture, human nature, Marxism, Christian nationalism, social justice, spiritual warfare, and more.",
+  "description_text": "Greg talks to Frank Turek and Phoenix Hayes, authors of The War on Reality: Recovering Truth in a World That Celebrates Lies, about foundational ideas behind the controversies in our culture, human nature, Marxism, Christian nationalism, social justice, spiritual warfare, and more.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/54ce6f50-c321-3506-a283-4fb53c589ad7",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/g674qcujk8rj7peb/091626.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/interview-frank-turek-and-phoenix-hayes-%e2%80%93-the-war-on-reality/",
+  "pub_date": "2026-09-16",
+  "rss_transcript_tags": [],
+  "slug": "2026-09-16-interview-frank-turek-and-phoenix-hayes-the-war-on-reality",
+  "title": "Interview: Frank Turek and Phoenix Hayes – The War on Reality",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-09-16T18:10:55Z",
+  "youtube_url": null
+}

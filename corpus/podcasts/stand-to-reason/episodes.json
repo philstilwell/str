@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "strweekly.podbean.com/54ce6f50-c321-3506-a283-4fb53c589ad7",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/g674qcujk8rj7peb/091626.mp3",
+      "path": "episodes/2026-09-16-interview-frank-turek-and-phoenix-hayes-the-war-on-reality",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/interview-frank-turek-and-phoenix-hayes-%e2%80%93-the-war-on-reality/",
+      "pub_date": "2026-09-16",
+      "slug": "2026-09-16-interview-frank-turek-and-phoenix-hayes-the-war-on-reality",
+      "title": "Interview: Frank Turek and Phoenix Hayes – The War on Reality",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "strweekly.podbean.com/03bf85fc-91e9-37d5-b926-4f4d504e10ef",
       "mp3_url": "https://mcdn.podbean.com/mf/web/7sccex4bthvb27zb/090926.mp3",
       "path": "episodes/2026-09-09-does-science-contradict-the-bible",
@@ -2229,5 +2251,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-09-10T17:43:54Z"
+  "updated_at": "2026-09-16T18:13:20Z"
 }
