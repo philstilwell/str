@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-09-18T17:40:15Z",
+  "description_html": "Greg reads an evangelism story from a listener about praying when you use apologetics, then he answers questions about the rapture, whether Paul’s words that we should desire to prophesy contradict Greg’s view on hearing the voice of God, and the doctrine of entire sanctification.",
+  "description_text": "Greg reads an evangelism story from a listener about praying when you use apologetics, then he answers questions about the rapture, whether Paul’s words that we should desire to prophesy contradict Greg’s view on hearing the voice of God, and the doctrine of entire sanctification.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/8a20910d-abff-3554-9c1c-543930f47ed7",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/j4h8iiz86isdj4sq/091826.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/don-t-forget-to-pray-when-you-use-apologetics/",
+  "pub_date": "2026-09-18",
+  "rss_transcript_tags": [],
+  "slug": "2026-09-18-dont-forget-to-pray-when-you-use-apologetics",
+  "title": "Don’t Forget to Pray When You Use Apologetics",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-09-18T17:40:15Z",
+  "youtube_url": null
+}

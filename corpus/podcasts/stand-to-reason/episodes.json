@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "strweekly.podbean.com/8a20910d-abff-3554-9c1c-543930f47ed7",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/j4h8iiz86isdj4sq/091826.mp3",
+      "path": "episodes/2026-09-18-dont-forget-to-pray-when-you-use-apologetics",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/don-t-forget-to-pray-when-you-use-apologetics/",
+      "pub_date": "2026-09-18",
+      "slug": "2026-09-18-dont-forget-to-pray-when-you-use-apologetics",
+      "title": "Don’t Forget to Pray When You Use Apologetics",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "strweekly.podbean.com/54ce6f50-c321-3506-a283-4fb53c589ad7",
       "mp3_url": "https://mcdn.podbean.com/mf/web/g674qcujk8rj7peb/091626.mp3",
       "path": "episodes/2026-09-16-interview-frank-turek-and-phoenix-hayes-the-war-on-reality",
@@ -2251,5 +2273,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-09-16T18:13:20Z"
+  "updated_at": "2026-09-18T17:42:38Z"
 }
