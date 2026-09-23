@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "strweekly.podbean.com/9c3550a8-5dcc-354f-8a2a-6a46160f9b44",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/sv5hktfc55qtsu6g/092326.mp3",
+      "path": "episodes/2026-09-23-is-abortion-morally-acceptable-to-save-the-life-of-the-mother",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/is-abortion-morally-acceptable-to-save-the-life-of-the-mother/",
+      "pub_date": "2026-09-23",
+      "slug": "2026-09-23-is-abortion-morally-acceptable-to-save-the-life-of-the-mother",
+      "title": "Is Abortion Morally Acceptable to Save the Life of the Mother?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "strweekly.podbean.com/8a20910d-abff-3554-9c1c-543930f47ed7",
       "mp3_url": "https://mcdn.podbean.com/mf/web/j4h8iiz86isdj4sq/091826.mp3",
       "path": "episodes/2026-09-18-dont-forget-to-pray-when-you-use-apologetics",
@@ -2273,5 +2295,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-09-18T17:42:38Z"
+  "updated_at": "2026-09-23T18:25:52Z"
 }
