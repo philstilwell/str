@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-09-25T18:33:59Z",
+  "description_html": "Greg answers questions about whether it’s possible for a true Christian to lose his salvation, advice for starting an Outpost without having leadership experience, how to get more comfortable praying in public, and whether the Great Commission is for the whole church or just the apostles.",
+  "description_text": "Greg answers questions about whether it’s possible for a true Christian to lose his salvation, advice for starting an Outpost without having leadership experience, how to get more comfortable praying in public, and whether the Great Commission is for the whole church or just the apostles.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/f498e9b7-8b57-3462-94c6-10437f5bca07",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/iyx7anptnzxac8zq/092526.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/can-a-true-christian-lose-his-salvation/",
+  "pub_date": "2026-09-25",
+  "rss_transcript_tags": [],
+  "slug": "2026-09-25-can-a-true-christian-lose-his-salvation",
+  "title": "Can a True Christian Lose His Salvation?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-09-25T18:33:59Z",
+  "youtube_url": null
+}

@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "strweekly.podbean.com/f498e9b7-8b57-3462-94c6-10437f5bca07",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/iyx7anptnzxac8zq/092526.mp3",
+      "path": "episodes/2026-09-25-can-a-true-christian-lose-his-salvation",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/can-a-true-christian-lose-his-salvation/",
+      "pub_date": "2026-09-25",
+      "slug": "2026-09-25-can-a-true-christian-lose-his-salvation",
+      "title": "Can a True Christian Lose His Salvation?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "strweekly.podbean.com/9c3550a8-5dcc-354f-8a2a-6a46160f9b44",
       "mp3_url": "https://mcdn.podbean.com/mf/web/sv5hktfc55qtsu6g/092326.mp3",
       "path": "episodes/2026-09-23-is-abortion-morally-acceptable-to-save-the-life-of-the-mother",
@@ -2295,5 +2317,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-09-23T18:25:52Z"
+  "updated_at": "2026-09-25T18:36:22Z"
 }
