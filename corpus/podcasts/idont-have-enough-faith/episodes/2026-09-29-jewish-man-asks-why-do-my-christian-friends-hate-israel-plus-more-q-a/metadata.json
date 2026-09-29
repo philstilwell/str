@@ -1,0 +1,35 @@
+{
+  "audio_source": {
+    "feed_element": "encoded",
+    "player_url": "https://player.blubrry.com/id/155593422?cache=1790701214#mode-Light&border-000000&progress-000000",
+    "source": "embedded_player",
+    "source_url": "https://crossexamined.org/jewish-man-asks-why-do-my-christian-friends-hate-israel-plus-more-qa/",
+    "url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek_Podcast_Solo_9-29-2026.mp3"
+  },
+  "created_at": "2026-09-29T19:24:32Z",
+  "description_html": "<p>Does the coming of Jesus mean the Old Testament is null and void? Did He destroy Judaism along with all Jewish holidays? Should Israel be totally wiped off the map, as some &#8220;Christians&#8221; claim? In this midweek episode, Frank responds to a question from a Jewish man seeking clarity on comments made by his so-called [&#8230;]</p>\n<p>The post <a href=\"https://crossexamined.org/jewish-man-asks-why-do-my-christian-friends-hate-israel-plus-more-qa/\">Jewish Man Asks: Why Do My &#8220;Christian&#8221; Friends Hate Israel? PLUS More Q&#038;A</a> appeared first on <a href=\"https://crossexamined.org\">CrossExamined</a>.</p>",
+  "description_text": "Does the coming of Jesus mean the Old Testament is null and void? Did He destroy Judaism along with all Jewish holidays? Should Israel be totally wiped off the map, as some “Christians” claim? In this midweek episode, Frank responds to a question from a Jewish man seeking clarity on comments made by his so-called […] The post Jewish Man Asks: Why Do My “Christian” Friends Hate Israel? PLUS More Q&A appeared first on CrossExamined .",
+  "duration": null,
+  "feed_url": "https://crossexamined.org/category/podcast/feed/",
+  "guid": "https://crossexamined.org/?p=104122",
+  "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek_Podcast_Solo_9-29-2026.mp3",
+  "podcast": {
+    "home_url": "https://crossexamined.org/podcasts/",
+    "id": "idont-have-enough-faith",
+    "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+  },
+  "podcast_page_url": "https://crossexamined.org/jewish-man-asks-why-do-my-christian-friends-hate-israel-plus-more-qa/",
+  "pub_date": "2026-09-29",
+  "rss_transcript_tags": [],
+  "slug": "2026-09-29-jewish-man-asks-why-do-my-christian-friends-hate-israel-plus-more-q-a",
+  "title": "Jewish Man Asks: Why Do My “Christian” Friends Hate Israel? PLUS More Q&A",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-09-29T19:24:32Z",
+  "youtube_url": null
+}
