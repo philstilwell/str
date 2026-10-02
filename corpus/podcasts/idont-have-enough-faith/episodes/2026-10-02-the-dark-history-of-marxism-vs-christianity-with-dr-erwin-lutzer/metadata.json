@@ -1,0 +1,35 @@
+{
+  "audio_source": {
+    "feed_element": "encoded",
+    "player_url": "https://player.blubrry.com/id/155616478?cache=1790967028#mode-Light&border-000000&progress-000000",
+    "source": "embedded_player",
+    "source_url": "https://crossexamined.org/the-dark-history-of-marxism-vs-christianity-with-dr-erwin-lutzer/",
+    "url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast_Lutzer_10-2-26.mp3"
+  },
+  "created_at": "2026-10-02T19:16:39Z",
+  "description_html": "<p>Karl Marx and D.L. Moody were two men with radically different visions for humanity. Both witnessed poverty, injustice, and suffering, but their solutions couldn’t have been more different. So, what can these two 19th-century contemporaries teach us about the battle of worldviews we&#8217;re facing today? One of our favorite guests, Dr. Erwin Lutzer, joins Frank [&#8230;]</p>\n<p>The post <a href=\"https://crossexamined.org/the-dark-history-of-marxism-vs-christianity-with-dr-erwin-lutzer/\">The Dark History of Marxism vs. Christianity with Dr. Erwin Lutzer</a> appeared first on <a href=\"https://crossexamined.org\">CrossExamined</a>.</p>",
+  "description_text": "Karl Marx and D.L. Moody were two men with radically different visions for humanity. Both witnessed poverty, injustice, and suffering, but their solutions couldn’t have been more different. So, what can these two 19th-century contemporaries teach us about the battle of worldviews we’re facing today? One of our favorite guests, Dr. Erwin Lutzer, joins Frank […] The post The Dark History of Marxism vs. Christianity with Dr. Erwin Lutzer appeared first on CrossExamined .",
+  "duration": null,
+  "feed_url": "https://crossexamined.org/category/podcast/feed/",
+  "guid": "https://crossexamined.org/?p=104135",
+  "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast_Lutzer_10-2-26.mp3",
+  "podcast": {
+    "home_url": "https://crossexamined.org/podcasts/",
+    "id": "idont-have-enough-faith",
+    "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+  },
+  "podcast_page_url": "https://crossexamined.org/the-dark-history-of-marxism-vs-christianity-with-dr-erwin-lutzer/",
+  "pub_date": "2026-10-02",
+  "rss_transcript_tags": [],
+  "slug": "2026-10-02-the-dark-history-of-marxism-vs-christianity-with-dr-erwin-lutzer",
+  "title": "The Dark History of Marxism vs. Christianity with Dr. Erwin Lutzer",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-10-02T19:16:39Z",
+  "youtube_url": null
+}
