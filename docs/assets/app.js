@@ -1,3 +1,12 @@
+// Privacy-first Cloudflare Web Analytics; install once per page, including generated critiques.
+if (!document.querySelector('script[src*="cloudflareinsights.com/beacon.min.js"]')) {
+  const beacon = document.createElement("script");
+  beacon.defer = true;
+  beacon.src = "https://static.cloudflareinsights.com/beacon.min.js";
+  beacon.setAttribute("data-cf-beacon", JSON.stringify({ token: "9a122b86521d4cbb82616e208cbd57a0" }));
+  document.head.appendChild(beacon);
+}
+
 const copyButtons = document.querySelectorAll("[data-copy-target]");
 
 function selectElementText(element) {
