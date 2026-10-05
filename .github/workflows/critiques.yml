@@ -22,6 +22,7 @@ on:
 
 permissions:
   contents: write
+  pages: write
 
 concurrency:
   group: critique-generation
@@ -29,7 +30,7 @@ concurrency:
 
 jobs:
   critique:
-    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.ref == 'refs/heads/main' && (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success') }}
     runs-on: ubuntu-latest
     env:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -39,6 +40,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v7
+        with:
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v6
@@ -94,16 +97,76 @@ jobs:
       - name: Run full quality suite
         run: pytest
 
+      - name: Queue announcements for new assessments
+        id: queue
+        run: python -m str_workflow.x_posts enqueue
+
       - name: Commit public critique updates
+        id: commit
         run: |
-          if [[ -z "$(git status --porcelain docs)" ]]; then
+          if [[ -z "$(git status --porcelain docs outreach/x-posts.json)" ]]; then
             echo "No critique updates to commit."
             exit 0
           fi
 
+          if [[ -n "$(git status --porcelain docs)" ]]; then
+            echo "pages_changed=true" >> "$GITHUB_OUTPUT"
+          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs
+          git add docs outreach/x-posts.json
           git commit -m "Add transcript critiques"
           git pull --rebase origin "$GITHUB_REF_NAME"
           git push origin "HEAD:$GITHUB_REF_NAME"
+
+      - name: Request publication of the new assessment pages
+        if: steps.commit.outputs.pages_changed == 'true' || steps.queue.outputs.pending == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        # Commits made with GITHUB_TOKEN do not automatically start Pages builds.
+        run: gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"
+
+  announce:
+    needs: critique
+    # Also recover queued notices when generation fails, without repeating its paid calls.
+    if: ${{ always() && !cancelled() && github.ref == 'refs/heads/main' && (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Check out committed assessments and announcement history
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install posting dependencies
+        run: python -m pip install -e ".[x]"
+
+      - name: Configure announcement history author
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Publish queued announcements after checking the live pages
+        env:
+          X_POSTING_ENABLED: ${{ vars.X_POSTING_ENABLED }}
+          X_USERNAME: ${{ vars.X_USERNAME }}
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+        run: python -m str_workflow.x_posts publish
+
+      - name: Preserve announcement recovery history
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: x-announcement-history-${{ github.run_id }}-${{ github.run_attempt }}
+          path: outreach/x-posts.json
+          retention-days: 90

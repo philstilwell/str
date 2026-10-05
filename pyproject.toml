@@ -22,6 +22,9 @@ str-critique = "str_workflow.critique:main"
 str-outreach = "str_workflow.outreach:main"
 
 [project.optional-dependencies]
+x = [
+  "requests-oauthlib>=2.0.0",
+]
 dev = [
   "pytest>=8.2.0",
 ]

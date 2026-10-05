@@ -13,6 +13,10 @@ The log stores only public outreach information:
 
 Never put credentials, cookies, private messages, or other private data in an outreach record.
 
+Automatic X announcements use a separate durable queue in `x-posts.json`. See
+[X posting setup and recovery](X-POSTING.md). They do not require the manual-notice
+approval sequence below or Google Sheet credentials.
+
 ## Initialize a critique
 
 Run this after the critique page has been rendered. Metadata and Contents are extracted from the page, and both indexes are rebuilt automatically.
