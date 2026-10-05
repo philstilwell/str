@@ -23,6 +23,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from .outreach import atomic_write, extract_critique, utc_now, validate_slug
+from .x_tags import social_tags
 
 STATE_PATH = Path("outreach/x-posts.json")
 DOCS_DIR = Path("docs/episodes")
@@ -82,13 +83,21 @@ def shorten(text: str, limit: int) -> str:
 
 
 def compose_post(critique: dict[str, Any]) -> str:
-    title = shorten(critique["episode_title"], 110)
-    lead = f"New OnReason assessment: {title}"
+    mentions, hashtags = social_tags(critique)
+    tags = "\n".join(" ".join(items) for items in (mentions, hashtags) if items)
     footer = f"\n\nRead the assessment: {critique['url']}"
-    # X wraps the single canonical URL to 23 characters.
-    remaining = 280 - text_weight(lead + "\n\nTopics: \n\nRead the assessment: ") - 23
-    topics = shorten("; ".join(critique["compact_topics"][:2]), remaining)
-    return f"{lead}\n\nTopics: {topics}{footer}"
+
+    def body(title: str, topics: str) -> str:
+        return f"New OnReason assessment: {title}\n\nTopics: {topics}\n\n{tags}"
+
+    # Reserve whole verified tags and the canonical link before shortening prose.
+    remaining = 280 - text_weight(body("", "") + "\n\nRead the assessment: ") - 23
+    # Episode text cannot introduce unverified account mentions or extra hashtags.
+    plain_title = re.sub(r"[@#](?=\w)", "", critique["episode_title"])
+    plain_topics = re.sub(r"[@#](?=\w)", "", "; ".join(critique["compact_topics"][:2]))
+    title = shorten(plain_title, min(110, remaining - 32))
+    topics = shorten(plain_topics, remaining - text_weight(title))
+    return body(title, topics) + footer
 
 
 def validate_post(slug: str, post: dict[str, Any]) -> None:

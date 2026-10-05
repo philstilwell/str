@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "podcasts": [
+    {
+      "names": [
+        "Stand to Reason Weekly Podcast"
+      ],
+      "handle": "STRtweets",
+      "verified_on": "2026-10-05",
+      "sources": [
+        "https://www.str.org/",
+        "https://x.com/STRtweets"
+      ],
+      "id": "stand-to-reason",
+      "hashtag": "#StandToReason"
+    },
+    {
+      "names": [
+        "I Don't Have Enough FAITH to Be an ATHEIST"
+      ],
+      "handle": "DrFrankTurek",
+      "verified_on": "2026-10-05",
+      "sources": [
+        "https://crossexamined.org/"
+      ],
+      "id": "cross-examined",
+      "hashtag": "#CrossExamined",
+      "note": "The podcast's official website links its X presence to Frank Turek's account."
+    }
+  ],
+  "speakers": [
+    {
+      "names": ["John Stonestreet"],
+      "handle": "jbstonestreet",
+      "verified_on": "2026-10-05",
+      "sources": ["https://breakpoint.org/john-stonestreet-bio/"]
+    },
+    {
+      "names": ["Jeremy Boreing"],
+      "handle": "JeremyDBoreing",
+      "verified_on": "2026-10-05",
+      "sources": ["https://x.com/JeremyDBoreing"]
+    },
+    {
+      "names": [
+        "Greg Koukl",
+        "Gregory Koukl",
+        "Greg Kokel"
+      ],
+      "handle": "gregkoukl",
+      "verified_on": "2026-10-05",
+      "sources": [
+        "https://x.com/gregkoukl"
+      ],
+      "podcast_aliases": {
+        "stand-to-reason": [
+          "Greg"
+        ]
+      }
+    },
+    {
+      "names": [
+        "Frank Turek"
+      ],
+      "handle": "DrFrankTurek",
+      "verified_on": "2026-10-05",
+      "sources": [
+        "https://crossexamined.org/"
+      ]
+    },
+    {
+      "names": [
+        "Phoenix Hayes"
+      ],
+      "handle": "PhoenixHayes_",
+      "verified_on": "2026-10-05",
+      "sources": [
+        "https://x.com/PhoenixHayes_"
+      ]
+    },
+    {
+      "names": [
+        "Tim Barnett"
+      ],
+      "handle": "timothybarnett",
+      "verified_on": "2026-10-05",
+      "sources": [
+        "https://mobile.x.com/timothybarnett/with_replies"
+      ]
+    },
+    {
+      "names": [
+        "Alan Shlemon"
+      ],
+      "handle": "AlanShlemon",
+      "verified_on": "2026-10-05",
+      "sources": [
+        "https://x.com/AlanShlemon"
+      ]
+    },
+    {
+      "names": [
+        "John Lennox"
+      ],
+      "handle": "profjohnlennox",
+      "verified_on": "2026-10-05",
+      "sources": [
+        "https://www.johnlennox.org/"
+      ]
+    },
+    {
+      "names": [
+        "Erwin Lutzer"
+      ],
+      "handle": "erwinlutzer",
+      "verified_on": "2026-10-05",
+      "sources": [
+        "https://podcast.jackhibbs.com/his-sovereignty-is-our-sanity/"
+      ]
+    },
+    {
+      "names": [
+        "Natasha Crain"
+      ],
+      "handle": "natasha_crain",
+      "verified_on": "2026-10-05",
+      "sources": [
+        "https://natashacrain.com/"
+      ]
+    },
+    {
+      "names": [
+        "Eric Metaxas"
+      ],
+      "handle": "ericmetaxas",
+      "verified_on": "2026-10-05",
+      "sources": [
+        "https://ericmetaxas.com/"
+      ]
+    },
+    {
+      "names": [
+        "Dinesh D'Souza"
+      ],
+      "handle": "DineshDSouza",
+      "verified_on": "2026-10-05",
+      "sources": [
+        "https://www.dineshdsouza.com/"
+      ]
+    },
+    {
+      "names": [
+        "Stephen C. Meyer",
+        "Stephen Meyer"
+      ],
+      "handle": "StephenCMeyer",
+      "verified_on": "2026-10-05",
+      "sources": [
+        "https://www.discovery.org/m/securepdfs/2021/03/rotg-pk.pdf"
+      ]
+    },
+    {
+      "names": [
+        "Gavin Ortlund"
+      ],
+      "handle": "gavinortlund",
+      "verified_on": "2026-10-05",
+      "sources": [
+        "https://x.com/gavinortlund/status/1883835983969526187"
+      ]
+    }
+  ]
+}

@@ -2,8 +2,36 @@
 
 The critique workflow publishes one standalone X announcement through Buffer for
 each new assessment. It uses the assessment title, up to two claim topics, and
-its canonical OnReason link. No X developer account or direct X API credentials
+its canonical OnReason link, plus relevant account mentions and hashtags.
+No X developer account or direct X API credentials
 are needed, and no additional AI request is made.
+
+## Account mentions and hashtags
+
+Announcements include up to four verified `@mentions`, the podcast's hashtag,
+and one topic hashtag selected from the title and claim topics. For example,
+an STR episode with Greg Koukl uses `@STRtweets @gregkoukl` and
+`#StandToReason`; an episode from CrossExamined uses `@DrFrankTurek` and
+`#CrossExamined`. CrossExamined's official site links its X presence to Turek's
+account, so that handle appears only once when he is also the host.
+
+[x-accounts.json](x-accounts.json) records each verified handle, its evidence
+links, and its verification date. Speakers match the page's Speaker metadata or
+an explicit title introduction such as "with Dr. Stephen C. Meyer". People
+merely discussed in the assessment and unverified accounts are not tagged.
+Known transcription variants are listed explicitly; the short name "Greg"
+matches Koukl only for the Stand to Reason podcast.
+
+The podcast account is prioritized, followed by credited speakers in their
+listed order, then guests identified explicitly in the title. The formatter
+reserves room for complete tags and the assessment link before shortening the
+title and topic summary to fit X's 280-character limit. It adds no paid lookup
+or AI call. Already queued and published text remains unchanged.
+
+Before adding a new speaker or changing a handle, check their official website
+or X profile, then update the directory's sources and date. An unknown guest's
+handle is omitted until verified. Mentions identify accounts; delivery of a
+notification depends on X and the recipient's blocking/notification settings.
 
 ## Connect the account
 

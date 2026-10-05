@@ -7,6 +7,7 @@ import pytest
 import requests
 
 from str_workflow import x_posts as x
+from str_workflow.x_tags import load_accounts, social_tags
 
 
 PAGE = Path("docs/episodes/2026-07-15-we-have-an-obligation-to-help-the-poor/index.html")
@@ -208,6 +209,89 @@ def test_every_existing_assessment_can_produce_a_valid_topic_specific_post():
         x.validate_post(page.parent.name, post)
         assert "Topics: " in post["text"]
         assert post["text"].endswith(critique["url"])
+        mentions, hashtags = social_tags(critique)
+        assert mentions  # Both existing podcasts have a verified account.
+        assert all(tag in post["text"].split() for tag in mentions + hashtags)
+
+
+def test_mentions_match_credited_speakers_and_deduplicate_podcast_host():
+    page = Path("docs/episodes/2026-09-16-interview-frank-turek-and-phoenix-hayes-the-war-on-reality/index.html")
+    critique = x.extract_critique(page)
+    assert critique["speaker"] == "Greg Koukl with Frank Turek and Phoenix Hayes"
+    mentions, hashtags = social_tags(critique)
+    assert mentions == ["@STRtweets", "@gregkoukl", "@DrFrankTurek", "@PhoenixHayes_"]
+    assert hashtags[0] == "#StandToReason"
+    critique["podcast"] = "I Don't Have Enough FAITH to Be an ATHEIST"
+    mentions, hashtags = social_tags(critique)
+    assert mentions.count("@DrFrankTurek") == 1
+    assert hashtags[0] == "#CrossExamined"
+
+
+def test_people_discussed_in_title_or_topics_are_not_treated_as_speakers():
+    critique = x.extract_critique(PAGE)
+    critique.update(episode_title="Frank Turek and Phoenix Hayes", compact_topics=["John Lennox"], speaker="Greg Koukl")
+    assert social_tags(critique)[0] == ["@STRtweets", "@gregkoukl"]
+    critique.update(speaker="Unverified Guest", podcast="Unknown podcast")
+    assert social_tags(critique)[0] == []
+
+
+def test_explicit_title_guest_is_matched_when_speaker_credit_is_generic():
+    critique = x.extract_critique(PAGE)
+    critique.update(
+        podcast="I Don't Have Enough FAITH to Be an ATHEIST",
+        speaker="Frank Turek and guest",
+        episode_title="The Beginning of the Universe with Dr. Stephen C. Meyer",
+    )
+    assert social_tags(critique)[0] == ["@DrFrankTurek", "@StephenCMeyer"]
+
+
+def test_transcript_aliases_are_scoped_and_names_have_word_boundaries():
+    critique = x.extract_critique(PAGE)
+    critique["speaker"] = "Greg Kokel (as rendered in the transcript)"
+    assert "@gregkoukl" in social_tags(critique)[0]
+    critique["speaker"] = "Greg and callers"
+    assert "@gregkoukl" in social_tags(critique)[0]
+    critique["podcast"] = "Unknown podcast"
+    assert social_tags(critique)[0] == []
+    critique["speaker"] = "Frank Turekson and an unverified guest"
+    assert social_tags(critique)[0] == []
+
+
+def test_hashtags_reflect_topics_and_free_text_cannot_inject_handles():
+    critique = x.extract_critique(PAGE)
+    critique.update(episode_title="Artificial Intelligence and @NotVerified #Spam", compact_topics=["AI and morality"], speaker="Greg Koukl")
+    mentions, hashtags = social_tags(critique)
+    assert hashtags == ["#StandToReason", "#ArtificialIntelligence"]
+    text = x.compose_post(critique)
+    assert "@NotVerified" not in text and "#Spam" not in text
+    assert all(tag in text.split() for tag in mentions + hashtags)
+
+
+def test_long_posts_reserve_complete_mentions_hashtags_and_link():
+    critique = x.extract_critique(PAGE)
+    critique.update(
+        episode_title="漢字😀é " * 150,
+        compact_topics=["Artificial intelligence " * 100],
+        speaker="Greg Koukl, Phoenix Hayes, Tim Barnett, Frank Turek",
+    )
+    mentions, hashtags = social_tags(critique)
+    assert len(mentions) == 4
+    post = {"url": critique["url"], "title": critique["episode_title"], "text": x.compose_post(critique), "status": "pending"}
+    x.validate_post(critique["slug"], post)
+    assert all(tag in post["text"].split() for tag in mentions + hashtags)
+
+
+def test_verified_directory_rejects_unverified_or_malformed_handles(tmp_path):
+    directory = load_accounts()
+    path = tmp_path / "accounts.json"
+    directory["speakers"][0]["handle"] = "wrong account"
+    path.write_text(json.dumps(directory))
+    with pytest.raises(ValueError, match="handle"):
+        load_accounts(path)
+    directory["speakers"][0].update(handle="gregkoukl", sources=[])
+    path.write_text(json.dumps(directory))
+    with pytest.raises(ValueError, match="verification"):
+        load_accounts(path)
 
 
 def test_long_unicode_title_and_topics_fit_without_cutting_off_link():

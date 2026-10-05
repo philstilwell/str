@@ -315,6 +315,13 @@ def extract_critique(
     if source_url:
         validate_url(source_url, "Episode source URL")
 
+    speaker = ""
+    for term in soup.select("dl.meta-list dt"):
+        if term.get_text(" ", strip=True).casefold() in {"speaker", "speakers"}:
+            value = term.find_next_sibling("dd")
+            speaker = value.get_text(" ", strip=True) if value else ""
+            break
+
     contents = [
         link.get_text(" ", strip=True)
         for link in soup.select("#toc-list li a")
@@ -331,6 +338,7 @@ def extract_critique(
         "slug": slug,
         "url": critique_url,
         "podcast": podcast,
+        "speaker": speaker,
         "episode_title": episode_title,
         "episode_source": {"name": source_name, "url": source_url},
         "contents": contents,
