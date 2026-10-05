@@ -31,12 +31,22 @@ feature was installed. Later assessments remain queued while posting is disabled
 review that queue before activation if setup has been delayed. The original X
 API credential path has been removed.
 
+Activated on October 5, 2026 for **@PhilStilwe22050**, using Buffer channel
+`6ac3f3fc6a5c39ccb623afb6`. A read-only connection check confirmed the X account
+and that the channel was connected, unlocked, and unpaused. The announcement
+queue was empty at activation. The key is stored only in the GitHub Actions
+secret and has `account:read`, `posts:read`, and `posts:write` permissions.
+It expires **October 5, 2027**; renew it and replace `BUFFER_API_KEY` before then
+to keep announcements running.
+
 ## Cost estimate
 
 As checked October 5, 2026, [Buffer's free plan](https://buffer.com/pricing)
-includes up to three channels, ten scheduled posts per channel at a time
-(refilled after publication), and 3,000 API requests per month. The expected
-additional cost for this workflow is **$0 within those limits**. Account checks,
+includes up to three channels and ten scheduled posts per channel at a time
+(refilled after publication). This account's [API settings](https://publish.buffer.com/settings/api)
+currently show limits of 100 requests per 15 minutes, 500 per 24 hours, and
+10,000 per 30 days. The expected additional cost for this workflow is
+**$0 within those limits**. Account checks,
 creation, and delivery checks use Buffer's allowance. There are no direct paid X
 API calls. Existing assessment-generation costs are separate. No paid plan,
 payment method, or trial is required.
