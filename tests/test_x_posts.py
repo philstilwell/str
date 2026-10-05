@@ -25,17 +25,25 @@ def state_with_post():
 
 class Session:
     def __init__(self, response=None, username="example", before_post=None):
-        self.response = response if response is not None else reply(201, {"data": {"id": "123456"}})
+        self.response = response if response is not None else create_reply()
         self.username = username
         self.before_post = before_post
         self.posts = []
         self.gets = []
-
-    def get(self, url, **kwargs):
-        self.gets.append(url)
-        return reply(200, {"data": {"id": "789", "username": self.username}})
+        self.delivery = {"id": "buffer-123", "channelId": "channel-789", "status": "sent", "externalLink": "https://x.com/example/status/123456"}
 
     def post(self, url, **kwargs):
+        query = kwargs["json"]["query"]
+        if query == x.CHANNEL_QUERY:
+            self.gets.append(query)
+            return reply(200, {"data": {"channel": {
+                "id": "channel-789", "serviceId": "789", "name": self.username,
+                "service": "twitter", "isDisconnected": False,
+                "isLocked": False, "isQueuePaused": False,
+            }}})
+        if query == x.POST_QUERY:
+            self.gets.append(query)
+            return reply(200, {"data": {"post": self.delivery}})
         if self.before_post:
             self.before_post()
         self.posts.append((url, kwargs))
@@ -48,10 +56,19 @@ def reply(status, data):
     return SimpleNamespace(status_code=status, json=lambda: data)
 
 
+def create_reply(status="sent"):
+    return reply(200, {"data": {"createPost": {
+        "__typename": "PostActionSuccess", "post": {
+            "id": "buffer-123", "channelId": "channel-789", "status": status,
+            "externalLink": "https://x.com/example/status/123456" if status == "sent" else None,
+        },
+    }}})
+
+
 def send(state, session, checkpoint=lambda: None, page_ready=lambda _: True):
     return x.publish(
-        state, session=session, expected_username="example", checkpoint=checkpoint,
-        page_ready=page_ready,
+        state, session=session, expected_username="example", channel_id="channel-789",
+        checkpoint=checkpoint, page_ready=page_ready, sleep=lambda _: None,
     )
 
 
@@ -69,12 +86,13 @@ def test_success_is_claimed_before_sending_and_never_reposted_after_reload(tmp_p
 
     session = Session(before_post=before_post)
     assert send(state, session, checkpoint) == 1
-    assert [next(iter(item["posts"].values()))["status"] for item in snapshots] == ["sending", "posted"]
+    assert [next(iter(item["posts"].values()))["status"] for item in snapshots] == ["sending", "submitted", "posted"]
     assert send(x.read_state(path), session, checkpoint) == 0
     assert len(session.posts) == 1
     assert len(session.gets) == 1
-    assert session.posts[0][0] == "https://api.x.com/2/tweets"
+    assert session.posts[0][0] == "https://api.buffer.com"
     assert session.posts[0][1]["allow_redirects"] is False
+    assert session.posts[0][1]["json"]["variables"]["input"]["mode"] == "shareNow"
 
 
 def test_failed_durable_claim_never_contacts_post_endpoint():
@@ -91,7 +109,8 @@ def test_failed_durable_claim_never_contacts_post_endpoint():
 
 @pytest.mark.parametrize("response", [
     requests.Timeout("connection dropped"),
-    reply(500, {}), reply(201, {}), reply(201, {"data": None}),
+    reply(500, {}), reply(200, {}), reply(200, {"data": None}),
+    reply(200, {"errors": [{"message": "unconfirmed"}]}),
     reply(302, {}), reply(400, {}),
 ])
 def test_ambiguous_result_is_held_and_not_retried(response):
@@ -123,21 +142,21 @@ def test_success_followed_by_failed_receipt_push_is_held_on_next_run():
     assert len(session.posts) == 1
 
 
-@pytest.mark.parametrize("code", [401, 402, 403, 429])
+@pytest.mark.parametrize("code", [401, 403, 429])
 def test_explicit_rejection_is_retained_for_later_run(code):
     state = state_with_post()
     session = Session(reply(code, {}))
-    with pytest.raises(x.PostingError, match="retained for a later run"):
+    with pytest.raises(x.PostingError, match="Retained for a later run"):
         send(state, session)
     assert next(iter(state["posts"].values()))["status"] == "pending"
-    session.response = reply(201, {"data": {"id": "54321"}})
+    session.response = create_reply()
     assert send(state, session) == 1
 
 
 def test_unpublished_page_never_calls_x_and_stays_pending():
     state = state_with_post()
     session = Session()
-    with pytest.raises(x.PostingError, match="not live yet"):
+    with pytest.raises(x.PostingError, match="Awaiting live assessment"):
         send(state, session, page_ready=lambda _: False)
     assert session.posts == session.gets == []
     assert next(iter(state["posts"].values()))["status"] == "pending"
@@ -145,7 +164,7 @@ def test_unpublished_page_never_calls_x_and_stays_pending():
 
 def test_wrong_account_cannot_publish():
     session = Session(username="wrong_account")
-    with pytest.raises(x.PostingError, match="do not match"):
+    with pytest.raises(x.PostingError, match="does not match"):
         send(state_with_post(), session)
     assert session.posts == []
 
@@ -211,19 +230,19 @@ def test_corrupt_or_missing_history_never_becomes_an_empty_queue(tmp_path):
 def test_disabled_posting_does_not_load_credentials_or_contact_x(tmp_path, monkeypatch):
     path = tmp_path / "state.json"
     x.save_state(path, state_with_post())
-    monkeypatch.delenv("X_POSTING_ENABLED", raising=False)
+    monkeypatch.delenv("BUFFER_POSTING_ENABLED", raising=False)
     monkeypatch.setattr("sys.argv", ["x_posts", "--state", str(path), "publish"])
-    monkeypatch.setattr(x, "x_session", lambda: pytest.fail("Contacted X while disabled"))
+    monkeypatch.setattr(x, "buffer_session", lambda: pytest.fail("Contacted Buffer while disabled"))
     assert x.main() == 0
 
 
 def test_live_posting_outside_workflow_stops_before_loading_credentials(tmp_path, monkeypatch):
     path = tmp_path / "state.json"
     x.save_state(path, state_with_post())
-    monkeypatch.setenv("X_POSTING_ENABLED", "true")
+    monkeypatch.setenv("BUFFER_POSTING_ENABLED", "true")
     monkeypatch.delenv("GITHUB_ACTIONS", raising=False)
     monkeypatch.setattr("sys.argv", ["x_posts", "--state", str(path), "publish"])
-    monkeypatch.setattr(x, "x_session", lambda: pytest.fail("Loaded credentials outside workflow"))
+    monkeypatch.setattr(x, "buffer_session", lambda: pytest.fail("Loaded credentials outside workflow"))
     assert x.main() == 1
 
 
@@ -236,3 +255,51 @@ def test_workflow_queues_before_commit_and_preserves_posting_recovery():
     assert "cancel-in-progress: false" in workflow
     assert "x_posts publish" in workflow
     assert "x-announcement-history-" in workflow
+    assert "secrets.BUFFER_API_KEY" in workflow
+    assert "secrets.X_API_KEY" not in workflow
+
+
+def test_buffer_acceptance_is_not_mistaken_for_publication_and_next_run_only_checks_delivery():
+    state = state_with_post()
+    session = Session(create_reply("scheduled"))
+    session.delivery = {"id": "buffer-123", "channelId": "channel-789", "status": "scheduled", "externalLink": None}
+    saved = []
+    with pytest.raises(x.PostingError, match="Awaiting live assessment"):
+        send(state, session, lambda: saved.append(copy.deepcopy(state)))
+    post = next(iter(saved[-1]["posts"].values()))
+    assert post["status"] == "submitted"
+    assert "posted_url" not in post
+    session.delivery.update(status="sent", externalLink="https://x.com/example/status/123456")
+    assert send(state, session) == 1
+    assert len(session.posts) == 1
+
+
+def test_failed_buffer_delivery_is_not_recreated():
+    state = state_with_post()
+    session = Session(create_reply("scheduled"))
+    session.delivery["status"] = "error"
+    with pytest.raises(x.PostingError, match="could not publish"):
+        send(state, session)
+    assert next(iter(state["posts"].values()))["status"] == "failed"
+    with pytest.raises(x.PostingError, match="Inspect failed"):
+        send(state, session)
+    assert len(session.posts) == 1
+
+
+def test_buffer_typed_mutation_error_retains_queue():
+    session = Session(reply(200, {"data": {"createPost": {
+        "__typename": "LimitReachedError", "message": "Plan limit reached",
+    }}}))
+    state = state_with_post()
+    with pytest.raises(x.PostingError, match="Retained"):
+        send(state, session)
+    assert next(iter(state["posts"].values()))["status"] == "pending"
+
+
+def test_wrong_buffer_receipt_cannot_be_marked_posted():
+    state = state_with_post()
+    response = create_reply()
+    response.json()["data"]["createPost"]["post"]["channelId"] = "other-account"
+    with pytest.raises(x.PostingError, match="different post or account"):
+        send(state, Session(response))
+    assert next(iter(state["posts"].values()))["status"] == "submitted"

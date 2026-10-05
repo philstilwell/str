@@ -1,7 +1,8 @@
-"""Queue and publish one X announcement for each newly published assessment.
+"""Queue and publish one X announcement through Buffer for each new assessment.
 
-Before any POST, a sending claim is pushed to GitHub. An interrupted or ambiguous
+Before creating a post, a sending claim is pushed to GitHub. An interrupted or ambiguous
 attempt is held for inspection instead of risking a duplicate on the next run.
+Buffer acceptance and confirmed publication on X are recorded separately.
 """
 
 from __future__ import annotations
@@ -16,6 +17,7 @@ import time
 import unicodedata
 from pathlib import Path
 from typing import Any, Callable
+from urllib.parse import urlsplit
 
 import requests
 from bs4 import BeautifulSoup
@@ -24,13 +26,33 @@ from .outreach import atomic_write, extract_critique, utc_now, validate_slug
 
 STATE_PATH = Path("outreach/x-posts.json")
 DOCS_DIR = Path("docs/episodes")
-API_URL = "https://api.x.com/2"
-SECRET_NAMES = ("X_API_KEY", "X_API_SECRET", "X_ACCESS_TOKEN", "X_ACCESS_TOKEN_SECRET")
-STATES = {"pending", "sending", "posted", "uncertain"}
+API_URL = "https://api.buffer.com"
+STATES = {"pending", "sending", "submitted", "posted", "uncertain", "failed"}
+
+CHANNEL_QUERY = """query AssessmentChannel($input: ChannelInput!) {
+  channel(input: $input) {
+    id name service serviceId externalLink isDisconnected isLocked isQueuePaused
+  }
+}"""
+POST_FIELDS = "id channelId status externalLink"
+CREATE_POST = """mutation AssessmentAnnouncement($input: CreatePostInput!) {
+  createPost(input: $input) {
+    __typename
+    ... on PostActionSuccess { post { """ + POST_FIELDS + """ } }
+    ... on MutationError { message }
+  }
+}"""
+POST_QUERY = """query AssessmentDelivery($input: PostInput!) {
+  post(input: $input) { """ + POST_FIELDS + """ }
+}"""
 
 
 class PostingError(ValueError):
     pass
+
+
+class RejectedPost(PostingError):
+    """Buffer explicitly rejected creation; no post was accepted."""
 
 
 def text_weight(text: str) -> int:
@@ -83,6 +105,8 @@ def validate_post(slug: str, post: dict[str, Any]) -> None:
         raise PostingError(f"Announcement exceeds X's character limit: {slug}")
     if post.get("status") not in STATES or not post.get("title"):
         raise PostingError(f"Invalid announcement state for {slug}")
+    if post["status"] in {"submitted", "failed"} and not post.get("buffer_post_id"):
+        raise PostingError(f"Missing Buffer post ID for {slug}")
     if post["status"] == "posted" and not re.fullmatch(
         r"https://x\.com/i/web/status/[0-9]+", post.get("posted_url", "")
     ):
@@ -153,27 +177,46 @@ def wait_for_page(post: dict[str, Any], attempts: int) -> bool:
     return False
 
 
-def x_session() -> requests.Session:
-    missing = [name for name in SECRET_NAMES if not os.getenv(name)]
-    if missing:
-        raise PostingError("Missing GitHub secrets: " + ", ".join(missing))
-    from requests_oauthlib import OAuth1
-
+def buffer_session() -> requests.Session:
+    key = os.getenv("BUFFER_API_KEY", "")
+    if not key:
+        raise PostingError("Missing GitHub secret: BUFFER_API_KEY")
     session = requests.Session()
-    session.auth = OAuth1(*(os.environ[name] for name in SECRET_NAMES))
+    session.headers["Authorization"] = f"Bearer {key}"
     return session
 
 
-def verify_account(session: requests.Session, expected: str) -> str:
+def buffer_request(session: requests.Session, query: str, variables: dict[str, Any]) -> dict[str, Any]:
+    response = session.post(
+        API_URL, json={"query": query, "variables": variables},
+        timeout=30, allow_redirects=False,
+    )
+    if response.status_code in {401, 403, 429}:
+        raise RejectedPost(f"Buffer rejected request (HTTP {response.status_code}).")
+    if response.status_code != 200:
+        raise PostingError(f"Unconfirmed Buffer response (HTTP {response.status_code}).")
+    payload = response.json()
+    if not isinstance(payload, dict) or payload.get("errors") or not isinstance(payload.get("data"), dict):
+        raise PostingError("Buffer returned an unconfirmed result; inspect the announcement history.")
+    return payload["data"]
+
+
+def verify_account(session: requests.Session, channel_id: str, expected: str) -> str:
     if not re.fullmatch(r"[A-Za-z0-9_]{1,15}", expected):
         raise PostingError("Set X_USERNAME to the intended account name without @.")
-    response = session.get(f"{API_URL}/users/me", timeout=30, allow_redirects=False)
-    if response.status_code != 200:
-        raise PostingError(f"X account verification failed (HTTP {response.status_code}).")
-    user = response.json().get("data", {})
-    if user.get("username", "").casefold() != expected.casefold() or not user.get("id"):
-        raise PostingError("X credentials do not match X_USERNAME; no announcement was sent.")
-    return str(user["id"])
+    if not channel_id:
+        raise PostingError("Set BUFFER_CHANNEL_ID to the connected X account in Buffer.")
+    channel = buffer_request(session, CHANNEL_QUERY, {"input": {"id": channel_id}}).get("channel")
+    if not isinstance(channel, dict) or channel.get("id") != channel_id or channel.get("service") != "twitter":
+        raise PostingError("Buffer channel is not the configured X account.")
+    link = urlsplit(channel.get("externalLink") or "")
+    link_matches = link.hostname in {"x.com", "twitter.com", "www.x.com", "www.twitter.com"} and link.path.strip("/").casefold() == expected.casefold()
+    name_matches = str(channel.get("name", "")).lstrip("@").casefold() == expected.casefold()
+    if not (link_matches or name_matches) or not channel.get("serviceId"):
+        raise PostingError("Buffer account does not match X_USERNAME; no announcement was sent.")
+    if any(channel.get(flag) is not False for flag in ("isDisconnected", "isLocked", "isQueuePaused")):
+        raise PostingError("The Buffer channel is disconnected, locked, or paused.")
+    return str(channel["serviceId"])
 
 
 def require_workflow() -> None:
@@ -199,62 +242,102 @@ def transition(post: dict[str, Any], status: str, note: str) -> None:
     post["history"].append({"status": status, "at": utc_now(), "note": note})
 
 
+def record_delivery(post: dict[str, Any], delivery: dict[str, Any], checkpoint: Callable[[], None]) -> bool:
+    if delivery.get("id") != post["buffer_post_id"] or delivery.get("channelId") != post["buffer_channel_id"]:
+        raise PostingError("Buffer returned delivery information for a different post or account.")
+    if delivery.get("status") in {"error", "draft", "needs_approval"}:
+        transition(post, "failed", f"Buffer delivery needs attention: {delivery['status']}.")
+        checkpoint()
+        raise PostingError("Buffer could not publish the accepted post; inspect it in Buffer before retrying.")
+    if delivery.get("status") == "sent":
+        link = urlsplit(delivery.get("externalLink") or "")
+        match = re.fullmatch(r"/(?:[A-Za-z0-9_]+|i/web)/status/([0-9]+)/?", link.path)
+        if link.scheme == "https" and link.hostname in {"x.com", "twitter.com", "www.x.com", "www.twitter.com"} and match:
+            post["posted_url"] = f"https://x.com/i/web/status/{match.group(1)}"
+            transition(post, "posted", "Buffer confirmed publication on X and returned the public permalink.")
+            checkpoint()
+            return True
+    return False
+
+
+def confirm_delivery(session: requests.Session, post: dict[str, Any], checkpoint: Callable[[], None], sleep: Callable[[float], None]) -> bool:
+    for attempt in range(6):
+        delivery = buffer_request(session, POST_QUERY, {"input": {"id": post["buffer_post_id"]}}).get("post")
+        if not isinstance(delivery, dict):
+            raise PostingError("Buffer has not returned a valid delivery receipt.")
+        if record_delivery(post, delivery, checkpoint):
+            return True
+        if attempt < 5:
+            sleep(5)
+    return False
+
+
 def publish(
     state: dict[str, Any], *, session: requests.Session,
-    expected_username: str, checkpoint: Callable[[], None],
+    expected_username: str, channel_id: str, checkpoint: Callable[[], None],
     page_ready: Callable[[dict[str, Any]], bool],
+    sleep: Callable[[float], None] = time.sleep,
 ) -> int:
     held = [slug for slug, post in state["posts"].items() if post["status"] in {"sending", "uncertain"}]
     if held:
-        raise PostingError("Inspect uncertain X attempts before continuing: " + ", ".join(held))
+        raise PostingError("Inspect uncertain Buffer attempts before continuing: " + ", ".join(held))
     account_id = None
     sent = 0
     deferred = []
     for slug, post in state["posts"].items():
-        if post["status"] != "pending":
+        if post["status"] == "posted":
             continue
+        if post["status"] == "failed":
+            raise PostingError(f"Inspect failed Buffer delivery for {slug}; it will not be recreated automatically.")
         validate_post(slug, post)
-        if not page_ready(post):
+        if post["status"] == "pending" and not page_ready(post):
             deferred.append(slug)
             continue
         if account_id is None:
-            account_id = verify_account(session, expected_username)
+            account_id = verify_account(session, channel_id, expected_username)
         if post.get("account_id") not in {None, account_id}:
             raise PostingError("A queued announcement belongs to a different X account.")
+        if post.get("buffer_channel_id") not in {None, channel_id}:
+            raise PostingError("An existing attempt belongs to a different Buffer channel.")
         post["account_id"] = account_id
         post["username"] = expected_username
-        transition(post, "sending", "Attempt claimed before contacting X.")
-        checkpoint()  # Must reach origin/main before a paid, externally visible write.
+        post["buffer_channel_id"] = channel_id
+        if post["status"] == "submitted":
+            if confirm_delivery(session, post, checkpoint, sleep):
+                sent += 1
+            else:
+                deferred.append(slug)
+            continue
+        transition(post, "sending", "Attempt claimed before asking Buffer to publish.")
+        checkpoint()  # Must reach origin/main before any externally visible write.
         try:
-            response = session.post(
-                f"{API_URL}/tweets", json={"text": post["text"]},
-                timeout=30, allow_redirects=False,
-            )
-        except requests.RequestException:
-            transition(post, "uncertain", "Connection failed; inspect X before retrying.")
+            result = buffer_request(session, CREATE_POST, {"input": {
+                "channelId": channel_id, "text": post["text"],
+                "schedulingType": "automatic", "mode": "shareNow",
+            }}).get("createPost")
+            if isinstance(result, dict) and result.get("__typename") != "PostActionSuccess" and result.get("message"):
+                raise RejectedPost("Buffer rejected the post; check channel permissions and plan limits.")
+            delivery = result.get("post") if isinstance(result, dict) else None
+            if not isinstance(delivery, dict) or not isinstance(delivery.get("id"), str) or not delivery["id"]:
+                raise PostingError("Buffer did not return a post ID.")
+        except RejectedPost as exc:
+            transition(post, "pending", str(exc))
             checkpoint()
-            raise PostingError(f"X result uncertain for {slug}; automatic retry is blocked.") from None
-        # Only explicit authentication, billing, or rate-limit rejections are safe
-        # to retry automatically. Other results require inspection (including 5xx).
-        if response.status_code in {401, 402, 403, 429}:
-            transition(post, "pending", f"X rejected request (HTTP {response.status_code}).")
+            raise PostingError(f"{exc} Retained for a later run.") from None
+        except (requests.RequestException, ValueError):
+            transition(post, "uncertain", "Unconfirmed Buffer result; inspect Buffer and X before retrying.")
             checkpoint()
-            raise PostingError(f"X rejected announcement (HTTP {response.status_code}); retained for a later run.")
-        try:
-            post_id = response.json().get("data", {}).get("id") if response.status_code == 201 else None
-        except (ValueError, AttributeError):
-            post_id = None
-        if not isinstance(post_id, str) or not post_id.isdigit():
-            transition(post, "uncertain", f"Unconfirmed response (HTTP {response.status_code}); inspect X.")
-            checkpoint()
-            raise PostingError(f"X result uncertain for {slug}; automatic retry is blocked.")
-        post["posted_url"] = f"https://x.com/i/web/status/{post_id}"
-        transition(post, "posted", "X confirmed creation and returned the post ID.")
+            raise PostingError(f"Buffer result uncertain for {slug}; automatic retry is blocked.") from None
+        post["buffer_post_id"] = delivery["id"]
+        transition(post, "submitted", "Buffer accepted the post; awaiting confirmed publication on X.")
         checkpoint()
-        print(f"Posted {slug}: {post['posted_url']}", flush=True)
-        sent += 1
+        if record_delivery(post, delivery, checkpoint) or confirm_delivery(session, post, checkpoint, sleep):
+            print(f"Posted {slug}: {post['posted_url']}", flush=True)
+            sent += 1
+        else:
+            deferred.append(slug)
     if deferred:
-        raise PostingError("Assessment pages are not live yet; retained for the next run: " + ", ".join(deferred))
+        raise PostingError("Awaiting live assessment pages or Buffer delivery; retained for the next run: " + ", ".join(deferred))
     return sent
 
 
@@ -288,8 +371,8 @@ def main() -> int:
                 with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
                     output.write(f"pending={str(pending).lower()}\n")
             return 0
-        if os.getenv("X_POSTING_ENABLED", "").lower() != "true":
-            print("X posting is disabled. Queued announcements are retained.")
+        if os.getenv("BUFFER_POSTING_ENABLED", "").lower() != "true":
+            print("Buffer posting is disabled. Queued announcements are retained.")
             return 0
         if not 1 <= args.page_check_attempts <= 20:
             raise PostingError("Page check attempts must be between 1 and 20.")
@@ -302,9 +385,10 @@ def main() -> int:
             save_state(args.state, state)
             git_checkpoint(args.state)
 
-        with x_session() as session:
+        with buffer_session() as session:
             sent = publish(
                 state, session=session, expected_username=os.getenv("X_USERNAME", ""),
+                channel_id=os.getenv("BUFFER_CHANNEL_ID", ""),
                 checkpoint=checkpoint,
                 page_ready=lambda post: wait_for_page(post, args.page_check_attempts),
             )

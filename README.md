@@ -67,7 +67,7 @@ python -m str_workflow.critique_batch --dry-run
 
 ### Automatic Twitter / X announcements
 
-The same scheduled critique workflow queues one topic-specific X post and the
+The same scheduled critique workflow queues one topic-specific X post through Buffer and the
 canonical assessment link for each new public page. Post text comes from the
 assessment title and its first two claim topics, with no additional model calls.
 After committing validated pages and their announcement queue, the workflow
@@ -77,13 +77,14 @@ The daily recovery run also processes previously queued announcements, including
 when there are no new transcripts. Announcement failures do not roll back pages
 or repeat paid critique generation.
 
-Posting starts only after the X account is connected and `X_POSTING_ENABLED` is
+Posting starts only after the regular X account is connected to Buffer and `BUFFER_POSTING_ENABLED` is
 set to `true`. The initial history excludes the 142 assessments already present
 when this integration was added; it does not announce that archive. Future
 assessments remain queued while posting is disabled. Review the queue before
 enabling if connection has been delayed.
 
-See [X account setup, costs, previews, and recovery](outreach/X-POSTING.md).
+No X developer account is needed. Buffer’s free plan is expected to cover this workflow.
+See [Buffer setup, costs, previews, and recovery](outreach/X-POSTING.md).
 
 ## Local Use
 
