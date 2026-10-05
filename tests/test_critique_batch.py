@@ -359,7 +359,9 @@ def test_critique_workflow_follows_successful_ingest_with_scheduled_recovery_swe
     assert "11:15 EST / 12:15 EDT" in critiques
     assert "python -m str_workflow.critique_batch" in critiques
     assert "--skip-site-refresh" in critiques
-    assert "actions/upload-artifact@v4" in critiques
+    assert "actions/upload-artifact@v7" in critiques
+    assert "actions/upload-artifact@v4" not in critiques
+    assert "actions/setup-python@v6" not in critiques
     assert "critique-generation-recovery-${{ github.run_id }}" in critiques
     assert "python -m str_workflow.site" in critiques
     assert "python tools/build_site_seo.py" in critiques

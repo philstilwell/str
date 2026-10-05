@@ -32,6 +32,7 @@ jobs:
   critique:
     if: ${{ github.ref == 'refs/heads/main' && (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success') }}
     runs-on: ubuntu-latest
+    timeout-minutes: 90
     env:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       CRITIQUE_MODEL: ${{ github.event.inputs.model || vars.CRITIQUE_MODEL || 'gpt-5.5' }}
@@ -44,7 +45,7 @@ jobs:
           ref: main
 
       - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v7
         with:
           python-version: "3.12"
           cache: "pip"
@@ -70,7 +71,7 @@ jobs:
 
       - name: Upload critique generation recovery artifacts
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: critique-generation-recovery-${{ github.run_id }}
           if-no-files-found: ignore
@@ -140,7 +141,7 @@ jobs:
           fetch-depth: 0
 
       - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v7
         with:
           python-version: "3.12"
           cache: "pip"
@@ -163,7 +164,7 @@ jobs:
 
       - name: Preserve announcement recovery history
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: x-announcement-history-${{ github.run_id }}-${{ github.run_attempt }}
           path: outreach/x-posts.json
