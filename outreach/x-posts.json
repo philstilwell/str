@@ -150,7 +150,7 @@
       "url": "https://onreason.com/episodes/2026-10-06-0-01-seconds-that-changed-womens-sports-and-her-life-forever-with-riley/",
       "title": "0.01-Seconds That Changed Women’s Sports (and Her Life) Forever with Riley Gaines",
       "text": "New OnReason assessment: 0.01-Seconds That Changed Women’s Sports (and Her Life) Forever with Riley Gaines\n\nTopics: Providential tie; Sex-classified competition\n\n@DrFrankTurek\n#CrossExamined #Apologetics\n\nRead the assessment: https://onreason.com/episodes/2026-10-06-0-01-seconds-that-changed-womens-sports-and-her-life-forever-with-riley/",
-      "status": "submitted",
+      "status": "posted",
       "created_at": "2026-10-06T19:37:37Z",
       "history": [
         {
@@ -162,12 +162,18 @@
           "status": "submitted",
           "at": "2026-10-06T19:38:37Z",
           "note": "Buffer accepted the post; awaiting confirmed publication on X."
+        },
+        {
+          "status": "posted",
+          "at": "2026-10-06T19:38:39Z",
+          "note": "Buffer confirmed publication on X and returned the public permalink."
         }
       ],
       "account_id": "1639036228656832512",
       "username": "PhilStilwe22050",
       "buffer_channel_id": "6ac3f3fc6a5c39ccb623afb6",
-      "buffer_post_id": "6ac54e3c299f8672071cc642"
+      "buffer_post_id": "6ac54e3c299f8672071cc642",
+      "posted_url": "https://x.com/i/web/status/2107556148010164459"
     }
   }
 }
