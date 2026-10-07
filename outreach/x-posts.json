@@ -179,9 +179,18 @@
       "url": "https://onreason.com/episodes/2026-10-07-word-of-god-is-used-in-a-surprising-way-in-the-book-of-acts/",
       "title": "“Word of God” Is Used in a Surprising Way in the Book of Acts",
       "text": "New OnReason assessment: “Word of God” Is Used in a Surprising Way in the Book of Acts\n\nTopics: Acts usage of Word of God; Message power/Spirit causation\n\n@STRtweets @gregkoukl\n#StandToReason #Ethics\n\nRead the assessment: https://onreason.com/episodes/2026-10-07-word-of-god-is-used-in-a-surprising-way-in-the-book-of-acts/",
-      "status": "pending",
+      "status": "sending",
       "created_at": "2026-10-07T20:06:10Z",
-      "history": []
+      "history": [
+        {
+          "status": "sending",
+          "at": "2026-10-07T20:07:08Z",
+          "note": "Attempt claimed before asking Buffer to publish."
+        }
+      ],
+      "account_id": "1639036228656832512",
+      "username": "PhilStilwe22050",
+      "buffer_channel_id": "6ac3f3fc6a5c39ccb623afb6"
     }
   }
 }
