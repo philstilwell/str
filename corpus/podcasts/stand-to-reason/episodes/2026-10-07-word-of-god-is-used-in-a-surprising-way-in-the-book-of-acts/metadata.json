@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-10-07T20:00:18Z",
+  "description_html": "Greg talks about how the phrase “word of God” is used in a surprising way in the book of Acts, then he responds to a caller’s questions and challenges regarding Greg’s claim that “God doesn’t try.”",
+  "description_text": "Greg talks about how the phrase “word of God” is used in a surprising way in the book of Acts, then he responds to a caller’s questions and challenges regarding Greg’s claim that “God doesn’t try.”",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/cdbdff88-2811-3101-95ed-9438751a3492",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/6kia8xhjtm8wwe7a/100726.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/word-of-god-is-used-in-a-surprising-way-in-the-book-of-acts/",
+  "pub_date": "2026-10-07",
+  "rss_transcript_tags": [],
+  "slug": "2026-10-07-word-of-god-is-used-in-a-surprising-way-in-the-book-of-acts",
+  "title": "“Word of God” Is Used in a Surprising Way in the Book of Acts",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-10-07T20:00:18Z",
+  "youtube_url": null
+}

@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "strweekly.podbean.com/cdbdff88-2811-3101-95ed-9438751a3492",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/6kia8xhjtm8wwe7a/100726.mp3",
+      "path": "episodes/2026-10-07-word-of-god-is-used-in-a-surprising-way-in-the-book-of-acts",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/word-of-god-is-used-in-a-surprising-way-in-the-book-of-acts/",
+      "pub_date": "2026-10-07",
+      "slug": "2026-10-07-word-of-god-is-used-in-a-surprising-way-in-the-book-of-acts",
+      "title": "“Word of God” Is Used in a Surprising Way in the Book of Acts",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "strweekly.podbean.com/aa1ed6aa-b973-33fd-914e-03f4e4d4092d",
       "mp3_url": "https://mcdn.podbean.com/mf/web/hjwwwqypa996t67h/093026.mp3",
       "path": "episodes/2026-09-30-there-is-no-equal-to-christianity-as-a-coherent-worldview",
@@ -2339,5 +2361,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-09-30T19:19:07Z"
+  "updated_at": "2026-10-07T20:02:33Z"
 }
