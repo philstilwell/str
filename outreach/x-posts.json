@@ -237,18 +237,24 @@
       "url": "https://onreason.com/episodes/2026-10-09-what-makes-morality-moral/",
       "title": "What Makes ethical discourse ethical?",
       "text": "New OnReason assessment: What Makes ethical discourse ethical?\n\nTopics: God as the ethical “sposer”; Biology/evolution/secular condemnation\n\n@STRtweets @gregkoukl\n#StandToReason #Science\n\nRead the assessment: https://onreason.com/episodes/2026-10-09-what-makes-morality-moral/",
-      "status": "sending",
+      "status": "submitted",
       "created_at": "2026-10-09T19:46:44Z",
       "history": [
         {
           "status": "sending",
           "at": "2026-10-09T19:47:44Z",
           "note": "Attempt claimed before asking Buffer to publish."
+        },
+        {
+          "status": "submitted",
+          "at": "2026-10-09T19:47:47Z",
+          "note": "Buffer accepted the post; awaiting confirmed publication on X."
         }
       ],
       "account_id": "1639036228656832512",
       "username": "PhilStilwe22050",
-      "buffer_channel_id": "6ac3f3fc6a5c39ccb623afb6"
+      "buffer_channel_id": "6ac3f3fc6a5c39ccb623afb6",
+      "buffer_post_id": "6ac944e2b07d37ac974d1741"
     }
   }
 }
