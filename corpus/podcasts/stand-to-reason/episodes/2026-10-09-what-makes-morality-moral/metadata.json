@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-10-09T19:32:04Z",
+  "description_html": "Greg answers questions about how to help people understand that if there is no God then there’s no moral standard, a caller’s book idea, what “Christianity” means, Catholicism, the Holy Spirit’s pronoun, and how to respond when people ask how you’re doing after a Christian loved one dies.",
+  "description_text": "Greg answers questions about how to help people understand that if there is no God then there’s no moral standard, a caller’s book idea, what “Christianity” means, Catholicism, the Holy Spirit’s pronoun, and how to respond when people ask how you’re doing after a Christian loved one dies.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/e48f51d2-9142-3545-a7ed-e80de3c25bf8",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/fmeafkv9iwg3eh33/100926.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/what-makes-morality-moral/",
+  "pub_date": "2026-10-09",
+  "rss_transcript_tags": [],
+  "slug": "2026-10-09-what-makes-morality-moral",
+  "title": "What Makes Morality Moral?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-10-09T19:32:04Z",
+  "youtube_url": null
+}

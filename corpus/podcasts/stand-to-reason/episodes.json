@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "strweekly.podbean.com/e48f51d2-9142-3545-a7ed-e80de3c25bf8",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/fmeafkv9iwg3eh33/100926.mp3",
+      "path": "episodes/2026-10-09-what-makes-morality-moral",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/what-makes-morality-moral/",
+      "pub_date": "2026-10-09",
+      "slug": "2026-10-09-what-makes-morality-moral",
+      "title": "What Makes Morality Moral?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "strweekly.podbean.com/cdbdff88-2811-3101-95ed-9438751a3492",
       "mp3_url": "https://mcdn.podbean.com/mf/web/6kia8xhjtm8wwe7a/100726.mp3",
       "path": "episodes/2026-10-07-word-of-god-is-used-in-a-surprising-way-in-the-book-of-acts",
@@ -2361,5 +2383,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-10-07T20:02:33Z"
+  "updated_at": "2026-10-09T19:34:04Z"
 }
