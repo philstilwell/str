@@ -591,9 +591,27 @@ h3 {
   table-layout: fixed;
 }
 
+/* Keep short labels compact and give the explanatory prose room to breathe. */
+.source-map-table th:nth-child(1) {
+  width: 18%;
+}
+
+.source-map-table th:nth-child(2) {
+  width: 24%;
+}
+
+.source-map-table th:nth-child(3) {
+  width: 20%;
+}
+
+.source-map-table th:nth-child(4) {
+  width: 38%;
+}
+
 .source-map-table td {
   font-size: 12px;
   line-height: 1.35;
+  overflow-wrap: anywhere;
 }
 
 .source-map-table td:first-child {
@@ -605,6 +623,7 @@ h3 {
 }
 
 .source-map-table .link-pill {
+  max-width: 100%;
   min-height: 22px;
   margin: 1px 2px 1px 0;
   padding: 2px 6px;
