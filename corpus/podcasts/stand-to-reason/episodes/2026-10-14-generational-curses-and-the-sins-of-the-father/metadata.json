@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-10-14T18:34:33Z",
+  "description_html": "Greg examines a passage that’s often used to support the idea of generational curses, then he talks to a caller about whether the Nicene Creed indicates that we’re saved by baptism and how we can have an expectancy for Christ if there’s no rapture.",
+  "description_text": "Greg examines a passage that’s often used to support the idea of generational curses, then he talks to a caller about whether the Nicene Creed indicates that we’re saved by baptism and how we can have an expectancy for Christ if there’s no rapture.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/022ecc0b-653e-3cd4-95db-e3d0d91e053a",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/fxntw7uunmxaz3vz/101426.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/generational-curses-and-the-sins-of-the-father/",
+  "pub_date": "2026-10-14",
+  "rss_transcript_tags": [],
+  "slug": "2026-10-14-generational-curses-and-the-sins-of-the-father",
+  "title": "Generational Curses and the Sins of the Father",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-10-14T18:34:33Z",
+  "youtube_url": null
+}
