@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-10-16T18:00:57Z",
+  "description_html": "Greg answers questions from callers about whether abortion is ever necessary to save the life of the mother, how to respond to someone who thinks Genesis 6:5–7 indicates that our Creator makes mistakes, and who the “gods” are that God presides over according to Psalm 82.",
+  "description_text": "Greg answers questions from callers about whether abortion is ever necessary to save the life of the mother, how to respond to someone who thinks Genesis 6:5–7 indicates that our Creator makes mistakes, and who the “gods” are that God presides over according to Psalm 82.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/8351a0ed-a636-3218-848e-98aad0ea3a7f",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/sfqsyud6pdayip7p/101626.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/does-genesis-65%e2%80%937-indicate-that-even-our-creator-makes-mistakes/",
+  "pub_date": "2026-10-16",
+  "rss_transcript_tags": [],
+  "slug": "2026-10-16-does-genesis-6-5-7-indicate-that-even-our-creator-makes-mistakes",
+  "title": "Does Genesis 6:5–7 Indicate That Even Our Creator Makes Mistakes?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-10-16T18:00:57Z",
+  "youtube_url": null
+}

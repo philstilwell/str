@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "strweekly.podbean.com/8351a0ed-a636-3218-848e-98aad0ea3a7f",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/sfqsyud6pdayip7p/101626.mp3",
+      "path": "episodes/2026-10-16-does-genesis-6-5-7-indicate-that-even-our-creator-makes-mistakes",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/does-genesis-65%e2%80%937-indicate-that-even-our-creator-makes-mistakes/",
+      "pub_date": "2026-10-16",
+      "slug": "2026-10-16-does-genesis-6-5-7-indicate-that-even-our-creator-makes-mistakes",
+      "title": "Does Genesis 6:5–7 Indicate That Even Our Creator Makes Mistakes?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "strweekly.podbean.com/022ecc0b-653e-3cd4-95db-e3d0d91e053a",
       "mp3_url": "https://mcdn.podbean.com/mf/web/fxntw7uunmxaz3vz/101426.mp3",
       "path": "episodes/2026-10-14-generational-curses-and-the-sins-of-the-father",
@@ -2405,5 +2427,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-10-14T18:36:40Z"
+  "updated_at": "2026-10-16T18:03:12Z"
 }
