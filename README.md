@@ -232,3 +232,15 @@ Critique depth is a production contract, not a copy-editing preference. The vali
 The standing epistemic stance is that epistemic faith is intrinsically irrational: confidence should be proportioned to evidence, and any appeal to faith as a basis for belief is a rational defect rather than an epistemic virtue. Biblical faith-language can express trust, reliance, or loyalty as relational commitment, but it must not be treated as evidence for truth or a warrant for belief merely because it uses the word “faith.” Critiques should steelman faith claims charitably without rehabilitating faith-based confidence as rational.
 
 The standing ethical stance is moral non-realism. Critiques may analyze ethical language, harms, welfare, preferences, emotions, social coordination, and public justification, but they should not write as if ethical discourse names stance-independent norm-furniture or an ontological object.
+
+## Search metadata
+
+Run `python3 tools/build_site_seo.py` after changing public pages. This refreshes
+unique critique titles and topic-first descriptions, social previews, the homepage
+archive structured data, canonical URLs, robots.txt, and the sitemap. The scheduled
+critique workflow already runs this step. Only public HTML pages enter the sitemap;
+private transcripts remain outside the public site.
+
+Podcast release dates describe the source episode, not the publication date of its
+critique. Sitemap modification dates are omitted until reliable page revision dates
+are available. No paid generation or search service is required for this refresh.

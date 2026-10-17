@@ -700,7 +700,7 @@ def test_public_site_has_seo_metadata_and_discovery_files():
         canonical = soup.select_one('link[rel="canonical"]')
         assert canonical
         assert canonical["href"].startswith("https://onreason.com/")
-        assert soup.select_one('meta[name="robots"]')["content"] == "index,follow"
+        assert soup.select_one('meta[name="robots"]')["content"] == "index,follow,max-image-preview:large"
         assert soup.select_one('meta[property="og:title"]')
         assert soup.select_one('meta[property="og:description"]')
         assert soup.select_one('meta[property="og:url"]')["content"] == canonical["href"]

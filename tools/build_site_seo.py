@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import re
 import sys
-from datetime import date
 from pathlib import Path
 from xml.sax.saxutils import escape as xml_escape
 
@@ -61,10 +60,14 @@ def episode_description(title: str, source_label: str) -> str:
 
 def page_description(path: Path, soup: BeautifulSoup, title: str, source_label: str) -> str:
     if "/episodes/" in page_path(path):
-        lede = soup.select_one(".article-header .lede")
-        if lede:
-            return truncate_description(lede.get_text(" ", strip=True))
-        return episode_description(plain_title(title), source_label)
+        heading = soup.select_one("h1")
+        topic = heading.get_text(" ", strip=True) if heading else plain_title(title)
+        speaker = next((row.select_one("dd").get_text(" ", strip=True)
+                        for row in soup.select(".meta-list > div")
+                        if row.select_one("dt") and row.select_one("dd")
+                        and row.select_one("dt").get_text(strip=True) == "Speaker"), "")
+        show = speaker or ("Frank Turek" if "CrossExamined" in source_label else "Stand to Reason")
+        return truncate_description(f"{topic} — an independent critique of {show}'s apologetics, examining the claims, evidence, and reasoning.")
     if page_path(path) == "/methodology/":
         return truncate_description(
             "How OnReason critiques apologetics podcasts by steelmanning claims, tracing evidence, testing rivals, and calibrating confidence."
@@ -98,7 +101,19 @@ def structured_data_for_page(
 ) -> dict:
     nodes = [organization_schema(base_url), website_schema(SITE_DESCRIPTION, base_url)]
     if page_path(path) == "/":
-        nodes.append(webpage_schema(document_title, description, url, "CollectionPage"))
+        collection = webpage_schema(document_title, description, url, "CollectionPage")
+        collection["mainEntity"] = {"@id": f"{url}#critiques"}
+        nodes.append(collection)
+        items = []
+        for episode in sorted((DOCS_DIR / "episodes").glob("*/index.html"), reverse=True):
+            episode_soup = BeautifulSoup(episode.read_text(encoding="utf-8"), "html.parser")
+            heading = episode_soup.select_one("h1")
+            items.append({"@type": "ListItem", "position": len(items) + 1,
+                          "name": heading.get_text(" ", strip=True),
+                          "url": canonical_url(page_path(episode), base_url)})
+        nodes.append({"@type": "ItemList", "@id": f"{url}#critiques",
+                      "name": "Apologetics podcast critiques", "numberOfItems": len(items),
+                      "itemListElement": items})
     elif page_path(path) == "/methodology/":
         nodes.extend(
             [
@@ -129,7 +144,11 @@ def structured_data_for_page(
 def preferred_document_title(path: Path, soup: BeautifulSoup) -> str:
     existing = soup.title.get_text(" ", strip=True) if soup.title else "OnReason"
     if page_path(path) == "/":
-        return "OnReason | Evidence-Proportionate Apologetics Critiques"
+        return "Christian Apologetics Critiques: Koukl & Turek | OnReason"
+    if "/episodes/" in page_path(path):
+        heading = soup.select_one("h1")
+        topic = heading.get_text(" ", strip=True) if heading else plain_title(existing)
+        return f"{topic} — Critique | OnReason"
     return existing
 
 
@@ -150,7 +169,6 @@ def update_html_page(path: Path, base_url: str) -> None:
         social_title=document_title,
         image_url=absolute_asset_url("/assets/evidence-alignment.png", base_url),
         image_alt=DEFAULT_SOCIAL_IMAGE_ALT,
-        published_date=published_date(path),
         structured_data=structured_data,
     )
     updated, replacements = SEO_HEAD_RE.subn(f"\n{seo_head}\n    ", html, count=1)
@@ -161,10 +179,6 @@ def update_html_page(path: Path, base_url: str) -> None:
 
 def html_pages() -> list[Path]:
     return [DOCS_DIR / "index.html", DOCS_DIR / "methodology/index.html", *sorted((DOCS_DIR / "episodes").glob("*/index.html"))]
-
-
-def sitemap_lastmod(path: Path, site_updated: str) -> str:
-    return published_date(path) or site_updated
 
 
 def sitemap_priority(path: Path) -> str:
@@ -181,14 +195,12 @@ def sitemap_changefreq(path: Path) -> str:
 
 
 def write_sitemap(pages: list[Path], base_url: str) -> None:
-    site_updated = date.today().isoformat()
     rows = []
     for page in pages:
         loc = canonical_url(page_path(page), base_url)
         rows.append(
             "  <url>\n"
             f"    <loc>{xml_escape(loc)}</loc>\n"
-            f"    <lastmod>{xml_escape(sitemap_lastmod(page, site_updated))}</lastmod>\n"
             f"    <changefreq>{sitemap_changefreq(page)}</changefreq>\n"
             f"    <priority>{sitemap_priority(page)}</priority>\n"
             "  </url>"

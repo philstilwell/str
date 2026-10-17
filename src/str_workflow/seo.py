@@ -7,7 +7,7 @@ from typing import Any
 
 SITE_NAME = "OnReason"
 SITE_BASE_URL = "https://onreason.com"
-SITE_DESCRIPTION = "Evidence-proportionate critiques of apologetics podcast episodes."
+SITE_DESCRIPTION = "Independent critiques of Greg Koukl, Stand to Reason, and Frank Turek podcasts. Examine Christian apologetics claims, evidence, logic, and cognitive bias."
 DEFAULT_SOCIAL_IMAGE_PATH = "/assets/evidence-alignment.png"
 DEFAULT_SOCIAL_IMAGE_ALT = "Abstract evidence-alignment illustration with papers, scales, and a magnifying glass."
 THEME_COLOR = "#111a15"
@@ -66,7 +66,7 @@ def organization_schema(base_url: str = SITE_BASE_URL) -> dict[str, Any]:
         "url": canonical_url("/", base_url),
         "logo": {
             "@type": "ImageObject",
-            "url": site_image_url(base_url),
+            "url": absolute_asset_url("/assets/favicon.svg", base_url),
         },
     }
 
@@ -97,6 +97,7 @@ def webpage_schema(
         "description": truncate_description(description),
         "isPartOf": {"@id": f"{canonical_url('/')}#website"},
         "inLanguage": "en-US",
+        **({"mainEntity": {"@id": f"{page_url}#article"}} if "/episodes/" in page_url else {}),
     }
 
 
@@ -137,13 +138,12 @@ def article_schema(
         "image": [image_url or site_image_url()],
         "inLanguage": "en-US",
     }
-    if published_date:
-        article["datePublished"] = published_date
     if source_url:
         article["isBasedOn"] = {
             "@type": "PodcastEpisode",
             "name": source_label or title,
             "url": source_url,
+            **({"datePublished": published_date} if published_date else {}),
         }
     return article
 
@@ -165,7 +165,7 @@ def render_seo_head(
     lines = [
         f"    <title>{esc(document_title)}</title>",
         f'    <meta name="description" content="{esc(meta_description)}">',
-        '    <meta name="robots" content="index,follow">',
+        '    <meta name="robots" content="index,follow,max-image-preview:large">',
         f'    <meta name="author" content="{esc(SITE_NAME)}">',
         f'    <meta name="theme-color" content="{esc(THEME_COLOR)}">',
         f'    <link rel="canonical" href="{esc(page_url)}">',

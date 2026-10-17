@@ -1256,7 +1256,7 @@ def validate_page(path: Path) -> list[str]:
     if not canonical_href.startswith("https://onreason.com/episodes/") or not canonical_href.endswith("/"):
         errors.append("page must include an absolute canonical URL for its OnReason episode path")
     meta_expectations = {
-        "robots": ('meta[name="robots"]', "index,follow"),
+        "robots": ('meta[name="robots"]', "index,follow,max-image-preview:large"),
         "og_type": ('meta[property="og:type"]', "article"),
         "og_title": ('meta[property="og:title"]', None),
         "og_description": ('meta[property="og:description"]', None),
@@ -1266,7 +1266,6 @@ def validate_page(path: Path) -> list[str]:
         "twitter_title": ('meta[name="twitter:title"]', None),
         "twitter_description": ('meta[name="twitter:description"]', None),
         "twitter_image": ('meta[name="twitter:image"]', "https://onreason.com/assets/evidence-alignment.png"),
-        "article_published_time": ('meta[property="article:published_time"]', None),
     }
     for name, (selector, expected) in meta_expectations.items():
         node = soup.select_one(selector)
@@ -1554,7 +1553,7 @@ def render_critique(spec: dict[str, Any]) -> str:
     description = text(episode.get("meta_description")) or text(episode.get("lede"))
     episode_slug = text(episode.get("slug"))
     page_url = canonical_url(f"/episodes/{episode_slug}/")
-    document_title = f"{title} | OnReason"
+    document_title = f"{title} — Critique | OnReason"
     social_image = site_image_url()
     structured_data = graph_schema(
         [
@@ -1586,7 +1585,6 @@ def render_critique(spec: dict[str, Any]) -> str:
         social_title=document_title,
         image_url=social_image,
         image_alt=text(episode.get("hero_alt")) or DEFAULT_SOCIAL_IMAGE_ALT,
-        published_date=text(episode.get("pub_date")),
         structured_data=structured_data,
     )
     toc_items = [
