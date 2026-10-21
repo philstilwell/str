@@ -382,9 +382,18 @@
       "url": "https://onreason.com/episodes/2026-10-20-is-old-earth-creation-anti-biblical-responding-to-ken-ham/",
       "title": "Is Old-Earth Creation Anti-Biblical? Responding to Ken Ham",
       "text": "New OnReason assessment: Is Old-Earth Creation Anti-Biblical? Responding to Ken Ham\n\nTopics: Old-earth creation as biblically permissible; Macroevolution as mathematically/biologically impossible\n\n@DrFrankTurek\n#CrossExamined #Bible\n\nRead the assessment: https://onreason.com/episodes/2026-10-20-is-old-earth-creation-anti-biblical-responding-to-ken-ham/",
-      "status": "pending",
+      "status": "sending",
       "created_at": "2026-10-21T18:49:14Z",
-      "history": []
+      "history": [
+        {
+          "status": "sending",
+          "at": "2026-10-21T18:49:45Z",
+          "note": "Attempt claimed before asking Buffer to publish."
+        }
+      ],
+      "account_id": "1639036228656832512",
+      "username": "PhilStilwe22050",
+      "buffer_channel_id": "6ac3f3fc6a5c39ccb623afb6"
     },
     "2026-10-21-dont-be-demas": {
       "url": "https://onreason.com/episodes/2026-10-21-dont-be-demas/",
