@@ -411,18 +411,24 @@
       "url": "https://onreason.com/episodes/2026-10-21-dont-be-demas/",
       "title": "Don’t Be Demas",
       "text": "New OnReason assessment: Don’t Be Demas\n\nTopics: Demas as apostasy evidence; Irreversible regeneration\n\n@STRtweets @gregkoukl\n#StandToReason #Apologetics\n\nRead the assessment: https://onreason.com/episodes/2026-10-21-dont-be-demas/",
-      "status": "sending",
+      "status": "submitted",
       "created_at": "2026-10-21T18:49:14Z",
       "history": [
         {
           "status": "sending",
           "at": "2026-10-21T18:49:51Z",
           "note": "Attempt claimed before asking Buffer to publish."
+        },
+        {
+          "status": "submitted",
+          "at": "2026-10-21T18:49:54Z",
+          "note": "Buffer accepted the post; awaiting confirmed publication on X."
         }
       ],
       "account_id": "1639036228656832512",
       "username": "PhilStilwe22050",
-      "buffer_channel_id": "6ac3f3fc6a5c39ccb623afb6"
+      "buffer_channel_id": "6ac3f3fc6a5c39ccb623afb6",
+      "buffer_post_id": "6ad9095168c8c0a061781d2a"
     }
   }
 }
