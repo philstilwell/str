@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-10-21T18:35:25Z",
+  "description_html": "Greg talks about what happens to Demas in the New Testament and warns against following in his steps, then he talks to a caller about whether 1 John 2:19 is referring to false teachers rather than false believers.",
+  "description_text": "Greg talks about what happens to Demas in the New Testament and warns against following in his steps, then he talks to a caller about whether 1 John 2:19 is referring to false teachers rather than false believers.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/a79a7622-1162-3220-93b5-a10ed7555215",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/epq9eaa65tyrduks/102126.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/don-t-be-demas/",
+  "pub_date": "2026-10-21",
+  "rss_transcript_tags": [],
+  "slug": "2026-10-21-dont-be-demas",
+  "title": "Don’t Be Demas",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-10-21T18:35:25Z",
+  "youtube_url": null
+}
