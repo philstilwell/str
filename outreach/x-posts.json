@@ -440,18 +440,24 @@
       "url": "https://onreason.com/episodes/2026-10-23-how-can-i-deal-with-my-fear-that-my-children-will-reject-christ/",
       "title": "How Can I Deal with My Fear That My Children Will Reject Christ?",
       "text": "New OnReason assessment: How Can I Deal with My Fear That My Children Will Reject Christ?\n\nTopics: Parental terror under eternal-punishment theology; Religious retention through…\n\n@STRtweets @gregkoukl\n#StandToReason #Theology\n\nRead the assessment: https://onreason.com/episodes/2026-10-23-how-can-i-deal-with-my-fear-that-my-children-will-reject-christ/",
-      "status": "sending",
+      "status": "submitted",
       "created_at": "2026-10-23T18:30:04Z",
       "history": [
         {
           "status": "sending",
           "at": "2026-10-23T18:30:31Z",
           "note": "Attempt claimed before asking Buffer to publish."
+        },
+        {
+          "status": "submitted",
+          "at": "2026-10-23T18:30:33Z",
+          "note": "Buffer accepted the post; awaiting confirmed publication on X."
         }
       ],
       "account_id": "1639036228656832512",
       "username": "PhilStilwe22050",
-      "buffer_channel_id": "6ac3f3fc6a5c39ccb623afb6"
+      "buffer_channel_id": "6ac3f3fc6a5c39ccb623afb6",
+      "buffer_post_id": "6adba7c8e4be8a4d861e65f5"
     },
     "2026-10-23-is-socialism-more-christian-than-capitalism-with-dr-jay-richards": {
       "url": "https://onreason.com/episodes/2026-10-23-is-socialism-more-christian-than-capitalism-with-dr-jay-richards/",
