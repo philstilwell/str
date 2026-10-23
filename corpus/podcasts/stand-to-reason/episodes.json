@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "strweekly.podbean.com/10eb5a64-1bcd-3673-a29f-0c8123991e6d",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/nuqr8jt4td5w8y6n/102326.mp3",
+      "path": "episodes/2026-10-23-how-can-i-deal-with-my-fear-that-my-children-will-reject-christ",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/how-can-i-deal-with-my-fear-that-my-children-will-reject-christ/",
+      "pub_date": "2026-10-23",
+      "slug": "2026-10-23-how-can-i-deal-with-my-fear-that-my-children-will-reject-christ",
+      "title": "How Can I Deal with My Fear That My Children Will Reject Christ?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "strweekly.podbean.com/a79a7622-1162-3220-93b5-a10ed7555215",
       "mp3_url": "https://mcdn.podbean.com/mf/web/epq9eaa65tyrduks/102126.mp3",
       "path": "episodes/2026-10-21-dont-be-demas",
@@ -2449,5 +2471,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-10-21T18:37:23Z"
+  "updated_at": "2026-10-23T18:19:36Z"
 }

@@ -1,0 +1,35 @@
+{
+  "audio_source": {
+    "feed_element": "encoded",
+    "player_url": "https://player.blubrry.com/id/155814973?cache=1792773185#mode-Light&border-000000&progress-000000",
+    "source": "embedded_player",
+    "source_url": "https://crossexamined.org/is-socialism-more-christian-than-capitalism-with-dr-jay-richards/",
+    "url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast-Jay_10-23-26.mp3"
+  },
+  "created_at": "2026-10-23T18:19:37Z",
+  "description_html": "<p>If someone becomes wealthy does that automatically mean that someone else will become poor? It seems that some Americans need a refresher course in basic economics! This week, Frank is joined by Dr. Jay Richards, author of &#8216;Money, Greed, and God&#8216;, to make the Christian case for capitalism and free enterprise. With socialism gaining popularity [&#8230;]</p>\n<p>The post <a href=\"https://crossexamined.org/is-socialism-more-christian-than-capitalism-with-dr-jay-richards/\">Is Socialism More Christian Than Capitalism? with Dr. Jay Richards</a> appeared first on <a href=\"https://crossexamined.org\">CrossExamined</a>.</p>",
+  "description_text": "If someone becomes wealthy does that automatically mean that someone else will become poor? It seems that some Americans need a refresher course in basic economics! This week, Frank is joined by Dr. Jay Richards, author of ‘Money, Greed, and God‘, to make the Christian case for capitalism and free enterprise. With socialism gaining popularity […] The post Is Socialism More Christian Than Capitalism? with Dr. Jay Richards appeared first on CrossExamined .",
+  "duration": null,
+  "feed_url": "https://crossexamined.org/category/podcast/feed/",
+  "guid": "https://crossexamined.org/?p=104214",
+  "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast-Jay_10-23-26.mp3",
+  "podcast": {
+    "home_url": "https://crossexamined.org/podcasts/",
+    "id": "idont-have-enough-faith",
+    "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+  },
+  "podcast_page_url": "https://crossexamined.org/is-socialism-more-christian-than-capitalism-with-dr-jay-richards/",
+  "pub_date": "2026-10-23",
+  "rss_transcript_tags": [],
+  "slug": "2026-10-23-is-socialism-more-christian-than-capitalism-with-dr-jay-richards",
+  "title": "Is Socialism More Christian Than Capitalism? with Dr. Jay Richards",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-10-23T18:19:37Z",
+  "youtube_url": null
+}

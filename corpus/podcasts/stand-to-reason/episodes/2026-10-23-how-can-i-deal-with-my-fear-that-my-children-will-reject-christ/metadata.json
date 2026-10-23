@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-10-23T18:17:27Z",
+  "description_html": "Greg responds to questions about how to deal with the fear that your children will reject Christ, and whether atheists who formerly identified as Christians ought to agree with us that they were never really Christians.",
+  "description_text": "Greg responds to questions about how to deal with the fear that your children will reject Christ, and whether atheists who formerly identified as Christians ought to agree with us that they were never really Christians.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/10eb5a64-1bcd-3673-a29f-0c8123991e6d",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/nuqr8jt4td5w8y6n/102326.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/how-can-i-deal-with-my-fear-that-my-children-will-reject-christ/",
+  "pub_date": "2026-10-23",
+  "rss_transcript_tags": [],
+  "slug": "2026-10-23-how-can-i-deal-with-my-fear-that-my-children-will-reject-christ",
+  "title": "How Can I Deal with My Fear That My Children Will Reject Christ?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-10-23T18:17:27Z",
+  "youtube_url": null
+}

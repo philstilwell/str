@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "https://crossexamined.org/?p=104214",
+      "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast-Jay_10-23-26.mp3",
+      "path": "episodes/2026-10-23-is-socialism-more-christian-than-capitalism-with-dr-jay-richards",
+      "podcast": {
+        "home_url": "https://crossexamined.org/podcasts/",
+        "id": "idont-have-enough-faith",
+        "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+      },
+      "podcast_page_url": "https://crossexamined.org/is-socialism-more-christian-than-capitalism-with-dr-jay-richards/",
+      "pub_date": "2026-10-23",
+      "slug": "2026-10-23-is-socialism-more-christian-than-capitalism-with-dr-jay-richards",
+      "title": "Is Socialism More Christian Than Capitalism? with Dr. Jay Richards",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "https://crossexamined.org/?p=104206",
       "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek-Podcast-Frank-Solo_10-20-2026.mp3",
       "path": "episodes/2026-10-20-is-old-earth-creation-anti-biblical-responding-to-ken-ham",
@@ -909,5 +931,5 @@
     "id": "idont-have-enough-faith",
     "title": "I Don't Have Enough FAITH to Be an ATHEIST"
   },
-  "updated_at": "2026-10-21T18:41:31Z"
+  "updated_at": "2026-10-23T18:22:04Z"
 }
