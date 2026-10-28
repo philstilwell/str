@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "strweekly.podbean.com/2faa71c3-3e78-3dc6-b263-e67630c30388",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/amj2ay66qp6iqm4z/102826.mp3",
+      "path": "episodes/2026-10-28-beauty-and-morality-are-objective",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/beauty-and-morality-are-objective/",
+      "pub_date": "2026-10-28",
+      "slug": "2026-10-28-beauty-and-morality-are-objective",
+      "title": "Beauty and Morality Are Objective",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "strweekly.podbean.com/10eb5a64-1bcd-3673-a29f-0c8123991e6d",
       "mp3_url": "https://mcdn.podbean.com/mf/web/nuqr8jt4td5w8y6n/102326.mp3",
       "path": "episodes/2026-10-23-how-can-i-deal-with-my-fear-that-my-children-will-reject-christ",
@@ -2471,5 +2493,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-10-23T18:19:36Z"
+  "updated_at": "2026-10-28T19:33:49Z"
 }

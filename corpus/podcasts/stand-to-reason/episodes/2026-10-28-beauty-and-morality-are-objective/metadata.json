@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-10-28T19:31:42Z",
+  "description_html": "Greg reflects on the objective nature of beauty and morality, then he answers questions about how providence and the decrees of God play out in life and how to manage a denominational split in a way that shows respect to all but still makes clear the danger of staying in the denomination.",
+  "description_text": "Greg reflects on the objective nature of beauty and morality, then he answers questions about how providence and the decrees of God play out in life and how to manage a denominational split in a way that shows respect to all but still makes clear the danger of staying in the denomination.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/2faa71c3-3e78-3dc6-b263-e67630c30388",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/amj2ay66qp6iqm4z/102826.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/beauty-and-morality-are-objective/",
+  "pub_date": "2026-10-28",
+  "rss_transcript_tags": [],
+  "slug": "2026-10-28-beauty-and-morality-are-objective",
+  "title": "Beauty and Morality Are Objective",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-10-28T19:31:42Z",
+  "youtube_url": null
+}
