@@ -790,4 +790,14 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://onreason.com/episodes/2026-10-30-did-we-really-find-noahs-ark-plus-the-most-amazing-jesus-discovery-with/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://onreason.com/episodes/2026-10-30-thy-will-be-done/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
