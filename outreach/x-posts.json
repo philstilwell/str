@@ -585,7 +585,7 @@
       "url": "https://onreason.com/episodes/2026-10-30-thy-will-be-done/",
       "title": "Thy Will Be Done?",
       "text": "New OnReason assessment: Thy Will Be Done?\n\nTopics: Prayer outcomes/anecdotal plausibility; Sovereign will/all events\n\n@STRtweets @gregkoukl\n#StandToReason #Theology\n\nRead the assessment: https://onreason.com/episodes/2026-10-30-thy-will-be-done/",
-      "status": "submitted",
+      "status": "posted",
       "created_at": "2026-10-30T19:30:59Z",
       "history": [
         {
@@ -597,12 +597,18 @@
           "status": "submitted",
           "at": "2026-10-30T19:32:07Z",
           "note": "Buffer accepted the post; awaiting confirmed publication on X."
+        },
+        {
+          "status": "posted",
+          "at": "2026-10-30T19:32:09Z",
+          "note": "Buffer confirmed publication on X and returned the public permalink."
         }
       ],
       "account_id": "1639036228656832512",
       "username": "PhilStilwe22050",
       "buffer_channel_id": "6ac3f3fc6a5c39ccb623afb6",
-      "buffer_post_id": "6ae4f0b6a1145743496625e7"
+      "buffer_post_id": "6ae4f0b6a1145743496625e7",
+      "posted_url": "https://x.com/i/web/status/2116251820821467603"
     }
   }
 }
