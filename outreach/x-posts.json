@@ -556,9 +556,18 @@
       "url": "https://onreason.com/episodes/2026-10-30-did-we-really-find-noahs-ark-plus-the-most-amazing-jesus-discovery-with/",
       "title": "Did We REALLY Find Noah’s Ark? PLUS The Most Amazing Jesus Discovery with Dr. Jeremiah J. Johnston",
       "text": "New OnReason assessment: Did We REALLY Find Noah’s Ark? PLUS The Most Amazing Jesus Discovery with Dr. Jeremiah J. Johnston\n\nTopics: Abortion prooftexts/ethical certainty…\n\n@DrFrankTurek\n#CrossExamined #Ethics\n\nRead the assessment: https://onreason.com/episodes/2026-10-30-did-we-really-find-noahs-ark-plus-the-most-amazing-jesus-discovery-with/",
-      "status": "pending",
+      "status": "sending",
       "created_at": "2026-10-30T19:30:59Z",
-      "history": []
+      "history": [
+        {
+          "status": "sending",
+          "at": "2026-10-30T19:31:58Z",
+          "note": "Attempt claimed before asking Buffer to publish."
+        }
+      ],
+      "account_id": "1639036228656832512",
+      "username": "PhilStilwe22050",
+      "buffer_channel_id": "6ac3f3fc6a5c39ccb623afb6"
     },
     "2026-10-30-thy-will-be-done": {
       "url": "https://onreason.com/episodes/2026-10-30-thy-will-be-done/",
