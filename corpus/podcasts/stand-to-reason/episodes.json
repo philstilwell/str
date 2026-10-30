@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "strweekly.podbean.com/f668a6a0-045d-3317-9220-b36665d798a6",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/cdrf6r4qwa4qfimp/103026.mp3",
+      "path": "episodes/2026-10-30-thy-will-be-done",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/thy-will-be-done/",
+      "pub_date": "2026-10-30",
+      "slug": "2026-10-30-thy-will-be-done",
+      "title": "Thy Will Be Done?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "strweekly.podbean.com/2faa71c3-3e78-3dc6-b263-e67630c30388",
       "mp3_url": "https://mcdn.podbean.com/mf/web/amj2ay66qp6iqm4z/102826.mp3",
       "path": "episodes/2026-10-28-beauty-and-morality-are-objective",
@@ -2493,5 +2515,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-10-28T19:33:49Z"
+  "updated_at": "2026-10-30T19:21:31Z"
 }

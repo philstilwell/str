@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-10-30T19:19:54Z",
+  "description_html": "Greg talks about God’s wills and praying for his will to be done, then he answers questions about  citing the story of the rich man and Lazarus to someone who rejects Christianity because of unsaved loved ones who passed away, and whether Moses changes God’s mind in Numbers 14.",
+  "description_text": "Greg talks about God’s wills and praying for his will to be done, then he answers questions about  citing the story of the rich man and Lazarus to someone who rejects Christianity because of unsaved loved ones who passed away, and whether Moses changes God’s mind in Numbers 14.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/f668a6a0-045d-3317-9220-b36665d798a6",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/cdrf6r4qwa4qfimp/103026.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/thy-will-be-done/",
+  "pub_date": "2026-10-30",
+  "rss_transcript_tags": [],
+  "slug": "2026-10-30-thy-will-be-done",
+  "title": "Thy Will Be Done?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-10-30T19:19:54Z",
+  "youtube_url": null
+}

@@ -1,0 +1,35 @@
+{
+  "audio_source": {
+    "feed_element": "encoded",
+    "player_url": "https://player.blubrry.com/id/155931290?cache=1793378961#mode-Light&border-000000&progress-000000",
+    "source": "embedded_player",
+    "source_url": "https://crossexamined.org/did-we-really-find-noahs-ark-plus-the-most-amazing-jesus-discovery-with-dr-jeremiah-j-johnston/",
+    "url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast_Jeremiah_10-30-26.mp3"
+  },
+  "created_at": "2026-10-30T19:21:32Z",
+  "description_html": "<p>Did we REALLY find Noah&#8217;s Ark or are millions of people being misled by internet hype? Have we REALLY found the burial box of Jesus’s brother, James? And what do jihad and progressive Christianity have to do with America&#8217;s upcoming midterm elections? Dr. Jeremiah J. Johnston, president and founder of Christian Thinkers, joins Frank to [&#8230;]</p>\n<p>The post <a href=\"https://crossexamined.org/did-we-really-find-noahs-ark-plus-the-most-amazing-jesus-discovery-with-dr-jeremiah-j-johnston/\">Did We REALLY Find Noah&#8217;s Ark? PLUS The Most Amazing Jesus Discovery with Dr. Jeremiah J. Johnston</a> appeared first on <a href=\"https://crossexamined.org\">CrossExamined</a>.</p>",
+  "description_text": "Did we REALLY find Noah’s Ark or are millions of people being misled by internet hype? Have we REALLY found the burial box of Jesus’s brother, James? And what do jihad and progressive Christianity have to do with America’s upcoming midterm elections? Dr. Jeremiah J. Johnston, president and founder of Christian Thinkers, joins Frank to […] The post Did We REALLY Find Noah’s Ark? PLUS The Most Amazing Jesus Discovery with Dr. Jeremiah J. Johnston appeared first on CrossExamined .",
+  "duration": null,
+  "feed_url": "https://crossexamined.org/category/podcast/feed/",
+  "guid": "https://crossexamined.org/?p=104248",
+  "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast_Jeremiah_10-30-26.mp3",
+  "podcast": {
+    "home_url": "https://crossexamined.org/podcasts/",
+    "id": "idont-have-enough-faith",
+    "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+  },
+  "podcast_page_url": "https://crossexamined.org/did-we-really-find-noahs-ark-plus-the-most-amazing-jesus-discovery-with-dr-jeremiah-j-johnston/",
+  "pub_date": "2026-10-30",
+  "rss_transcript_tags": [],
+  "slug": "2026-10-30-did-we-really-find-noahs-ark-plus-the-most-amazing-jesus-discovery-with",
+  "title": "Did We REALLY Find Noah’s Ark? PLUS The Most Amazing Jesus Discovery with Dr. Jeremiah J. Johnston",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-10-30T19:21:32Z",
+  "youtube_url": null
+}
