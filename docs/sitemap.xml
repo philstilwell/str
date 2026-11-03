@@ -800,4 +800,9 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://onreason.com/episodes/2026-11-03-4-ways-mormons-muslims-jehovahs-witnesses-change-the-gospel-with-dr/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
