@@ -1,0 +1,35 @@
+{
+  "audio_source": {
+    "feed_element": "encoded",
+    "player_url": "https://player.blubrry.com/id/155952024?cache=1793732933#mode-Light&border-000000&progress-000000",
+    "source": "embedded_player",
+    "source_url": "https://crossexamined.org/4-ways-mormons-muslims-jehovahs-witnesses-change-the-gospel-with-dr-brady-blevins/",
+    "url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek_Podcast_Blevins_11-3-2026.mp3"
+  },
+  "created_at": "2026-11-03T20:29:50Z",
+  "description_html": "<p>A Muslim co-worker says Jesus never claimed to be God. Your Mormon neighbor says, “We believe in Jesus too!” Then, a Jehovah’s Witness opens the New World Translation and starts reading what sounds like scripture. Are you ready to respond? Or are you suddenly hoping somebody changes the subject? Frank welcomes Dr. Brady Blevins, Senior [&#8230;]</p>\n<p>The post <a href=\"https://crossexamined.org/4-ways-mormons-muslims-jehovahs-witnesses-change-the-gospel-with-dr-brady-blevins/\">4 Ways Mormons, Muslims, &#038; Jehovah&#8217;s Witnesses CHANGE the Gospel with Dr. Brady Blevins</a> appeared first on <a href=\"https://crossexamined.org\">CrossExamined</a>.</p>",
+  "description_text": "A Muslim co-worker says Jesus never claimed to be God. Your Mormon neighbor says, “We believe in Jesus too!” Then, a Jehovah’s Witness opens the New World Translation and starts reading what sounds like scripture. Are you ready to respond? Or are you suddenly hoping somebody changes the subject? Frank welcomes Dr. Brady Blevins, Senior […] The post 4 Ways Mormons, Muslims, & Jehovah’s Witnesses CHANGE the Gospel with Dr. Brady Blevins appeared first on CrossExamined .",
+  "duration": null,
+  "feed_url": "https://crossexamined.org/category/podcast/feed/",
+  "guid": "https://crossexamined.org/?p=104258",
+  "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek_Podcast_Blevins_11-3-2026.mp3",
+  "podcast": {
+    "home_url": "https://crossexamined.org/podcasts/",
+    "id": "idont-have-enough-faith",
+    "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+  },
+  "podcast_page_url": "https://crossexamined.org/4-ways-mormons-muslims-jehovahs-witnesses-change-the-gospel-with-dr-brady-blevins/",
+  "pub_date": "2026-11-03",
+  "rss_transcript_tags": [],
+  "slug": "2026-11-03-4-ways-mormons-muslims-jehovahs-witnesses-change-the-gospel-with-dr",
+  "title": "4 Ways Mormons, Muslims, & Jehovah’s Witnesses CHANGE the Gospel with Dr. Brady Blevins",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-11-03T20:29:50Z",
+  "youtube_url": null
+}
