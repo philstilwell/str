@@ -643,18 +643,24 @@
       "url": "https://onreason.com/episodes/2026-11-04-christianity-is-about-an-objective-reality-outside-of-us/",
       "title": "Christianity Is About an Objective Reality Outside of Us",
       "text": "New OnReason assessment: Christianity Is About an Objective Reality Outside of Us\n\nTopics: Objective-reality apologetic; Kingdom-conflict atonement frame\n\n@STRtweets @gregkoukl\n#StandToReason #Philosophy\n\nRead the assessment: https://onreason.com/episodes/2026-11-04-christianity-is-about-an-objective-reality-outside-of-us/",
-      "status": "sending",
+      "status": "submitted",
       "created_at": "2026-11-04T20:57:05Z",
       "history": [
         {
           "status": "sending",
           "at": "2026-11-04T20:57:59Z",
           "note": "Attempt claimed before asking Buffer to publish."
+        },
+        {
+          "status": "submitted",
+          "at": "2026-11-04T20:58:02Z",
+          "note": "Buffer accepted the post; awaiting confirmed publication on X."
         }
       ],
       "account_id": "1639036228656832512",
       "username": "PhilStilwe22050",
-      "buffer_channel_id": "6ac3f3fc6a5c39ccb623afb6"
+      "buffer_channel_id": "6ac3f3fc6a5c39ccb623afb6",
+      "buffer_post_id": "6aeb9c580bb7d41592a5b3b3"
     }
   }
 }
