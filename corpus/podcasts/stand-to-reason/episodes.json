@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "strweekly.podbean.com/5b3e7ffd-8fe5-3be1-b8d8-fc2b31bd0585",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/f6pwqskud5abu9qp/110626.mp3",
+      "path": "episodes/2026-11-06-should-praying-for-miracles-be-an-integral-part-of-evangelism",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/should-praying-for-miracles-be-an-integral-part-of-evangelism/",
+      "pub_date": "2026-11-06",
+      "slug": "2026-11-06-should-praying-for-miracles-be-an-integral-part-of-evangelism",
+      "title": "Should Praying for Miracles Be an Integral Part of Evangelism?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "strweekly.podbean.com/3af608b9-613d-31ec-8f38-4e017e44caba",
       "mp3_url": "https://mcdn.podbean.com/mf/web/hydth883fd8gmen9/110426.mp3",
       "path": "episodes/2026-11-04-christianity-is-about-an-objective-reality-outside-of-us",
@@ -2537,5 +2559,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-11-04T20:50:31Z"
+  "updated_at": "2026-11-06T20:27:57Z"
 }
