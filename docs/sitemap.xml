@@ -820,4 +820,14 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://onreason.com/episodes/2026-11-10-whos-to-blame-for-the-election-the-only-stat-you-need-to-know-plus-q-a/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://onreason.com/episodes/2026-11-11-the-arguments-for-same-sex-marriage-were-always-going-to-lead-to-this/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
