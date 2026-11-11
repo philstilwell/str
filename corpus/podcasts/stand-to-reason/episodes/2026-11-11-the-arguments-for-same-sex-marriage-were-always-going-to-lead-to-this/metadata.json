@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-11-11T21:22:41Z",
+  "description_html": "Greg talks about West Hollywood legally recognizing multi-partner relationships, responds to a challenge that he can’t demonstrate the existence of a supernatural category via a legitimate methodology, and answers whether the three-day darkness in Exodus has something to do with Jesus.",
+  "description_text": "Greg talks about West Hollywood legally recognizing multi-partner relationships, responds to a challenge that he can’t demonstrate the existence of a supernatural category via a legitimate methodology, and answers whether the three-day darkness in Exodus has something to do with Jesus.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/8c5520d0-333e-3252-9404-ef6624b2025a",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/t762rp9innybysq6/111126.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/the-arguments-for-same-sex-marriage-were-always-going-to-lead-to-this/",
+  "pub_date": "2026-11-11",
+  "rss_transcript_tags": [],
+  "slug": "2026-11-11-the-arguments-for-same-sex-marriage-were-always-going-to-lead-to-this",
+  "title": "The Arguments for Same-Sex Marriage Were Always Going to Lead to This",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-11-11T21:22:41Z",
+  "youtube_url": null
+}

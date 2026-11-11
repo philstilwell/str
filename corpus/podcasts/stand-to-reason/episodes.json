@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "strweekly.podbean.com/8c5520d0-333e-3252-9404-ef6624b2025a",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/t762rp9innybysq6/111126.mp3",
+      "path": "episodes/2026-11-11-the-arguments-for-same-sex-marriage-were-always-going-to-lead-to-this",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/the-arguments-for-same-sex-marriage-were-always-going-to-lead-to-this/",
+      "pub_date": "2026-11-11",
+      "slug": "2026-11-11-the-arguments-for-same-sex-marriage-were-always-going-to-lead-to-this",
+      "title": "The Arguments for Same-Sex Marriage Were Always Going to Lead to This",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "strweekly.podbean.com/5b3e7ffd-8fe5-3be1-b8d8-fc2b31bd0585",
       "mp3_url": "https://mcdn.podbean.com/mf/web/f6pwqskud5abu9qp/110626.mp3",
       "path": "episodes/2026-11-06-should-praying-for-miracles-be-an-integral-part-of-evangelism",
@@ -2559,5 +2581,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-11-06T20:27:57Z"
+  "updated_at": "2026-11-11T21:24:12Z"
 }
