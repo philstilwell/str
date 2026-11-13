@@ -830,4 +830,14 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://onreason.com/episodes/2026-11-13-how-can-god-be-both-immutable-and-incarnate/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://onreason.com/episodes/2026-11-13-the-most-compelling-scientific-evidence-for-god-atheists-still-cant-away/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
