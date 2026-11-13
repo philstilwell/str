@@ -1,0 +1,35 @@
+{
+  "audio_source": {
+    "feed_element": "encoded",
+    "player_url": "https://player.blubrry.com/id/156029622?cache=1794594239#mode-Light&border-000000&progress-000000",
+    "source": "embedded_player",
+    "source_url": "https://crossexamined.org/the-most-compelling-scientific-evidence-for-god-atheists-still-cant-explain-away/",
+    "url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast-Frank-Solo_11-13-26.mp3"
+  },
+  "created_at": "2026-11-13T20:55:10Z",
+  "description_html": "<p>The great John Lennox once said, &#8220;When brilliant scientists talk nonsense, it&#8217;s still nonsense.&#8221; What would make him say such a thing? This week, Frank turns to Chapter 4 of his newly updated book, &#8216;I Don&#8217;t Have Enough Faith to Be an Atheist,&#8217; to unpack the remarkable science behind the fine-tuning of the universe. In [&#8230;]</p>\n<p>The post <a href=\"https://crossexamined.org/the-most-compelling-scientific-evidence-for-god-atheists-still-cant-explain-away/\">The Most Compelling Scientific Evidence for God Atheists Still Can&#8217;t Explain Away</a> appeared first on <a href=\"https://crossexamined.org\">CrossExamined</a>.</p>",
+  "description_text": "The great John Lennox once said, “When brilliant scientists talk nonsense, it’s still nonsense.” What would make him say such a thing? This week, Frank turns to Chapter 4 of his newly updated book, ‘I Don’t Have Enough Faith to Be an Atheist,’ to unpack the remarkable science behind the fine-tuning of the universe. In […] The post The Most Compelling Scientific Evidence for God Atheists Still Can’t Explain Away appeared first on CrossExamined .",
+  "duration": null,
+  "feed_url": "https://crossexamined.org/category/podcast/feed/",
+  "guid": "https://crossexamined.org/?p=104285",
+  "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Podcast-Frank-Solo_11-13-26.mp3",
+  "podcast": {
+    "home_url": "https://crossexamined.org/podcasts/",
+    "id": "idont-have-enough-faith",
+    "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+  },
+  "podcast_page_url": "https://crossexamined.org/the-most-compelling-scientific-evidence-for-god-atheists-still-cant-explain-away/",
+  "pub_date": "2026-11-13",
+  "rss_transcript_tags": [],
+  "slug": "2026-11-13-the-most-compelling-scientific-evidence-for-god-atheists-still-cant-away",
+  "title": "The Most Compelling Scientific Evidence for God Atheists Still Can’t Explain Away",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-11-13T20:55:10Z",
+  "youtube_url": null
+}

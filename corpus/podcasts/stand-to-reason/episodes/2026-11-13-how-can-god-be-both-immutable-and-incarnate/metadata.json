@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-11-13T20:53:39Z",
+  "description_html": "Greg answers questions about how to make sense of the fact that God is immutable but also incarnate, thoughts on using mockery and satire in apologetics, “Get behind me, Satan,” interacting with a friend who talks about her lesbian relationship, and challenging a friend’s Catholicism.",
+  "description_text": "Greg answers questions about how to make sense of the fact that God is immutable but also incarnate, thoughts on using mockery and satire in apologetics, “Get behind me, Satan,” interacting with a friend who talks about her lesbian relationship, and challenging a friend’s Catholicism.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/2bec1a25-8741-3363-90e5-0f34166e7c3b",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/mctw5k6wm9fyud4t/111326.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/how-can-god-be-both-immutable-and-incarnate/",
+  "pub_date": "2026-11-13",
+  "rss_transcript_tags": [],
+  "slug": "2026-11-13-how-can-god-be-both-immutable-and-incarnate",
+  "title": "How Can God Be Both Immutable and Incarnate?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-11-13T20:53:39Z",
+  "youtube_url": null
+}

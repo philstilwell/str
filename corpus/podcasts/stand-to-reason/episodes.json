@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "strweekly.podbean.com/2bec1a25-8741-3363-90e5-0f34166e7c3b",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/mctw5k6wm9fyud4t/111326.mp3",
+      "path": "episodes/2026-11-13-how-can-god-be-both-immutable-and-incarnate",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/how-can-god-be-both-immutable-and-incarnate/",
+      "pub_date": "2026-11-13",
+      "slug": "2026-11-13-how-can-god-be-both-immutable-and-incarnate",
+      "title": "How Can God Be Both Immutable and Incarnate?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "strweekly.podbean.com/8c5520d0-333e-3252-9404-ef6624b2025a",
       "mp3_url": "https://mcdn.podbean.com/mf/web/t762rp9innybysq6/111126.mp3",
       "path": "episodes/2026-11-11-the-arguments-for-same-sex-marriage-were-always-going-to-lead-to-this",
@@ -2581,5 +2603,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-11-11T21:24:12Z"
+  "updated_at": "2026-11-13T20:55:07Z"
 }
