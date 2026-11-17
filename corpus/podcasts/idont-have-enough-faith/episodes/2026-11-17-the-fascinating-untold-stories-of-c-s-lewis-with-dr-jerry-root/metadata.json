@@ -1,0 +1,35 @@
+{
+  "audio_source": {
+    "feed_element": "encoded",
+    "player_url": "https://player.blubrry.com/id/156056187?cache=1794946073#mode-Light&border-000000&progress-000000",
+    "source": "embedded_player",
+    "source_url": "https://crossexamined.org/the-fascinating-untold-stories-of-c-s-lewis-with-dr-jerry-root/",
+    "url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek_Podcast_JerryRoot_11-17-2026.mp3"
+  },
+  "created_at": "2026-11-17T22:17:33Z",
+  "description_html": "<p>How does a former atheist become the most influential Christian apologist of the past century? And why do his books and stories still resonate with believers and skeptics alike after all this time? Frank welcomes C.S. Lewis scholar, professor, and author, Dr. Jerry Root, to uncover some fascinating details about Lewis&#8217;s life, conversion, and lasting [&#8230;]</p>\n<p>The post <a href=\"https://crossexamined.org/the-fascinating-untold-stories-of-c-s-lewis-with-dr-jerry-root/\">The Fascinating &#038; Untold Stories of C.S. Lewis with Dr. Jerry Root</a> appeared first on <a href=\"https://crossexamined.org\">CrossExamined</a>.</p>",
+  "description_text": "How does a former atheist become the most influential Christian apologist of the past century? And why do his books and stories still resonate with believers and skeptics alike after all this time? Frank welcomes C.S. Lewis scholar, professor, and author, Dr. Jerry Root, to uncover some fascinating details about Lewis’s life, conversion, and lasting […] The post The Fascinating & Untold Stories of C.S. Lewis with Dr. Jerry Root appeared first on CrossExamined .",
+  "duration": null,
+  "feed_url": "https://crossexamined.org/category/podcast/feed/",
+  "guid": "https://crossexamined.org/?p=104303",
+  "mp3_url": "https://media.blubrry.com/cross_examined/b/content.blubrry.com/cross_examined/IDHEF_Midweek_Podcast_JerryRoot_11-17-2026.mp3",
+  "podcast": {
+    "home_url": "https://crossexamined.org/podcasts/",
+    "id": "idont-have-enough-faith",
+    "title": "I Don't Have Enough FAITH to Be an ATHEIST"
+  },
+  "podcast_page_url": "https://crossexamined.org/the-fascinating-untold-stories-of-c-s-lewis-with-dr-jerry-root/",
+  "pub_date": "2026-11-17",
+  "rss_transcript_tags": [],
+  "slug": "2026-11-17-the-fascinating-untold-stories-of-c-s-lewis-with-dr-jerry-root",
+  "title": "The Fascinating & Untold Stories of C.S. Lewis with Dr. Jerry Root",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-11-17T22:17:33Z",
+  "youtube_url": null
+}
