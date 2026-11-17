@@ -846,9 +846,18 @@
       "url": "https://onreason.com/episodes/2026-11-17-the-fascinating-untold-stories-of-c-s-lewis-with-dr-jerry-root/",
       "title": "The Fascinating & Untold Stories of C.S. Lewis with Dr. Jerry Root",
       "text": "New OnReason assessment: The Fascinating & Untold Stories of C.S. Lewis with Dr. Jerry Root\n\nTopics: Atheism dismissed through anecdote/motive diagnosis; Christianity as the true myth made…\n\n@DrFrankTurek\n#CrossExamined #History\n\nRead the assessment: https://onreason.com/episodes/2026-11-17-the-fascinating-untold-stories-of-c-s-lewis-with-dr-jerry-root/",
-      "status": "pending",
+      "status": "sending",
       "created_at": "2026-11-17T22:25:45Z",
-      "history": []
+      "history": [
+        {
+          "status": "sending",
+          "at": "2026-11-17T22:26:43Z",
+          "note": "Attempt claimed before asking Buffer to publish."
+        }
+      ],
+      "account_id": "1639036228656832512",
+      "username": "PhilStilwe22050",
+      "buffer_channel_id": "6ac3f3fc6a5c39ccb623afb6"
     }
   }
 }
