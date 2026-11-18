@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "strweekly.podbean.com/4f657d0c-60c2-3165-af86-7c75c2acdce4",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/hvtdmaxid27iz2pe/111826.mp3",
+      "path": "episodes/2026-11-18-carried-away-in-the-spirit",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/carried-away-in-the-spirit/",
+      "pub_date": "2026-11-18",
+      "slug": "2026-11-18-carried-away-in-the-spirit",
+      "title": "Carried Away in the Spirit?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "strweekly.podbean.com/2bec1a25-8741-3363-90e5-0f34166e7c3b",
       "mp3_url": "https://mcdn.podbean.com/mf/web/mctw5k6wm9fyud4t/111326.mp3",
       "path": "episodes/2026-11-13-how-can-god-be-both-immutable-and-incarnate",
@@ -2603,5 +2625,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-11-13T20:55:07Z"
+  "updated_at": "2026-11-18T21:56:23Z"
 }
