@@ -904,9 +904,18 @@
       "url": "https://onreason.com/episodes/2026-11-20-street-evangelism-in-israel-the-top-jewish-objections-with-jeff-morgan/",
       "title": "Street Evangelism in Israel! The Top Jewish Objections with Jeff Morgan",
       "text": "New OnReason assessment: Street Evangelism in Israel! The Top Jewish Objections with Jeff Morgan\n\nTopics: Rabbinic-filter diagnosis; Delayed messianic fulfillment\n\n@DrFrankTurek\n#CrossExamined #Apologetics\n\nRead the assessment: https://onreason.com/episodes/2026-11-20-street-evangelism-in-israel-the-top-jewish-objections-with-jeff-morgan/",
-      "status": "pending",
+      "status": "sending",
       "created_at": "2026-11-20T21:57:40Z",
-      "history": []
+      "history": [
+        {
+          "status": "sending",
+          "at": "2026-11-20T21:58:36Z",
+          "note": "Attempt claimed before asking Buffer to publish."
+        }
+      ],
+      "account_id": "1639036228656832512",
+      "username": "PhilStilwe22050",
+      "buffer_channel_id": "6ac3f3fc6a5c39ccb623afb6"
     }
   }
 }
