@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-11-27T22:40:48Z",
+  "description_html": "Greg responds to questions about whether we’re commanded to have children even if we’re not financially able, a former missionary returning to the mission field, what makes another fall eternally impossible, and how our freedom in eternity will differ from Adam and Eve’s freedom.",
+  "description_text": "Greg responds to questions about whether we’re commanded to have children even if we’re not financially able, a former missionary returning to the mission field, what makes another fall eternally impossible, and how our freedom in eternity will differ from Adam and Eve’s freedom.",
+  "duration": "3480",
+  "feed_url": "https://feed.podbean.com/strweekly/feed.xml",
+  "guid": "strweekly.podbean.com/19937b88-c049-355f-9484-0ce35358694b",
+  "mp3_url": "https://mcdn.podbean.com/mf/web/qxbd5ebev7xpmxmb/112726.mp3",
+  "podcast": {
+    "home_url": "https://strweekly.podbean.com/",
+    "id": "stand-to-reason",
+    "title": "Stand to Reason Weekly Podcast"
+  },
+  "podcast_page_url": "https://strweekly.podbean.com/e/are-we-commanded-to-have-children-even-if-we-re-not-financially-able/",
+  "pub_date": "2026-11-27",
+  "rss_transcript_tags": [],
+  "slug": "2026-11-27-are-we-commanded-to-have-children-even-if-were-not-financially-able",
+  "title": "Are We Commanded to Have Children Even If We’re Not Financially Able?",
+  "transcript": {
+    "asr_model": "gpt-4o-mini-transcribe",
+    "json_path": "transcript.json",
+    "path": "transcript.md",
+    "source": "openai",
+    "status": "generated_asr"
+  },
+  "updated_at": "2026-11-27T22:40:48Z",
+  "youtube_url": null
+}

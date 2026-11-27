@@ -1,6 +1,28 @@
 {
   "episodes": [
     {
+      "guid": "strweekly.podbean.com/19937b88-c049-355f-9484-0ce35358694b",
+      "mp3_url": "https://mcdn.podbean.com/mf/web/qxbd5ebev7xpmxmb/112726.mp3",
+      "path": "episodes/2026-11-27-are-we-commanded-to-have-children-even-if-were-not-financially-able",
+      "podcast": {
+        "home_url": "https://strweekly.podbean.com/",
+        "id": "stand-to-reason",
+        "title": "Stand to Reason Weekly Podcast"
+      },
+      "podcast_page_url": "https://strweekly.podbean.com/e/are-we-commanded-to-have-children-even-if-we-re-not-financially-able/",
+      "pub_date": "2026-11-27",
+      "slug": "2026-11-27-are-we-commanded-to-have-children-even-if-were-not-financially-able",
+      "title": "Are We Commanded to Have Children Even If We’re Not Financially Able?",
+      "transcript": {
+        "asr_model": "gpt-4o-mini-transcribe",
+        "json_path": "transcript.json",
+        "path": "transcript.md",
+        "source": "openai",
+        "status": "generated_asr"
+      },
+      "youtube_url": null
+    },
+    {
       "guid": "strweekly.podbean.com/441dad20-4e36-3832-9967-a32d5136a076",
       "mp3_url": "https://mcdn.podbean.com/mf/web/9bancgze3j5xzc4y/112526.mp3",
       "path": "episodes/2026-11-25-thanksgiving-only-makes-sense-in-a-theistic-world",
@@ -2647,5 +2669,5 @@
     "id": "stand-to-reason",
     "title": "Stand to Reason Weekly Podcast"
   },
-  "updated_at": "2026-11-25T23:05:51Z"
+  "updated_at": "2026-11-27T22:42:28Z"
 }
