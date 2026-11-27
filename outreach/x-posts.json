@@ -1020,9 +1020,18 @@
       "url": "https://onreason.com/episodes/2026-11-27-soar-through-the-bible-in-2027-with-dr-skip-heitzig/",
       "title": "Soar Through the Bible in 2027 with Dr. Skip Heitzig",
       "text": "New OnReason assessment: Soar Through the Bible in 2027 with Dr. Skip Heitzig\n\nTopics: Bible-as-divine-revelation; Typology-as-apologetic-proof\n\n@DrFrankTurek\n#CrossExamined #Bible\n\nRead the assessment: https://onreason.com/episodes/2026-11-27-soar-through-the-bible-in-2027-with-dr-skip-heitzig/",
-      "status": "pending",
+      "status": "sending",
       "created_at": "2026-11-27T22:54:05Z",
-      "history": []
+      "history": [
+        {
+          "status": "sending",
+          "at": "2026-11-27T22:54:39Z",
+          "note": "Attempt claimed before asking Buffer to publish."
+        }
+      ],
+      "account_id": "1639036228656832512",
+      "username": "PhilStilwe22050",
+      "buffer_channel_id": "6ac3f3fc6a5c39ccb623afb6"
     }
   }
 }
